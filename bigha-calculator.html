@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="nav.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>Bigha Calculator Bihar | बिघा कैलकुलेटर | Bigha to Katha, Sqft, Acre, Decimal Converter</title>
+    <meta name="description" content="बिहार का #1 बीघा, कट्ठा, धूर, डिसमिल, वर्ग फीट और एकड़ भूमि कैलकुलेटर। बिहार मानक एवं जिला-वार लग्गी माप के अनुसार 100% सटीक कनवर्टर।" />
+    <meta name="keywords" content="bigha calculator bihar, bigha to katha, katha to sqft, dhur to decimal, bihar land measurement, laggi calculator, registry price calculator bihar" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.bighawala.com/bigha-calculator.html" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bighawala.com/bigha-calculator.html">
+    <meta property="og:site_name" content="BighaWala.com">
+    <meta property="og:title" content="Bigha Calculator Bihar | बिघा कैलकुलेटर | BighaWala.com">
+    <meta property="og:description" content="बिहार का सर्वोत्तम बीघा, कट्ठा, धूर, डिसमिल और वर्ग फीट भूमि कनवर्टर कैलकुलेटर।">
+    <meta property="og:image" content="https://www.bighawala.com/og-image.jpg">
+    <meta property="og:locale" content="hi_IN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bigha Calculator Bihar | BighaWala.com">
+    <meta name="twitter:description" content="बिहार का सर्वोत्तम बीघा, कट्ठा, धूर, डिसमिल और वर्ग फीट भूमि कनवर्टर कैलकुलेटर।">
+    <meta name="twitter:image" content="https://www.bighawala.com/og-image.jpg">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primaryGreen: '#2E7D32',
+              darkGreen: '#1B5E20',
+              saffron: '#FF6F00',
+              lightGreenBg: '#F1F8E9',
+              darkText: '#333333',
+              accentSaffron: '#FF6F00',
+              lightGreen: '#E8F5E9',
+            },
+            fontFamily: {
+              sans: ['Poppins', 'Noto Sans Devanagari', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7577953323229534" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1T8BNYBTE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Z1T8BNYBTE', { 'send_page_view': true });
+
+      setTimeout(function() {
+        gtag('event', 'user_engagement', { 'engagement_time_msec': 5000 });
+      }, 5000);
+
+      var scrollFired = false;
+      window.addEventListener('scroll', function() {
+        if (!scrollFired) {
+          scrollFired = true;
+          gtag('event', 'scroll', { 'percent_scrolled': 10 });
+        }
+      }, {passive: true});
+    </script>
+
+    <style>
+      * { box-sizing: border-box; }
+      body { font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif; background-color: #F8FAFC; }
+
+      /* Tab Buttons Styling */
+      .tab-btn {
+        transition: all 0.2s ease;
+      }
+      .tab-btn.active {
+        background-color: #1B5E20;
+        color: #FFFFFF;
+        box-shadow: 0 4px 12px rgba(27, 94, 32, 0.25);
+      }
+
+      /* Output card highlight */
+      .result-box {
+        background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+        border: 2px solid #86EFAC;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+
+
+    <!-- MAIN CALCULATOR PAGE CONTAINER -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-6">
+
+      <!-- HEADER HERO TITLE -->
+      <section class="text-center mb-6">
+        <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-black rounded-full uppercase tracking-wider mb-2">
+          Official Bihar Revenue Standard 2026
+        </span>
+        <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mb-2">
+          बिहार बीघा कैलकुलेटर (Bigha Calculator)
+        </h1>
+        <p class="text-xs sm:text-base font-bold text-slate-600 max-w-2xl mx-auto">
+          बीघा, कट्ठा, धूर, डिसमिल, वर्ग फीट, वर्ग मीटर और एकड़ में बिहार जमीन की नापी एवं रजिस्ट्री मूल्य का 100% सटीक कनवर्टर।
+        </p>
+      </section>
+
+      <!-- CALCULATOR TABS CONTAINER -->
+      <section class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden mb-8">
+        
+        <!-- Tab Navigation Buttons (4 Tabs) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 bg-slate-100 p-2 gap-2 border-b border-slate-200">
+          <button id="tab-btn-1" onclick="switchTab(1)" class="tab-btn active py-3 px-2 rounded-2xl text-xs sm:text-sm font-extrabold text-center cursor-pointer">
+            1️⃣ बीघा कनवर्टर<br><span class="text-[10px] opacity-80 font-normal">(Bigha Converter)</span>
+          </button>
+          <button id="tab-btn-2" onclick="switchTab(2)" class="tab-btn py-3 px-2 bg-white text-slate-700 hover:bg-slate-200 rounded-2xl text-xs sm:text-sm font-extrabold text-center cursor-pointer">
+            2️⃣ रिवर्स कनवर्टर<br><span class="text-[10px] opacity-80 font-normal">(Reverse Unit to Bigha)</span>
+          </button>
+          <button id="tab-btn-3" onclick="switchTab(3)" class="tab-btn py-3 px-2 bg-white text-slate-700 hover:bg-slate-200 rounded-2xl text-xs sm:text-sm font-extrabold text-center cursor-pointer">
+            3️⃣ जमीन रेट कैलकुलेटर<br><span class="text-[10px] opacity-80 font-normal">(Price & Stamp Duty)</span>
+          </button>
+          <button id="tab-btn-4" onclick="switchTab(4)" class="tab-btn py-3 px-2 bg-white text-slate-700 hover:bg-slate-200 rounded-2xl text-xs sm:text-sm font-extrabold text-center cursor-pointer">
+            4️⃣ लग्गी माप कैलकुलेटर<br><span class="text-[10px] opacity-80 font-normal">(Local Laggi Size)</span>
+          </button>
+        </div>
+
+        <!-- TAB CONTENT 1: BIGHA CONVERTER -->
+        <div id="tab-content-1" class="p-6">
+          <div class="max-w-3xl mx-auto">
+            <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 mb-6">
+              <h2 class="text-sm font-extrabold text-emerald-900 mb-1">📐 बीघा + कट्ठा + धूर दर्ज करें (Enter Land Area):</h2>
+              <p class="text-xs text-emerald-700 font-semibold">
+                उदा: 2 बीघा 5 कट्ठा 10 धूर (या केवल 2.5 बीघा भी दर्ज कर सकते हैं)
+              </p>
+            </div>
+
+            <!-- Inputs Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">बीघा (Bigha):</label>
+                <input type="number" id="t1-bigha" step="0.01" value="2" min="0" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 2.5" />
+              </div>
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">कट्ठा (Katha 0-19):</label>
+                <input type="number" id="t1-katha" step="1" value="5" min="0" max="19" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="0 - 19" />
+              </div>
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">धूर (Dhur 0-79):</label>
+                <input type="number" id="t1-dhur" step="0.1" value="10" min="0" max="79" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="0 - 79" />
+              </div>
+            </div>
+
+            <!-- OUTPUT DISPLAY BOX -->
+            <div class="result-box rounded-2xl p-6 shadow-md">
+              <div class="text-center pb-4 border-b border-emerald-300 mb-4">
+                <span class="text-xs font-extrabold uppercase text-emerald-800 tracking-wider">कुल क्षेत्रफल (Total Land Output)</span>
+                <div id="t1-out-breakdown" class="text-xl sm:text-2xl font-black text-emerald-950 mt-1">
+                  2 बीघा 5 कट्ठा 10 धूर
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                <div class="bg-white/90 p-3 rounded-xl border border-emerald-200">
+                  <div class="text-[11px] font-bold text-slate-500 uppercase">कुल धूर (Dhur)</div>
+                  <div id="t1-out-dhur" class="text-lg font-black text-slate-900">910 Dhur</div>
+                </div>
+                <div class="bg-white/90 p-3 rounded-xl border border-emerald-200">
+                  <div class="text-[11px] font-bold text-slate-500 uppercase">कट्ठा + धूर</div>
+                  <div id="t1-out-kd" class="text-lg font-black text-slate-900">45 Katha 10 Dhur</div>
+                </div>
+                <div class="bg-white/90 p-3 rounded-xl border border-emerald-200">
+                  <div class="text-[11px] font-bold text-slate-500 uppercase">कुल बीघा (Bigha)</div>
+                  <div id="t1-out-bigha" class="text-lg font-black text-slate-900">2.275 Bigha</div>
+                </div>
+                <div class="bg-white/90 p-3 rounded-xl border border-emerald-200">
+                  <div class="text-[11px] font-bold text-slate-500 uppercase">डिसमिल (Decimal)</div>
+                  <div id="t1-out-decimal" class="text-lg font-black text-emerald-800">71.09 Decimal</div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center mt-3">
+                <div class="bg-white/90 p-3 rounded-xl border border-emerald-200">
+                  <div class="text-[11px] font-bold text-slate-500 uppercase">Square Feet (वर्ग फीट)</div>
+                  <div id="t1-out-sqft" class="text-base font-black text-slate-900">61,936.9 Sqft</div>
+                </div>
+                <div class="bg-white/90 p-3 rounded-xl border border-emerald-200">
+                  <div class="text-[11px] font-bold text-slate-500 uppercase">Square Meters (वर्ग मीटर)</div>
+                  <div id="t1-out-sqm" class="text-base font-black text-slate-900">5,754.1 Sqm</div>
+                </div>
+                <div class="bg-white/90 p-3 rounded-xl border border-emerald-200">
+                  <div class="text-[11px] font-bold text-slate-500 uppercase">एकड़ (Acre)</div>
+                  <div id="t1-out-acre" class="text-base font-black text-slate-900">1.422 Acre</div>
+                </div>
+                <div class="bg-white/90 p-3 rounded-xl border border-emerald-200">
+                  <div class="text-[11px] font-bold text-slate-500 uppercase">हेक्टेयर (Hectare)</div>
+                  <div id="t1-out-hectare" class="text-base font-black text-slate-900">0.575 Hectare</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB CONTENT 2: REVERSE CONVERTER -->
+        <div id="tab-content-2" class="p-6 hidden">
+          <div class="max-w-3xl mx-auto">
+            <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 mb-6">
+              <h2 class="text-sm font-extrabold text-blue-950 mb-1">🔄 किसी भी यूनिट को बीघा-कट्ठा में बदलें (Reverse Unit Converter):</h2>
+              <p class="text-xs text-blue-800 font-semibold">
+                मान दर्ज करें और यूनिट चुनें (उदा. 5000 Sqft या 2.5 Acre या 50 Decimal)
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">संख्या / मान दर्ज करें (Enter Value):</label>
+                <input type="number" id="t2-value" step="any" value="5000" min="0" oninput="calcTab2()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-blue-600 rounded-xl font-bold text-slate-900 outline-none text-base" />
+              </div>
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">यूनिट चुनें (Select Unit):</label>
+                <select id="t2-unit" onchange="calcTab2()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-blue-600 rounded-xl font-bold text-slate-900 outline-none text-base">
+                  <option value="sqft" selected>Square Feet (वर्ग फीट)</option>
+                  <option value="decimal">Decimal / Dismil (डिसमिल)</option>
+                  <option value="acre">Acre (एकड़)</option>
+                  <option value="sqm">Square Meters (वर्ग मीटर)</option>
+                  <option value="hectare">Hectare (हेक्टेयर)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- TAB 2 OUTPUT RESULT BOX -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-xl">
+              <div class="text-center pb-4 border-b border-slate-800 mb-4">
+                <span class="text-xs font-extrabold uppercase text-amber-400 tracking-wider">बिहार बीघा-कट्ठा विभाजन (Bihar Land Breakdown)</span>
+                <div id="t2-out-breakdown" class="text-2xl sm:text-3xl font-black text-emerald-400 mt-1">
+                  0 बीघा 3 कट्ठा 13.47 धूर
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">कुल बीघा (Bigha)</div>
+                  <div id="t2-out-bigha" class="text-base font-black text-white">0.1837 Bigha</div>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">कुल कट्ठा (Katha)</div>
+                  <div id="t2-out-katha" class="text-base font-black text-white">3.673 Katha</div>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">कुल धूर (Dhur)</div>
+                  <div id="t2-out-dhur" class="text-base font-black text-white">73.46 Dhur</div>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">डिसमिल (Decimal)</div>
+                  <div id="t2-out-decimal" class="text-base font-black text-amber-300">11.478 Decimal</div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center mt-3">
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">Sqft</div>
+                  <div id="t2-out-sqft" class="text-sm font-bold text-slate-200">5,000 Sqft</div>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">Sqm</div>
+                  <div id="t2-out-sqm" class="text-sm font-bold text-slate-200">464.5 Sqm</div>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">Acre</div>
+                  <div id="t2-out-acre" class="text-sm font-bold text-slate-200">0.1147 Acre</div>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">Hectare</div>
+                  <div id="t2-out-hectare" class="text-sm font-bold text-slate-200">0.0464 Hectare</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB CONTENT 3: PRICE CALCULATOR -->
+        <div id="tab-content-3" class="p-6 hidden">
+          <div class="max-w-3xl mx-auto">
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-6">
+              <h2 class="text-sm font-extrabold text-amber-950 mb-1">💰 जमीन रजिस्ट्री खर्च एवं स्टाम्प ड्यूटी कैलकुलेटर (Land Registry Price):</h2>
+              <p class="text-xs text-amber-800 font-semibold">
+                कट्ठा में जमीन का माप और दर (₹/कट्ठा) दर्ज करें। बिहार सरकारी नियमों के अनुसार स्टाम्प ड्यूटी और रजिस्ट्री फीस दिखेगी।
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">जमीन का आकार (कट्ठा में):</label>
+                <input type="number" id="t3-katha" step="0.1" value="5" min="0" oninput="calcTab3()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-amber-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 5" />
+              </div>
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">दर प्रति कट्ठा (₹ Rate per Katha):</label>
+                <input type="number" id="t3-rate" step="1000" value="500000" min="0" oninput="calcTab3()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-amber-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 500000" />
+              </div>
+            </div>
+
+            <!-- OUTPUT DISPLAY BOX -->
+            <div class="bg-white rounded-2xl p-6 border-2 border-amber-300 shadow-lg space-y-4">
+              <div class="flex justify-between items-center pb-3 border-b border-slate-200">
+                <span class="text-sm font-bold text-slate-600">कुल जमीन का मूल्य (Total Land Price):</span>
+                <span id="t3-total-price" class="text-xl sm:text-2xl font-black text-emerald-800">₹25,00,000</span>
+              </div>
+
+              <!-- Male Purchaser Breakdown -->
+              <div class="bg-amber-50/80 p-4 rounded-xl border border-amber-200">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-xs font-extrabold text-amber-900 uppercase">👨 पुरुष क्रेता (Male Registry Cost):</span>
+                  <span class="text-xs font-black text-amber-800">Stamp 6% + Reg 2%</span>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-semibold text-slate-700 mb-2">
+                  <div>स्टाम्प ड्यूटी (6%): <span id="t3-male-stamp" class="font-bold">₹1,50,000</span></div>
+                  <div>रजिस्ट्री फीस (2% max 60k): <span id="t3-male-reg" class="font-bold">₹50,000</span></div>
+                  <div>कुल रजिस्ट्री खर्च: <span id="t3-male-total-reg" class="font-bold text-emerald-800">₹2,00,000</span></div>
+                </div>
+                <div class="text-sm font-extrabold text-slate-900 border-t border-amber-200 pt-2 flex justify-between">
+                  <span>कुल अनुमानित बजट (Total Budget Male):</span>
+                  <span id="t3-male-budget" class="text-base font-black text-slate-900">₹27,00,000</span>
+                </div>
+              </div>
+
+              <!-- Female Purchaser Breakdown -->
+              <div class="bg-emerald-50/80 p-4 rounded-xl border border-emerald-200">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-xs font-extrabold text-emerald-900 uppercase">👩 महिला क्रेता (Female Registry Savings):</span>
+                  <span class="text-xs font-black text-emerald-800">Stamp 5.7% + Reg 2%</span>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-semibold text-slate-700 mb-2">
+                  <div>स्टाम्प ड्यूटी (5.7%): <span id="t3-female-stamp" class="font-bold">₹1,42,500</span></div>
+                  <div>रजिस्ट्री फीस (2% max 60k): <span id="t3-female-reg" class="font-bold">₹50,000</span></div>
+                  <div>कुल रजिस्ट्री खर्च: <span id="t3-female-total-reg" class="font-bold text-emerald-800">₹1,92,500</span></div>
+                </div>
+                <div class="text-sm font-extrabold text-slate-900 border-t border-emerald-200 pt-2 flex justify-between">
+                  <span>कुल अनुमानित बजट (Total Budget Female):</span>
+                  <span id="t3-female-budget" class="text-base font-black text-slate-900">₹26,92,500</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB CONTENT 4: LAGGI CALCULATOR -->
+        <div id="tab-content-4" class="p-6 hidden">
+          <div class="max-w-3xl mx-auto">
+            <div class="bg-purple-50 border border-purple-200 rounded-2xl p-4 mb-6">
+              <h2 class="text-sm font-extrabold text-purple-950 mb-1">📏 जिला-वार लग्गी माप कैलकुलेटर (Local Laggi Measurement):</h2>
+              <p class="text-xs text-purple-800 font-semibold mb-2">
+                बिहार के अलग-अलग जिलों में लग्गी (लगा) का साइज 4 हाथ से 8 हाथ तक भिन्न होता है। अपने जिले के अनुसार सटीक नापी जानें।
+              </p>
+              <div class="bg-white/80 p-2.5 rounded-xl border border-purple-200 text-xs font-bold text-slate-700">
+                ℹ️ note: "Laggi ek local measurement hai. Alag-alag jagah alag hoti hai. Apne area ke patwari/amin se confirm karein."
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">जिला चुनें (Select District):</label>
+                <select id="t4-district" onchange="onDistrictChangeTab4()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-purple-600 rounded-xl font-bold text-slate-900 outline-none text-base">
+                  <option value="5.5" selected>Patna (पटना) — 5.5 हाथ</option>
+                  <option value="5.5">Gaya (गया) — 5.5 हाथ</option>
+                  <option value="6.5">Muzaffarpur (मुजफ्फरपुर) — 6.5 हाथ</option>
+                  <option value="6.5">Darbhanga (दरभंगा) — 6.5 हाथ</option>
+                  <option value="6.5">Madhubani (मधुबनी) — 6.5 हाथ</option>
+                  <option value="6.5">Samastipur (समस्तीपुर) — 6.5 हाथ</option>
+                  <option value="5.5">Bhagalpur (भागलपुर) — 5.5 हाथ</option>
+                  <option value="6.0">Purnia (पूर्णिया) — 6.0 हाथ</option>
+                  <option value="6.0">Katihar (कटिहार) — 6.0 हाथ</option>
+                  <option value="6.0">Saharsa (सहरसा) — 6.0 हाथ</option>
+                  <option value="6.0">Begusarai (बेगूसराय) — 6.0 हाथ</option>
+                  <option value="5.5">Rohtas (रोहतास) — 5.5 हाथ</option>
+                  <option value="5.5">Saran (सारण/छपरा) — 5.5 हाथ</option>
+                  <option value="6.5">Vaishali (वैशाली) — 6.5 हाथ</option>
+                  <option value="6.5">East Champaran (पूर्वी चंपारण) — 6.5 हाथ</option>
+                  <option value="custom">Custom (अन्य हाथ दर्ज करें)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">लग्गी साइज (हाथ में / Laggi in Hath):</label>
+                <input type="number" id="t4-laggi-hath" step="0.25" value="5.5" min="4" max="10" oninput="calcTab4()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-purple-600 rounded-xl font-bold text-slate-900 outline-none text-base" />
+              </div>
+            </div>
+
+            <!-- TAB 4 OUTPUT -->
+            <div class="bg-purple-900 text-white rounded-2xl p-6 shadow-xl">
+              <div class="text-center pb-4 border-b border-purple-800 mb-4">
+                <span class="text-xs font-extrabold uppercase text-purple-300 tracking-wider">लग्गी नापी परिणाम (Selected Laggi Results)</span>
+                <div id="t4-out-headline" class="text-xl sm:text-2xl font-black text-amber-300 mt-1">
+                  5.5 हाथ लग्गी (Laggi = 5.5 Cubits)
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <div class="bg-purple-950/80 p-4 rounded-xl border border-purple-800">
+                  <div class="text-xs font-bold text-purple-300 uppercase mb-1">1 धूर (Dhur) =</div>
+                  <div id="t4-out-dhur" class="text-xl font-black text-white">68.06 Sqft</div>
+                  <div id="t4-out-dhur-sqm" class="text-xs font-semibold text-purple-300 mt-1">(6.32 Sqm)</div>
+                </div>
+                <div class="bg-purple-950/80 p-4 rounded-xl border border-purple-800">
+                  <div class="text-xs font-bold text-purple-300 uppercase mb-1">1 कट्ठा (Katha) =</div>
+                  <div id="t4-out-katha" class="text-xl font-black text-amber-300">1,361.25 Sqft</div>
+                  <div id="t4-out-katha-sqm" class="text-xs font-semibold text-purple-300 mt-1">(126.46 Sqm)</div>
+                </div>
+                <div class="bg-purple-950/80 p-4 rounded-xl border border-purple-800">
+                  <div class="text-xs font-bold text-purple-300 uppercase mb-1">1 बीघा (Bigha) =</div>
+                  <div id="t4-out-bigha" class="text-xl font-black text-emerald-400">27,225.0 Sqft</div>
+                  <div id="t4-out-bigha-sqm" class="text-xs font-semibold text-purple-300 mt-1">(2,529.28 Sqm)</div>
+                </div>
+              </div>
+
+              <p class="text-center text-[11px] font-semibold text-purple-200 mt-4">
+                सूत्र: 1 धूर (Sqft) = (लग्गी हाथ में × 1.5)² | 1 कट्ठा = 20 धूर | 1 बीघा = 20 कट्ठा
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- OFFICIAL BIHAR LAND MEASUREMENT REFERENCE TABLE -->
+      <section class="bg-white rounded-3xl p-6 shadow-xl border border-slate-200 mb-10">
+        <div class="text-center mb-6">
+          <span class="text-2xl">📊</span>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+            बिहार भूमि माप चार्ट (Official Bihar Land Measurement Chart)
+          </h2>
+          <p class="text-xs sm:text-sm font-bold text-slate-500">
+            सरकारी राजस्व मानक माप तालिका (Standard Revenue Equivalents)
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs sm:text-sm text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="bg-emerald-900 text-white font-extrabold uppercase text-center">
+                <th class="p-3 border border-emerald-800">Unit (इकाई)</th>
+                <th class="p-3 border border-emerald-800">Dhur (धूर)</th>
+                <th class="p-3 border border-emerald-800">Katha (कट्ठा)</th>
+                <th class="p-3 border border-emerald-800">Bigha (बीघा)</th>
+                <th class="p-3 border border-emerald-800">Sqft (वर्ग फीट)</th>
+                <th class="p-3 border border-emerald-800">Decimal (डिसमिल)</th>
+              </tr>
+            </thead>
+            <tbody class="font-bold text-slate-800 text-center divide-y divide-slate-200">
+              <tr class="hover:bg-emerald-50 transition">
+                <td class="p-3 border bg-slate-50 text-emerald-900 font-extrabold">1 Dhur (धूर)</td>
+                <td class="p-3 border">1</td>
+                <td class="p-3 border">0.05</td>
+                <td class="p-3 border">0.0025</td>
+                <td class="p-3 border text-emerald-800">68.0625</td>
+                <td class="p-3 border">0.078125</td>
+              </tr>
+              <tr class="hover:bg-emerald-50 transition bg-slate-50/50">
+                <td class="p-3 border bg-slate-50 text-emerald-900 font-extrabold">1 Katha (कट्ठा)</td>
+                <td class="p-3 border">20</td>
+                <td class="p-3 border">1</td>
+                <td class="p-3 border">0.05</td>
+                <td class="p-3 border text-emerald-800">1,361.25</td>
+                <td class="p-3 border">1.5625</td>
+              </tr>
+              <tr class="hover:bg-emerald-50 transition">
+                <td class="p-3 border bg-slate-50 text-emerald-900 font-extrabold">1 Bigha (बीघा)</td>
+                <td class="p-3 border">400</td>
+                <td class="p-3 border">20</td>
+                <td class="p-3 border">1</td>
+                <td class="p-3 border text-emerald-800 font-black">27,225.0</td>
+                <td class="p-3 border font-black">31.25</td>
+              </tr>
+              <tr class="hover:bg-emerald-50 transition bg-slate-50/50">
+                <td class="p-3 border bg-slate-50 text-emerald-900 font-extrabold">1 Decimal (डिसमिल)</td>
+                <td class="p-3 border">12.8</td>
+                <td class="p-3 border">0.64</td>
+                <td class="p-3 border">0.032</td>
+                <td class="p-3 border text-emerald-800">435.6</td>
+                <td class="p-3 border">1</td>
+              </tr>
+              <tr class="hover:bg-emerald-50 transition">
+                <td class="p-3 border bg-slate-50 text-emerald-900 font-extrabold">1 Acre (एकड़)</td>
+                <td class="p-3 border">640</td>
+                <td class="p-3 border">32</td>
+                <td class="p-3 border">1.6</td>
+                <td class="p-3 border text-emerald-800">43,560.0</td>
+                <td class="p-3 border">100</td>
+              </tr>
+              <tr class="hover:bg-emerald-50 transition bg-slate-50/50">
+                <td class="p-3 border bg-slate-50 text-emerald-900 font-extrabold">1 Sqft (वर्ग फीट)</td>
+                <td class="p-3 border">0.01469</td>
+                <td class="p-3 border">0.0007346</td>
+                <td class="p-3 border">0.0000367</td>
+                <td class="p-3 border text-emerald-800">1</td>
+                <td class="p-3 border">0.002295</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SAATHI PROMO BANNER -->
+      <section class="bg-gradient-to-r from-emerald-800 to-emerald-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl text-center mb-8">
+        <span class="text-4xl sm:text-5xl mb-2 inline-block">🎙️🤝</span>
+        <h3 class="text-xl sm:text-2xl font-black mb-2">क्या आपको जमीन नापी या हिसाब में कोई परेशानी है?</h3>
+        <p class="text-xs sm:text-sm font-semibold text-emerald-100 max-w-xl mx-auto mb-5">
+          बीघावाला के साथी एआई हेल्प बोट से बोलकर या लिखकर अपनी भाषा (हिंदी, मैथिली, भोजपुरी) में सलाह लें।
+        </p>
+        <a href="saathi-bot.html" class="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm rounded-xl shadow-lg transition">
+          <span>🎙️ साथी से बात करें →</span>
+        </a>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-300 py-10 mt-auto border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
+        <div>
+          <div class="nav-logo-name text-lg mb-2">Bigha<span>Wala</span>.com</div>
+          <p class="text-slate-400 font-medium leading-relaxed">
+            बिहार का #1 डिजिटल जमीन पोर्टल। बीघा कैलकुलेटर, दाखिल ख़ारिज, जमाबंदी, एलपीसी और साथी एआई वॉइस हेल्प।
+          </p>
+        </div>
+        <div>
+          <p class="font-extrabold text-white text-sm uppercase mb-2">टूल्स एवं कैलकुलेटर</p>
+          <ul class="space-y-1.5 font-semibold text-slate-400">
+            <li><a href="bigha-calculator.html" class="hover:text-emerald-400">Bigha Calculator</a></li>
+            <li><a href="saathi-bot.html" class="hover:text-emerald-400">साथी Voice Bot</a></li>
+            <li><a href="land-cost-calculator.html" class="hover:text-emerald-400">Registry Calculator</a></li>
+            <li><a href="zameen-moolyankan.html" class="hover:text-emerald-400">Zameen Valuation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-extrabold text-white text-sm uppercase mb-2">राजस्व गाइड</p>
+          <ul class="space-y-1.5 font-semibold text-slate-400">
+            <li><a href="apna-khata-dekhe.html" class="hover:text-emerald-400">Apna Khata</a></li>
+            <li><a href="dakhil-kharij.html" class="hover:text-emerald-400">Dakhil Kharij Guide</a></li>
+            <li><a href="lpc-bihar.html" class="hover:text-emerald-400">LPC Certificate</a></li>
+            <li><a href="jamabandi.html" class="hover:text-emerald-400">Jamabandi Panjee</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-extrabold text-white text-sm uppercase mb-2">हेल्पलाइन</p>
+          <p class="text-slate-400 font-semibold mb-2">WhatsApp: +91 9835102324</p>
+          <p class="text-slate-500 text-[11px]">24x7 निशुल्क मार्गदर्शन उपलब्ध</p>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto px-4 pt-6 mt-6 border-t border-slate-900 text-center text-slate-500 font-bold space-x-4 text-xs">
+        <span>© 2026 BighaWala.com</span>
+        <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+        <a href="privacy-policy/index.html" class="hover:underline">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="float-btn float-wa" aria-label="WhatsApp">📱</a>
+    <a href="saathi-bot.html" class="float-btn float-ai" aria-label="साथी से बात करें" title="साथी से बात करें">🎙️</a>
+
+    <!-- 4. MOBILE BOTTOM FIXED NAVIGATION BAR -->
+    <div class="fixed bottom-0 left-0 right-0 bg-darkGreen text-white z-40 border-t border-emerald-700 shadow-2xl sm:hidden">
+      <div class="grid grid-cols-5 text-center text-[10px] font-bold py-2">
+        
+        <!-- Home 🏠 -->
+        <a href="index.html" class="flex flex-col items-center justify-center gap-0.5 text-slate-200 hover:text-white">
+          <span class="text-base">🏠</span>
+          <span>Home</span>
+        </a>
+
+        <!-- Calculator 🧮 -->
+        <a href="bigha-calculator.html" class="flex flex-col items-center justify-center gap-0.5 text-amber-300 font-extrabold">
+          <span class="text-base">🧮</span>
+          <span>Calculator</span>
+        </a>
+
+        <!-- Khata 📋 -->
+        <a href="apna-khata-dekhe.html" class="flex flex-col items-center justify-center gap-0.5 text-slate-200 hover:text-white">
+          <span class="text-base">📋</span>
+          <span>Khata</span>
+        </a>
+
+        <!-- साथी 🎙️ -->
+        <a href="saathi-bot.html" class="flex flex-col items-center justify-center gap-0.5 text-amber-300 font-extrabold">
+          <span class="text-base animate-pulse">🎙️</span>
+          <span>साथी</span>
+        </a>
+
+        <!-- Community 🤝 -->
+        <a href="community-qa.html" class="flex flex-col items-center justify-center gap-0.5 text-slate-200 hover:text-white">
+          <span class="text-base">🤝</span>
+          <span>Community</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- CALCULATOR JAVASCRIPT LOGIC -->
+    <script>
+      // Tab Switching
+      function switchTab(tabNum) {
+        for (var i = 1; i <= 4; i++) {
+          var btn = document.getElementById('tab-btn-' + i);
+          var content = document.getElementById('tab-content-' + i);
+          if (btn && content) {
+            btn.className = 'tab-btn py-3 px-2 bg-white text-slate-700 hover:bg-slate-200 rounded-2xl text-xs sm:text-sm font-extrabold text-center cursor-pointer';
+            content.classList.add('hidden');
+          }
+        }
+
+        var activeBtn = document.getElementById('tab-btn-' + tabNum);
+        var activeContent = document.getElementById('tab-content-' + tabNum);
+        if (activeBtn && activeContent) {
+          activeBtn.className = 'tab-btn active py-3 px-2 rounded-2xl text-xs sm:text-sm font-extrabold text-center cursor-pointer';
+          activeContent.classList.remove('hidden');
+        }
+      }
+
+      // TAB 1: BIGHA CONVERTER
+      function calcTab1() {
+        var bigha = parseFloat(document.getElementById('t1-bigha').value) || 0;
+        var katha = parseFloat(document.getElementById('t1-katha').value) || 0;
+        var dhur = parseFloat(document.getElementById('t1-dhur').value) || 0;
+
+        // Total Dhur formula: 1 Bigha = 400 Dhur, 1 Katha = 20 Dhur
+        var totalDhur = (bigha * 400) + (katha * 20) + dhur;
+
+        // Breakdown
+        var calcBigha = Math.floor(totalDhur / 400);
+        var remDhur1 = totalDhur % 400;
+        var calcKatha = Math.floor(remDhur1 / 20);
+        var finalDhur = (remDhur1 % 20);
+
+        var totalKathaFull = Math.floor(totalDhur / 20);
+        var totalKathaRemDhur = (totalDhur % 20);
+
+        // Standard Bihar conversions:
+        // 1 Dhur = 68.0625 sqft
+        var totalSqft = totalDhur * 68.0625;
+        var totalSqm = totalSqft / 10.7639;
+        var totalDecimal = totalDhur * 0.078125; // 1 Dhur = 0.078125 Decimal (1 Bigha = 31.25 Decimal)
+        var totalAcre = totalSqft / 43560; // 1 Acre = 43560 sqft
+        var totalHectare = (totalDhur / 400) / 3.9536; // 1 Hectare = 3.9536 Bigha
+
+        document.getElementById('t1-out-breakdown').textContent = 
+          calcBigha + " बीघा " + calcKatha + " कट्ठा " + (finalDhur % 1 === 0 ? finalDhur : finalDhur.toFixed(1)) + " धूर";
+
+        document.getElementById('t1-out-dhur').textContent = totalDhur.toFixed(1) + " Dhur";
+        document.getElementById('t1-out-kd').textContent = totalKathaFull + " Katha " + (totalKathaRemDhur % 1 === 0 ? totalKathaRemDhur : totalKathaRemDhur.toFixed(1)) + " Dhur";
+        document.getElementById('t1-out-bigha').textContent = (totalDhur / 400).toFixed(3) + " Bigha";
+        document.getElementById('t1-out-decimal').textContent = totalDecimal.toFixed(2) + " Decimal";
+
+        document.getElementById('t1-out-sqft').textContent = totalSqft.toLocaleString('en-IN', {maximumFractionDigits: 1}) + " Sqft";
+        document.getElementById('t1-out-sqm').textContent = totalSqm.toLocaleString('en-IN', {maximumFractionDigits: 1}) + " Sqm";
+        document.getElementById('t1-out-acre').textContent = totalAcre.toFixed(3) + " Acre";
+        document.getElementById('t1-out-hectare').textContent = totalHectare.toFixed(3) + " Hectare";
+      }
+
+      // TAB 2: REVERSE CONVERTER
+      function calcTab2() {
+        var val = parseFloat(document.getElementById('t2-value').value) || 0;
+        var unit = document.getElementById('t2-unit').value;
+
+        var totalDhur = 0;
+
+        if (unit === 'sqft') {
+          totalDhur = val / 68.0625;
+        } else if (unit === 'decimal') {
+          totalDhur = val / 0.078125;
+        } else if (unit === 'acre') {
+          totalDhur = val * 640;
+        } else if (unit === 'sqm') {
+          totalDhur = (val * 10.7639) / 68.0625;
+        } else if (unit === 'hectare') {
+          totalDhur = val * 3.9536 * 400;
+        }
+
+        var bigha = Math.floor(totalDhur / 400);
+        var remDhur = totalDhur % 400;
+        var katha = Math.floor(remDhur / 20);
+        var dhur = remDhur % 20;
+
+        var sqft = totalDhur * 68.0625;
+        var sqm = sqft / 10.7639;
+        var decimal = totalDhur * 0.078125;
+        var acre = sqft / 43560;
+        var hectare = (totalDhur / 400) / 3.9536;
+
+        document.getElementById('t2-out-breakdown').textContent = 
+          bigha + " बीघा " + katha + " कट्ठा " + dhur.toFixed(2) + " धूर";
+
+        document.getElementById('t2-out-bigha').textContent = (totalDhur / 400).toFixed(4) + " Bigha";
+        document.getElementById('t2-out-katha').textContent = (totalDhur / 20).toFixed(3) + " Katha";
+        document.getElementById('t2-out-dhur').textContent = totalDhur.toFixed(2) + " Dhur";
+        document.getElementById('t2-out-decimal').textContent = decimal.toFixed(3) + " Decimal";
+
+        document.getElementById('t2-out-sqft').textContent = sqft.toLocaleString('en-IN', {maximumFractionDigits: 1}) + " Sqft";
+        document.getElementById('t2-out-sqm').textContent = sqm.toLocaleString('en-IN', {maximumFractionDigits: 1}) + " Sqm";
+        document.getElementById('t2-out-acre').textContent = acre.toFixed(4) + " Acre";
+        document.getElementById('t2-out-hectare').textContent = hectare.toFixed(4) + " Hectare";
+      }
+
+      // TAB 3: PRICE CALCULATOR
+      function calcTab3() {
+        var katha = parseFloat(document.getElementById('t3-katha').value) || 0;
+        var rate = parseFloat(document.getElementById('t3-rate').value) || 0;
+
+        var totalPrice = katha * rate;
+
+        // Stamp duty: Male = 6%, Female = 5.7%
+        var maleStamp = totalPrice * 0.06;
+        var femaleStamp = totalPrice * 0.057;
+
+        // Registration fee: 2% (max 60,000)
+        var regFee = Math.min(totalPrice * 0.02, 60000);
+
+        var maleTotalReg = maleStamp + regFee;
+        var femaleTotalReg = femaleStamp + regFee;
+
+        var maleTotalBudget = totalPrice + maleTotalReg;
+        var femaleTotalBudget = totalPrice + femaleTotalReg;
+
+        document.getElementById('t3-total-price').textContent = "₹" + totalPrice.toLocaleString('en-IN');
+
+        document.getElementById('t3-male-stamp').textContent = "₹" + maleStamp.toLocaleString('en-IN');
+        document.getElementById('t3-male-reg').textContent = "₹" + regFee.toLocaleString('en-IN');
+        document.getElementById('t3-male-total-reg').textContent = "₹" + maleTotalReg.toLocaleString('en-IN');
+        document.getElementById('t3-male-budget').textContent = "₹" + maleTotalBudget.toLocaleString('en-IN');
+
+        document.getElementById('t3-female-stamp').textContent = "₹" + femaleStamp.toLocaleString('en-IN');
+        document.getElementById('t3-female-reg').textContent = "₹" + regFee.toLocaleString('en-IN');
+        document.getElementById('t3-female-total-reg').textContent = "₹" + femaleTotalReg.toLocaleString('en-IN');
+        document.getElementById('t3-female-budget').textContent = "₹" + femaleTotalBudget.toLocaleString('en-IN');
+      }
+
+      // TAB 4: LAGGI CALCULATOR
+      function onDistrictChangeTab4() {
+        var sel = document.getElementById('t4-district');
+        var val = sel.value;
+        if (val !== 'custom') {
+          document.getElementById('t4-laggi-hath').value = val;
+        }
+        calcTab4();
+      }
+
+      function calcTab4() {
+        var laggiHath = parseFloat(document.getElementById('t4-laggi-hath').value) || 5.5;
+
+        // Formula: 1 Dhur = (Laggi in Hath * 1.5)^2 sqft
+        var dhurSqft = Math.pow(laggiHath * 1.5, 2);
+        var kathaSqft = dhurSqft * 20;
+        var bighaSqft = kathaSqft * 20;
+
+        var dhurSqm = dhurSqft / 10.7639;
+        var kathaSqm = kathaSqft / 10.7639;
+        var bighaSqm = bighaSqft / 10.7639;
+
+        document.getElementById('t4-out-headline').textContent = laggiHath + " हाथ लग्गी (Laggi = " + laggiHath + " Cubits)";
+
+        document.getElementById('t4-out-dhur').textContent = dhurSqft.toFixed(2) + " Sqft";
+        document.getElementById('t4-out-dhur-sqm').textContent = "(" + dhurSqm.toFixed(2) + " Sqm)";
+
+        document.getElementById('t4-out-katha').textContent = kathaSqft.toLocaleString('en-IN', {maximumFractionDigits: 1}) + " Sqft";
+        document.getElementById('t4-out-katha-sqm').textContent = "(" + kathaSqm.toLocaleString('en-IN', {maximumFractionDigits: 1}) + " Sqm)";
+
+        document.getElementById('t4-out-bigha').textContent = bighaSqft.toLocaleString('en-IN', {maximumFractionDigits: 1}) + " Sqft";
+        document.getElementById('t4-out-bigha-sqm').textContent = "(" + bighaSqm.toLocaleString('en-IN', {maximumFractionDigits: 1}) + " Sqm)";
+      }
+
+  // COMPLETE SEARCH INDEX DATA (ALL 36 PAGES)
+  const bighawalaSearchIndex = [
+    { title: "Home Page", url: "index.html", desc: "बिहार का #1 जमीन पोर्टल - बीघा कैलकुलेटर, अपना खाता, दाखिल खारिज" },
+    { title: "Apna Khata Dekhen (अपना खाता)", url: "apna-khata-dekhe.html", desc: "बिहार में ऑनलाइन अपना खाता व खतियान देखने की पूरी गाइड" },
+    { title: "Bigha Calculator (बीघा कैलकुलेटर)", url: "bigha-calculator.html", desc: "कट्ठा, धुर, डिसमिल व स्क्वायर फीट में बीघा मापी गणना करें" },
+    { title: "Bigha to Decimal Converter", url: "bigha-to-decimal.html", desc: "बीघा को डिसमिल में तुरंत बदलें" },
+    { title: "Dakhil Kharij Guide (दाखिल खारिज)", url: "dakhil-kharij.html", desc: "म्यूटेशन के नियम, स्थिति व स्टेप बाय स्टेप प्रक्रिया" },
+    { title: "Dakhil Kharij Fees (सरकारी शुल्क)", url: "dakhil-kharij-fees.html", desc: "बिहार में दाखिल खारिज का सही सरकारी खर्च व कोर्ट फी" },
+    { title: "LPC Bihar (भूमि स्वामित्व प्रमाण पत्र)", url: "lpc-bihar.html", desc: "LPC आवेदन करने की प्रक्रिया व जरूरी दस्तावेज" },
+    { title: "LPC Validity & Renewal", url: "lpc-validity-renewal.html", desc: "एलपीसी प्रमाण पत्र की वैधता और रिन्यूअल नियम" },
+    { title: "Jamabandi Bihar (जमाबंदी पंजी)", url: "jamabandi.html", desc: "डिजिटल जमाबंदी पंजी-II ऑनलाइन देखें व प्रिंट करें" },
+    { title: "Bhulekh Bihar (भूलेख)", url: "bhulekh.html", desc: "अपना खाता, खेसरा, भू-नक्शा और बिहार भूमि रिकॉर्ड ऑनलाइन" },
+    { title: "Registry Bihar Guide (रजिस्ट्री प्रक्रिया)", url: "registry-bihar.html", desc: "बिहार में जमीन रजिस्ट्री के नियम और सरकारी प्रक्रिया" },
+    { title: "Zameen Registry Charges", url: "zameen-registry-charges.html", desc: "स्टाम्प ड्यूटी और रजिस्ट्री फीस कैलकुलेटर" },
+    { title: "Bainama Format Bihar (केवाला डीड)", url: "bainama-format-bihar.html", desc: "सेल डीड केवाला ड्राफ्ट प्रारूप डाउनलोड करें" },
+    { title: "Khata Khesra Bihar", url: "khata-khesra-bihar.html", desc: "खाता और खेसरा नंबर की पूरी जानकारी" },
+    { title: "Bhu Naksha Bihar (भू-नक्शा)", url: "bhu-naksha-bihar.html", desc: "बिहार के गांवों का नक्शा ऑनलाइन डाउनलोड करें" },
+    { title: "Self Declaration Form Bihar", url: "self-declaration-form-bihar.html", desc: "विशेष भूमि सर्वेक्षण 2026 वंशावली स्व-घोषणा पत्र" },
+    { title: "Zameen Vivad Bihar (भूमि विवाद)", url: "zameen-vivad-bihar.html", desc: "जमीन विवाद, अंचलाधिकारी शिकायत एवं समाधान" },
+    { title: "Land Rates 2026 (सरकारी दर)", url: "land-rates.html", desc: "बिहार के सभी 38 जिलों का नया MVR रेट लिस्ट" },
+    { title: "MVR Rate Bihar", url: "mvr-rate-bihar.html", desc: "न्यूनतम मूल्य दर (Minimum Value Rate) खोजें" },
+    { title: "Jamin Ka Rate Bihar", url: "jamin-ka-rate-bihar.html", desc: "अपने अंचल की जमीन का सरकारी रेट जानें" },
+    { title: "Circle Rate Bihar", url: "circle-rate-bihar.html", desc: "सर्किल रेट और बाजार मूल्य कैलकुलेटर" },
+    { title: "All 38 Districts Land Rate", url: "bihar-all-districts-land-rate.html", desc: "बिहार के 38 जिलों का श्रेणीवार जमीन रेट" },
+    { title: "Zameen Moolyankan", url: "zameen-moolyankan.html", desc: "जमीन की कुल सरकारी कीमत का मूल्यांकन करें" },
+    { title: "Land Cost Calculator", url: "land-cost-calculator.html", desc: "रजिस्ट्री स्टाम्प ड्यूटी व कुल लागत गणना" },
+    { title: "Zameen Comparison Tool", url: "zameen-comparison.html", desc: "दो जमीनों की कीमत और माप की तुलना करें" },
+    { title: "Bihar Land Quiz", url: "bihar-land-quiz.html", desc: "बिहार भूमि नियमों से जुड़ा ऑनलाइन क्विज" },
+    { title: "Document Checker Tool", url: "document-checker.html", desc: "जमीन खरीदने से पहले दस्तावेजों की जांच करें" },
+    { title: "Saathi Voice AI (साथी एआई)", url: "saathi-bot.html", desc: "बोलकर अपनी भाषा में जमीन के सवाल पूछें" },
+    { title: "Ask AI Expert (बीघावाला एक्सपर्ट)", url: "ask-expert.html", desc: "एआई विशेषज्ञ से जमीन का तुरंत समाधान पाएं" },
+    { title: "Community Q&A (किसान मंच)", url: "community-qa.html", desc: "अन्य किसानों व एक्सपर्ट से सवाल-जवाब करें" },
+    { title: "Bihar Land News (ताजा खबरें)", url: "bihar-land-news.html", desc: "बिहार भूमि सुधार और नए नियमों की खबरें" },
+    { title: "Bihar Bhumi Official Portal Guide", url: "bihar-bhumi-portal.html", desc: "biharbhumi.bihar.gov.in का प्रयोग कैसे करें" },
+    { title: "Kisan Credit Card (KCC Bihar)", url: "kisan-credit-card-bihar.html", desc: "किसान क्रेडिट कार्ड आवेदन और पात्रता नियम" },
+    { title: "PM Awas Yojana Bihar", url: "pm-awas-yojana-bihar.html", desc: "प्रधानमंत्री आवास योजना की सूची और आवेदन" },
+    { title: "About BighaWala.com", url: "about.html", desc: "हमारे पोर्टल और टीम के बारे में जानें" },
+    { title: "Contact Us", url: "contact.html", desc: "बीघावाला सहायता टीम से संपर्क करें" },
+    { title: "Disclaimer & Privacy", url: "disclaimer.html", desc: "अस्वीकरण और गोपनीयता नीति" }
+  ];
+
+  // Toggle Search Bar
+  function toggleSearchBar() {
+    const bar = document.getElementById('search-slide-bar');
+    const input = document.getElementById('globalSearchInput');
+    if (bar.classList.contains('open')) {
+      bar.classList.remove('open');
+    } else {
+      bar.classList.add('open');
+      setTimeout(() => input && input.focus(), 150);
+    }
+  }
+
+  // Toggle Mobile Overlay Menu
+  function toggleMobileMenu() {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    if (overlay.classList.contains('hidden')) {
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    } else {
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  // Live Search Filter Handler
+  function handleLiveSearch() {
+    const input = document.getElementById('globalSearchInput');
+    const box = document.getElementById('searchResultsBox');
+    const query = input.value.trim().toLowerCase();
+
+    if (query.length < 2) {
+      box.classList.add('hidden');
+      box.innerHTML = '';
+      return;
+    }
+
+    const matches = bighawalaSearchIndex.filter(item => 
+      item.title.toLowerCase().includes(query) || 
+      item.desc.toLowerCase().includes(query) ||
+      item.url.toLowerCase().includes(query)
+    );
+
+    if (matches.length === 0) {
+      box.innerHTML = '<div class="p-3 text-xs text-slate-500 font-bold text-center">कोई परिणाम नहीं मिला। (No results found)</div>';
+      box.classList.remove('hidden');
+      return;
+    }
+
+    box.innerHTML = matches.map(item => `
+      <a href="${item.url}" class="block p-3 rounded-xl hover:bg-lightGreenBg border border-slate-100 hover:border-emerald-300 transition group text-left">
+        <div class="text-xs font-black text-slate-900 group-hover:text-primaryGreen flex items-center justify-between">
+          <span>${item.title}</span>
+          <span class="text-[10px] font-bold text-primaryGreen">खोलें ➜</span>
+        </div>
+        <div class="text-[11px] text-slate-500 font-medium leading-snug mt-0.5">${item.desc}</div>
+      </a>
+    `).join('');
+
+    box.classList.remove('hidden');
+  }
+
+      // Initial Calculations
+      document.addEventListener('DOMContentLoaded', function() {
+        calcTab1();
+        calcTab2();
+        calcTab3();
+        calcTab4();
+      });
+    </script>
+  </body>
+</html>
