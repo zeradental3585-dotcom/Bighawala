@@ -181,7 +181,7 @@ var NAV_HTML = `
   display:flex;align-items:center;
   gap:5px;padding:8px 14px;
   min-height:44px;
-  background:#FF6F00;color:#fff;
+  background:#C2410C;color:#fff;
   border-radius:20px;
   text-decoration:none;
   font-size:12.5px;font-weight:600;
@@ -312,7 +312,7 @@ var NAV_HTML = `
 
 .bw-mmwa{
   display:block;
-  background:#FF6F00;color:#fff;
+  background:#C2410C;color:#fff;
   text-align:center;padding:15px;
   border-radius:12px;font-weight:700;
   font-size:15px;margin-top:20px;
