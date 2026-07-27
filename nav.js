@@ -77,7 +77,7 @@ var NAV_HTML = `
 }
 
 .bw-ln .g{color:#2E7D32;}
-.bw-ln .o{color:#FF6F00;}
+.bw-ln .o{color:#C2410C;}
 
 .bw-ltag{
   font-size:9.5px;color:#888;
@@ -344,7 +344,7 @@ var NAV_HTML = `
 
 .bw-mbar a span:first-child{font-size:20px;}
 .bw-mbar a span:last-child{font-size:9.5px;font-weight:500;}
-.bw-mbar a:hover{color:#FFB300;}
+.bw-mbar a:hover{color:#FFCC00;}
 
 @media(max-width:1024px){
   .bw-nav{display:none;}
@@ -527,7 +527,7 @@ var NAV_HTML = `
 
 <div class="bw-mbar">
   <div style="text-align:center;padding:4px 8px 2px;font-size:10px;color:rgba(255,255,255,0.5);font-family:'Poppins',sans-serif;line-height:1.2;">
-    A <strong style="color:rgba(255,255,255,0.7);">Zera Technologies</strong> Property | Designed &amp; Developed by <a href="https://zeratech.io/" target="_blank" style="color:#FFB300;text-decoration:none;font-weight:600;">Zera Technologies</a>
+    A <strong style="color:rgba(255,255,255,0.7);">Zera Technologies</strong> Property | Designed &amp; Developed by <a href="https://zeratech.io/" target="_blank" style="color:#FFCC00;text-decoration:none;font-weight:600;">Zera Technologies</a>
   </div>
   <div class="bw-mbari">
     <a href="index.html">
@@ -697,7 +697,7 @@ function initNav(){
   if (ft && !document.getElementById('zera-credit-ft')) {
     var cDiv = document.createElement('div');
     cDiv.id = 'zera-credit-ft';
-    cDiv.innerHTML = '<div style="text-align:center;padding:10px 0 0;border-top:1px solid rgba(255,255,255,0.1);margin-top:12px;font-size:11px;color:rgba(255,255,255,0.5);font-family:\'Poppins\',sans-serif;">A <strong style="color:rgba(255,255,255,0.7);">Zera Technologies</strong> Property | Designed &amp; Developed by <a href="https://zeratech.io/" target="_blank" style="color:#FFB300;text-decoration:none;font-weight:600;">Zera Technologies</a></div>';
+    cDiv.innerHTML = '<div style="text-align:center;padding:10px 0 0;border-top:1px solid rgba(255,255,255,0.1);margin-top:12px;font-size:11px;color:rgba(255,255,255,0.5);font-family:\'Poppins\',sans-serif;">A <strong style="color:rgba(255,255,255,0.7);">Zera Technologies</strong> Property | Designed &amp; Developed by <a href="https://zeratech.io/" target="_blank" style="color:#FFCC00;text-decoration:none;font-weight:600;">Zera Technologies</a></div>';
     ft.appendChild(cDiv.firstElementChild);
   }
 }
