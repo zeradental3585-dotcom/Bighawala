@@ -407,59 +407,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-12 px-4 mt-auto">
-      <div class="max-w-7xl mx-auto space-y-8">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-slate-800">
-          <div class="space-y-2 max-w-2xl">
-            <a href="index.html" class="inline-flex items-center gap-2 hover:opacity-90 transition-opacity" aria-label="BighaWala.com Home">
-  <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-800 text-white font-black text-sm flex items-center justify-center shadow-md shrink-0">BW</span>
-  <span class="text-lg font-black"><span class="text-emerald-400">Bigha</span><span class="text-orange-400">Wala</span><span class="text-emerald-400">.com</span></span>
-</a>
-            <p class="text-xs leading-relaxed text-slate-500">
-              Disclaimer (अस्वीकरण): यह वेबसाइट केवल शैक्षणिक, सूचनात्मक और उपयोगिता उद्देश्यों के लिए है। किसी भी कानूनी विवाद, संपत्ति खरीद या अधिकारिक सत्यापन के लिए हमेशा बिहार सरकार के राजस्व एवं भूमि सुधार विभाग के अधिकारिक पोर्टल <a href="https://biharbhumi.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="text-orange-400 underline font-extrabold hover:text-orange-300 transition-colors">biharbhumi.bihar.gov.in</a> पर जाएँ।
-            </p>
-          </div>
-          <div class="text-left md:text-right space-y-1 shrink-0">
-            <p class="text-xs text-slate-500">
-              विकसित भारत - समृद्ध बिहार भूमि अभियान © 2025
-            </p>
-            <p class="text-sm font-black text-orange-400 tracking-wider">
-              BighaWala.com
-            </p>
-          </div>
-        </div>
 
-        <div class="flex flex-wrap justify-between items-center gap-4 text-xs font-bold">
-          <div class="flex flex-wrap gap-x-5 gap-y-2">
-            <a href="index.html" class="hover:text-orange-400 transition-colors">Home (मुख्य पृष्ठ)</a>
-            <span class="text-slate-800">•</span>
-            <a href="bigha-calculator.html" class="hover:text-orange-400 transition-colors">Calculator</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html" class="hover:text-orange-400 transition-colors">Disclaimer (अस्वीकरण)</a>
-            <span class="text-slate-800">•</span>
-            <a href="privacy-policy/index.html" class="hover:text-orange-400 transition-colors">Privacy Policy (गोपनीयता नीति)</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html#terms" class="hover:text-orange-400 transition-colors">Terms of Use</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html#about" class="hover:text-orange-400 transition-colors">About Us (हमारे बारे में)</a>
-          </div>
-          <div class="text-slate-500">
-            AdSense compliant & Secure SSL 🔒
-          </div>
-        </div>
-      </div>
-    </footer>
 
-    <!-- MOBILE NAVIGATION MENU JAVASCRIPT -->
-    <script>
-      
 
-    <!-- AI CHAT integration SCRIPT -->
+    <!-- ASK EXPERT CHAT SCRIPT (client-side FAQ engine, no backend, no API key) -->
     <script>
       let messagesHistory = [];
-
-      const API_KEY = 'AIzaSyCy60HKc39mbfA4xp8o0qZ3-uFX4KmfsRk';
 
       // FIX 3: Typewriter effect for welcome message
       const welcomeTextContent = "नमस्ते! 🙏 Main BighaWala AI Expert hoon. Bihar ki zameen ke baare mein koi bhi sawaal poochein — Hindi ya English mein. Upar दिए buttons par click karein ya apna sawaal likhein neeche 👇";
@@ -516,133 +469,74 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // FIX 4: WORKING EXACT API CALL FUNCTION
-      async function askAI(question) {
-        // Try local proxy route /api/chat first if running full-stack
-        try {
-          const res = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              messages: [{ role: 'user', content: question }]
-            })
-          });
-          if (res.ok) {
-            const data = await res.json();
-            if (data.message) return data.message;
+      // Client-side FAQ engine -- no backend, no API key.
+      // Real, pre-written answers to common Bihar land questions, matched
+      // against the user's question by keyword scoring.
+      const EXPERT_KB = [
+        {
+          keywords: ['bigha', 'katha', 'kattha', 'kitna katha', '1 bigha'],
+          answer: 'Bihar mein 1 Bigha = 20 Katha, aur 1 Katha = 20 Dhur hota hai. Poora conversion chart aur calculator bigha-calculator.html par available hai — Bigha, Katha, Dhur, Dhurki, Decimal, Acre, Sqft sabka aapas mein conversion turant milega.'
+        },
+        {
+          keywords: ['dakhil kharij', 'dakhil', 'kharij', 'mutation', 'online apply'],
+          answer: 'Dakhil Kharij online karne ke liye biharbhumi.bihar.gov.in par jaayein, "Apply for Mutation" option choose karein, registry deed number, khata/khesra details aur apni ID (Aadhar) upload karein. Application submit karne ke baad ek case number milega jisse status track kar sakte hain. Poora step-by-step guide dakhil-kharij.html page par hai.'
+        },
+        {
+          keywords: ['lpc', 'documents', 'kagaz', 'chahiye', 'land possession certificate'],
+          answer: 'LPC (Land Possession Certificate) ke liye zaroori documents: jamabandi/khatiyan ki copy, rasid (lagaan receipt), registry deed, Aadhar card, aur ek application form Anchal Karyalaya mein. Kuch anchal mein dakhil kharij praman patra bhi maanga jaata hai. Poori list lpc-bihar.html par hai.'
+        },
+        {
+          keywords: ['apna khata', 'khata online', 'khatiyan dekhen', 'ror'],
+          answer: 'land.bihar.gov.in/Ror2025/RoR.aspx par jaakar apna district, anchal, mauja aur khata/khesra number daalkar khatiyan (RoR) muft mein online dekh sakte hain.'
+        },
+        {
+          keywords: ['stamp duty', 'registration fee', 'kitni lagti'],
+          answer: 'Purush khariddar ke liye 6% aur mahila khariddar ke liye 5.7% stamp duty lagti hai — mahilaon ko 0.3% ki extra chhoot milti hai. Iske alawa registration fee 2% (max ₹60,000) alag se lagti hai.'
+        },
+        {
+          keywords: ['mvr', 'minimum value register', 'circle rate'],
+          answer: 'MVR (Minimum Value Register) sarkar dwara fix kiya gaya minimum circle rate hai jispar stamp duty calculate hoti hai — market rate isse alag (aksar zyada) ho sakta hai. Apne area ka MVR rate mvr-rate-bihar.html par dekh sakte hain.'
+        },
+        {
+          keywords: ['jamabandi', 'download', 'nikalna'],
+          answer: 'Jamabandi download karne ke liye land.bihar.gov.in par jaakar "Jamabandi Panjee" section choose karein, district/anchal/mauja select karke khata ya khesra number se search karein aur PDF download kar sakte hain.'
+        },
+        {
+          keywords: ['lpc validity', 'kitni hoti hai', 'purana lpc', 'expiry'],
+          answer: 'LPC ki koi fixed sarkari expiry nahi hoti, lekin banks aam taur par 6 mahine se 1 saal purana LPC hi accept karte hain. Agar aapka LPC isse purana hai to naya banwana zyada safe rahega.'
+        },
+        {
+          keywords: ['zameen kharidne', 'kharidne se pehle', 'check karna chahiye', 'purchase'],
+          answer: 'Zameen kharidne se pehle: 1) Jamabandi/khatiyan verify karein ki malik ka naam match karta hai, 2) encumbrance certificate lekar check karein koi loan/case to nahi hai, 3) confirm karein dakhil kharij ho chuka hai ya nahi, 4) circle rate se kam par deal na karein, 5) site par jaakar physical possession/boundary verify karein.'
+        },
+        {
+          keywords: ['dispute', 'vivad', 'kabza', 'jhagda', 'padosi'],
+          answer: 'Zameen vivaad ki sthiti mein sabse pehle Anchal Adhikari (CO) ko likhit application dein. Wahan solution na mile to DCLR ya SDO ke paas jaayein. Poori process zameen-vivad-bihar.html page par di gayi hai.'
+        }
+      ];
+
+      function askAI(question) {
+        const q = question.toLowerCase();
+        let best = null;
+        let bestScore = 0;
+        for (const item of EXPERT_KB) {
+          let score = 0;
+          for (const kw of item.keywords) {
+            if (q.includes(kw.toLowerCase())) score++;
           }
-        } catch(e) {
-          console.warn('Backend proxy unavailable, attempting direct Gemini API call');
-        }
-
-        // Exact direct Gemini Flash API call
-        const url =
-          'https://generativelanguage.googleapis.com' +
-          '/v1beta/models/gemini-1.5-flash' +
-          ':generateContent?key=' + API_KEY;
-
-        const body = {
-          contents: [{
-            parts: [{
-              text: 'You are BighaWala AI Expert. ' +
-                'Answer only Bihar land questions. ' +
-                'Reply in simple Hindi+English. ' +
-                'Keep answer under 150 words. ' +
-                'Be helpful and warm. ' +
-                'End with: Koi aur sawaal? ' +
-                '\n\nQuestion: ' + question
-            }]
-          }],
-          generationConfig: {
-            maxOutputTokens: 300,
-            temperature: 0.7
+          if (score > bestScore) {
+            bestScore = score;
+            best = item;
           }
-        };
-
-        try {
-          const res = await fetch(url, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-          });
-
-          const data = await res.json();
-          return data.candidates[0].content.parts[0].text;
-
-        } catch(err) {
-          return 'Maafi — abhi server se connect nahi ho pa raha. WhatsApp karein: 9835102324';
         }
-      }
-
-      async function handleChatSubmit(event) {
-        event.preventDefault();
-        
-        const inputEl = document.getElementById('chat-input');
-        const questionText = inputEl.value.trim();
-        if (!questionText) return;
-
-        // Reset input immediately
-        inputEl.value = '';
-        hideError();
-
-        const chatBox = document.getElementById('chat-box');
-        
-        // Append User Message to UI
-        const userMsgHtml = `
-          <div class="flex items-start gap-3 max-w-xl ml-auto justify-end">
-            <div class="bg-emerald-700 text-white rounded-2xl p-3.5 text-xs sm:text-sm font-bold leading-relaxed shadow-xs">
-              ${questionText}
-            </div>
-            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-xs flex items-center justify-center font-black text-emerald-800 shrink-0">
-              आप
-            </div>
-          </div>
-        `;
-        chatBox.insertAdjacentHTML('beforeend', userMsgHtml);
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-        // Show Typing Indicator
-        const typingIndicator = document.getElementById('typing-indicator');
-        typingIndicator.classList.remove('hidden');
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-        const sendBtn = document.getElementById('chat-send-btn');
-        sendBtn.disabled = true;
-        sendBtn.classList.add('opacity-50');
-
-        try {
-          const botReply = await askAI(questionText);
-          
-          // Hide typing indicator
-          typingIndicator.classList.add('hidden');
-
-          // Render formatted markdown response in HTML
-          const botMsgHtml = `
-            <div class="flex items-start gap-3 max-w-2xl animate-fade-in">
-              <div class="w-8 h-8 rounded-lg bg-orange-100 text-sm flex items-center justify-center shrink-0 font-bold">
-                🤖
-              </div>
-              <div class="bg-white border border-slate-200/80 rounded-2xl p-4 text-xs sm:text-sm font-medium leading-relaxed text-slate-800 shadow-xs prose prose-sm max-w-none">
-                ${formatBotMessage(botReply)}
-              </div>
-            </div>
-          `;
-          chatBox.insertAdjacentHTML('beforeend', botMsgHtml);
-          chatBox.scrollTop = chatBox.scrollHeight;
-
-        } catch (error) {
-          console.error(error);
-          typingIndicator.classList.add('hidden');
-          
-          const errorAlert = document.getElementById('chat-error');
-          errorAlert.classList.remove('hidden');
-          document.getElementById('error-message').innerText = 'Maafi — abhi server se connect nahi ho pa raha. WhatsApp karein: 9835102324';
-        } finally {
-          sendBtn.disabled = false;
-          sendBtn.classList.remove('opacity-50');
+        if (best && bestScore > 0) {
+          return Promise.resolve(best.answer + '\n\nKoi aur sawaal?');
         }
+        return Promise.resolve(
+          'Maafi, iske liye humare paas abhi ek exact jawab nahi hai. ' +
+          'Upar diye common sawaalon mein se koi try karein, ya humein WhatsApp par poochein: ' +
+          '[9835102324](https://wa.me/919835102324)'
+        );
       }
 
       // Format markdown response to HTML
@@ -682,23 +576,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
   
-<!-- STICKY BOTTOM BAR (FIX 4) -->
-<div id="sticky-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md text-white border-t border-emerald-500/30 px-3 py-2.5 shadow-2xl transition-all duration-300">
-  <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 text-xs sm:text-sm font-bold overflow-x-auto no-scrollbar">
-    <a href="ask-expert.html" class="flex items-center gap-1.5 bg-emerald-600/90 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all shadow-xs shrink-0">
-      <span>🤖</span> <span>Koi sawaal?</span>
-    </a>
-    <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all shadow-xs shrink-0">
-      <span>📱</span> <span>WhatsApp: 9835102324</span>
-    </a>
-    <a href="bigha-calculator.html" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border border-slate-700 shrink-0">
-      <span>🧮</span> <span>Bigha Calculator</span>
-    </a>
-    <a href="dakhil-kharij.html" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border border-slate-700 shrink-0">
-      <span>📋</span> <span>Dakhil Kharij</span>
-    </a>
-  </div>
-</div>
+
+
 
 <!-- EXIT INTENT POPUP (FIX 5) -->
 <div id="exit-intent-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-4 hidden transition-opacity duration-300">
