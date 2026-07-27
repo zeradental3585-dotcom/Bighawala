@@ -6,19 +6,19 @@ var NAV_HTML = `
 
 /* Shared hero gradients — gives each page category its own identity */
 .hero-gradient{
-  background:linear-gradient(135deg,#1B5E20 0%,#2E7D32 50%,#E65100 100%);
+  background:linear-gradient(135deg,#1B5E20 0%,#2E7D32 50%,#C2410C 100%);
 }
 .hero-gradient-north{
-  background:linear-gradient(135deg,#0f766e 0%,#0d9488 50%,#059669 100%);
+  background:linear-gradient(135deg,#0f766e 0%,#0d9488 50%,#047857 100%);
 }
 .hero-gradient-south{
-  background:linear-gradient(135deg,#92400e 0%,#c2410c 50%,#ea580c 100%);
+  background:linear-gradient(135deg,#92400e 0%,#c2410c 50%,#9a3412 100%);
 }
 .hero-gradient-east{
   background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 50%,#2563eb 100%);
 }
 .hero-gradient-hub{
-  background:linear-gradient(135deg,#581c87 0%,#7c3aed 50%,#a855f7 100%);
+  background:linear-gradient(135deg,#581c87 0%,#7c3aed 50%,#6d28d9 100%);
 }
 
 .bw-header *{box-sizing:border-box;margin:0;padding:0;}
