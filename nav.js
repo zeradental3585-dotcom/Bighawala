@@ -23,7 +23,7 @@ var NAV_HTML = `
 
 .bw-header *{box-sizing:border-box;margin:0;padding:0;}
 
-html,body{
+html{
   overflow-x:hidden;
   max-width:100vw;
 }
