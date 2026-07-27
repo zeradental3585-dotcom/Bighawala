@@ -10,7 +10,7 @@
     <meta property="og:url" content="https://www.bighawala.com/">
     <meta property="og:site_name" content="BighaWala.com">
     <meta property="og:title" content="BighaWala.com | बिहार का #1 जमीन पोर्टल | Bigha Calculator, Dakhil Kharij, Bhulekh">
-    <meta property="og:description" content="Bihar ki zameen ki har jankari — Bigha Calculator, Apna Khata, Dakhil Kharij, LPC, Land Rates, AI Expert. Bihar ka #1 free land information platform. 38 districts covered.">
+    <meta property="og:description" content="Bihar ki zameen ki har jankari — Bigha Calculator, Apna Khata, Dakhil Kharij, LPC, Land Rates, Ask Expert. Bihar ka #1 free land information platform. 38 districts covered.">
     <meta property="og:image" content="https://www.bighawala.com/og/index.jpg">
     <meta property="og:image:secure_url" content="https://www.bighawala.com/og/index.jpg">
     <meta property="og:image:type" content="image/jpeg">
@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.bighawala.com/">
     <meta name="twitter:title" content="BighaWala.com | बिहार का #1 जमीन पोर्टल | Bigha Calculator, Dakhil Kharij, Bhulekh">
-    <meta name="twitter:description" content="Bihar ki zameen ki har jankari — Bigha Calculator, Apna Khata, Dakhil Kharij, LPC, Land Rates, AI Expert. Bihar ka #1 free land information platform. 38 districts covered.">
+    <meta name="twitter:description" content="Bihar ki zameen ki har jankari — Bigha Calculator, Apna Khata, Dakhil Kharij, LPC, Land Rates, Ask Expert. Bihar ka #1 free land information platform. 38 districts covered.">
     <meta name="twitter:image" content="https://www.bighawala.com/og/index.jpg">
 
     <!-- Schema & Link Image Source for Legacy Scrapers -->
@@ -34,7 +34,7 @@
     <title>BighaWala.com | बिहार का #1 जमीन पोर्टल | Bigha Calculator, Dakhil Kharij, Bhulekh</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Bihar ki zameen ki har jankari — Bigha Calculator, Apna Khata, Dakhil Kharij, LPC, Land Rates, AI Expert. Bihar ka #1 free land information platform. 38 districts covered." />
+    <meta name="description" content="Bihar ki zameen ki har jankari — Bigha Calculator, Apna Khata, Dakhil Kharij, LPC, Land Rates, Ask Expert. Bihar ka #1 free land information platform. 38 districts covered." />
     <meta name="keywords" content="bigha wala, bihar bhumi, apna khata bihar, dakhil kharij, bhulekh bihar, bigha calculator, bihar land rate 2026" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.bighawala.com/" />
@@ -111,12 +111,30 @@
         align-items: center;
         justify-content: center;
       }
+
+      /* Scroll-reveal animation for homepage sections */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+      }
     </style>
 </head>
   <body class="bg-slate-50 text-slate-800 selection:bg-orange-100 selection:text-orange-900">
 
     <!-- HERO SECTION -->
     <section class="hero-gradient text-white py-12 sm:py-20 px-4 relative overflow-hidden">
+      <!-- Decorative glow orbs -->
+      <div class="pointer-events-none absolute -top-24 -left-16 w-72 h-72 bg-amber-400/20 rounded-full blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-28 -right-20 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl"></div>
+      <div class="pointer-events-none absolute top-1/3 right-1/4 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
       <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
         
         <span class="inline-block bg-orange-500/30 backdrop-blur-md border border-orange-300/40 text-white font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
@@ -150,7 +168,7 @@
           </div>
           <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
             <p class="text-xl sm:text-2xl font-black text-amber-300">8</p>
-            <p class="text-[11px] font-bold text-white">AI Tools</p>
+            <p class="text-[11px] font-bold text-white">Smart Tools</p>
           </div>
         </div>
 
@@ -341,7 +359,7 @@
           <a href="document-checker.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
             <span class="text-3xl">📄</span>
             <h3 class="font-black text-slate-900 text-sm sm:text-base">Document Checker</h3>
-            <p class="text-xs text-slate-500 font-semibold">Kagaz AI se samjhein Hindi mein</p>
+            <p class="text-xs text-slate-500 font-semibold">Kagaz turant samjhein Hindi mein</p>
             <p class="text-[11px] text-amber-700 font-extrabold">Users: 10,000+ | ⭐⭐⭐⭐⭐</p>
           </a>
         </div>
@@ -465,7 +483,7 @@
         <div class="flex items-center gap-3">
           <span class="w-12 h-12 rounded-2xl bg-emerald-700 text-white font-black text-2xl flex items-center justify-center shadow-md">🎙️</span>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black text-slate-900">साथी (Saathi) — Bihar Land Voice Helper AI</h2>
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900">साथी (Saathi) — Bihar Land Voice Helper</h2>
             <p class="text-xs text-slate-600 font-bold">बोलें या लिखें — हिंदी, मैथिली एवं भोजपुरी में पाएं सहायता</p>
           </div>
         </div>
@@ -488,7 +506,7 @@
         </div>
 
         <a href="saathi-bot.html" class="inline-flex items-center justify-center gap-2 w-full bg-emerald-700 hover:bg-emerald-800 text-white font-black text-base py-3.5 rounded-xl shadow-md transition">
-          🎙️ साथी से अभी बात करें (Voice AI) →
+          🎙️ साथी से अभी बात करें (Voice Helper) →
         </a>
       </section>
 
@@ -604,7 +622,7 @@
         </div>
         <div class="p-4 bg-white border border-slate-200 rounded-2xl">
           <span class="text-2xl block">🤖</span>
-          <span class="font-black text-xs sm:text-sm text-slate-900 block mt-1">AI Powered</span>
+          <span class="font-black text-xs sm:text-sm text-slate-900 block mt-1">Always Free</span>
           <span class="text-[10px] text-slate-500 font-bold">24/7 Available</span>
         </div>
       </section>
@@ -620,7 +638,7 @@
   <span class="text-lg font-black"><span class="text-emerald-400">Bigha</span><span class="text-orange-400">Wala</span><span class="text-emerald-400">.com</span></span>
 </a>
           <p class="text-xs text-slate-400 font-semibold leading-relaxed">
-            बिहार का #1 मुफ्त जमीन सूचना एवं कैलकुलेटर पोर्टल। 38 जिलों की भूमि दरें, दाखिल खारिज, अपना खाता, बीघा रूपांतरण एवं साथी वॉइस AI सहायता।
+            बिहार का #1 मुफ्त जमीन सूचना एवं कैलकुलेटर पोर्टल। 38 जिलों की भूमि दरें, दाखिल खारिज, अपना खाता, बीघा रूपांतरण एवं साथी वॉइस सहायता।
           </p>
           <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 gap-2 bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-2 rounded-xl border border-emerald-600 transition">
             📱 Helpline: 9835102324
@@ -631,7 +649,7 @@
           <p class="font-extrabold text-white text-sm uppercase tracking-wider">Quick Tools</p>
           <ul class="space-y-1.5 font-semibold text-slate-400 text-xs sm:text-sm">
             <li><a href="bigha-calculator.html" class="inline-flex items-center min-h-11 hover:text-emerald-400">Bigha Calculator</a></li>
-            <li><a href="saathi-bot.html" class="inline-flex items-center min-h-11 hover:text-emerald-400 font-bold text-emerald-400">🎙️ साथी Voice AI</a></li>
+            <li><a href="saathi-bot.html" class="inline-flex items-center min-h-11 hover:text-emerald-400 font-bold text-emerald-400">🎙️ साथी Voice Helper</a></li>
             <li><a href="zameen-moolyankan.html" class="inline-flex items-center min-h-11 hover:text-emerald-400">Zameen Moolyankan</a></li>
             <li><a href="land-cost-calculator.html" class="inline-flex items-center min-h-11 hover:text-emerald-400">Registry Cost Calculator</a></li>
             <li><a href="zameen-comparison.html" class="inline-flex items-center min-h-11 hover:text-emerald-400">Zameen Compare</a></li>
@@ -695,8 +713,29 @@
         });
       });
 
+      // 1b. Scroll-reveal for homepage sections
+      document.addEventListener('DOMContentLoaded', function() {
+        var sections = document.querySelectorAll('main > section');
+        if (!('IntersectionObserver' in window) || !sections.length) {
+          sections.forEach(function(s) { s.classList.add('in-view'); });
+          return;
+        }
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        sections.forEach(function(s) {
+          s.classList.add('reveal');
+          observer.observe(s);
+        });
+      });
+
       // 2. Typewriter Effect
-      var twWords = ['Bigha Calculator...', 'Dakhil Kharij Guide...', 'Apna Khata Dekhen...', 'Land Rates 2026...', 'AI Expert 24/7...'];
+      var twWords = ['Bigha Calculator...', 'Dakhil Kharij Guide...', 'Apna Khata Dekhen...', 'Land Rates 2026...', 'Ask Expert 24/7...'];
       var twIdx = 0;
       setInterval(function() {
         twIdx = (twIdx + 1) % twWords.length;
@@ -751,8 +790,8 @@
       { title: "Zameen Comparison Tool", url: "zameen-comparison.html", desc: "दो जमीनों की कीमत और माप की तुलना करें" },
       { title: "Bihar Land Quiz", url: "bihar-land-quiz.html", desc: "बिहार भूमि नियमों से जुड़ा ऑनलाइन क्विज" },
       { title: "Document Checker Tool", url: "document-checker.html", desc: "जमीन खरीदने से पहले दस्तावेजों की जांच करें" },
-      { title: "Saathi Voice AI (साथी एआई)", url: "saathi-bot.html", desc: "बोलकर अपनी भाषा में जमीन के सवाल पूछें" },
-      { title: "Ask AI Expert (बीघावाला एक्सपर्ट)", url: "ask-expert.html", desc: "एआई विशेषज्ञ से जमीन का तुरंत समाधान पाएं" },
+      { title: "Saathi Voice Helper (साथी सहायक)", url: "saathi-bot.html", desc: "बोलकर अपनी भाषा में जमीन के सवाल पूछें" },
+      { title: "Ask Expert (बीघावाला एक्सपर्ट)", url: "ask-expert.html", desc: "तैयार विशेषज्ञ जवाबों से जमीन का तुरंत समाधान पाएं" },
       { title: "Community Q&A (किसान मंच)", url: "community-qa.html", desc: "अन्य किसानों व एक्सपर्ट से सवाल-जवाब करें" },
       { title: "Bihar Land News (ताजा खबरें)", url: "bihar-land-news.html", desc: "बिहार भूमि सुधार और नए नियमों की खबरें" },
       { title: "Bihar Bhumi Official Portal Guide", url: "bihar-bhumi-portal.html", desc: "biharbhumi.bihar.gov.in का प्रयोग कैसे करें" },
