@@ -650,7 +650,7 @@ window.bwDS = function(q){
 };
 
 function initNav(){
-  var existing = document.querySelector('header,nav,.bw-header,#bwH');
+  var existing = document.querySelector('.bw-header,#bwH');
   if(existing){
     existing.remove();
   }
