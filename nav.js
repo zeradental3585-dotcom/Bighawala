@@ -23,6 +23,12 @@ var NAV_HTML = `
 
 .bw-header *{box-sizing:border-box;margin:0;padding:0;}
 
+.bw-sr-only{
+  position:absolute;width:1px;height:1px;
+  padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
 .bw-header{
   background:#fff;
   border-bottom:2px solid #E8F5E9;
@@ -144,7 +150,7 @@ var NAV_HTML = `
 }
 
 .bw-si{
-  width:36px;height:36px;
+  width:44px;height:44px;
   border-radius:8px;background:none;
   border:none;cursor:pointer;
   display:flex;align-items:center;
@@ -185,7 +191,9 @@ var NAV_HTML = `
 
 .bw-ham{
   display:none;flex-direction:column;
+  align-items:center;justify-content:center;
   gap:5px;cursor:pointer;
+  width:44px;height:44px;
   background:none;border:none;
   padding:6px;border-radius:8px;
 }
@@ -266,7 +274,7 @@ var NAV_HTML = `
 }
 
 .bw-mmc{
-  width:36px;height:36px;
+  width:44px;height:44px;
   border-radius:8px;background:#F5F5F5;
   border:none;cursor:pointer;
   font-size:18px;color:#333;
@@ -421,10 +429,10 @@ var NAV_HTML = `
 </ul>
 
 <div class="bw-right">
-  <button class="bw-si" onclick="bwS()">🔍</button>
+  <button class="bw-si" onclick="bwS()" aria-label="खोजें (Search)">🔍</button>
   <a href="saathi-bot.html" class="bw-sai">🎙️ साथी AI</a>
   <a href="https://wa.me/919835102324" target="_blank" class="bw-wai">💬 Expert</a>
-  <button class="bw-ham" onclick="bwM()">
+  <button class="bw-ham" onclick="bwM()" aria-label="मेन्यू खोलें (Open menu)">
     <span></span><span></span><span></span>
   </button>
 </div>
@@ -432,6 +440,7 @@ var NAV_HTML = `
 </div>
 
 <div class="bw-sw" id="bwSW">
+  <label for="bwSI" class="bw-sr-only">साइट खोजें (Search site)</label>
   <input type="text" class="bw-si2"
     id="bwSI"
     placeholder="खोजें... Bigha Calculator, Dakhil Kharij, Patna Rate"
@@ -451,7 +460,7 @@ var NAV_HTML = `
         </span>
       </div>
     </a>
-    <button class="bw-mmc" onclick="bwM()">✕</button>
+    <button class="bw-mmc" onclick="bwM()" aria-label="मेन्यू बंद करें (Close menu)">✕</button>
   </div>
   <div class="bw-mmb">
     <div class="bw-mms">
