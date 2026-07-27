@@ -23,6 +23,11 @@ var NAV_HTML = `
 
 .bw-header *{box-sizing:border-box;margin:0;padding:0;}
 
+a,button,.bw-mbar a,.bw-ham,.bw-si{
+  -webkit-tap-highlight-color:rgba(46,125,50,0.15);
+  touch-action:manipulation;
+}
+
 .bw-sr-only{
   position:absolute;width:1px;height:1px;
   padding:0;margin:-1px;overflow:hidden;
@@ -527,9 +532,6 @@ var NAV_HTML = `
 </div>
 
 <div class="bw-mbar">
-  <div style="text-align:center;padding:4px 8px 2px;font-size:10px;color:rgba(255,255,255,0.5);font-family:'Poppins',sans-serif;line-height:1.2;">
-    A <strong style="color:rgba(255,255,255,0.7);">Zera Technologies</strong> Property | Designed &amp; Developed by <a href="https://zeratech.io/" target="_blank" style="color:#FFCC00;text-decoration:none;font-weight:600;">Zera Technologies</a>
-  </div>
   <div class="bw-mbari">
     <a href="index.html">
       <span>🏠</span><span>Home</span>
@@ -691,8 +693,11 @@ function initNav(){
     }
   });
 
-  if(window.innerWidth<600)
-    document.body.style.paddingBottom='80px';
+  if(window.innerWidth<600){
+    var mbarEl = document.querySelector('.bw-mbar');
+    var mbarH = mbarEl ? mbarEl.getBoundingClientRect().height : 80;
+    document.body.style.paddingBottom = Math.ceil(mbarH + 8) + 'px';
+  }
 
   var ft = document.querySelector('footer');
   if (ft && !document.getElementById('zera-credit-ft')) {
