@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Plot Name -->
             <div class="space-y-1.5">
               <label class="block text-xs font-black text-slate-700 uppercase tracking-wider">प्लॉट का पहचान नाम (Plot Name):</label>
-              <input type="text" id="plotA-name" value="Plot Near Highway" placeholder="जैसे: बाईपास रोड प्लॉट, गाओं वाली ज़मीन" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primaryGreen/20 focus:border-primaryGreen focus:outline-none text-slate-800 font-bold text-sm bg-slate-50/50 hover:bg-white transition-all shadow-xs" />
+              <input aria-label="जैसे: बाईपास रोड प्लॉट, गाओं वाली ज़मीन" type="text" id="plotA-name" value="Plot Near Highway" placeholder="जैसे: बाईपास रोड प्लॉट, गाओं वाली ज़मीन" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primaryGreen/20 focus:border-primaryGreen focus:outline-none text-slate-800 font-bold text-sm bg-slate-50/50 hover:bg-white transition-all shadow-xs" />
             </div>
 
             <!-- District selection -->
@@ -264,15 +264,15 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-3 gap-3">
                 <div class="space-y-1">
                   <span class="text-[10px] font-black text-slate-500 block">बीघा (Bigha)</span>
-                  <input type="number" id="plotA-bigha" min="0" value="0" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-primaryGreen focus:outline-none text-sm bg-white" />
+                  <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="plotA-bigha" min="0" value="0" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-primaryGreen focus:outline-none text-sm bg-white" />
                 </div>
                 <div class="space-y-1">
                   <span class="text-[10px] font-black text-slate-500 block">कट्ठा (Katha)</span>
-                  <input type="number" id="plotA-katha" min="0" value="10" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-primaryGreen focus:outline-none text-sm bg-white" />
+                  <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="plotA-katha" min="0" value="10" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-primaryGreen focus:outline-none text-sm bg-white" />
                 </div>
                 <div class="space-y-1">
                   <span class="text-[10px] font-black text-slate-500 block">धुर (Dhur)</span>
-                  <input type="number" id="plotA-dhur" min="0" value="0" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-primaryGreen focus:outline-none text-sm bg-white" />
+                  <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="plotA-dhur" min="0" value="0" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-primaryGreen focus:outline-none text-sm bg-white" />
                 </div>
               </div>
             </div>
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <label class="block text-xs font-black text-slate-700 uppercase tracking-wider">मांगी गई कीमत (Asking Price in ₹):</label>
                 <div class="relative">
                   <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 font-bold text-sm">₹</span>
-                  <input type="number" id="plotA-price" value="1200000" placeholder="0" class="w-full pl-7 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primaryGreen/20 focus:border-primaryGreen focus:outline-none text-slate-800 font-black text-sm bg-slate-50/50 hover:bg-white transition-all shadow-xs" />
+                  <input aria-label="0" type="number" id="plotA-price" value="1200000" placeholder="0" class="w-full pl-7 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primaryGreen/20 focus:border-primaryGreen focus:outline-none text-slate-800 font-black text-sm bg-slate-50/50 hover:bg-white transition-all shadow-xs" />
                 </div>
               </div>
               
@@ -303,19 +303,19 @@ document.addEventListener('DOMContentLoaded', function() {
               <label class="block text-xs font-black text-slate-700 uppercase tracking-wider">कागजात विश्वसनीयता (Documents Checklist):</label>
               <div class="space-y-2 text-xs font-bold text-slate-700">
                 <label class="flex items-center gap-2.5 cursor-pointer">
-                  <input type="checkbox" id="plotA-doc1" checked class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="plotA-doc1" checked class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span>जमाबंदी दुरुस्त है (Register II updated)</span>
                 </label>
                 <label class="flex items-center gap-2.5 cursor-pointer">
-                  <input type="checkbox" id="plotA-doc2" checked class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="plotA-doc2" checked class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span>दखल कब्ज़ा प्रमाण पत्र (LPC Available)</span>
                 </label>
                 <label class="flex items-center gap-2.5 cursor-pointer">
-                  <input type="checkbox" id="plotA-doc3" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="plotA-doc3" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span>दाखिल खारिज पूर्ण है (Mutation Complete)</span>
                 </label>
                 <label class="flex items-center gap-2.5 cursor-pointer">
-                  <input type="checkbox" id="plotA-doc4" checked class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="plotA-doc4" checked class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span>पक्की बाउंड्री की हुई है (Boundary Constructed)</span>
                 </label>
               </div>
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Plot Name -->
             <div class="space-y-1.5">
               <label class="block text-xs font-black text-slate-700 uppercase tracking-wider">प्लॉट का पहचान नाम (Plot Name):</label>
-              <input type="text" id="plotB-name" value="Village Boundary Plot" placeholder="जैसे: बाईपास रोड प्लॉट, गाओं वाली ज़मीन" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-accentSaffron/20 focus:border-accentSaffron focus:outline-none text-slate-800 font-bold text-sm bg-slate-50/50 hover:bg-white transition-all shadow-xs" />
+              <input aria-label="जैसे: बाईपास रोड प्लॉट, गाओं वाली ज़मीन" type="text" id="plotB-name" value="Village Boundary Plot" placeholder="जैसे: बाईपास रोड प्लॉट, गाओं वाली ज़मीन" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-accentSaffron/20 focus:border-accentSaffron focus:outline-none text-slate-800 font-bold text-sm bg-slate-50/50 hover:bg-white transition-all shadow-xs" />
             </div>
 
             <!-- District selection -->
@@ -385,15 +385,15 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-3 gap-3">
                 <div class="space-y-1">
                   <span class="text-[10px] font-black text-slate-500 block">बीघा (Bigha)</span>
-                  <input type="number" id="plotB-bigha" min="0" value="0" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-accentSaffron focus:outline-none text-sm bg-white" />
+                  <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="plotB-bigha" min="0" value="0" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-accentSaffron focus:outline-none text-sm bg-white" />
                 </div>
                 <div class="space-y-1">
                   <span class="text-[10px] font-black text-slate-500 block">कट्ठा (Katha)</span>
-                  <input type="number" id="plotB-katha" min="0" value="15" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-accentSaffron focus:outline-none text-sm bg-white" />
+                  <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="plotB-katha" min="0" value="15" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-accentSaffron focus:outline-none text-sm bg-white" />
                 </div>
                 <div class="space-y-1">
                   <span class="text-[10px] font-black text-slate-500 block">धुर (Dhur)</span>
-                  <input type="number" id="plotB-dhur" min="0" value="0" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-accentSaffron focus:outline-none text-sm bg-white" />
+                  <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="plotB-dhur" min="0" value="0" class="w-full px-3 py-2 text-center border border-slate-200 rounded-lg text-slate-800 font-black focus:border-accentSaffron focus:outline-none text-sm bg-white" />
                 </div>
               </div>
             </div>
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <label class="block text-xs font-black text-slate-700 uppercase tracking-wider">मांगी गई कीमत (Asking Price in ₹):</label>
                 <div class="relative">
                   <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 font-bold text-sm">₹</span>
-                  <input type="number" id="plotB-price" value="900000" placeholder="0" class="w-full pl-7 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-accentSaffron/20 focus:border-accentSaffron focus:outline-none text-slate-800 font-black text-sm bg-slate-50/50 hover:bg-white transition-all shadow-xs" />
+                  <input aria-label="0" type="number" id="plotB-price" value="900000" placeholder="0" class="w-full pl-7 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-accentSaffron/20 focus:border-accentSaffron focus:outline-none text-slate-800 font-black text-sm bg-slate-50/50 hover:bg-white transition-all shadow-xs" />
                 </div>
               </div>
               
@@ -424,19 +424,19 @@ document.addEventListener('DOMContentLoaded', function() {
               <label class="block text-xs font-black text-slate-700 uppercase tracking-wider">कागजात विश्वसनीयता (Documents Checklist):</label>
               <div class="space-y-2 text-xs font-bold text-slate-700">
                 <label class="flex items-center gap-2.5 cursor-pointer">
-                  <input type="checkbox" id="plotB-doc1" checked class="w-4 h-4 rounded text-accentSaffron focus:ring-accentSaffron border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="plotB-doc1" checked class="w-4 h-4 rounded text-accentSaffron focus:ring-accentSaffron border-slate-300" />
                   <span>जमाबंदी दुरुस्त है (Register II updated)</span>
                 </label>
                 <label class="flex items-center gap-2.5 cursor-pointer">
-                  <input type="checkbox" id="plotB-doc2" class="w-4 h-4 rounded text-accentSaffron focus:ring-accentSaffron border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="plotB-doc2" class="w-4 h-4 rounded text-accentSaffron focus:ring-accentSaffron border-slate-300" />
                   <span>दखल कब्ज़ा प्रमाण पत्र (LPC Available)</span>
                 </label>
                 <label class="flex items-center gap-2.5 cursor-pointer">
-                  <input type="checkbox" id="plotB-doc3" class="w-4 h-4 rounded text-accentSaffron focus:ring-accentSaffron border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="plotB-doc3" class="w-4 h-4 rounded text-accentSaffron focus:ring-accentSaffron border-slate-300" />
                   <span>दाखिल खारिज पूर्ण है (Mutation Complete)</span>
                 </label>
                 <label class="flex items-center gap-2.5 cursor-pointer">
-                  <input type="checkbox" id="plotB-doc4" class="w-4 h-4 rounded text-accentSaffron focus:ring-accentSaffron border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="plotB-doc4" class="w-4 h-4 rounded text-accentSaffron focus:ring-accentSaffron border-slate-300" />
                   <span>पक्की बाउंड्री की हुई है (Boundary Constructed)</span>
                 </label>
               </div>

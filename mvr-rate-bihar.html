@@ -266,11 +266,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <div class="flex gap-4">
                   <label class="flex items-center gap-2 cursor-pointer font-bold bg-emerald-950 border border-emerald-800 rounded-xl px-4 py-2.5 hover:border-orange-400 transition-colors">
-                    <input type="radio" name="buyer-gender" value="male" checked onchange="calculateMVRRegistry()" class="accent-orange-500 w-4 h-4" />
+                    <input aria-label="विकल्प: male" type="radio" name="buyer-gender" value="male" checked onchange="calculateMVRRegistry()" class="accent-orange-500 w-4 h-4" />
                     <span>Male (पुरुष - 6.0%)</span>
                   </label>
                   <label class="flex items-center gap-2 cursor-pointer font-bold bg-emerald-950 border border-emerald-800 rounded-xl px-4 py-2.5 hover:border-orange-400 transition-colors">
-                    <input type="radio" name="buyer-gender" value="female" onchange="calculateMVRRegistry()" class="accent-orange-500 w-4 h-4" />
+                    <input aria-label="विकल्प: female" type="radio" name="buyer-gender" value="female" onchange="calculateMVRRegistry()" class="accent-orange-500 w-4 h-4" />
                     <span>Female (महिला - 5.7%)</span>
                   </label>
                 </div>
@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
             <span class="text-slate-400">🔍</span>
           </div>
-          <input type="text" id="search-mvr" class="w-full pl-10 pr-4 py-3 border-2 border-slate-200 rounded-2xl text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primaryGreen font-bold" placeholder="Apna jila ya kshetra dhundhen... (उदा: Patna, Gaya, Residential, Commercial)" oninput="filterMVRTable()" />
+          <input aria-label="Apna jila ya kshetra dhundhen... (उदा: Patna, Gaya, Residential, Commercial)" type="text" id="search-mvr" class="w-full pl-10 pr-4 py-3 border-2 border-slate-200 rounded-2xl text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primaryGreen font-bold" placeholder="Apna jila ya kshetra dhundhen... (उदा: Patna, Gaya, Residential, Commercial)" oninput="filterMVRTable()" />
         </div>
 
         <!-- DYNAMIC / HIGHLY OPTIMIZED TABLE -->

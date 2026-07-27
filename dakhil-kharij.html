@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <label class="block text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-1">
               आवेदन सबमिट तिथि (Application Submit Date):
             </label>
-            <input type="date" id="dakhilSubmitDate" onchange="calculateDakhilTimeline()" class="w-full px-4 py-3 bg-white border-2 border-blue-400 rounded-xl text-sm font-bold text-slate-900 focus:outline-none focus:border-blue-600 shadow-xs" />
+            <input aria-label="तारीख चुनें (Select date)" type="date" id="dakhilSubmitDate" onchange="calculateDakhilTimeline()" class="w-full px-4 py-3 bg-white border-2 border-blue-400 rounded-xl text-sm font-bold text-slate-900 focus:outline-none focus:border-blue-600 shadow-xs" />
           </div>
 
           <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-4 text-blue-950 space-y-1 text-center sm:text-left">
@@ -412,32 +412,32 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Document Checklist Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <label class="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-400 cursor-pointer transition">
-            <input type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
             <span class="text-xs sm:text-sm font-bold text-slate-800">1. Sale Deed/Bainama copy ready hai (केवाला PDF)</span>
           </label>
 
           <label class="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-400 cursor-pointer transition">
-            <input type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
             <span class="text-xs sm:text-sm font-bold text-slate-800">2. Jamabandi nakal hai (biharbhumi.bihar.gov.in se)</span>
           </label>
 
           <label class="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-400 cursor-pointer transition">
-            <input type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
             <span class="text-xs sm:text-sm font-bold text-slate-800">3. Aadhar Card ready hai (आधार कार्ड)</span>
           </label>
 
           <label class="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-400 cursor-pointer transition">
-            <input type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
             <span class="text-xs sm:text-sm font-bold text-slate-800">4. Passport photo ready hai (पासपोर्ट फोटो)</span>
           </label>
 
           <label class="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-400 cursor-pointer transition">
-            <input type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
             <span class="text-xs sm:text-sm font-bold text-slate-800">5. Court fee stamp ₹100 hai (कोर्ट फी स्टाम्प)</span>
           </label>
 
           <label class="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-400 cursor-pointer transition">
-            <input type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateDakhilDocProgress()" class="dakhil-doc-item w-5 h-5 accent-emerald-600 rounded mt-0.5 shrink-0" />
             <span class="text-xs sm:text-sm font-bold text-slate-800">6. Mobile number (OTP ke liye)</span>
           </label>
         </div>
@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <label class="block text-[11px] font-black text-emerald-950 uppercase tracking-wider mb-1">डेसिमल दर्ज करें (Dismil)</label>
-              <input type="number" id="mini-dismil" value="100" class="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold focus:outline-none focus:border-emerald-500" oninput="calculateBighaMini()" />
+              <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="mini-dismil" value="100" class="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold focus:outline-none focus:border-emerald-500" oninput="calculateBighaMini()" />
             </div>
             <div>
               <label class="block text-[11px] font-black text-emerald-950 uppercase tracking-wider mb-1">कट्टा साइज (Dismil per Katha)</label>

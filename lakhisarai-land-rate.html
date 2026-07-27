@@ -370,11 +370,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Land Size (Katha में)</label>
-                <input type="number" id="calc-size" value="1" min="0.1" step="0.1" oninput="calculateRegistryCosts()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="calc-size" value="1" min="0.1" step="0.1" oninput="calculateRegistryCosts()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Rate per Katha (₹ में)</label>
-                <input type="number" id="calc-rate" value="25000" min="1000" step="5000" oninput="calculateRegistryCosts()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="calc-rate" value="25000" min="1000" step="5000" oninput="calculateRegistryCosts()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
               </div>
             </div>
 

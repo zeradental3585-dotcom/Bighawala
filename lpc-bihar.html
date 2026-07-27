@@ -376,27 +376,27 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Checklist items -->
         <div class="space-y-3">
           <label class="flex items-center gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:bg-emerald-50/60 transition select-none">
-            <input type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
             <span class="text-xs sm:text-sm font-black text-slate-800">☐ Khata number pata hai (खाता संख्या मालूम है)</span>
           </label>
 
           <label class="flex items-center gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:bg-emerald-50/60 transition select-none">
-            <input type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
             <span class="text-xs sm:text-sm font-black text-slate-800">☐ Khesra number pata hai (खेसरा संख्या मालूम है)</span>
           </label>
 
           <label class="flex items-center gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:bg-emerald-50/60 transition select-none">
-            <input type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
             <span class="text-xs sm:text-sm font-black text-slate-800">☐ Aadhar Card ready hai (आधार कार्ड तैयार है)</span>
           </label>
 
           <label class="flex items-center gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:bg-emerald-50/60 transition select-none">
-            <input type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
             <span class="text-xs sm:text-sm font-black text-slate-800">☐ Photo ready hai (पासपोर्ट साइज फोटो / स्कैन तैयार है)</span>
           </label>
 
           <label class="flex items-center gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:bg-emerald-50/60 transition select-none">
-            <input type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" onchange="updateLpcChecklist()" class="lpc-check-item w-5 h-5 accent-emerald-600 rounded cursor-pointer">
             <span class="text-xs sm:text-sm font-black text-slate-800">☐ ₹10 court fee stamp leni hai (कोर्ट फीस स्टाम्प व्यवस्था की गई है)</span>
           </label>
         </div>
@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <label class="block text-[11px] font-black text-emerald-950 uppercase tracking-wider mb-1">डेसिमल दर्ज करें (Dismil)</label>
-              <input type="number" id="mini-dismil" value="100" class="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold focus:outline-none focus:border-emerald-500" oninput="calculateBighaMini()" />
+              <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="mini-dismil" value="100" class="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold focus:outline-none focus:border-emerald-500" oninput="calculateBighaMini()" />
             </div>
             <div>
               <label class="block text-[11px] font-black text-emerald-950 uppercase tracking-wider mb-1">कट्टा साइज (Dismil per Katha)</label>

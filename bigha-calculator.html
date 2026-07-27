@@ -152,15 +152,15 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
               <div>
                 <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">बीघा (Bigha):</label>
-                <input type="number" id="t1-bigha" step="0.01" value="2" min="0" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 2.5" />
+                <input aria-label="e.g. 2.5" type="number" id="t1-bigha" step="0.01" value="2" min="0" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 2.5" />
               </div>
               <div>
                 <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">कट्ठा (Katha 0-19):</label>
-                <input type="number" id="t1-katha" step="1" value="5" min="0" max="19" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="0 - 19" />
+                <input aria-label="0 - 19" type="number" id="t1-katha" step="1" value="5" min="0" max="19" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="0 - 19" />
               </div>
               <div>
                 <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">धूर (Dhur 0-79):</label>
-                <input type="number" id="t1-dhur" step="0.1" value="10" min="0" max="79" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="0 - 79" />
+                <input aria-label="0 - 79" type="number" id="t1-dhur" step="0.1" value="10" min="0" max="79" oninput="calcTab1()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="0 - 79" />
               </div>
             </div>
 
@@ -228,7 +228,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div>
                 <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">संख्या / मान दर्ज करें (Enter Value):</label>
-                <input type="number" id="t2-value" step="any" value="5000" min="0" oninput="calcTab2()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-blue-600 rounded-xl font-bold text-slate-900 outline-none text-base" />
+                <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="t2-value" step="any" value="5000" min="0" oninput="calcTab2()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-blue-600 rounded-xl font-bold text-slate-900 outline-none text-base" />
               </div>
               <div>
                 <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">यूनिट चुनें (Select Unit):</label>
@@ -306,11 +306,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div>
                 <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">जमीन का आकार (कट्ठा में):</label>
-                <input type="number" id="t3-katha" step="0.1" value="5" min="0" oninput="calcTab3()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-amber-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 5" />
+                <input aria-label="e.g. 5" type="number" id="t3-katha" step="0.1" value="5" min="0" oninput="calcTab3()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-amber-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 5" />
               </div>
               <div>
                 <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">दर प्रति कट्ठा (₹ Rate per Katha):</label>
-                <input type="number" id="t3-rate" step="1000" value="500000" min="0" oninput="calcTab3()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-amber-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 500000" />
+                <input aria-label="e.g. 500000" type="number" id="t3-rate" step="1000" value="500000" min="0" oninput="calcTab3()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-amber-600 rounded-xl font-bold text-slate-900 outline-none text-base" placeholder="e.g. 500000" />
               </div>
             </div>
 
@@ -398,7 +398,7 @@
 
               <div>
                 <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1.5">लग्गी साइज (हाथ में / Laggi in Hath):</label>
-                <input type="number" id="t4-laggi-hath" step="0.25" value="5.5" min="4" max="10" oninput="calcTab4()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-purple-600 rounded-xl font-bold text-slate-900 outline-none text-base" />
+                <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="t4-laggi-hath" step="0.25" value="5.5" min="4" max="10" oninput="calcTab4()" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-purple-600 rounded-xl font-bold text-slate-900 outline-none text-base" />
               </div>
             </div>
 

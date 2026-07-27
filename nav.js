@@ -96,6 +96,7 @@ var NAV_HTML = `
 .bw-nav>li>button{
   display:flex;align-items:center;
   gap:3px;padding:8px 11px;
+  min-height:44px;
   color:#333;text-decoration:none;
   font-size:13px;font-weight:500;
   background:none;border:none;
@@ -164,6 +165,7 @@ var NAV_HTML = `
 .bw-sai{
   display:flex;align-items:center;
   gap:5px;padding:8px 14px;
+  min-height:44px;
   background:#2E7D32;color:#fff;
   border-radius:20px;
   text-decoration:none;
@@ -178,6 +180,7 @@ var NAV_HTML = `
 .bw-wai{
   display:flex;align-items:center;
   gap:5px;padding:8px 14px;
+  min-height:44px;
   background:#FF6F00;color:#fff;
   border-radius:20px;
   text-decoration:none;
@@ -297,6 +300,7 @@ var NAV_HTML = `
 .bw-mm a{
   display:flex;align-items:center;
   gap:10px;padding:13px 4px;
+  min-height:44px;
   color:#333;text-decoration:none;
   font-size:15px;
   font-family:'Poppins',sans-serif;

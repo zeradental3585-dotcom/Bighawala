@@ -289,21 +289,21 @@ document.addEventListener('DOMContentLoaded', function() {
             </label>
             <div class="grid grid-cols-3 gap-2">
               <label class="flex flex-col items-center justify-center p-3 border-2 border-slate-200 bg-slate-50 hover:bg-emerald-50/50 hover:border-emerald-200 rounded-2xl cursor-pointer transition-all text-center group">
-                <input type="radio" name="land-type" value="agricultural" class="sr-only" checked onchange="onInputChange()" />
+                <input aria-label="विकल्प: agricultural" type="radio" name="land-type" value="agricultural" class="sr-only" checked onchange="onInputChange()" />
                 <span class="text-2xl block mb-1">🌾</span>
                 <span class="text-xs font-black text-slate-700">Agricultural</span>
                 <span class="text-[10px] text-slate-400 font-bold">कृषि भूमि</span>
               </label>
               
               <label class="flex flex-col items-center justify-center p-3 border-2 border-slate-200 bg-slate-50 hover:bg-emerald-50/50 hover:border-emerald-200 rounded-2xl cursor-pointer transition-all text-center group">
-                <input type="radio" name="land-type" value="residential" class="sr-only" onchange="onInputChange()" />
+                <input aria-label="विकल्प: residential" type="radio" name="land-type" value="residential" class="sr-only" onchange="onInputChange()" />
                 <span class="text-2xl block mb-1">🏠</span>
                 <span class="text-xs font-black text-slate-700">Residential</span>
                 <span class="text-[10px] text-slate-400 font-bold">आवासीय</span>
               </label>
 
               <label class="flex flex-col items-center justify-center p-3 border-2 border-slate-200 bg-slate-50 hover:bg-emerald-50/50 hover:border-emerald-200 rounded-2xl cursor-pointer transition-all text-center group">
-                <input type="radio" name="land-type" value="commercial" class="sr-only" onchange="onInputChange()" />
+                <input aria-label="विकल्प: commercial" type="radio" name="land-type" value="commercial" class="sr-only" onchange="onInputChange()" />
                 <span class="text-2xl block mb-1">🏪</span>
                 <span class="text-xs font-black text-slate-700">Commercial</span>
                 <span class="text-[10px] text-slate-400 font-bold">व्यवसायिक</span>
@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </label>
             <div class="grid grid-cols-2 gap-4">
               <label class="flex items-center gap-3 p-4 border-2 border-emerald-500 bg-emerald-50/20 rounded-2xl cursor-pointer transition-all group" id="label-gender-male">
-                <input type="radio" name="gender" value="male" class="text-primaryGreen focus:ring-0" checked onchange="onGenderChange('male')" />
+                <input aria-label="विकल्प: male" type="radio" name="gender" value="male" class="text-primaryGreen focus:ring-0" checked onchange="onGenderChange('male')" />
                 <div>
                   <span class="font-black text-slate-800 text-sm sm:text-base block">👨 Male Buyer</span>
                   <span class="text-[11px] text-slate-400 font-bold block">6% Stamp Duty</span>
@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </label>
 
               <label class="flex items-center gap-3 p-4 border-2 border-slate-200 bg-slate-50 hover:bg-emerald-50/50 hover:border-emerald-200 rounded-2xl cursor-pointer transition-all group" id="label-gender-female">
-                <input type="radio" name="gender" value="female" class="text-primaryGreen focus:ring-0" onchange="onGenderChange('female')" />
+                <input aria-label="विकल्प: female" type="radio" name="gender" value="female" class="text-primaryGreen focus:ring-0" onchange="onGenderChange('female')" />
                 <div>
                   <span class="font-black text-slate-800 text-sm sm:text-base block">👩 Female Buyer</span>
                   <span class="text-[11px] text-emerald-600 font-bold block">5.7% Stamp Duty (Saving)</span>
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </label>
             <div class="grid grid-cols-2 gap-4">
               <label class="flex items-center gap-3 p-4 border-2 border-slate-200 bg-slate-50 hover:bg-emerald-50/50 hover:border-emerald-200 rounded-2xl cursor-pointer transition-all group" id="label-loan-yes">
-                <input type="radio" name="home-loan" value="yes" class="text-primaryGreen focus:ring-0" onchange="onLoanChange('yes')" />
+                <input aria-label="विकल्प: yes" type="radio" name="home-loan" value="yes" class="text-primaryGreen focus:ring-0" onchange="onLoanChange('yes')" />
                 <div>
                   <span class="font-black text-slate-800 text-sm sm:text-base block">👍 हाँ (Haan)</span>
                   <span class="text-[11px] text-slate-400 font-bold block">Loan charges are extra</span>
@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </label>
 
               <label class="flex items-center gap-3 p-4 border-2 border-emerald-500 bg-emerald-50/20 rounded-2xl cursor-pointer transition-all group" id="label-loan-no">
-                <input type="radio" name="home-loan" value="no" class="text-primaryGreen focus:ring-0" checked onchange="onLoanChange('no')" />
+                <input aria-label="विकल्प: no" type="radio" name="home-loan" value="no" class="text-primaryGreen focus:ring-0" checked onchange="onLoanChange('no')" />
                 <div>
                   <span class="font-black text-slate-800 text-sm sm:text-base block">👎 नहीं (Nahi)</span>
                   <span class="text-[11px] text-slate-400 font-bold block">Self funding zameen</span>
@@ -742,7 +742,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="space-y-3.5" id="checklist-container">
           <!-- Step 1 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-1" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(1)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-1" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(1)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 1: Seller ka Khatyan verify karein</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Bhoomi sudhaar portal par jaakar original owner ka details check karein: <a href="https://land.bihar.gov.in/Ror2025/RoR.aspx" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-extrabold hover:text-emerald-600">land.bihar.gov.in/Ror2025/RoR.aspx</a></span>
@@ -751,7 +751,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 2 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-2" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(2)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-2" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(2)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 2: Encumbrance check karein (भार मुक्ति प्रमाण)</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Registry office mein search dekar check karein ki land par pehle se koi bank loan ya vivad toh nahi chal raha hai.</span>
@@ -760,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 3 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-3" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(3)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-3" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(3)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 3: Circle rate confirm karein</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Apne halka/mouza ka updated government circle rate check karein: <a href="https://nibandhan.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-extrabold hover:text-emerald-600">nibandhan.bihar.gov.in</a></span>
@@ -769,7 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 4 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-4" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(4)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-4" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(4)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 4: Sale deed draft karwayein</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Kisi registered drafting lawyer se complete Sale deed (Dastavez) likhwayein. Isme seller aur buyer ki har shart saaf likhi honi chahiye.</span>
@@ -778,7 +778,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 5 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-5" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(5)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-5" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(5)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 5: Stamp paper kharidein</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Kharide gaye stamp ka value stamp duty ke bilkul barabar hona chahiye. E-stamping portal ya authorized vendor se hi buy karein.</span>
@@ -787,7 +787,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 6 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-6" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(6)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-6" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(6)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 6: SRO mein appointment lein</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Sub-Registrar Office (SRO) mein registration ke liye online date book karein: <a href="https://nibandhan.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-extrabold hover:text-emerald-600">nibandhan.bihar.gov.in</a></span>
@@ -796,7 +796,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 7 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-7" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(7)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-7" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(7)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 7: SRO Office mein Registry karwayein</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Sahi time par SRO court office pahunchein. Saath mein Seller, Buyer aur 2 Gawah (Witnesses) hone chahiye jinke paas valid ID card ho.</span>
@@ -805,7 +805,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 8 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-8" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(8)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-8" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(8)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 8: Dakhil Kharij apply karein (Online Mutation)</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Registry hone ke turant baad dakhil kharij ke liye online avedan karein: <a href="https://biharbhumi.bihar.gov.in/Biharbhumi/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-extrabold hover:text-emerald-600">biharbhumi.bihar.gov.in</a></span>
@@ -814,7 +814,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 9 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-9" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(9)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-9" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(9)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 9: LPC (Land Possession Certificate) banwayein</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Zameen par apna physical kabja verify karwane ke liye LPC ke liye CO office se online apply karein.</span>
@@ -823,7 +823,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Step 10 -->
           <label class="flex items-start gap-3.5 p-4 rounded-xl border border-slate-100 hover:border-emerald-100 hover:bg-slate-50/50 cursor-pointer transition-all select-none">
-            <input type="checkbox" id="chk-step-10" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(10)" />
+            <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="chk-step-10" class="rounded text-primaryGreen focus:ring-0 w-5 h-5 mt-0.5 border-2 border-slate-300" onchange="toggleChecklist(10)" />
             <div class="space-y-0.5">
               <span class="font-black text-slate-800 text-sm sm:text-base block">Step 10: Nayi Jamabandi mein apna naam check karein</span>
               <span class="text-xs text-slate-500 leading-relaxed block font-medium">Sari process complete hone par Bihar bhumi portal par online Jamabandi Register II mein naye ror khata update dekhne milegi.</span>

@@ -327,7 +327,7 @@
             </label>
             <div class="relative">
               <span class="absolute left-4 top-3 text-slate-500 font-black text-lg">₹</span>
-              <input type="number" id="calcValue" value="1000000" min="1000" step="10000" oninput="calculateRegistryCharges()" class="w-full bg-white border-2 border-emerald-500 rounded-xl py-3 pl-10 pr-4 text-slate-900 font-black text-lg focus:outline-none focus:ring-2 focus:ring-emerald-600">
+              <input aria-label="संख्या दर्ज करें (Enter number)" type="number" id="calcValue" value="1000000" min="1000" step="10000" oninput="calculateRegistryCharges()" class="w-full bg-white border-2 border-emerald-500 rounded-xl py-3 pl-10 pr-4 text-slate-900 font-black text-lg focus:outline-none focus:ring-2 focus:ring-emerald-600">
             </div>
 
             <!-- Quick select buttons -->
@@ -347,11 +347,11 @@
             </label>
             <div class="grid grid-cols-2 gap-3">
               <label class="cursor-pointer border-2 border-slate-300 bg-white rounded-xl p-3 flex items-center justify-center gap-2 text-sm font-bold text-slate-800 hover:border-emerald-500 transition has-[:checked]:bg-emerald-700 has-[:checked]:text-white has-[:checked]:border-emerald-800">
-                <input type="radio" name="gender" value="male" checked onchange="calculateRegistryCharges()" class="hidden">
+                <input aria-label="विकल्प: male" type="radio" name="gender" value="male" checked onchange="calculateRegistryCharges()" class="hidden">
                 <span>👨 Male (6% Stamp)</span>
               </label>
               <label class="cursor-pointer border-2 border-slate-300 bg-white rounded-xl p-3 flex items-center justify-center gap-2 text-sm font-bold text-slate-800 hover:border-emerald-500 transition has-[:checked]:bg-emerald-700 has-[:checked]:text-white has-[:checked]:border-emerald-800">
-                <input type="radio" name="gender" value="female" onchange="calculateRegistryCharges()" class="hidden">
+                <input aria-label="विकल्प: female" type="radio" name="gender" value="female" onchange="calculateRegistryCharges()" class="hidden">
                 <span>👩 Female (5.7% Stamp)</span>
               </label>
             </div>
@@ -364,15 +364,15 @@
             </label>
             <div class="grid grid-cols-3 gap-2">
               <label class="cursor-pointer border-2 border-slate-300 bg-white rounded-xl p-2.5 text-center text-xs font-bold text-slate-800 hover:border-emerald-500 transition has-[:checked]:bg-emerald-700 has-[:checked]:text-white has-[:checked]:border-emerald-800">
-                <input type="radio" name="propType" value="agri" checked onchange="calculateRegistryCharges()" class="hidden">
+                <input aria-label="विकल्प: agri" type="radio" name="propType" value="agri" checked onchange="calculateRegistryCharges()" class="hidden">
                 <span>🌾 Agricultural</span>
               </label>
               <label class="cursor-pointer border-2 border-slate-300 bg-white rounded-xl p-2.5 text-center text-xs font-bold text-slate-800 hover:border-emerald-500 transition has-[:checked]:bg-emerald-700 has-[:checked]:text-white has-[:checked]:border-emerald-800">
-                <input type="radio" name="propType" value="res" onchange="calculateRegistryCharges()" class="hidden">
+                <input aria-label="विकल्प: res" type="radio" name="propType" value="res" onchange="calculateRegistryCharges()" class="hidden">
                 <span>🏠 Residential</span>
               </label>
               <label class="cursor-pointer border-2 border-slate-300 bg-white rounded-xl p-2.5 text-center text-xs font-bold text-slate-800 hover:border-emerald-500 transition has-[:checked]:bg-emerald-700 has-[:checked]:text-white has-[:checked]:border-emerald-800">
-                <input type="radio" name="propType" value="comm" onchange="calculateRegistryCharges()" class="hidden">
+                <input aria-label="विकल्प: comm" type="radio" name="propType" value="comm" onchange="calculateRegistryCharges()" class="hidden">
                 <span>🏪 Commercial</span>
               </label>
             </div>

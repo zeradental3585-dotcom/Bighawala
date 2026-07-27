@@ -103,6 +103,14 @@
         body { padding-bottom: 60px; }
         input, select, button { font-size: 16px !important; }
       }
+
+      /* Touch target sizing for small pill/badge links */
+      .tag-row a, .dist-badge {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
   
     <script id="og-dynamic-updater">
@@ -130,7 +138,7 @@
     <section class="hero-gradient text-white py-12 sm:py-20 px-4 relative overflow-hidden">
       <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
         
-        <span class="inline-block bg-orange-500/30 backdrop-blur-md border border-orange-300/40 text-orange-200 font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+        <span class="inline-block bg-orange-500/30 backdrop-blur-md border border-orange-300/40 text-white font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
           🏆 Bihar का #1 Land Platform
         </span>
 
@@ -140,7 +148,7 @@
         </h1>
 
         <!-- Typewriter Text Effect -->
-        <div class="text-base sm:text-xl font-bold text-emerald-100 h-8 flex items-center justify-center gap-2">
+        <div class="text-base sm:text-xl font-bold text-white h-8 flex items-center justify-center gap-2">
           <span>खोजें:</span>
           <span id="typewriter" class="text-white bg-white/10 px-3 py-1 rounded-lg border border-white/20">Bigha Calculator...</span>
         </div>
@@ -149,19 +157,19 @@
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto pt-4 text-center">
           <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
             <p class="text-xl sm:text-2xl font-black text-amber-300">5,00,000+</p>
-            <p class="text-[11px] font-bold text-emerald-100">Users Served</p>
+            <p class="text-[11px] font-bold text-white">Users Served</p>
           </div>
           <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
             <p class="text-xl sm:text-2xl font-black text-amber-300">65+</p>
-            <p class="text-[11px] font-bold text-emerald-100">Pages & Guides</p>
+            <p class="text-[11px] font-bold text-white">Pages & Guides</p>
           </div>
           <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
             <p class="text-xl sm:text-2xl font-black text-amber-300">38</p>
-            <p class="text-[11px] font-bold text-emerald-100">Districts Covered</p>
+            <p class="text-[11px] font-bold text-white">Districts Covered</p>
           </div>
           <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
             <p class="text-xl sm:text-2xl font-black text-amber-300">8</p>
-            <p class="text-[11px] font-bold text-emerald-100">AI Tools</p>
+            <p class="text-[11px] font-bold text-white">AI Tools</p>
           </div>
         </div>
 
@@ -186,13 +194,14 @@
         </h2>
         
         <div class="relative">
-          <input type="text" oninput="handleMainSearch(this.value)" placeholder="जैसे: Bigha Calculator, Dakhil Kharij, Patna Land Rate" class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-3.5 text-slate-900 font-bold text-base focus:outline-none focus:border-emerald-600 focus:bg-white shadow-inner">
+          <label for="mainSearchInput" class="bw-sr-only">आप क्या ढूंढ रहे हैं? (What are you looking for?)</label>
+          <input type="text" id="mainSearchInput" oninput="handleMainSearch(this.value)" placeholder="जैसे: Bigha Calculator, Dakhil Kharij, Patna Land Rate" class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-3.5 text-slate-900 font-bold text-base focus:outline-none focus:border-emerald-600 focus:bg-white shadow-inner">
         </div>
         
         <div id="mainSearchResults" class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-lg empty:hidden"></div>
 
         <!-- Popular Tags -->
-        <div class="flex flex-wrap items-center justify-center gap-2 pt-2 text-xs font-bold">
+        <div class="tag-row flex flex-wrap items-center justify-center gap-2 pt-2 text-xs font-bold">
           <span class="text-slate-400">लोकप्रिय:</span>
           <a href="apna-khata-dekhe.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">[अपना खाता]</a>
           <a href="dakhil-kharij.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">[दाखिल खारिज]</a>
@@ -221,11 +230,11 @@
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-black text-slate-700 mb-1">बीघा (Bigha) दर्ज करें:</label>
+              <label for="homeBighaIn" class="block text-xs font-black text-slate-700 mb-1">बीघा (Bigha) दर्ज करें:</label>
               <input type="number" id="homeBighaIn" value="1" min="0" oninput="calcHomeBigha()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 font-bold text-slate-900 focus:outline-none focus:border-emerald-600">
             </div>
             <div>
-              <label class="block text-xs font-black text-slate-700 mb-1">कट्ठा (Katha) परिणाम:</label>
+              <label for="homeKathaOut" class="block text-xs font-black text-slate-700 mb-1">कट्ठा (Katha) परिणाम:</label>
               <input type="text" id="homeKathaOut" value="20 Katha" readonly class="w-full bg-emerald-50 border border-emerald-300 text-emerald-900 font-extrabold rounded-xl px-4 py-2.5">
             </div>
           </div>
@@ -364,6 +373,7 @@
           <a href="bihar-all-districts-land-rate.html" class="text-xs font-bold text-emerald-700 hover:underline">Sabhi 38 Districts →</a>
         </div>
 
+        <label for="districtFilter" class="bw-sr-only">Apna jila dhundhen (Search your district)</label>
         <input type="text" id="districtFilter" oninput="filterDistricts(this.value)" placeholder="Apna jila dhundhen..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-bold focus:outline-none focus:border-emerald-600">
 
         <!-- Districts Badges -->

@@ -253,15 +253,15 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-3 gap-3.5 sm:gap-5">
                 <div class="space-y-1">
                   <span class="text-xs font-black text-slate-500 uppercase tracking-wider block">बीघा (Bigha)</span>
-                  <input type="number" id="input-bigha" min="0" value="0" placeholder="0" oninput="updateTotalKathaBadge()" class="w-full px-4 py-3 sm:py-3.5 border-2 border-slate-200 rounded-xl focus:border-primaryGreen focus:outline-none text-slate-900 font-black text-center sm:text-lg bg-slate-50 hover:bg-white transition-all shadow-xs" />
+                  <input aria-label="0" type="number" id="input-bigha" min="0" value="0" placeholder="0" oninput="updateTotalKathaBadge()" class="w-full px-4 py-3 sm:py-3.5 border-2 border-slate-200 rounded-xl focus:border-primaryGreen focus:outline-none text-slate-900 font-black text-center sm:text-lg bg-slate-50 hover:bg-white transition-all shadow-xs" />
                 </div>
                 <div class="space-y-1">
                   <span class="text-xs font-black text-slate-500 uppercase tracking-wider block">कट्ठा (Katha)</span>
-                  <input type="number" id="input-katha" min="0" value="10" placeholder="0" oninput="updateTotalKathaBadge()" class="w-full px-4 py-3 sm:py-3.5 border-2 border-slate-200 rounded-xl focus:border-primaryGreen focus:outline-none text-slate-900 font-black text-center sm:text-lg bg-slate-50 hover:bg-white transition-all shadow-xs" />
+                  <input aria-label="0" type="number" id="input-katha" min="0" value="10" placeholder="0" oninput="updateTotalKathaBadge()" class="w-full px-4 py-3 sm:py-3.5 border-2 border-slate-200 rounded-xl focus:border-primaryGreen focus:outline-none text-slate-900 font-black text-center sm:text-lg bg-slate-50 hover:bg-white transition-all shadow-xs" />
                 </div>
                 <div class="space-y-1">
                   <span class="text-xs font-black text-slate-500 uppercase tracking-wider block">धुर (Dhur)</span>
-                  <input type="number" id="input-dhur" min="0" value="0" placeholder="0" oninput="updateTotalKathaBadge()" class="w-full px-4 py-3 sm:py-3.5 border-2 border-slate-200 rounded-xl focus:border-primaryGreen focus:outline-none text-slate-900 font-black text-center sm:text-lg bg-slate-50 hover:bg-white transition-all shadow-xs" />
+                  <input aria-label="0" type="number" id="input-dhur" min="0" value="0" placeholder="0" oninput="updateTotalKathaBadge()" class="w-full px-4 py-3 sm:py-3.5 border-2 border-slate-200 rounded-xl focus:border-primaryGreen focus:outline-none text-slate-900 font-black text-center sm:text-lg bg-slate-50 hover:bg-white transition-all shadow-xs" />
                 </div>
               </div>
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1">
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <!-- Agricultural -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all group" id="label-type-agri">
-                  <input type="radio" name="land-type" value="agri" checked onchange="handleLandTypeChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: agri" type="radio" name="land-type" value="agri" checked onchange="handleLandTypeChange(this)" class="sr-only" />
                   <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-2xl shadow-xs group-hover:scale-105 transition-transform shrink-0">🌾</div>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Krishi Bhoomi (Agricultural)</span>
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- Residential -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all group" id="label-type-res">
-                  <input type="radio" name="land-type" value="res" onchange="handleLandTypeChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: res" type="radio" name="land-type" value="res" onchange="handleLandTypeChange(this)" class="sr-only" />
                   <div class="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-2xl shadow-xs group-hover:scale-105 transition-transform shrink-0">🏠</div>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Awasiya (Residential)</span>
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- Commercial -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all group" id="label-type-comm">
-                  <input type="radio" name="land-type" value="comm" onchange="handleLandTypeChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: comm" type="radio" name="land-type" value="comm" onchange="handleLandTypeChange(this)" class="sr-only" />
                   <div class="w-12 h-12 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-2xl shadow-xs group-hover:scale-105 transition-transform shrink-0">🏪</div>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Vyavsayik (Commercial)</span>
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- Empty Plot -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all group" id="label-type-empty">
-                  <input type="radio" name="land-type" value="empty" onchange="handleLandTypeChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: empty" type="radio" name="land-type" value="empty" onchange="handleLandTypeChange(this)" class="sr-only" />
                   <div class="w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-2xl shadow-xs group-hover:scale-105 transition-transform shrink-0">📦</div>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Khaali Plot (Empty Plot)</span>
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <!-- Main Road -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all" id="label-cond-road">
-                  <input type="radio" name="land-cond" value="road" checked onchange="handleLandCondChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: road" type="radio" name="land-cond" value="road" checked onchange="handleLandCondChange(this)" class="sr-only" />
                   <span class="text-2xl shrink-0">🛣️</span>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Main Road par (+30% Value)</span>
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- Colony -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all" id="label-cond-colony">
-                  <input type="radio" name="land-cond" value="colony" onchange="handleLandCondChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: colony" type="radio" name="land-cond" value="colony" onchange="handleLandCondChange(this)" class="sr-only" />
                   <span class="text-2xl shrink-0">🏘️</span>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Colony mein (Standard Value)</span>
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- Inside Village -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all" id="label-cond-village">
-                  <input type="radio" name="land-cond" value="village" onchange="handleLandCondChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: village" type="radio" name="land-cond" value="village" onchange="handleLandCondChange(this)" class="sr-only" />
                   <span class="text-2xl shrink-0">🌾</span>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Gaon ke andar (-20% Value)</span>
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- Agricultural Field -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all" id="label-cond-field">
-                  <input type="radio" name="land-cond" value="field" onchange="handleLandCondChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: field" type="radio" name="land-cond" value="field" onchange="handleLandCondChange(this)" class="sr-only" />
                   <span class="text-2xl shrink-0">🚜</span>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Khet mein (Base Value)</span>
@@ -364,32 +364,32 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 <!-- Amenity 1 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-am-road">
-                  <input type="checkbox" id="am-road" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="am-road" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">🛣️ Paved Road</span>
                 </label>
                 <!-- Amenity 2 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-am-electricity">
-                  <input type="checkbox" id="am-electricity" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="am-electricity" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">⚡ Electricity</span>
                 </label>
                 <!-- Amenity 3 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-am-water">
-                  <input type="checkbox" id="am-water" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="am-water" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">💧 Water Supply</span>
                 </label>
                 <!-- Amenity 4 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-am-school">
-                  <input type="checkbox" id="am-school" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="am-school" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">🏫 Near School</span>
                 </label>
                 <!-- Amenity 5 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-am-market">
-                  <input type="checkbox" id="am-market" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="am-market" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">🏪 Near Market</span>
                 </label>
                 <!-- Amenity 6 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-am-registry">
-                  <input type="checkbox" id="am-registry" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="am-registry" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">📋 Registry/Mutation</span>
                 </label>
               </div>
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <!-- City Center -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all" id="label-area-city">
-                  <input type="radio" name="area-type" value="city" checked onchange="handleAreaTypeChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: city" type="radio" name="area-type" value="city" checked onchange="handleAreaTypeChange(this)" class="sr-only" />
                   <span class="text-2xl shrink-0">🏙️</span>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Shahar ke andar (City Center)</span>
@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- City Outskirts -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all" id="label-area-outskirts">
-                  <input type="radio" name="area-type" value="outskirts" onchange="handleAreaTypeChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: outskirts" type="radio" name="area-type" value="outskirts" onchange="handleAreaTypeChange(this)" class="sr-only" />
                   <span class="text-2xl shrink-0">🏘️</span>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Shahar ke bahar (City Outskirts)</span>
@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- Kasba/Town -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all" id="label-area-town">
-                  <input type="radio" name="area-type" value="town" onchange="handleAreaTypeChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: town" type="radio" name="area-type" value="town" onchange="handleAreaTypeChange(this)" class="sr-only" />
                   <span class="text-2xl shrink-0">🏡</span>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Kasba / Town</span>
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </label>
                 <!-- Village -->
                 <label class="relative border-2 border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 cursor-pointer hover:border-primaryGreen hover:bg-emerald-50/5 transition-all" id="label-area-village">
-                  <input type="radio" name="area-type" value="village" onchange="handleAreaTypeChange(this)" class="sr-only" />
+                  <input aria-label="विकल्प: village" type="radio" name="area-type" value="village" onchange="handleAreaTypeChange(this)" class="sr-only" />
                   <span class="text-2xl shrink-0">🌾</span>
                   <div>
                     <span class="font-extrabold text-slate-900 text-sm sm:text-base block">Gaon (Village)</span>
@@ -476,27 +476,27 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 <!-- Premium 1 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-loc-highway">
-                  <input type="checkbox" id="loc-highway" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="loc-highway" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">🛣️ Highway ke paas (+20%)</span>
                 </label>
                 <!-- Premium 2 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-loc-railway">
-                  <input type="checkbox" id="loc-railway" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="loc-railway" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">🚉 Railway station (+15%)</span>
                 </label>
                 <!-- Premium 3 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-loc-industrial">
-                  <input type="checkbox" id="loc-industrial" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="loc-industrial" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">🏭 Industrial area (+10%)</span>
                 </label>
                 <!-- Premium 4 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-loc-tourist">
-                  <input type="checkbox" id="loc-tourist" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="loc-tourist" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">🏛️ Tourist Area (+10%)</span>
                 </label>
                 <!-- Premium 5 -->
                 <label class="border-2 border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primaryGreen transition-colors" id="label-loc-river">
-                  <input type="checkbox" id="loc-river" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
+                  <input aria-label="चेकलिस्ट आइटम चुनें (Select checklist item)" type="checkbox" id="loc-river" onchange="toggleCheckboxStyle(this)" class="w-4 h-4 rounded text-primaryGreen focus:ring-primaryGreen border-slate-300" />
                   <span class="text-sm font-extrabold text-slate-700">🌊 Near River/Pond</span>
                 </label>
               </div>
