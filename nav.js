@@ -23,6 +23,11 @@ var NAV_HTML = `
 
 .bw-header *{box-sizing:border-box;margin:0;padding:0;}
 
+html,body{
+  overflow-x:hidden;
+  max-width:100vw;
+}
+
 a,button,.bw-mbar a,.bw-ham,.bw-si{
   -webkit-tap-highlight-color:rgba(46,125,50,0.15);
   touch-action:manipulation;
