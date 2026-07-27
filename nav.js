@@ -400,6 +400,11 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
   .bw-li{width:36px;height:36px;}
   .bw-li span{font-size:13px;}
 }
+@media(max-width:420px){
+  .bw-hi{padding:0 10px;gap:6px;}
+  .bw-right{gap:4px;}
+  .bw-sai{display:none;}
+}
 </style>
 
 <header class="bw-header" id="bwH">
