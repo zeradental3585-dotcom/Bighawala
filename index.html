@@ -32,7 +32,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BighaWala.com | बिहार का #1 जमीन पोर्टल | Bigha Calculator, Dakhil Kharij, Bhulekh</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Bihar ki zameen ki har jankari — Bigha Calculator, Apna Khata, Dakhil Kharij, LPC, Land Rates, Ask Expert. Bihar ka #1 free land information platform. 38 districts covered." />
     <meta name="keywords" content="bigha wala, bihar bhumi, apna khata bihar, dakhil kharij, bhulekh bihar, bigha calculator, bihar land rate 2026" />
@@ -98,6 +98,20 @@
         background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #E65100 100%);
       }
 
+      /* Subtle dot-grid texture for the hero */
+      .hero-pattern {
+        background-image: radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+
+      /* Gradient text accent used in headings */
+      .text-gradient {
+        background: linear-gradient(90deg, #FFD54F, #FFB74D);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
       /* Responsiveness & Touch Targets */
       @media(max-width: 767px) {
         body { padding-bottom: 60px; }
@@ -124,27 +138,34 @@
       }
       @media (prefers-reduced-motion: reduce) {
         .reveal { opacity: 1; transform: none; transition: none; }
+        .stat-count { transition: none; }
       }
     </style>
 </head>
   <body class="bg-slate-50 text-slate-800 selection:bg-orange-100 selection:text-orange-900">
 
     <!-- HERO SECTION -->
-    <section class="hero-gradient text-white py-12 sm:py-20 px-4 relative overflow-hidden">
+    <section class="hero-gradient hero-pattern text-white pt-14 pb-16 sm:pt-24 sm:pb-24 px-4 relative overflow-hidden">
       <!-- Decorative glow orbs -->
       <div class="pointer-events-none absolute -top-24 -left-16 w-72 h-72 bg-amber-400/20 rounded-full blur-3xl"></div>
       <div class="pointer-events-none absolute -bottom-28 -right-20 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl"></div>
       <div class="pointer-events-none absolute top-1/3 right-1/4 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-      <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-        
-        <span class="inline-block bg-orange-500/30 backdrop-blur-md border border-orange-300/40 text-white font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
-          🏆 Bihar का #1 Land Platform
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-slate-950/10"></div>
+
+      <div class="max-w-4xl mx-auto text-center space-y-7 relative z-10">
+
+        <span class="inline-flex items-center gap-1.5 bg-orange-500/25 backdrop-blur-md border border-orange-300/40 text-white font-black text-[11px] sm:text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+          <span>🏆</span> Bihar का #1 Land Platform
         </span>
 
-        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.08]">
           बिहार में जमीन से जुड़ी<br>
-          <span class="text-amber-300">हर जानकारी — बिल्कुल मुफ्त</span>
+          <span class="text-gradient">हर जानकारी — बिल्कुल मुफ्त</span>
         </h1>
+
+        <p class="text-sm sm:text-lg text-white/80 font-semibold max-w-2xl mx-auto leading-relaxed">
+          बीघा कैलकुलेटर से लेकर दाखिल खारिज तक — बिहार के सभी 38 जिलों के लिए एक ही जगह, बिना किसी छुपे शुल्क के।
+        </p>
 
         <!-- Typewriter Text Effect -->
         <div class="text-base sm:text-xl font-bold text-white h-8 flex items-center justify-center gap-2">
@@ -154,83 +175,120 @@
 
         <!-- Live Stats Counter -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto pt-4 text-center">
-          <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
-            <p class="text-xl sm:text-2xl font-black text-amber-300">5,00,000+</p>
-            <p class="text-[11px] font-bold text-white">Users Served</p>
+          <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5">
+            <p class="text-xl sm:text-2xl font-black text-amber-300"><span class="stat-count" data-target="500000" data-suffix="+">0</span></p>
+            <p class="text-[11px] font-bold text-white/85 mt-0.5">Users Served</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
-            <p class="text-xl sm:text-2xl font-black text-amber-300">65+</p>
-            <p class="text-[11px] font-bold text-white">Pages & Guides</p>
+          <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5">
+            <p class="text-xl sm:text-2xl font-black text-amber-300"><span class="stat-count" data-target="65" data-suffix="+">0</span></p>
+            <p class="text-[11px] font-bold text-white/85 mt-0.5">Pages & Guides</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
-            <p class="text-xl sm:text-2xl font-black text-amber-300">38</p>
-            <p class="text-[11px] font-bold text-white">Districts Covered</p>
+          <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5">
+            <p class="text-xl sm:text-2xl font-black text-amber-300"><span class="stat-count" data-target="38" data-suffix="">0</span></p>
+            <p class="text-[11px] font-bold text-white/85 mt-0.5">Districts Covered</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 rounded-2xl">
-            <p class="text-xl sm:text-2xl font-black text-amber-300">8</p>
-            <p class="text-[11px] font-bold text-white">Smart Tools</p>
+          <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5">
+            <p class="text-xl sm:text-2xl font-black text-amber-300"><span class="stat-count" data-target="8" data-suffix="">0</span></p>
+            <p class="text-[11px] font-bold text-white/85 mt-0.5">Smart Tools</p>
           </div>
         </div>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <a href="bigha-calculator.html" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-base px-8 py-4 rounded-2xl shadow-xl transition border border-amber-400 text-center">
-            🧮 Bigha Calculate करें
+          <a href="bigha-calculator.html" class="group w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-base px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 border border-amber-400 text-center">
+            🧮 Bigha Calculate करें <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
           </a>
-          <a href="apna-khata-dekhe.html" class="w-full sm:w-auto bg-white/15 hover:bg-white/25 text-white border border-white/40 font-black text-base px-8 py-4 rounded-2xl backdrop-blur-md transition text-center">
+          <a href="apna-khata-dekhe.html" class="w-full sm:w-auto bg-white/15 hover:bg-white/25 text-white border border-white/40 font-black text-base px-8 py-4 rounded-2xl backdrop-blur-md hover:-translate-y-0.5 transition-all duration-300 text-center">
             📋 Apna Khata देखें
           </a>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-1 text-[11px] sm:text-xs font-bold text-white/70">
+          <span class="flex items-center gap-1.5">🔒 100% मुफ्त — कोई छुपा शुल्क नहीं</span>
+          <span class="flex items-center gap-1.5">🏛️ सरकारी पोर्टल Verified</span>
+          <span class="flex items-center gap-1.5">📱 9835102324 Helpline</span>
         </div>
 
       </div>
     </section>
 
     <!-- SECTION 1 — PROMINENT SEARCH SECTION -->
-    <section class="max-w-4xl mx-auto px-4 -mt-6 relative z-20">
-      <div class="bg-white rounded-3xl border-2 border-emerald-500/30 p-6 shadow-xl space-y-4">
+    <section class="max-w-4xl mx-auto px-4 -mt-8 sm:-mt-10 relative z-20">
+      <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-2xl shadow-slate-900/10 space-y-4">
         <h2 class="text-lg sm:text-xl font-black text-slate-900 text-center flex items-center justify-center gap-2">
           <span>🔍</span> आप क्या ढूंढ रहे हैं?
         </h2>
-        
+
         <div class="relative">
           <label for="mainSearchInput" class="bw-sr-only">आप क्या ढूंढ रहे हैं? (What are you looking for?)</label>
-          <input type="text" id="mainSearchInput" oninput="handleMainSearch(this.value)" placeholder="जैसे: Bigha Calculator, Dakhil Kharij, Patna Land Rate" class="w-full min-h-11 bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-3.5 text-slate-900 font-bold text-base focus:outline-none focus:border-emerald-600 focus:bg-white shadow-inner">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg">🔎</span>
+          <input type="text" id="mainSearchInput" oninput="handleMainSearch(this.value)" placeholder="जैसे: Bigha Calculator, Dakhil Kharij, Patna Land Rate" class="w-full min-h-11 bg-slate-50 border-2 border-slate-200 rounded-2xl pl-11 pr-4 py-3.5 text-slate-900 font-bold text-base focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-4 focus:ring-emerald-500/10 shadow-inner transition-all">
         </div>
-        
+
         <div id="mainSearchResults" class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-lg empty:hidden"></div>
 
         <!-- Popular Tags -->
         <div class="tag-row flex flex-wrap items-center justify-center gap-2 pt-2 text-xs font-bold">
-          <span class="text-slate-600">लोकप्रिय:</span>
-          <a href="apna-khata-dekhe.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">[अपना खाता]</a>
-          <a href="dakhil-kharij.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">[दाखिल खारिज]</a>
-          <a href="bigha-calculator.html" class="bg-orange-50 hover:bg-orange-100 text-orange-800 px-3 py-1 rounded-full border border-orange-200">[बीघा कैलकुलेटर]</a>
-          <a href="mvr-rate-bihar.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">[MVR Rate]</a>
-          <a href="lpc-bihar.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">[LPC]</a>
-          <a href="jamabandi.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">[जमाबंदी]</a>
-          <a href="registry-bihar.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">[रजिस्ट्री]</a>
-          <a href="patna-land-rate.html" class="bg-orange-50 hover:bg-orange-100 text-orange-800 px-3 py-1 rounded-full border border-orange-200">[पटना जमीन रेट]</a>
+          <span class="text-slate-500">लोकप्रिय:</span>
+          <a href="apna-khata-dekhe.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200 transition-colors">[अपना खाता]</a>
+          <a href="dakhil-kharij.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200 transition-colors">[दाखिल खारिज]</a>
+          <a href="bigha-calculator.html" class="bg-orange-50 hover:bg-orange-100 text-orange-800 px-3 py-1 rounded-full border border-orange-200 transition-colors">[बीघा कैलकुलेटर]</a>
+          <a href="mvr-rate-bihar.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200 transition-colors">[MVR Rate]</a>
+          <a href="lpc-bihar.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200 transition-colors">[LPC]</a>
+          <a href="jamabandi.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200 transition-colors">[जमाबंदी]</a>
+          <a href="registry-bihar.html" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200 transition-colors">[रजिस्ट्री]</a>
+          <a href="patna-land-rate.html" class="bg-orange-50 hover:bg-orange-100 text-orange-800 px-3 py-1 rounded-full border border-orange-200 transition-colors">[पटना जमीन रेट]</a>
         </div>
       </div>
     </section>
 
     <!-- MAIN CONTAINER FOR HOME SECTIONS -->
-    <main class="max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <main class="max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-14 sm:space-y-16">
+
+      <!-- SECTION — WHY BIGHAWALA (VALUE PROPS) -->
+      <section class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="flex items-center gap-3 p-5 bg-white border border-slate-200 rounded-2xl shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="w-11 h-11 shrink-0 rounded-2xl bg-emerald-50 flex items-center justify-center text-xl">🎯</span>
+          <div>
+            <p class="font-black text-slate-900 text-sm">सटीक जानकारी</p>
+            <p class="text-[11px] text-slate-500 font-semibold">सरकारी पोर्टल से Verified</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-5 bg-white border border-slate-200 rounded-2xl shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="w-11 h-11 shrink-0 rounded-2xl bg-amber-50 flex items-center justify-center text-xl">🆓</span>
+          <div>
+            <p class="font-black text-slate-900 text-sm">हमेशा मुफ्त</p>
+            <p class="text-[11px] text-slate-500 font-semibold">कोई लॉगिन, कोई फीस नहीं</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-5 bg-white border border-slate-200 rounded-2xl shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="w-11 h-11 shrink-0 rounded-2xl bg-slate-100 flex items-center justify-center text-xl">⚡</span>
+          <div>
+            <p class="font-black text-slate-900 text-sm">तुरंत जवाब</p>
+            <p class="text-[11px] text-slate-500 font-semibold">बिना इंतज़ार के इस्तेमाल करें</p>
+          </div>
+        </div>
+      </section>
 
       <!-- SECTION 2 — BIGHA CALCULATOR PREVIEW -->
       <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-md space-y-6">
-        <div class="border-b border-slate-100 pb-3 flex items-center justify-between flex-wrap gap-2">
-          <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
-            <span>🧮</span> Quick Bigha Calculator (त्वरित भू-मापक)
-          </h2>
-          <a href="bigha-calculator.html" class="text-xs font-bold text-emerald-700 hover:underline">Full Calculator →</a>
+        <div class="border-b border-slate-100 pb-4 flex items-center justify-between flex-wrap gap-3">
+          <div class="flex items-center gap-3">
+            <span class="w-11 h-11 shrink-0 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl">🧮</span>
+            <div>
+              <p class="text-[11px] font-black uppercase tracking-wider text-emerald-700">Free Calculator</p>
+              <h2 class="text-lg sm:text-xl font-black text-slate-900">Quick Bigha Calculator (त्वरित भू-मापक)</h2>
+            </div>
+          </div>
+          <a href="bigha-calculator.html" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 hover:underline whitespace-nowrap">Full Calculator →</a>
         </div>
 
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="homeBighaIn" class="block text-xs font-black text-slate-700 mb-1">बीघा (Bigha) दर्ज करें:</label>
-              <input type="number" id="homeBighaIn" value="1" min="0" oninput="calcHomeBigha()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 font-bold text-slate-900 focus:outline-none focus:border-emerald-600">
+              <input type="number" id="homeBighaIn" value="1" min="0" oninput="calcHomeBigha()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 font-bold text-slate-900 focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-500/10 transition-all">
             </div>
             <div>
               <label for="homeKathaOut" class="block text-xs font-black text-slate-700 mb-1">कट्ठा (Katha) परिणाम:</label>
@@ -256,52 +314,60 @@
       </section>
 
       <!-- SECTION 3 — GOVERNMENT PORTALS DIRECT ACCESS -->
-      <section class="bg-gradient-to-br from-emerald-50/60 to-slate-50 rounded-3xl border border-emerald-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+      <section class="bg-gradient-to-br from-emerald-50/70 to-slate-50 rounded-3xl border border-emerald-200/80 p-6 sm:p-8 shadow-sm space-y-6">
         <div class="text-center space-y-2">
-          <span class="bg-emerald-100 text-emerald-800 font-extrabold text-xs px-3 py-1 rounded-full uppercase">Official Portals</span>
-          <h2 class="text-2xl font-black text-slate-900">🏛️ सरकारी Portal — Direct Access</h2>
+          <span class="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-3 py-1 rounded-full uppercase tracking-wider">🏛️ Official Portals</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">सरकारी Portal — Direct Access</h2>
           <p class="text-xs sm:text-sm text-slate-600 font-bold">बिहार सरकार के सभी आधिकारिक भूमि पोर्टल एक स्थान पर</p>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <a href="https://land.bihar.gov.in/Ror2025/RoR.aspx" target="_blank" rel="noopener noreferrer" class="p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md transition text-center space-y-1">
-            <span class="text-2xl block">📋</span>
-            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">अपना खाता देखें 🔗</span>
+          <a href="https://land.bihar.gov.in/Ror2025/RoR.aspx" target="_blank" rel="noopener noreferrer" class="group p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center space-y-2">
+            <span class="mx-auto w-11 h-11 rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center text-xl transition-colors">📋</span>
+            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">अपना खाता देखें</span>
+            <span class="text-[10px] text-emerald-700 font-bold block">खोलें ↗</span>
           </a>
 
-          <a href="https://emutation.bihar.gov.in/MutationStatusNew" target="_blank" rel="noopener noreferrer" class="p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md transition text-center space-y-1">
-            <span class="text-2xl block">🔄</span>
-            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">दाखिल खारिज Status 🔗</span>
+          <a href="https://emutation.bihar.gov.in/MutationStatusNew" target="_blank" rel="noopener noreferrer" class="group p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center space-y-2">
+            <span class="mx-auto w-11 h-11 rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center text-xl transition-colors">🔄</span>
+            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">दाखिल खारिज Status</span>
+            <span class="text-[10px] text-emerald-700 font-bold block">खोलें ↗</span>
           </a>
 
-          <a href="https://emutation.bihar.gov.in/ViewJamabandi" target="_blank" rel="noopener noreferrer" class="p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md transition text-center space-y-1">
-            <span class="text-2xl block">📄</span>
-            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">जमाबंदी देखें 🔗</span>
+          <a href="https://emutation.bihar.gov.in/ViewJamabandi" target="_blank" rel="noopener noreferrer" class="group p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center space-y-2">
+            <span class="mx-auto w-11 h-11 rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center text-xl transition-colors">📄</span>
+            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">जमाबंदी देखें</span>
+            <span class="text-[10px] text-emerald-700 font-bold block">खोलें ↗</span>
           </a>
 
-          <a href="https://emutation.bihar.gov.in/frm_LPC_StatusNew" target="_blank" rel="noopener noreferrer" class="p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md transition text-center space-y-1">
-            <span class="text-2xl block">✅</span>
-            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">LPC Status 🔗</span>
+          <a href="https://emutation.bihar.gov.in/frm_LPC_StatusNew" target="_blank" rel="noopener noreferrer" class="group p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center space-y-2">
+            <span class="mx-auto w-11 h-11 rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center text-xl transition-colors">✅</span>
+            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">LPC Status</span>
+            <span class="text-[10px] text-emerald-700 font-bold block">खोलें ↗</span>
           </a>
 
-          <a href="https://bhulagan.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md transition text-center space-y-1">
-            <span class="text-2xl block">💰</span>
-            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">भू लगान Pay 🔗</span>
+          <a href="https://bhulagan.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="group p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center space-y-2">
+            <span class="mx-auto w-11 h-11 rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center text-xl transition-colors">💰</span>
+            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">भू लगान Pay</span>
+            <span class="text-[10px] text-emerald-700 font-bold block">खोलें ↗</span>
           </a>
 
-          <a href="https://emapi.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md transition text-center space-y-1">
-            <span class="text-2xl block">🗺️</span>
-            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">eMapi Naksha 🔗</span>
+          <a href="https://emapi.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="group p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center space-y-2">
+            <span class="mx-auto w-11 h-11 rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center text-xl transition-colors">🗺️</span>
+            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">eMapi Naksha</span>
+            <span class="text-[10px] text-emerald-700 font-bold block">खोलें ↗</span>
           </a>
 
-          <a href="https://biharbhumi.bihar.gov.in/trackapplication" target="_blank" rel="noopener noreferrer" class="p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md transition text-center space-y-1">
-            <span class="text-2xl block">📍</span>
-            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">Track Application 🔗</span>
+          <a href="https://biharbhumi.bihar.gov.in/trackapplication" target="_blank" rel="noopener noreferrer" class="group p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center space-y-2">
+            <span class="mx-auto w-11 h-11 rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center text-xl transition-colors">📍</span>
+            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">Track Application</span>
+            <span class="text-[10px] text-emerald-700 font-bold block">खोलें ↗</span>
           </a>
 
-          <a href="https://biharbhumiplus.bihar.gov.in/pg/" target="_blank" rel="noopener noreferrer" class="p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md transition text-center space-y-1">
-            <span class="text-2xl block">⚖️</span>
-            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">Jan Shikayat 🔗</span>
+          <a href="https://biharbhumiplus.bihar.gov.in/pg/" target="_blank" rel="noopener noreferrer" class="group p-4 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center space-y-2">
+            <span class="mx-auto w-11 h-11 rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center text-xl transition-colors">⚖️</span>
+            <span class="font-extrabold text-xs sm:text-sm text-slate-900 block">Jan Shikayat</span>
+            <span class="text-[10px] text-emerald-700 font-bold block">खोलें ↗</span>
           </a>
         </div>
         <p class="text-[11px] text-center text-slate-500 font-bold">Note: सभी portals government के official हैं — नई tab में खुलेंगे</p>
@@ -309,58 +375,67 @@
 
       <!-- SECTION 4 — FREE TOOLS GRID -->
       <section class="space-y-6">
-        <div class="flex justify-between items-center flex-wrap gap-2">
-          <h2 class="text-2xl font-black text-slate-900">⚡ Free Tools — जो काम आते हैं</h2>
-          <span class="text-xs font-bold text-emerald-700">100% Free Access</span>
+        <div class="flex justify-between items-end flex-wrap gap-2">
+          <div>
+            <p class="text-[11px] font-black uppercase tracking-wider text-emerald-700 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Free Tools</p>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900">जो काम आते हैं ⚡</h2>
+          </div>
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">100% Free Access</span>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
           <!-- Card 1 -->
-          <a href="bigha-calculator.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <span class="text-3xl">🧮</span>
-            <h3 class="font-black text-slate-900 text-sm sm:text-base">Bigha Calculator</h3>
-            <p class="text-xs text-slate-500 font-semibold">Bigha, Katha, Dhur instantly convert</p>
-            <p class="text-[11px] text-amber-700 font-extrabold">Users: 50,000+ | ⭐⭐⭐⭐⭐</p>
+          <a href="bigha-calculator.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-20 h-20 bg-emerald-50 rounded-full -mr-8 -mt-8 group-hover:scale-125 transition-transform duration-500"></div>
+            <span class="relative w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl">🧮</span>
+            <h3 class="relative font-black text-slate-900 text-sm sm:text-base">Bigha Calculator</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">Bigha, Katha, Dhur instantly convert</p>
+            <p class="relative text-[11px] text-amber-700 font-extrabold">50,000+ Users · ⭐⭐⭐⭐⭐</p>
           </a>
 
           <!-- Card 2 -->
-          <a href="zameen-moolyankan.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <span class="text-3xl">🏡</span>
-            <h3 class="font-black text-slate-900 text-sm sm:text-base">Zameen Moolyankan</h3>
-            <p class="text-xs text-slate-500 font-semibold">Apni zameen ki kimat janein</p>
-            <p class="text-[11px] text-amber-700 font-extrabold">Users: 25,000+ | ⭐⭐⭐⭐⭐</p>
+          <a href="zameen-moolyankan.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-20 h-20 bg-emerald-50 rounded-full -mr-8 -mt-8 group-hover:scale-125 transition-transform duration-500"></div>
+            <span class="relative w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl">🏡</span>
+            <h3 class="relative font-black text-slate-900 text-sm sm:text-base">Zameen Moolyankan</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">Apni zameen ki kimat janein</p>
+            <p class="relative text-[11px] text-amber-700 font-extrabold">25,000+ Users · ⭐⭐⭐⭐⭐</p>
           </a>
 
           <!-- Card 3 -->
-          <a href="land-cost-calculator.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <span class="text-3xl">💰</span>
-            <h3 class="font-black text-slate-900 text-sm sm:text-base">Registry Cost Calculator</h3>
-            <p class="text-xs text-slate-500 font-semibold">Stamp duty aur registry kharcha</p>
-            <p class="text-[11px] text-amber-700 font-extrabold">Users: 20,000+ | ⭐⭐⭐⭐⭐</p>
+          <a href="land-cost-calculator.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-20 h-20 bg-emerald-50 rounded-full -mr-8 -mt-8 group-hover:scale-125 transition-transform duration-500"></div>
+            <span class="relative w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl">💰</span>
+            <h3 class="relative font-black text-slate-900 text-sm sm:text-base">Registry Cost Calculator</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">Stamp duty aur registry kharcha</p>
+            <p class="relative text-[11px] text-amber-700 font-extrabold">20,000+ Users · ⭐⭐⭐⭐⭐</p>
           </a>
 
           <!-- Card 4 -->
-          <a href="zameen-comparison.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <span class="text-3xl">⚖️</span>
-            <h3 class="font-black text-slate-900 text-sm sm:text-base">Zameen Compare</h3>
-            <p class="text-xs text-slate-500 font-semibold">Do plots side by side compare karein</p>
-            <p class="text-[11px] text-amber-700 font-extrabold">Users: 15,000+ | ⭐⭐⭐⭐⭐</p>
+          <a href="zameen-comparison.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-20 h-20 bg-emerald-50 rounded-full -mr-8 -mt-8 group-hover:scale-125 transition-transform duration-500"></div>
+            <span class="relative w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl">⚖️</span>
+            <h3 class="relative font-black text-slate-900 text-sm sm:text-base">Zameen Compare</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">Do plots side by side compare karein</p>
+            <p class="relative text-[11px] text-amber-700 font-extrabold">15,000+ Users · ⭐⭐⭐⭐⭐</p>
           </a>
 
           <!-- Card 5 -->
-          <a href="bihar-land-quiz.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <span class="text-3xl">🎯</span>
-            <h3 class="font-black text-slate-900 text-sm sm:text-base">Bihar Land Quiz</h3>
-            <p class="text-xs text-slate-500 font-semibold">Kitna jaante hain aap? Test karein!</p>
-            <p class="text-[11px] text-amber-700 font-extrabold">Users: 30,000+ | ⭐⭐⭐⭐⭐</p>
+          <a href="bihar-land-quiz.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-20 h-20 bg-emerald-50 rounded-full -mr-8 -mt-8 group-hover:scale-125 transition-transform duration-500"></div>
+            <span class="relative w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl">🎯</span>
+            <h3 class="relative font-black text-slate-900 text-sm sm:text-base">Bihar Land Quiz</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">Kitna jaante hain aap? Test karein!</p>
+            <p class="relative text-[11px] text-amber-700 font-extrabold">30,000+ Users · ⭐⭐⭐⭐⭐</p>
           </a>
 
           <!-- Card 6 -->
-          <a href="document-checker.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <span class="text-3xl">📄</span>
-            <h3 class="font-black text-slate-900 text-sm sm:text-base">Document Checker</h3>
-            <p class="text-xs text-slate-500 font-semibold">Kagaz turant samjhein Hindi mein</p>
-            <p class="text-[11px] text-amber-700 font-extrabold">Users: 10,000+ | ⭐⭐⭐⭐⭐</p>
+          <a href="document-checker.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-20 h-20 bg-emerald-50 rounded-full -mr-8 -mt-8 group-hover:scale-125 transition-transform duration-500"></div>
+            <span class="relative w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl">📄</span>
+            <h3 class="relative font-black text-slate-900 text-sm sm:text-base">Document Checker</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">Kagaz turant samjhein Hindi mein</p>
+            <p class="relative text-[11px] text-amber-700 font-extrabold">10,000+ Users · ⭐⭐⭐⭐⭐</p>
           </a>
         </div>
       </section>
@@ -368,68 +443,74 @@
       <!-- SECTION 5 — DISTRICT SELECTOR -->
       <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-md space-y-6">
         <div class="flex justify-between items-center flex-wrap gap-2">
-          <h2 class="text-xl sm:text-2xl font-black text-slate-900">📍 अपने जिले की जमीन का Rate देखें</h2>
-          <a href="bihar-all-districts-land-rate.html" class="text-xs font-bold text-emerald-700 hover:underline">Sabhi 38 Districts →</a>
+          <div>
+            <p class="text-[11px] font-black uppercase tracking-wider text-emerald-700 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> District Rates</p>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900">📍 अपने जिले की जमीन का Rate देखें</h2>
+          </div>
+          <a href="bihar-all-districts-land-rate.html" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 hover:underline whitespace-nowrap">Sabhi 38 Districts →</a>
         </div>
 
         <label for="districtFilter" class="bw-sr-only">Apna jila dhundhen (Search your district)</label>
-        <input type="text" id="districtFilter" oninput="filterDistricts(this.value)" placeholder="Apna jila dhundhen..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-bold focus:outline-none focus:border-emerald-600">
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">📍</span>
+          <input type="text" id="districtFilter" oninput="filterDistricts(this.value)" placeholder="Apna jila dhundhen..." class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm font-bold focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-500/10 transition-all">
+        </div>
 
         <!-- Districts Badges -->
         <div class="space-y-4" id="districtContainer">
           <div>
             <p class="text-xs font-black text-slate-600 uppercase tracking-wider mb-2">North Bihar</p>
             <div class="flex flex-wrap gap-2">
-              <a href="patna-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Patna</a>
-              <a href="vaishali-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Vaishali</a>
-              <a href="saran-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Saran</a>
-              <a href="siwan-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Siwan</a>
-              <a href="gopalganj-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Gopalganj</a>
-              <a href="east-champaran-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">East Champaran</a>
-              <a href="west-champaran-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">West Champaran</a>
-              <a href="sitamarhi-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Sitamarhi</a>
-              <a href="sheohar-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Sheohar</a>
-              <a href="muzaffarpur-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Muzaffarpur</a>
-              <a href="darbhanga-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Darbhanga</a>
-              <a href="madhubani-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Madhubani</a>
-              <a href="samastipur-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Samastipur</a>
-              <a href="begusarai-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs">Begusarai</a>
+              <a href="patna-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Patna</a>
+              <a href="vaishali-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Vaishali</a>
+              <a href="saran-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Saran</a>
+              <a href="siwan-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Siwan</a>
+              <a href="gopalganj-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Gopalganj</a>
+              <a href="east-champaran-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">East Champaran</a>
+              <a href="west-champaran-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">West Champaran</a>
+              <a href="sitamarhi-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Sitamarhi</a>
+              <a href="sheohar-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Sheohar</a>
+              <a href="muzaffarpur-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Muzaffarpur</a>
+              <a href="darbhanga-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Darbhanga</a>
+              <a href="madhubani-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Madhubani</a>
+              <a href="samastipur-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Samastipur</a>
+              <a href="begusarai-land-rate.html" class="dist-badge bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Begusarai</a>
             </div>
           </div>
 
           <div>
             <p class="text-xs font-black text-slate-600 uppercase tracking-wider mb-2">South Bihar</p>
             <div class="flex flex-wrap gap-2">
-              <a href="gaya-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Gaya</a>
-              <a href="nalanda-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Nalanda</a>
-              <a href="jehanabad-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Jehanabad</a>
-              <a href="arwal-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Arwal</a>
-              <a href="aurangabad-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Aurangabad</a>
-              <a href="nawada-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Nawada</a>
-              <a href="rohtas-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Rohtas</a>
-              <a href="kaimur-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Kaimur</a>
-              <a href="bhojpur-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Bhojpur</a>
-              <a href="buxar-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Buxar</a>
-              <a href="bhagalpur-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Bhagalpur</a>
-              <a href="banka-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Banka</a>
-              <a href="munger-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Munger</a>
-              <a href="lakhisarai-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Lakhisarai</a>
-              <a href="sheikhpura-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Sheikhpura</a>
-              <a href="jamui-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs">Jamui</a>
+              <a href="gaya-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Gaya</a>
+              <a href="nalanda-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Nalanda</a>
+              <a href="jehanabad-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Jehanabad</a>
+              <a href="arwal-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Arwal</a>
+              <a href="aurangabad-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Aurangabad</a>
+              <a href="nawada-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Nawada</a>
+              <a href="rohtas-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Rohtas</a>
+              <a href="kaimur-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Kaimur</a>
+              <a href="bhojpur-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Bhojpur</a>
+              <a href="buxar-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Buxar</a>
+              <a href="bhagalpur-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Bhagalpur</a>
+              <a href="banka-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Banka</a>
+              <a href="munger-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Munger</a>
+              <a href="lakhisarai-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Lakhisarai</a>
+              <a href="sheikhpura-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Sheikhpura</a>
+              <a href="jamui-land-rate.html" class="dist-badge bg-orange-50 hover:bg-orange-100 text-orange-950 border border-orange-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Jamui</a>
             </div>
           </div>
 
           <div>
             <p class="text-xs font-black text-slate-600 uppercase tracking-wider mb-2">East Bihar</p>
             <div class="flex flex-wrap gap-2">
-              <a href="purnia-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs">Purnia</a>
-              <a href="katihar-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs">Katihar</a>
-              <a href="araria-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs">Araria</a>
-              <a href="kishanganj-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs">Kishanganj</a>
-              <a href="supaul-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs">Supaul</a>
-              <a href="saharsa-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs">Saharsa</a>
-              <a href="madhepura-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs">Madhepura</a>
-              <a href="khagaria-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs">Khagaria</a>
+              <a href="purnia-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Purnia</a>
+              <a href="katihar-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Katihar</a>
+              <a href="araria-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Araria</a>
+              <a href="kishanganj-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Kishanganj</a>
+              <a href="supaul-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Supaul</a>
+              <a href="saharsa-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Saharsa</a>
+              <a href="madhepura-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Madhepura</a>
+              <a href="khagaria-land-rate.html" class="dist-badge bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors">Khagaria</a>
             </div>
           </div>
         </div>
@@ -437,48 +518,53 @@
 
       <!-- SECTION 6 — GUIDES SECTION -->
       <section class="space-y-6">
-        <h2 class="text-2xl font-black text-slate-900">📚 Step by Step Guides — Hindi Mein</h2>
+        <p class="text-[11px] font-black uppercase tracking-wider text-emerald-700 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Step by Step</p>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 -mt-4">📚 Guides — Hindi Mein</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <a href="dakhil-kharij.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <div class="flex justify-between items-center text-xs text-slate-600 font-bold">
+          <a href="dakhil-kharij.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-24 h-24 bg-emerald-50 rounded-full -mr-10 -mt-10 group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="relative flex justify-between items-center text-xs text-slate-600 font-bold">
               <span>⏱️ 5 min read</span>
               <span class="text-emerald-700">10,000+ ne padha</span>
             </div>
-            <h3 class="font-extrabold text-slate-900 text-base">📋 Dakhil Kharij Complete Guide</h3>
-            <p class="text-xs text-slate-500 font-semibold">ऑनलाइन म्यूटेशन का सही तरीका, दस्तावेज सूची व स्टेटस</p>
+            <h3 class="relative font-extrabold text-slate-900 text-base">📋 Dakhil Kharij Complete Guide</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">ऑनलाइन म्यूटेशन का सही तरीका, दस्तावेज सूची व स्टेटस</p>
           </a>
 
-          <a href="apna-khata-dekhe.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <div class="flex justify-between items-center text-xs text-slate-600 font-bold">
+          <a href="apna-khata-dekhe.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-24 h-24 bg-emerald-50 rounded-full -mr-10 -mt-10 group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="relative flex justify-between items-center text-xs text-slate-600 font-bold">
               <span>⏱️ 3 min read</span>
               <span class="text-emerald-700">50,000+ ne padha</span>
             </div>
-            <h3 class="font-extrabold text-slate-900 text-base">🗺️ Apna Khata Kaise Dekhen</h3>
-            <p class="text-xs text-slate-500 font-semibold">खतियान और खाता संख्या देखने की पूरी प्रक्रिया</p>
+            <h3 class="relative font-extrabold text-slate-900 text-base">🗺️ Apna Khata Kaise Dekhen</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">खतियान और खाता संख्या देखने की पूरी प्रक्रिया</p>
           </a>
 
-          <a href="lpc-bihar.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <div class="flex justify-between items-center text-xs text-slate-600 font-bold">
+          <a href="lpc-bihar.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-24 h-24 bg-emerald-50 rounded-full -mr-10 -mt-10 group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="relative flex justify-between items-center text-xs text-slate-600 font-bold">
               <span>⏱️ 4 min read</span>
               <span class="text-emerald-700">8,000+ ne padha</span>
             </div>
-            <h3 class="font-extrabold text-slate-900 text-base">📄 LPC Kaise Banwayein</h3>
-            <p class="text-xs text-slate-500 font-semibold">भूमि स्वामित्व प्रमाण पत्र के लिए ऑनलाइन आवेदन</p>
+            <h3 class="relative font-extrabold text-slate-900 text-base">📄 LPC Kaise Banwayein</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">भूमि स्वामित्व प्रमाण पत्र के लिए ऑनलाइन आवेदन</p>
           </a>
 
-          <a href="jamabandi.html" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-md transition space-y-2">
-            <div class="flex justify-between items-center text-xs text-slate-600 font-bold">
+          <a href="jamabandi.html" class="group relative p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2 overflow-hidden">
+            <div class="pointer-events-none absolute top-0 right-0 w-24 h-24 bg-emerald-50 rounded-full -mr-10 -mt-10 group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="relative flex justify-between items-center text-xs text-slate-600 font-bold">
               <span>⏱️ 3 min read</span>
               <span class="text-emerald-700">7,000+ ne padha</span>
             </div>
-            <h3 class="font-extrabold text-slate-900 text-base">📑 Jamabandi Nakal Download</h3>
-            <p class="text-xs text-slate-500 font-semibold">ऑनलाइन जमाबंदी पंजी देखने व डाउनलोड करने का तरीका</p>
+            <h3 class="relative font-extrabold text-slate-900 text-base">📑 Jamabandi Nakal Download</h3>
+            <p class="relative text-xs text-slate-500 font-semibold">ऑनलाइन जमाबंदी पंजी देखने व डाउनलोड करने का तरीका</p>
           </a>
         </div>
       </section>
 
-      <!-- SECTION 7 — SAATHI VOICE AI HELP BOT PREVIEW -->
+      <!-- SECTION 7 — SAATHI VOICE HELP BOT PREVIEW -->
       <section class="bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-emerald-500/10 rounded-3xl border-2 border-emerald-400/50 p-6 sm:p-8 shadow-md space-y-6">
         <div class="flex items-center gap-3">
           <span class="w-12 h-12 rounded-2xl bg-emerald-700 text-white font-black text-2xl flex items-center justify-center shadow-md">🎙️</span>
@@ -500,12 +586,12 @@
 
         <!-- 3 Quick Question Buttons -->
         <div class="qq-row flex flex-wrap gap-2 text-xs font-bold">
-          <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition">[दाखिल खारिज सहायता]</a>
-          <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition">[मैथिली / भोजपुरी में बात करें]</a>
-          <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition">[जमीन दर एवं रजिस्ट्री]</a>
+          <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition-colors">[दाखिल खारिज सहायता]</a>
+          <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition-colors">[मैथिली / भोजपुरी में बात करें]</a>
+          <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition-colors">[जमीन दर एवं रजिस्ट्री]</a>
         </div>
 
-        <a href="saathi-bot.html" class="inline-flex items-center justify-center gap-2 w-full bg-emerald-700 hover:bg-emerald-800 text-white font-black text-base py-3.5 rounded-xl shadow-md transition">
+        <a href="saathi-bot.html" class="inline-flex items-center justify-center gap-2 w-full bg-emerald-700 hover:bg-emerald-800 text-white font-black text-base py-3.5 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
           🎙️ साथी से अभी बात करें (Voice Helper) →
         </a>
       </section>
@@ -513,12 +599,15 @@
       <!-- SECTION 8 — LIVE COMMUNITY Q&A -->
       <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-md space-y-6">
         <div class="flex justify-between items-center flex-wrap gap-2">
-          <h2 class="text-2xl font-black text-slate-900">🤝 Community — Sawaal Jawab</h2>
-          <a href="community-qa.html" class="inline-flex items-center min-h-11 text-xs font-bold text-emerald-700 hover:underline">5,000+ Sawaalon Ke Jawab →</a>
+          <div>
+            <p class="text-[11px] font-black uppercase tracking-wider text-emerald-700 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Community</p>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900">🤝 Sawaal Jawab</h2>
+          </div>
+          <a href="community-qa.html" class="inline-flex items-center min-h-11 text-xs font-bold text-emerald-700 hover:text-emerald-800 hover:underline whitespace-nowrap">5,000+ Sawaalon Ke Jawab →</a>
         </div>
 
         <div class="space-y-4">
-          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2 transition-all duration-300 hover:border-emerald-300 hover:shadow-sm">
             <div class="flex gap-2 text-[10px] font-black uppercase">
               <span class="bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">Dakhil Kharij</span>
               <span class="bg-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full">Patna</span>
@@ -527,7 +616,7 @@
             <a href="community-qa.html" class="text-xs font-bold text-emerald-700 hover:underline inline-block">[Jawab Dekhen →]</a>
           </div>
 
-          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2 transition-all duration-300 hover:border-emerald-300 hover:shadow-sm">
             <div class="flex gap-2 text-[10px] font-black uppercase">
               <span class="bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">LPC</span>
               <span class="bg-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full">Gaya</span>
@@ -536,7 +625,7 @@
             <a href="community-qa.html" class="text-xs font-bold text-emerald-700 hover:underline inline-block">[Jawab Dekhen →]</a>
           </div>
 
-          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2 transition-all duration-300 hover:border-emerald-300 hover:shadow-sm">
             <div class="flex gap-2 text-[10px] font-black uppercase">
               <span class="bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">Zameen Rate</span>
               <span class="bg-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full">Muzaffarpur</span>
@@ -548,29 +637,49 @@
       </section>
 
       <!-- SECTION 9 — WHATSAPP COMMUNITY -->
-      <section class="bg-emerald-800 text-white rounded-3xl p-6 sm:p-8 shadow-xl text-center space-y-4">
-        <span class="text-3xl">📱</span>
-        <h2 class="text-xl sm:text-2xl font-black">5,000+ लोग जुड़े हैं BighaWala WhatsApp Community से!</h2>
-        <p class="text-xs sm:text-sm text-emerald-100 font-semibold max-w-xl mx-auto">Weekly tips, rate updates, guides — सब FREE!</p>
-        <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-black text-sm sm:text-base px-8 py-3.5 rounded-2xl shadow-lg transition">
+      <section class="relative overflow-hidden bg-emerald-800 text-white rounded-3xl p-6 sm:p-8 shadow-xl text-center space-y-4">
+        <div class="pointer-events-none absolute -top-10 -right-10 w-40 h-40 bg-emerald-600/40 rounded-full blur-2xl"></div>
+        <div class="pointer-events-none absolute -bottom-12 -left-10 w-48 h-48 bg-emerald-700/40 rounded-full blur-2xl"></div>
+        <span class="relative text-3xl">📱</span>
+        <h2 class="relative text-xl sm:text-2xl font-black">5,000+ लोग जुड़े हैं BighaWala WhatsApp Community से!</h2>
+        <p class="relative text-xs sm:text-sm text-emerald-100 font-semibold max-w-xl mx-auto">Weekly tips, rate updates, guides — सब FREE!</p>
+        <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center gap-2 bg-white text-emerald-800 hover:bg-emerald-50 font-black text-sm sm:text-base px-8 py-3.5 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
           Join WhatsApp Community →
         </a>
       </section>
 
       <!-- SECTION 10 — TESTIMONIALS -->
       <section class="space-y-6">
-        <h2 class="text-2xl font-black text-slate-900 text-center">Bihar के लोग क्या कहते हैं?</h2>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 text-center">Bihar के लोग क्या कहते हैं?</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-5 bg-white border border-slate-200 rounded-2xl space-y-2 shadow-xs">
-            <div class="text-xs">⭐⭐⭐⭐⭐</div>
-            <p class="text-xs sm:text-sm text-slate-700 font-semibold">"BighaWala se Dakhil Kharij ki poori process samajh aayi. Pehle agent ko ₹2000 deta tha — ab khud kar leta hoon!"</p>
-            <p class="text-xs font-extrabold text-slate-900">— Ramesh Kumar, Patna</p>
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl space-y-3 shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div class="text-2xl text-emerald-200 leading-none font-black">"</div>
+            <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed -mt-2">BighaWala se Dakhil Kharij ki poori process samajh aayi. Pehle agent ko ₹2000 deta tha — ab khud kar leta hoon!</p>
+            <div class="flex items-center gap-3 pt-1">
+              <span class="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-800 text-white font-black text-xs flex items-center justify-center shrink-0">RK</span>
+              <div>
+                <p class="text-xs font-extrabold text-slate-900">Ramesh Kumar</p>
+                <div class="flex items-center gap-1.5">
+                  <p class="text-[10px] text-slate-500 font-bold">Patna</p>
+                  <span class="text-[10px] text-amber-500">⭐⭐⭐⭐⭐</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="p-5 bg-white border border-slate-200 rounded-2xl space-y-2 shadow-xs">
-            <div class="text-xs">⭐⭐⭐⭐⭐</div>
-            <p class="text-xs sm:text-sm text-slate-700 font-semibold">"Bigha Calculator bahut helpful hai. Zameen kharidi toh sahi size calculate kar paya. Shukriya BighaWala!"</p>
-            <p class="text-xs font-extrabold text-slate-900">— Sunita Devi, Gaya</p>
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl space-y-3 shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div class="text-2xl text-emerald-200 leading-none font-black">"</div>
+            <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed -mt-2">Bigha Calculator bahut helpful hai. Zameen kharidi toh sahi size calculate kar paya. Shukriya BighaWala!</p>
+            <div class="flex items-center gap-3 pt-1">
+              <span class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 text-white font-black text-xs flex items-center justify-center shrink-0">SD</span>
+              <div>
+                <p class="text-xs font-extrabold text-slate-900">Sunita Devi</p>
+                <div class="flex items-center gap-1.5">
+                  <p class="text-[10px] text-slate-500 font-bold">Gaya</p>
+                  <span class="text-[10px] text-amber-500">⭐⭐⭐⭐⭐</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -578,24 +687,27 @@
       <!-- SECTION 11 — NEWS PREVIEW -->
       <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-md space-y-6">
         <div class="flex justify-between items-center flex-wrap gap-2">
-          <h2 class="text-2xl font-black text-slate-900">📰 Latest Bihar Land News</h2>
-          <a href="bihar-land-news.html" class="text-xs font-bold text-emerald-700 hover:underline">Sabhi News →</a>
+          <div>
+            <p class="text-[11px] font-black uppercase tracking-wider text-emerald-700 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> News</p>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900">📰 Latest Bihar Land News</h2>
+          </div>
+          <a href="bihar-land-news.html" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 hover:underline whitespace-nowrap">Sabhi News →</a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <a href="bihar-land-news.html" class="p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition space-y-2">
+          <a href="bihar-land-news.html" class="group p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 space-y-2">
             <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded">July 2026</span>
             <h3 class="font-extrabold text-slate-900 text-xs sm:text-sm">Circle Rate Revision Update</h3>
             <p class="text-[11px] text-slate-500 font-semibold">बिहार के 38 जिलों में नए सर्किल रेट लागू।</p>
           </a>
 
-          <a href="bihar-land-news.html" class="p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition space-y-2">
+          <a href="bihar-land-news.html" class="group p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 space-y-2">
             <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded">July 2026</span>
             <h3 class="font-extrabold text-slate-900 text-xs sm:text-sm">PM Awas Yojana New List</h3>
             <p class="text-[11px] text-slate-500 font-semibold">पीएम आवास योजना की नई सूची जारी।</p>
           </a>
 
-          <a href="bihar-land-news.html" class="p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition space-y-2">
+          <a href="bihar-land-news.html" class="group p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 space-y-2">
             <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded">June 2026</span>
             <h3 class="font-extrabold text-slate-900 text-xs sm:text-sm">Dakhil Kharij Portal Update</h3>
             <p class="text-[11px] text-slate-500 font-semibold">म्यूटेशन प्रक्रिया हुई और तेज व पारदर्शी।</p>
@@ -604,25 +716,25 @@
       </section>
 
       <!-- SECTION 12 — TRUST SECTION -->
-      <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-        <div class="p-4 bg-white border border-slate-200 rounded-2xl">
-          <span class="text-2xl block">✅</span>
-          <span class="font-black text-xs sm:text-sm text-slate-900 block mt-1">100% Free</span>
+      <section class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="flex flex-col items-center text-center p-5 bg-white border border-slate-200 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="w-11 h-11 rounded-full bg-emerald-50 flex items-center justify-center text-xl mb-2">✅</span>
+          <span class="font-black text-xs sm:text-sm text-slate-900 block">100% Free</span>
           <span class="text-[10px] text-slate-500 font-bold">Kabhi Koi Fees Nahi</span>
         </div>
-        <div class="p-4 bg-white border border-slate-200 rounded-2xl">
-          <span class="text-2xl block">🔒</span>
-          <span class="font-black text-xs sm:text-sm text-slate-900 block mt-1">Safe & Secure</span>
+        <div class="flex flex-col items-center text-center p-5 bg-white border border-slate-200 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-xl mb-2">🔒</span>
+          <span class="font-black text-xs sm:text-sm text-slate-900 block">Safe & Secure</span>
           <span class="text-[10px] text-slate-500 font-bold">No Data Stored</span>
         </div>
-        <div class="p-4 bg-white border border-slate-200 rounded-2xl">
-          <span class="text-2xl block">🏛️</span>
-          <span class="font-black text-xs sm:text-sm text-slate-900 block mt-1">Govt Links Verified</span>
+        <div class="flex flex-col items-center text-center p-5 bg-white border border-slate-200 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="w-11 h-11 rounded-full bg-amber-50 flex items-center justify-center text-xl mb-2">🏛️</span>
+          <span class="font-black text-xs sm:text-sm text-slate-900 block">Govt Links Verified</span>
           <span class="text-[10px] text-slate-500 font-bold">Official Portals Only</span>
         </div>
-        <div class="p-4 bg-white border border-slate-200 rounded-2xl">
-          <span class="text-2xl block">🤖</span>
-          <span class="font-black text-xs sm:text-sm text-slate-900 block mt-1">Always Free</span>
+        <div class="flex flex-col items-center text-center p-5 bg-white border border-slate-200 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="w-11 h-11 rounded-full bg-emerald-50 flex items-center justify-center text-xl mb-2">⚡</span>
+          <span class="font-black text-xs sm:text-sm text-slate-900 block">Always Free</span>
           <span class="text-[10px] text-slate-500 font-bold">24/7 Available</span>
         </div>
       </section>
@@ -640,7 +752,7 @@
           <p class="text-xs text-slate-400 font-semibold leading-relaxed">
             बिहार का #1 मुफ्त जमीन सूचना एवं कैलकुलेटर पोर्टल। 38 जिलों की भूमि दरें, दाखिल खारिज, अपना खाता, बीघा रूपांतरण एवं साथी वॉइस सहायता।
           </p>
-          <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 gap-2 bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-2 rounded-xl border border-emerald-600 transition">
+          <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 gap-2 bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-2 rounded-xl border border-emerald-600 transition-colors">
             📱 Helpline: 9835102324
           </a>
         </div>
@@ -732,6 +844,45 @@
           s.classList.add('reveal');
           observer.observe(s);
         });
+      });
+
+      // 1c. Count-up animation for hero stats (runs once, on first view)
+      document.addEventListener('DOMContentLoaded', function() {
+        var counters = document.querySelectorAll('.stat-count');
+        if (!counters.length) return;
+
+        function animateCounter(el) {
+          var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+          var suffix = el.getAttribute('data-suffix') || '';
+          var duration = 1400;
+          var startTime = null;
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(target * eased);
+            el.textContent = current.toLocaleString('en-IN') + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            }
+          }
+          requestAnimationFrame(step);
+        }
+
+        if (!('IntersectionObserver' in window)) {
+          counters.forEach(animateCounter);
+          return;
+        }
+        var statObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              statObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.4 });
+        counters.forEach(function(c) { statObserver.observe(c); });
       });
 
       // 2. Typewriter Effect
@@ -840,8 +991,8 @@
         return;
       }
 
-      const matches = bighawalaSearchIndex.filter(item => 
-        item.title.toLowerCase().includes(query) || 
+      const matches = bighawalaSearchIndex.filter(item =>
+        item.title.toLowerCase().includes(query) ||
         item.desc.toLowerCase().includes(query) ||
         item.url.toLowerCase().includes(query)
       );
@@ -874,8 +1025,8 @@
         box.innerHTML = '';
         return;
       }
-      const matches = bighawalaSearchIndex.filter(item => 
-        item.title.toLowerCase().includes(q) || 
+      const matches = bighawalaSearchIndex.filter(item =>
+        item.title.toLowerCase().includes(q) ||
         item.desc.toLowerCase().includes(q) ||
         item.url.toLowerCase().includes(q)
       );
