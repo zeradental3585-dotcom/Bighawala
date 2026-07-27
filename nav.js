@@ -39,6 +39,35 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
   clip:rect(0,0,0,0);white-space:nowrap;border:0;
 }
 
+/* Shared FAQ accordion (used across guide pages via .faq-item/.faq-button/.faq-icon) */
+.faq-item{
+  border-bottom:1px solid #e2e8f0;
+}
+.faq-item:last-child{border-bottom:none;}
+.faq-button{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:16px 4px;background:none;border:none;cursor:pointer;
+  text-align:left;font-weight:700;font-size:14px;color:#0f172a;
+  font-family:'Poppins',sans-serif;min-height:44px;
+}
+.faq-icon{
+  flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:900;color:#2E7D32;background:#E8F5E9;border-radius:8px;
+  transition:transform 0.25s ease;
+}
+.faq-answer{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.3s ease, padding 0.3s ease;
+  padding:0 4px;font-size:13px;line-height:1.65;color:#475569;font-weight:500;
+}
+.faq-item.active .faq-answer{
+  max-height:600px;padding-bottom:16px;
+}
+.faq-item.active .faq-icon{
+  transform:rotate(45deg);
+  background:#2E7D32;color:#fff;
+}
+
 .bw-header{
   background:#fff;
   border-bottom:2px solid #E8F5E9;
@@ -419,12 +448,15 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="zameen-registry-charges.html">💳 Registry Charges</a>
       <a href="bainama-format-bihar.html">📝 Bainama Format</a>
       <a href="khata-khesra-bihar.html">🔑 Khata Khesra</a>
+      <a href="khatiyan-bihar.html">📜 Khatiyan Bihar</a>
       <a href="bhu-naksha-bihar.html">🗺️ Bhu Naksha</a>
       <a href="self-declaration-form-bihar.html">📋 Self Declaration</a>
       <a href="zameen-vivad-bihar.html">⚖️ Zameen Vivad</a>
       <a href="bihar-bhumi-portal.html">🏛️ Bihar Bhumi Portal</a>
       <a href="kisan-credit-card-bihar.html">🌾 Kisan Credit Card</a>
       <a href="pm-awas-yojana-bihar.html">🏠 PM Awas Yojana</a>
+      <a href="halka-mauja-kya-hota-hai.html">🏘️ Halka Mauja Kya Hai</a>
+      <a href="lpc-dakhil-kharij-status-check.html">🔍 LPC/DK Status Check</a>
     </div>
   </li>
   <li>
@@ -505,12 +537,15 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="zameen-registry-charges.html" onclick="bwM()">💳 Registry Charges</a>
       <a href="bainama-format-bihar.html" onclick="bwM()">📝 Bainama Format</a>
       <a href="khata-khesra-bihar.html" onclick="bwM()">🔑 Khata Khesra</a>
+      <a href="khatiyan-bihar.html" onclick="bwM()">📜 Khatiyan Bihar</a>
       <a href="bhu-naksha-bihar.html" onclick="bwM()">🗺️ Bhu Naksha</a>
       <a href="self-declaration-form-bihar.html" onclick="bwM()">📋 Self Declaration</a>
       <a href="zameen-vivad-bihar.html" onclick="bwM()">⚖️ Zameen Vivad</a>
       <a href="bihar-bhumi-portal.html" onclick="bwM()">🏛️ Bihar Bhumi Portal</a>
       <a href="kisan-credit-card-bihar.html" onclick="bwM()">🌾 Kisan Credit Card</a>
       <a href="pm-awas-yojana-bihar.html" onclick="bwM()">🏠 PM Awas Yojana</a>
+      <a href="halka-mauja-kya-hota-hai.html" onclick="bwM()">🏘️ Halka Mauja Kya Hai</a>
+      <a href="lpc-dakhil-kharij-status-check.html" onclick="bwM()">🔍 LPC/DK Status Check</a>
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Rates</div>
@@ -571,6 +606,9 @@ window.bwSD = [
   {t:'Registry Charges',k:'registry charges stamp duty',u:'zameen-registry-charges.html'},
   {t:'Bainama Format',k:'bainama sale deed hindi',u:'bainama-format-bihar.html'},
   {t:'Khata Khesra',k:'khata khesra number',u:'khata-khesra-bihar.html'},
+  {t:'Khatiyan Bihar',k:'khatiyan cs rs survey jamabandi',u:'khatiyan-bihar.html'},
+  {t:'Halka Mauja Kya Hai',k:'halka mauja anchal revenue village',u:'halka-mauja-kya-hota-hai.html'},
+  {t:'LPC/Dakhil Kharij Status',k:'lpc status dakhil kharij status mutation check',u:'lpc-dakhil-kharij-status-check.html'},
   {t:'Bhu Naksha',k:'bhu naksha land map',u:'bhu-naksha-bihar.html'},
   {t:'Self Declaration',k:'self declaration shapath patra',u:'self-declaration-form-bihar.html'},
   {t:'Zameen Vivad',k:'zameen vivad dispute',u:'zameen-vivad-bihar.html'},
