@@ -105,7 +105,7 @@
       }
 
       /* Touch target sizing for small pill/badge links */
-      .tag-row a, .dist-badge {
+      .tag-row a, .dist-badge, .qq-row a {
         min-height: 44px;
         display: inline-flex;
         align-items: center;
@@ -195,7 +195,7 @@
         
         <div class="relative">
           <label for="mainSearchInput" class="bw-sr-only">आप क्या ढूंढ रहे हैं? (What are you looking for?)</label>
-          <input type="text" id="mainSearchInput" oninput="handleMainSearch(this.value)" placeholder="जैसे: Bigha Calculator, Dakhil Kharij, Patna Land Rate" class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-3.5 text-slate-900 font-bold text-base focus:outline-none focus:border-emerald-600 focus:bg-white shadow-inner">
+          <input type="text" id="mainSearchInput" oninput="handleMainSearch(this.value)" placeholder="जैसे: Bigha Calculator, Dakhil Kharij, Patna Land Rate" class="w-full min-h-11 bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-3.5 text-slate-900 font-bold text-base focus:outline-none focus:border-emerald-600 focus:bg-white shadow-inner">
         </div>
         
         <div id="mainSearchResults" class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-lg empty:hidden"></div>
@@ -500,7 +500,7 @@
         </div>
 
         <!-- 3 Quick Question Buttons -->
-        <div class="flex flex-wrap gap-2 text-xs font-bold">
+        <div class="qq-row flex flex-wrap gap-2 text-xs font-bold">
           <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition">[दाखिल खारिज सहायता]</a>
           <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition">[मैथिली / भोजपुरी में बात करें]</a>
           <a href="saathi-bot.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 px-3 py-2 rounded-xl transition">[जमीन दर एवं रजिस्ट्री]</a>
@@ -515,7 +515,7 @@
       <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-md space-y-6">
         <div class="flex justify-between items-center flex-wrap gap-2">
           <h2 class="text-2xl font-black text-slate-900">🤝 Community — Sawaal Jawab</h2>
-          <a href="community-qa.html" class="text-xs font-bold text-emerald-700 hover:underline">5,000+ Sawaalon Ke Jawab →</a>
+          <a href="community-qa.html" class="inline-flex items-center min-h-11 text-xs font-bold text-emerald-700 hover:underline">5,000+ Sawaalon Ke Jawab →</a>
         </div>
 
         <div class="space-y-4">
@@ -643,7 +643,7 @@
           <p class="text-xs text-slate-400 font-semibold leading-relaxed">
             बिहार का #1 मुफ्त जमीन सूचना एवं कैलकुलेटर पोर्टल। 38 जिलों की भूमि दरें, दाखिल खारिज, अपना खाता, बीघा रूपांतरण एवं साथी वॉइस AI सहायता।
           </p>
-          <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-2 rounded-xl border border-emerald-600 transition">
+          <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 gap-2 bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-2 rounded-xl border border-emerald-600 transition">
             📱 Helpline: 9835102324
           </a>
         </div>
@@ -684,7 +684,7 @@
             <a href="bhagalpur-land-rate.html" class="hover:text-emerald-400">Bhagalpur</a> |
             <a href="nalanda-land-rate.html" class="hover:text-emerald-400">Nalanda</a>
           </div>
-          <a href="bihar-all-districts-land-rate.html" class="text-amber-400 font-bold block pt-2 text-xs sm:text-sm">All 38 Districts →</a>
+          <a href="bihar-all-districts-land-rate.html" class="text-amber-400 font-bold flex items-center min-h-11 pt-2 text-xs sm:text-sm">All 38 Districts →</a>
         </div>
       </div>
 

@@ -49,6 +49,7 @@ var NAV_HTML = `
   display:flex;align-items:center;
   gap:10px;text-decoration:none;
   flex-shrink:0;
+  min-height:44px;
 }
 
 .bw-li{
