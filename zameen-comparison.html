@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
             Do alag alag zameen ke beech confusion hai? Kaun sa plot sasta hai aur kiski legal status behtar hai?
           </p>
           <p class="text-emerald-800 text-sm font-medium">
-            Abhi side-by-side compare karein aur AI property expert se professional advice paye. Dono plots ki legal reliability, square feet ke rates aur registry cost ki poori report generate karein.
+            Abhi side-by-side compare karein aur turant smart advice paye. Dono plots ki legal reliability, square feet ke rates aur registry cost ki poori report generate karein.
           </p>
         </div>
       </div>
@@ -582,13 +582,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 🤖
               </div>
               <div>
-                <h3 class="font-black text-slate-900 text-base sm:text-lg">🤖 AI Expert Property Recommendation</h3>
-                <p class="text-xs text-slate-500 font-bold mt-0.5">Let BighaWala AI evaluate the best financial deal for you.</p>
+                <h3 class="font-black text-slate-900 text-base sm:text-lg">🤖 Smart Property Recommendation</h3>
+                <p class="text-xs text-slate-500 font-bold mt-0.5">Let BighaWala's comparison engine evaluate the best financial deal for you.</p>
               </div>
             </div>
             
             <button onclick="getAIRecommendation()" id="ai-btn" class="px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-black text-xs sm:text-sm rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
-              <span>⚡</span> Get AI Expert Verdict (Free)
+              <span>⚡</span> Get Smart Verdict (Free)
             </button>
           </div>
 
@@ -597,7 +597,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="text-center py-6 space-y-3" id="ai-state-initial">
               <span class="text-3xl">🤖</span>
               <p class="text-xs sm:text-sm font-bold text-slate-600 max-w-lg mx-auto leading-relaxed">
-                Upar diye "Get AI Expert Verdict" button par click karein. Humara AI dono plots ke location, circle rate, stamp duty aur registry value ko verify karke perfect investment advice tayar karega.
+                Upar diye "Get Smart Verdict" button par click karein. Hamara comparison engine dono plots ke location, circle rate, stamp duty aur registry value ko verify karke investment advice tayar karega.
               </p>
             </div>
 
@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </div>
               <div class="text-center space-y-2">
                 <p class="text-sm font-black text-slate-900" id="ai-loading-message">Evaluating both properties...</p>
-                <p class="text-xs font-bold text-slate-500 tracking-wider">BighaWala AI Engine v3.5</p>
+                <p class="text-xs font-bold text-slate-500 tracking-wider">BighaWala Comparison Engine</p>
               </div>
               <!-- Shimmer lines -->
               <div class="space-y-2.5 max-w-xl mx-auto pt-4">
@@ -624,8 +624,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Response injected here -->
               </div>
               <div class="text-[10px] text-slate-400 font-bold flex items-center justify-between border-t border-slate-100 pt-3">
-                <span>🛡️ AI advice is based on average district trends. Always perform physical verifications.</span>
-                <span>Powered by Gemini 3.5</span>
+                <span>🛡️ This advice is a rule-based comparison of the numbers you entered. Always perform physical verifications.</span>
+                <span>Rule-Based Analysis</span>
               </div>
             </div>
           </div>
@@ -756,11 +756,11 @@ document.addEventListener('DOMContentLoaded', function() {
           <!-- Q3 -->
           <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
             <button onclick="toggleFaq(3)" class="w-full px-5 py-4 text-left font-black text-slate-900 flex items-center justify-between gap-4 text-sm sm:text-base hover:bg-slate-50 transition-colors">
-              <span>Q: Kya BighaWala AI recommendation report 100% accurate hai?</span>
+              <span>Q: Kya BighaWala comparison report 100% accurate hai?</span>
               <svg id="faq-icon-3" class="w-4 h-4 text-slate-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div id="faq-ans-3" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 font-semibold border-t border-slate-100 pt-3 leading-relaxed">
-              BighaWala AI statistical averages aur local trends par deep computation karta hai, jo property validation ke liye best recommendation deta hai. Lekin registry karne se pehle local lawyer ya registrar office se verify zaroor karein.
+              BighaWala comparison engine aapke diye hue numbers (price, size, circle rate, road access, documents) par rule-based calculation karta hai. Lekin registry karne se pehle local lawyer ya registrar office se verify zaroor karein.
             </div>
           </div>
 
@@ -865,9 +865,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 9000);
       });
 
-      // Global comparison state to pass to AI endpoint
+      // Global comparison state used by the client-side recommendation engine
       let globalPlotA = null;
       let globalPlotB = null;
+      let globalWinBreakdown = null;
 
       // 1 Katha = 1361.25 sq ft
       const SQFT_PER_KATHA = 1361.25;
@@ -1042,30 +1043,39 @@ document.addEventListener('DOMContentLoaded', function() {
         // Compute wins
         let winsA = 0;
         let winsB = 0;
+        const categoryWins = {};
 
         // size comparison (higher is better)
-        if (sqftA > sqftB) { decorateWin('row-size', 1); winsA++; }
-        else if (sqftB > sqftA) { decorateWin('row-size', 2); winsB++; }
+        if (sqftA > sqftB) { decorateWin('row-size', 1); winsA++; categoryWins.size = 'A'; }
+        else if (sqftB > sqftA) { decorateWin('row-size', 2); winsB++; categoryWins.size = 'B'; }
+        else { categoryWins.size = 'tie'; }
 
         // price comparison (lower is better)
-        if (priceA < priceB) { decorateWin('row-price', 1); winsA++; }
-        else if (priceB < priceA) { decorateWin('row-price', 2); winsB++; }
+        if (priceA < priceB) { decorateWin('row-price', 1); winsA++; categoryWins.price = 'A'; }
+        else if (priceB < priceA) { decorateWin('row-price', 2); winsB++; categoryWins.price = 'B'; }
+        else { categoryWins.price = 'tie'; }
 
         // rate per katha comparison (lower rate is better)
-        if (ratePerKathaA < ratePerKathaB) { decorateWin('row-rate', 1); winsA++; }
-        else if (ratePerKathaB < ratePerKathaA) { decorateWin('row-rate', 2); winsB++; }
+        if (ratePerKathaA < ratePerKathaB) { decorateWin('row-rate', 1); winsA++; categoryWins.rate = 'A'; }
+        else if (ratePerKathaB < ratePerKathaA) { decorateWin('row-rate', 2); winsB++; categoryWins.rate = 'B'; }
+        else { categoryWins.rate = 'tie'; }
 
         // road score (higher is better)
-        if (roadScoreA > roadScoreB) { decorateWin('row-road', 1); winsA++; }
-        else if (roadScoreB > roadScoreA) { decorateWin('row-road', 2); winsB++; }
+        if (roadScoreA > roadScoreB) { decorateWin('row-road', 1); winsA++; categoryWins.road = 'A'; }
+        else if (roadScoreB > roadScoreA) { decorateWin('row-road', 2); winsB++; categoryWins.road = 'B'; }
+        else { categoryWins.road = 'tie'; }
 
         // doc reliability (higher is better)
-        if (docScoreA > docScoreB) { decorateWin('row-docs', 1); winsA++; }
-        else if (docScoreB > docScoreA) { decorateWin('row-docs', 2); winsB++; }
+        if (docScoreA > docScoreB) { decorateWin('row-docs', 1); winsA++; categoryWins.docs = 'A'; }
+        else if (docScoreB > docScoreA) { decorateWin('row-docs', 2); winsB++; categoryWins.docs = 'B'; }
+        else { categoryWins.docs = 'tie'; }
 
         // value for money ratio (higher VFM is better)
-        if (vfmRatioA > vfmRatioB) { decorateWin('row-vfm', 1); winsA++; }
-        else if (vfmRatioB > vfmRatioA) { decorateWin('row-vfm', 2); winsB++; }
+        if (vfmRatioA > vfmRatioB) { decorateWin('row-vfm', 1); winsA++; categoryWins.vfm = 'A'; }
+        else if (vfmRatioB > vfmRatioA) { decorateWin('row-vfm', 2); winsB++; categoryWins.vfm = 'B'; }
+        else { categoryWins.vfm = 'tie'; }
+
+        globalWinBreakdown = { winsA, winsB, categoryWins };
 
         // Final winner verdict
         let finalWinnerName = "";
@@ -1093,7 +1103,7 @@ document.addEventListener('DOMContentLoaded', function() {
           verdictEmoji = "⚖️";
           document.getElementById('verdict-heading').innerText = `⚖️ Both Deals are Tied!`;
           document.getElementById('verdict-heading').className = "text-2xl sm:text-4xl font-black tracking-tight text-amber-400";
-          verdictDesc = `Dono plots ne equal categories mein wins haasil kiye hain. Is sthiti mein final chunav aapki connectivity aur budget prashastha par nirbhar karta hai. AI Recommendation ka upyog karein expert verdict paane ke liye.`;
+          verdictDesc = `Dono plots ne equal categories mein wins haasil kiye hain. Is sthiti mein final chunav aapki connectivity aur budget prashastha par nirbhar karta hai. Neeche di gayi Smart Recommendation ka upyog karein detailed verdict paane ke liye.`;
         }
 
         document.getElementById('verdict-description').innerHTML = verdictDesc;
@@ -1154,9 +1164,49 @@ document.addEventListener('DOMContentLoaded', function() {
         "Preparing final expert recommendation statement..."
       ];
 
-      // Call Gemini API server route for AI Recommendation
-      async function getAIRecommendation() {
-        if (!globalPlotA || !globalPlotB) return;
+      // Client-side rule-based recommendation -- no backend, no API key.
+      // Builds a genuine narrative from the category-wise win breakdown that
+      // calculateComparison() already computed from the user's own numbers.
+      const CATEGORY_LABELS = {
+        size: 'Size (Sq.Ft.)',
+        price: 'Total Price',
+        rate: 'Rate per Katha',
+        road: 'Road Access',
+        docs: 'Document Reliability',
+        vfm: 'Value for Money'
+      };
+
+      function buildRecommendation() {
+        const a = globalPlotA, b = globalPlotB, wb = globalWinBreakdown;
+        const lines = [];
+
+        const aWins = Object.keys(wb.categoryWins).filter(k => wb.categoryWins[k] === 'A').map(k => CATEGORY_LABELS[k]);
+        const bWins = Object.keys(wb.categoryWins).filter(k => wb.categoryWins[k] === 'B').map(k => CATEGORY_LABELS[k]);
+
+        if (wb.winsA > wb.winsB) {
+          lines.push(`<strong>${a.name}</strong> behtar deal lag raha hai — yeh ${wb.winsA} mein se ${aWins.length} category mein aage hai: ${aWins.join(', ')}.`);
+          if (bWins.length) lines.push(`Lekin <strong>${b.name}</strong> in cheezon mein aage hai: ${bWins.join(', ')} — apni priority ke hisaab se weigh karein.`);
+        } else if (wb.winsB > wb.winsA) {
+          lines.push(`<strong>${b.name}</strong> behtar deal lag raha hai — yeh ${bWins.length} category mein aage hai: ${bWins.join(', ')}.`);
+          if (aWins.length) lines.push(`Lekin <strong>${a.name}</strong> in cheezon mein aage hai: ${aWins.join(', ')} — apni priority ke hisaab se weigh karein.`);
+        } else {
+          lines.push(`Dono plots barabar score kar rahe hain. <strong>${a.name}</strong> aage hai: ${aWins.join(', ') || 'kisi mein nahi'}; <strong>${b.name}</strong> aage hai: ${bWins.join(', ') || 'kisi mein nahi'}.`);
+        }
+
+        lines.push('');
+        if (a.docScore < 7.5 || b.docScore < 7.5) {
+          lines.push('⚠️ Documents check karein: jis plot ka Document Reliability score kam hai, usme dakhil kharij, encumbrance ya jamabandi verify karna zaroori hai registry se pehle.');
+        }
+        if (Math.abs(a.govtVal - a.askingPrice) / a.govtVal > 0.3 || Math.abs(b.govtVal - b.askingPrice) / b.govtVal > 0.3) {
+          lines.push('⚠️ Ek plot ki asking price sarkari MVR value se kaafi alag hai — stamp duty aur loan eligibility par isका असर पड़ सकता है।');
+        }
+        lines.push('Final decision se pehle physical site visit aur local registrar/lawyer se verification zaroor karein.');
+
+        return lines.join('\n');
+      }
+
+      function getAIRecommendation() {
+        if (!globalPlotA || !globalPlotB || !globalWinBreakdown) return;
 
         // Show loading state
         document.getElementById('ai-state-initial').classList.add('hidden');
@@ -1164,77 +1214,32 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('ai-state-loading').classList.remove('hidden');
         document.getElementById('ai-btn').classList.add('opacity-50', 'cursor-not-allowed');
 
-        // Animate loading text
+        // Animate loading text (cosmetic -- calculation below is instant, client-side)
         let msgIdx = 0;
         const msgInterval = setInterval(() => {
           document.getElementById('ai-loading-message').innerText = LOADER_MSGS[msgIdx % LOADER_MSGS.length];
           msgIdx++;
-        }, 1800);
+        }, 500);
 
-        try {
-          const response = await fetch('/api/compare-plots', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              plotA: {
-                name: globalPlotA.name,
-                district: globalPlotA.district,
-                areaType: globalPlotA.areaType,
-                landType: globalPlotA.landType,
-                sizeBigha: globalPlotA.sizeBigha,
-                sizeKatha: globalPlotA.sizeKatha,
-                sizeDhur: globalPlotA.sizeDhur,
-                askingPrice: globalPlotA.askingPrice,
-                road: globalPlotA.road,
-                docScore: globalPlotA.docScore
-              },
-              plotB: {
-                name: globalPlotB.name,
-                district: globalPlotB.district,
-                areaType: globalPlotB.areaType,
-                landType: globalPlotB.landType,
-                sizeBigha: globalPlotB.sizeBigha,
-                sizeKatha: globalPlotB.sizeKatha,
-                sizeDhur: globalPlotB.sizeDhur,
-                askingPrice: globalPlotB.askingPrice,
-                road: globalPlotB.road,
-                docScore: globalPlotB.docScore
-              }
-            })
-          });
-
-          const data = await response.json();
+        setTimeout(() => {
           clearInterval(msgInterval);
-
-          if (data.recommendation) {
-            // Success
-            // Format markdown-like bullet points nicely if returned, replacing line breaks with paragraphs
-            const formattedRec = data.recommendation.replace(/\n/g, '<br/>');
-            document.getElementById('ai-result-text').innerHTML = formattedRec;
-            
-            document.getElementById('ai-state-loading').classList.add('hidden');
-            document.getElementById('ai-state-success').classList.remove('hidden');
-          } else {
-            throw new Error("Invalid response format");
+          try {
+            const recommendation = buildRecommendation();
+            document.getElementById('ai-result-text').innerHTML = recommendation.replace(/\n/g, '<br/>');
+          } catch (err) {
+            console.error(err);
+            document.getElementById('ai-result-text').innerHTML = "माफ़ी चाहते हैं, तुलना तैयार करने में त्रुटि हुई। कृपया पुनः प्रयास करें।";
           }
-
-        } catch (err) {
-          console.error(err);
-          clearInterval(msgInterval);
-          document.getElementById('ai-result-text').innerHTML = "माफ़ी चाहते हैं, AI सिमुलेशन प्रक्रिया में त्रुटि हुई। कृपया पुनः प्रयास करें। <br/><span class='text-xs text-rose-600'>(" + (err.message || "Failed to fetch response") + ")</span>";
           document.getElementById('ai-state-loading').classList.add('hidden');
           document.getElementById('ai-state-success').classList.remove('hidden');
-        } finally {
           document.getElementById('ai-btn').classList.remove('opacity-50', 'cursor-not-allowed');
-        }
+        }, 1600);
       }
 
       // Share on WhatsApp
       function shareComparison() {
         if (!globalPlotA || !globalPlotB) return;
-        const msg = `*BighaWala Land Comparison Tool 2026* ⚖️\n\nMain do plots compare kar raha hoon:\n\n🟢 *Plot A:* ${globalPlotA.name} (${globalPlotA.district})\n- Size: ${globalPlotA.totalKatha.toFixed(2)} Katha\n- Price: ₹${globalPlotA.askingPrice.toLocaleString('en-IN')}\n- Docs Score: ${globalPlotA.docScore}/10\n\n🟠 *Plot B:* ${globalPlotB.name} (${globalPlotB.district})\n- Size: ${globalPlotB.totalKatha.toFixed(2)} Katha\n- Price: ₹${globalPlotB.askingPrice.toLocaleString('en-IN')}\n- Docs Score: ${globalPlotB.docScore}/10\n\nCompare details aur AI expert recommendation dekhne ke liye is link par jayein:\nhttps://www.bighawala.com/zameen-comparison.html`;
+        const msg = `*BighaWala Land Comparison Tool 2026* ⚖️\n\nMain do plots compare kar raha hoon:\n\n🟢 *Plot A:* ${globalPlotA.name} (${globalPlotA.district})\n- Size: ${globalPlotA.totalKatha.toFixed(2)} Katha\n- Price: ₹${globalPlotA.askingPrice.toLocaleString('en-IN')}\n- Docs Score: ${globalPlotA.docScore}/10\n\n🟠 *Plot B:* ${globalPlotB.name} (${globalPlotB.district})\n- Size: ${globalPlotB.totalKatha.toFixed(2)} Katha\n- Price: ₹${globalPlotB.askingPrice.toLocaleString('en-IN')}\n- Docs Score: ${globalPlotB.docScore}/10\n\nCompare details aur smart recommendation dekhne ke liye is link par jayein:\nhttps://www.bighawala.com/zameen-comparison.html`;
         const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
         window.open(url, '_blank');
       }
@@ -1316,61 +1321,6 @@ window.addEventListener('popstate', function() {
 });
 </script>
 
-<style>
-.sticky-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #1B5E20;
-  color: white;
-  padding: 8px 15px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 9999;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-}
-.sticky-bar a {
-  color: white;
-  text-decoration: none;
-  font-size: 11px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-.sticky-bar .bar-icon {
-  font-size: 18px;
-}
-@media (min-width: 768px) {
-  .sticky-bar { display: none; }
-}
-</style>
-
-<div class="sticky-bar">
-  <a href="index.html">
-    <span class="bar-icon">🏠</span>
-    <span>Home</span>
-  </a>
-  <a href="bigha-calculator.html">
-    <span class="bar-icon">🧮</span>
-    <span>Calculator</span>
-  </a>
-  <a href="ask-expert.html">
-    <span class="bar-icon">🤖</span>
-    <span>AI Expert</span>
-  </a>
-  <a href="community-qa.html">
-    <span class="bar-icon">🤝</span>
-    <span>Community</span>
-  </a>
-  <a href="javascript:void(0)" onclick="window.open('https://wa.me/919835102324','_blank')">
-    <span class="bar-icon">📱</span>
-    <span>WhatsApp</span>
-  </a>
-</div>
 
 <script>
 // Open external links in new tab only

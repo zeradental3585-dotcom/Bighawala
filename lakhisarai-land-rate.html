@@ -836,61 +836,6 @@ window.addEventListener('popstate', function() {
 });
 </script>
 
-<style>
-.sticky-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #1B5E20;
-  color: white;
-  padding: 8px 15px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 9999;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-}
-.sticky-bar a {
-  color: white;
-  text-decoration: none;
-  font-size: 11px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-.sticky-bar .bar-icon {
-  font-size: 18px;
-}
-@media (min-width: 768px) {
-  .sticky-bar { display: none; }
-}
-</style>
-
-<div class="sticky-bar">
-  <a href="index.html">
-    <span class="bar-icon">🏠</span>
-    <span>Home</span>
-  </a>
-  <a href="bigha-calculator.html">
-    <span class="bar-icon">🧮</span>
-    <span>Calculator</span>
-  </a>
-  <a href="ask-expert.html">
-    <span class="bar-icon">🤖</span>
-    <span>AI Expert</span>
-  </a>
-  <a href="community-qa.html">
-    <span class="bar-icon">🤝</span>
-    <span>Community</span>
-  </a>
-  <a href="javascript:void(0)" onclick="window.open('https://wa.me/919835102324','_blank')">
-    <span class="bar-icon">📱</span>
-    <span>WhatsApp</span>
-  </a>
-</div>
 
 <script>
 // Open external links in new tab only
