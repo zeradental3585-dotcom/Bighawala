@@ -147,19 +147,36 @@ document.addEventListener('DOMContentLoaded', function() {
   <body class="pb-16 bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col selection:bg-orange-100 selection:text-orange-900">
 
     <!-- BREAKING NEWS TICKER -->
+    <style>
+      .ticker-wrap{overflow:hidden;white-space:nowrap;}
+      .ticker-wrap .ticker-track{display:inline-flex;white-space:nowrap;animation:bw-ticker-scroll 30s linear infinite;}
+      .ticker-wrap:hover .ticker-track{animation-play-state:paused;}
+      @keyframes bw-ticker-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+      @media(prefers-reduced-motion:reduce){.ticker-wrap .ticker-track{animation:none;}}
+    </style>
     <div class="bg-red-600 text-white py-2 px-4 text-xs sm:text-sm font-bold border-b border-red-700 shadow-inner z-50 overflow-hidden">
       <div class="max-w-7xl mx-auto flex items-center">
         <span class="bg-white text-red-700 px-3 py-1 rounded-md text-[11px] uppercase tracking-wider font-extrabold mr-4 shrink-0 flex items-center gap-1.5 shadow-sm animate-pulse">
           <span class="w-2.5 h-2.5 rounded-full bg-red-600 inline-block"></span>ताजा खबर
         </span>
         <div class="ticker-wrap w-full">
-          <div class="ticker">
-            <span>🔴 LATEST: Bihar mein circle rate update 2026 &nbsp;|&nbsp; </span>
-            <span>Dakhil Kharij online portal naya update &nbsp;|&nbsp; </span>
-            <span>PM Awas Yojana Bihar nayi list 2026 &nbsp;|&nbsp; </span>
-            <span>Kisan Credit Card interest rate unchanged 4% &nbsp;|&nbsp; </span>
-            <span>Bihar stamp duty female buyers 5.7% confirmed &nbsp;|&nbsp; </span>
-            <span>विशेष सर्वेक्षण बिहार 2026 की समय सीमा बढ़ाई गयी</span>
+          <div class="ticker-track" id="ticker-track">
+            <span class="ticker-copy">
+              <span>🔴 LATEST: Bihar mein circle rate update 2026 &nbsp;|&nbsp; </span>
+              <span>Dakhil Kharij online portal naya update &nbsp;|&nbsp; </span>
+              <span>PM Awas Yojana Bihar nayi list 2026 &nbsp;|&nbsp; </span>
+              <span>Kisan Credit Card interest rate unchanged 4% &nbsp;|&nbsp; </span>
+              <span>Bihar stamp duty female buyers 5.7% confirmed &nbsp;|&nbsp; </span>
+              <span>विशेष सर्वेक्षण बिहार 2026 की समय सीमा बढ़ाई गयी &nbsp;|&nbsp; </span>
+            </span>
+            <span class="ticker-copy" aria-hidden="true">
+              <span>🔴 LATEST: Bihar mein circle rate update 2026 &nbsp;|&nbsp; </span>
+              <span>Dakhil Kharij online portal naya update &nbsp;|&nbsp; </span>
+              <span>PM Awas Yojana Bihar nayi list 2026 &nbsp;|&nbsp; </span>
+              <span>Kisan Credit Card interest rate unchanged 4% &nbsp;|&nbsp; </span>
+              <span>Bihar stamp duty female buyers 5.7% confirmed &nbsp;|&nbsp; </span>
+              <span>विशेष सर्वेक्षण बिहार 2026 की समय सीमा बढ़ाई गयी &nbsp;|&nbsp; </span>
+            </span>
           </div>
         </div>
       </div>
@@ -343,13 +360,13 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="max-w-4xl mx-auto space-y-8 relative z-10">
           <div class="text-center space-y-3">
             <span class="bg-accentSaffron/20 text-yellow-300 border border-accentSaffron/30 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">
-              ⚡ LIVE INTEGRATED AI TECHNOLOGY
+              ⚡ SMART NEWS SEARCH
             </span>
             <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
-              🤖 AI Se Latest Bihar Land News Generate Karein
+              🤖 Apne Topic Se Judi Bihar Land News Dhoondhein
             </h2>
             <p class="text-sm text-slate-300 max-w-2xl mx-auto">
-              बिहार भूमि के किसी भी विषय पर ताजा गाइडलाइंस और विश्वसनीय जानकारी तुरंत प्राप्त करें। हमारा कस्टमाइज्ड AI इंजन आपके सवालों का सटीक विश्लेषण करता है।
+              बिहार भूमि के किसी भी विषय पर हमारी वेरिफाइड न्यूज़ लाइब्रेरी से तुरंत सबसे प्रासंगिक खबर खोजें।
             </p>
           </div>
 
@@ -397,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="pt-2">
               <button onclick="generateAiNews()" id="ai-generate-btn" class="w-full bg-accentSaffron hover:bg-customSaffronHover text-white font-extrabold px-6 py-4 rounded-2xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base">
                 <span>🤖</span>
-                <span>AI Se News Generate Karein</span>
+                <span>Related News Dhoondhein</span>
               </button>
             </div>
           </div>
@@ -406,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div id="ai-loading" class="hidden text-center py-12 space-y-4">
             <div class="inline-block w-12 h-12 border-4 border-accentSaffron border-t-transparent rounded-full animate-spin"></div>
             <p id="ai-loading-text" class="text-yellow-400 font-extrabold text-sm animate-pulse">
-              Gemini AI Bihar Land database se update dhoondh raha hai... कृपया प्रतीक्षा करें।
+              Aapke topic se milti-julti khabar dhoondh rahe hain... कृपया प्रतीक्षा करें।
             </p>
           </div>
 
@@ -1198,54 +1215,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <!-- FOOTER (Matches Homepage) -->
-    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto space-y-8">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-slate-800">
-          <div class="space-y-2 max-w-2xl">
-            <a href="index.html" class="inline-flex items-center gap-2 hover:opacity-90 transition-opacity" aria-label="BighaWala.com Home">
-  <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-800 text-white font-black text-sm flex items-center justify-center shadow-md shrink-0">BW</span>
-  <span class="text-lg font-black"><span class="text-emerald-400">Bigha</span><span class="text-orange-400">Wala</span><span class="text-emerald-400">.com</span></span>
-</a>
-            <p class="text-xs leading-relaxed text-slate-500">
-              Disclaimer (अस्वीकरण): यह वेबसाइट केवल शैक्षणिक, सूचनात्मक और उपयोगिता उद्देश्यों के लिए है। किसी भी कानूनी विवाद, संपत्ति खरीद या अधिकारिक सत्यापन के लिए हमेशा बिहार सरकार के राजस्व एवं भूमि सुधार विभाग के अधिकारिक पोर्टल <a href="https://biharbhumi.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="text-orange-400 underline font-extrabold hover:text-orange-300 transition-colors">biharbhumi.bihar.gov.in</a> पर जाएँ।
-            </p>
-          </div>
-          <div class="text-left md:text-right space-y-1 shrink-0">
-            <p class="text-xs text-slate-500">
-              विकसित भारत - समृद्ध बिहार भूमि अभियान © 2026
-            </p>
-            <p class="text-sm font-black text-orange-400 tracking-wider">
-              BighaWala.com
-            </p>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap justify-between items-center gap-4 text-xs font-bold">
-          <div class="flex flex-wrap gap-x-5 gap-y-2">
-            <a href="index.html" class="hover:text-orange-400 transition-colors">Home (मुख्य पृष्ठ)</a>
-            <span class="text-slate-800">•</span>
-            <a href="bigha-calculator.html" class="hover:text-orange-400 transition-colors">Calculator</a>
-            <span class="text-slate-800">•</span>
-            <a href="jamabandi.html" class="hover:text-orange-400 transition-colors">जमाबंदी</a>
-            <span class="text-slate-800">•</span>
-            <a href="registry-bihar.html" class="hover:text-orange-400 transition-colors">रजिस्ट्री गाइड</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html" class="hover:text-orange-400 transition-colors">Disclaimer (अस्वीकरण)</a>
-            <span class="text-slate-800">•</span>
-            <a href="privacy-policy/index.html" class="hover:text-orange-400 transition-colors">Privacy Policy (गोपनीयता नीति)</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html#terms" class="hover:text-orange-400 transition-colors">Terms of Use</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html#about" class="hover:text-orange-400 transition-colors">About Us (हमारे बारे में)</a>
-          </div>
-          <div class="text-slate-500">
-            AdSense compliant & Secure SSL 🔒
-          </div>
-        </div>
-      </div>
-    </footer>
-
     <!-- INTERACTIVE JAVASCRIPT -->
     <script>
       // Sticky Menu and Mobile Drawer functionality
@@ -1274,92 +1243,88 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // AI News Generation API caller
+      // Client-side smart search over BighaWala's own news library
+      // (This page is static — there is no backend AI API. Instead of faking
+      // a network call that always fails, we search the real news items
+      // already published below and surface the most relevant ones.)
       let latestGeneratedHeadline = "";
-      async function generateAiNews() {
+
+      const NEWS_DB = [
+        { cat: "Circle Rate", date: "July 2026", title: "Bihar Mein Circle Rate 2026 — Kya Badla? Patna Sabse Zyada Mehanga", summary: "Bihar sarkar ne 2026 mein circle rate mein badlav kiye hain. Patna city ke core areas mein rate sabse zyada hain — ₹8 lakh se ₹25 lakh per katha tak.", link: "circle-rate-bihar.html", linkText: "Detailed Circle Rate Guide", keywords: "circle rate patna mehanga stamp duty valuation mvr rate 2026" },
+        { cat: "Government Scheme", date: "July 2026", title: "PM Awas Yojana Bihar 2026 — Nayi List Mein Apna Naam Kaise Dekhen", summary: "PMAY-G ke tehat Bihar ke gramin kshetron mein naye labharthiyon ki list 2026 jaari ho gayi hai. Labharthiyon ko ₹1.20 Lakh ki subsidy di jayegi.", link: "pm-awas-yojana-bihar.html", linkText: "Detailed PM Awas Guide", keywords: "pm awas yojana pmay gramin subsidy ghar makaan list naam check" },
+        { cat: "Legal Update", date: "June 2026", title: "Dakhil Kharij Bihar — Naya Portal Update Aur Nayi Process 2026", summary: "Bihar revenue department ne online Dakhil Kharij (Land Mutation) portal naye software par launch kiya hai, jisme automated FIFO rule implement hoga.", link: "dakhil-kharij.html", linkText: "Dakhil Kharij Guide", keywords: "dakhil kharij mutation portal fifo mutation status online" },
+        { cat: "Kisan", date: "June 2026", title: "Kisan Credit Card 2026 — 4% Interest Rate Confirmed", summary: "Government ne confirm kiya ki KCC par 4% effective interest rate 2026 mein bhi jaari rahega, time par repayment karne walon ke liye.", link: "kisan-credit-card-bihar.html", linkText: "Detailed KCC Guide", keywords: "kcc kisan credit card interest rate loan agriculture subsidy renewal" },
+        { cat: "Legal Update", date: "June 2026", title: "Bihar Registry Naya Rule — Female Buyers Ko Aur Choot", summary: "Female buyers ke liye stamp duty mein relief — mahila khariddaron ko extra concession di gayi hai, jisse effective stamp duty 5.7% reh gayi hai.", link: "registry-bihar.html", linkText: "Detailed Registry Guide", keywords: "registry stamp duty female buyer women mahila rule 5.7 percent" },
+        { cat: "Land Rates", date: "June 2026", title: "Patna Mein Zameen Ki Kimat 2026 — Kitna Badha Rate?", summary: "Patna ke various areas mein zameen ki kimat mein significant change aaya hai. Bihta aur Danapur bypass area mein land values me 2x demand.", link: "land-rates.html", linkText: "Detailed Land Rates", keywords: "patna land rate zameen kimat price muzaffarpur gaya bihta danapur" },
+        { cat: "Portal Update", date: "May 2026", title: "Apna Khata Bihar — Naya Portal land.bihar.gov.in/Ror2025/RoR.aspx", summary: "Khatiyan dekhne ke liye naya updated portal launch hua hai. High bandwidth servers se RoR (Records of Rights) bina hang huye dekh sakte hain.", link: "apna-khata-dekhe.html", linkText: "Apna Khata / RoR Portal Guide", keywords: "apna khata ror khatiyan record of rights portal bhulekh" },
+        { cat: "Government Scheme", date: "May 2026", title: "Fasal Bima Yojana Bihar 2026 — Kisan Kaise Apply Karein", summary: "Pradhan Mantri Fasal Bima Yojana ke antargat naya registration karna hoga — premium subsidize karke bank aur CSC counters se verification.", link: "kisan-credit-card-bihar.html", linkText: "Apply Guidelines", keywords: "fasal bima yojana crop insurance kisan registration premium subsidy" },
+        { cat: "Legal Update", date: "May 2026", title: "Land Dispute Bihar — Naya Fast Track Court System", summary: "Zameen vivad cases ke liye fast track system shuru — CO, DCLR, DM courts mein sunwayi ab 90 dinon tak seemit rahegi.", link: "zameen-comparison.html", linkText: "Land Dispute / Compare Tool", keywords: "land dispute vivad court fast track co dclr dm case" },
+        { cat: "Circle Rate", date: "April 2026", title: "MVR Rate Bihar April 2026 — District Wise Update", summary: "Kuch districts mein MVR rate mein badlav kiya gaya hai. Muzaffarpur aur Gaya ke outer highway bypass areas mein MVR badhne se guidelines update hui.", link: "mvr-rate-bihar.html", linkText: "Detailed MVR Guide", keywords: "mvr minimum valuation register rate district muzaffarpur gaya" },
+        { cat: "Registry", date: "April 2026", title: "Online Registry Appointment Bihar — nibandhan.bihar.gov.in", summary: "Online registry appointment lena aur aasaan ho gaya hai — server-side queueing se slot booking bina traffic error ke hoti hai.", link: "registry-bihar.html", linkText: "Detailed Registry Guide", keywords: "registry appointment nibandhan online slot booking queue" },
+        { cat: "Kisan", date: "March 2026", title: "Bihar Mein Agricultural Loan — Sabse Kam Interest Rate Kaise Paye", summary: "Sabse sasti loan facility KCC hai — nikatam public sector bank branch mein lagan rasid aur Jamabandi details dekar apply kar sakte hain.", link: "kisan-credit-card-bihar.html", linkText: "Detailed KCC Guide", keywords: "agricultural loan kcc bank interest rate jamabandi lagan rasid" }
+      ];
+
+      function scoreNewsItem(item, queryWords) {
+        var haystack = (item.cat + " " + item.title + " " + item.summary + " " + item.keywords).toLowerCase();
+        var score = 0;
+        queryWords.forEach(function(w) {
+          if (w.length < 3) return;
+          if (haystack.indexOf(w) !== -1) score++;
+        });
+        return score;
+      }
+
+      function generateAiNews() {
         const topicInput = document.getElementById('ai-news-topic');
         const topic = topicInput ? topicInput.value.trim() : "";
         if (!topic) {
-          alert("कृपया विश्लेषण करने के लिए कोई विषय या प्रश्न दर्ज करें (Please write or select a topic first).");
+          alert("कृपया खोजने के लिए कोई विषय या प्रश्न दर्ज करें (Please write or select a topic first).");
           return;
         }
 
         const genBtn = document.getElementById('ai-generate-btn');
         const loadingDiv = document.getElementById('ai-loading');
         const resultContainer = document.getElementById('ai-result-container');
-        
-        // UI reset & show loading
+
         genBtn.disabled = true;
         genBtn.classList.add('opacity-50');
         loadingDiv.classList.remove('hidden');
         resultContainer.classList.add('hidden');
 
-        // Pulsing loading message cycler
-        const loadingMessages = [
-          "Gemini AI Bihar Land database se update dhoondh raha hai...",
-          "Bhulekh aur dakhil-kharij naye guidelines scan ho rahe hain...",
-          "Bihar Revenue Department Circulars analyse ho rahe hain...",
-          "Authenticating with legal metadata guides..."
-        ];
-        let msgIndex = 0;
-        const msgInterval = setInterval(() => {
-          msgIndex = (msgIndex + 1) % loadingMessages.length;
-          document.getElementById('ai-loading-text').innerText = loadingMessages[msgIndex];
-        }, 1500);
+        // Small delay purely for UI feedback — this is a real client-side
+        // search over NEWS_DB above, not a simulated network call.
+        setTimeout(function() {
+          const queryWords = topic.toLowerCase().split(/[^a-z0-9ऀ-ॿ]+/).filter(Boolean);
+          const scored = NEWS_DB.map(function(item) {
+            return { item: item, score: scoreNewsItem(item, queryWords) };
+          }).sort(function(a, b) { return b.score - a.score; });
 
-        try {
-          const response = await fetch("/api/generate-land-news", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ topic: topic })
-          });
-
-          if (!response.ok) {
-            throw new Error("API call failed during land news generation.");
-          }
-
-          const data = await response.json();
-          clearInterval(msgInterval);
-          loadingDiv.classList.add('hidden');
-
-          // Display content
+          const topMatches = scored.filter(function(s) { return s.score > 0; }).slice(0, 3);
           const resultBody = document.getElementById('ai-result-body');
-          if (data && data.news) {
-            // Store headline for WhatsApp share
-            const headlineMatch = data.news.match(/📰 HEADLINE:\s*(.*)/i);
-            if (headlineMatch) {
-              latestGeneratedHeadline = headlineMatch[1].trim();
-            } else {
-              latestGeneratedHeadline = topic;
-            }
 
-            // Convert bullet points or symbols to clean HTML for display
-            let formattedText = data.news
-              .replace(/📰 HEADLINE:/g, '<strong class="text-primaryGreen text-lg block mb-2">📰 Headline:</strong>')
-              .replace(/📅 RELEVANT TO:/g, '<strong class="text-slate-800 text-sm block mt-4">📅 Relevant To:</strong>')
-              .replace(/━━━━━━━━━━━━━━/g, '<hr class="my-4 border-dashed border-slate-200">')
-              .replace(/SUMMARY:/g, '<strong class="text-slate-900 text-base block mb-2">Summary:</strong>')
-              .replace(/KEY POINTS:/g, '<strong class="text-amber-600 text-base block mt-4 mb-2">Key Points:</strong>')
-              .replace(/AAPKO KYA KARNA CHAHIYE:/g, '<strong class="text-orange-600 text-base block mt-4 mb-2">Aapko Kya Karna Chahiye:</strong>')
-              .replace(/OFFICIAL PORTAL:/g, '<strong class="text-sky-700 text-base block mt-4 mb-2">Official Portal:</strong>');
-
-            resultBody.innerHTML = formattedText;
-            resultContainer.classList.remove('hidden');
-          } else {
-            resultBody.innerText = "माफ कीजिये, अभी जानकारी प्राप्त नहीं हो सकी। कृपया दोबारा प्रयास करें।";
-            resultContainer.classList.remove('hidden');
-          }
-        } catch (error) {
-          console.error(error);
-          clearInterval(msgInterval);
           loadingDiv.classList.add('hidden');
-          alert("सिस्टम व्यस्त है, कृपया कुछ देर बाद फिर से प्रयास करें।");
-        } finally {
+
+          if (topMatches.length === 0) {
+            latestGeneratedHeadline = topic;
+            resultBody.innerHTML = 'माफ़ कीजिए, "' + topic.replace(/</g, '&lt;') + '" से मिलती-जुलती कोई खबर हमारी लाइब्रेरी में अभी नहीं है। नीचे "Sabhi Khabar" सेक्शन में सभी खबरें ब्राउज़ करें, या हमें WhatsApp पर पूछें।';
+          } else {
+            latestGeneratedHeadline = topMatches[0].item.title;
+            let html = '';
+            topMatches.forEach(function(m) {
+              const item = m.item;
+              html += '<div class="mb-5 pb-5 border-b border-slate-100 last:border-0 last:mb-0 last:pb-0">' +
+                '<strong class="text-primaryGreen text-lg block mb-1">📰 ' + item.title + '</strong>' +
+                '<span class="text-xs font-black text-slate-400 uppercase tracking-wider">' + item.cat + ' • ' + item.date + '</span>' +
+                '<p class="mt-2 text-sm text-slate-700">' + item.summary + '</p>' +
+                (item.link ? '<a href="' + item.link + '" class="inline-block mt-2 text-primaryGreen font-extrabold hover:underline text-sm">' + item.linkText + ' →</a>' : '') +
+                '</div>';
+            });
+            resultBody.innerHTML = html;
+          }
+          resultContainer.classList.remove('hidden');
           genBtn.disabled = false;
           genBtn.classList.remove('opacity-50');
-        }
+        }, 500);
       }
 
       function shareAiResult() {
@@ -1429,24 +1394,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
   
-<!-- STICKY BOTTOM BAR (FIX 4) -->
-<div id="sticky-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md text-white border-t border-emerald-500/30 px-3 py-2.5 shadow-2xl transition-all duration-300">
-  <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 text-xs sm:text-sm font-bold overflow-x-auto no-scrollbar">
-    <a href="ask-expert.html" class="flex items-center gap-1.5 bg-emerald-600/90 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all shadow-xs shrink-0">
-      <span>🤖</span> <span>Koi sawaal?</span>
-    </a>
-    <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all shadow-xs shrink-0">
-      <span>📱</span> <span>WhatsApp: 9835102324</span>
-    </a>
-    <a href="bigha-calculator.html" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border border-slate-700 shrink-0">
-      <span>🧮</span> <span>Bigha Calculator</span>
-    </a>
-    <a href="dakhil-kharij.html" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border border-slate-700 shrink-0">
-      <span>📋</span> <span>Dakhil Kharij</span>
-    </a>
-  </div>
-</div>
-
 <!-- EXIT INTENT POPUP (FIX 5) -->
 <div id="exit-intent-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-4 hidden transition-opacity duration-300">
   <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 border border-slate-200 shadow-2xl relative space-y-5 text-slate-800 animate-in fade-in zoom-in-95">
@@ -1509,13 +1456,6 @@ document.addEventListener('mouseleave', function(e) {
   }
 });
 
-// Mobile back button detection
-window.addEventListener('popstate', function() {
-  if (!exitShown) {
-    showExitPopup();
-    history.pushState(null, '', window.location.href);
-  }
-});
 </script>
 
 <!-- FOOTER HTML -->
@@ -1627,36 +1567,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-</script>
-
-<script>
-setTimeout(function() {
-  var popup = document.createElement('div');
-  popup.innerHTML = 
-    '<div style="position:fixed;bottom:80px;' +
-    'right:15px;background:#2E7D32;color:white;' +
-    'padding:12px 15px;border-radius:10px;' +
-    'max-width:220px;z-index:9998;' +
-    'box-shadow:0 4px 15px rgba(0,0,0,0.2);' +
-    'font-size:13px;">' +
-    '<div style="font-weight:bold;margin-bottom:5px;">' +
-    '💡 यह भी देखें:</div>' +
-    '<a href="bigha-calculator.html" ' +
-    'style="color:#FFD54F;display:block;' +
-    'margin:3px 0;">🧮 Bigha Calculator</a>' +
-    '<a href="dakhil-kharij.html" ' +
-    'style="color:#FFD54F;display:block;' +
-    'margin:3px 0;">📋 Dakhil Kharij Guide</a>' +
-    '<a href="land-rates.html" ' +
-    'style="color:#FFD54F;display:block;' +
-    'margin:3px 0;">💰 Land Rates 2026</a>' +
-    '<div onclick="this.parentElement.' +
-    'parentElement.remove()" ' +
-    'style="text-align:right;cursor:pointer;' +
-    'margin-top:5px;opacity:0.7;">✕ बंद करें</div>' +
-    '</div>';
-  document.body.appendChild(popup);
-}, 30000);
 </script>
 
 </body>
