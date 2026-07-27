@@ -573,49 +573,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-12 px-4 mt-auto">
-      <div class="max-w-7xl mx-auto space-y-8">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-slate-800">
-          <div class="space-y-2 max-w-2xl">
-            <a href="index.html" class="inline-flex items-center gap-2 hover:opacity-90 transition-opacity" aria-label="BighaWala.com Home">
-  <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-800 text-white font-black text-sm flex items-center justify-center shadow-md shrink-0">BW</span>
-  <span class="text-lg font-black"><span class="text-emerald-400">Bigha</span><span class="text-orange-400">Wala</span><span class="text-emerald-400">.com</span></span>
-</a>
-            <p class="text-xs leading-relaxed text-slate-500">
-              Disclaimer (अस्वीकरण): यह वेबसाइट केवल शैक्षणिक, सूचनात्मक और उपयोगिता उद्देश्यों के लिए है। किसी भी कानूनी विवाद, संपत्ति खरीद या अधिकारिक सत्यापन के लिए हमेशा बिहार सरकार के राजस्व एवं भूमि सुधार विभाग के अधिकारिक पोर्टल <a href="https://biharbhumi.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="text-orange-400 underline font-extrabold hover:text-orange-300 transition-colors">biharbhumi.bihar.gov.in</a> पर जाएँ।
-            </p>
-          </div>
-          <div class="text-left md:text-right space-y-1 shrink-0">
-            <p class="text-xs text-slate-500">
-              विकसित भारत - समृद्ध बिहार भूमि अभियान © 2026
-            </p>
-            <p class="text-sm font-black text-orange-400 tracking-wider">
-              BighaWala.com
-            </p>
-          </div>
-        </div>
 
-        <div class="flex flex-wrap justify-between items-center gap-4 text-xs font-bold">
-          <div class="flex flex-wrap gap-x-5 gap-y-2">
-            <a href="index.html" class="hover:text-orange-400 transition-colors">Home (मुख्य पृष्ठ)</a>
-            <span class="text-slate-800">•</span>
-            <a href="bigha-calculator.html" class="hover:text-orange-400 transition-colors">Calculator</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html" class="hover:text-orange-400 transition-colors">Disclaimer (अस्वीकरण)</a>
-            <span class="text-slate-800">•</span>
-            <a href="privacy-policy/index.html" class="hover:text-orange-400 transition-colors">Privacy Policy (गोपनीयता नीति)</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html#terms" class="hover:text-orange-400 transition-colors">Terms of Use</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html#about" class="hover:text-orange-400 transition-colors">About Us (हमारे बारे में)</a>
-          </div>
-          <div class="text-slate-500">
-            AdSense compliant & Secure SSL 🔒
-          </div>
-        </div>
-      </div>
-    </footer>
+
 
     <!-- MOBILE MENU TOGGLE JAVASCRIPT -->
     <script>
@@ -631,30 +590,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- PRE-LOADED QUESTIONS AND CATEGORY FILTERS JAVASCRIPT -->
     <script>
-      // Replace YOUR_GEMINI_API_KEY_HERE with your Gemini API key from:
-      // https://aistudio.google.com/app/apikey
-      const API_KEY = 'AIzaSyCy60HKc39mbfA4xp8o0qZ3-uFX4KmfsRk';
-      const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + API_KEY;
-
-      const SYSTEM_PROMPT = `You are BighaWala Expert — Bihar's most trusted land information assistant. Answer ONLY questions about Bihar land topics:
-- Land measurement (Bigha, Katha, Dhur)
-- Bhulekh, Apna Khata, Khatyan
-- Dakhil Kharij (Mutation)
-- LPC (Land Possession Certificate)
-- Jamabandi, land records
-- Land rates in Bihar
-- Bihar land buying/selling process
-- Government portals:
-  Khatyan: land.bihar.gov.in/Ror2025/RoR.aspx
-  Dakhil Kharij/LPC/Jamabandi: biharbhumi.bihar.gov.in/Biharbhumi/
-  Registry: nibandhan.bihar.gov.in
-
-Reply in simple Hindi+English mix (Hinglish).
-Keep answers practical and under 200 words.
-Always end with relevant portal link if applicable.
-Format with bullet points for steps.
-If NOT about Bihar land — say:
-'Maafi! Main sirf Bihar zameen ke sawaalon ka jawab de sakta hoon.'`;
+      // Client-side FAQ engine -- no backend, no API key.
+      // The 15 popular questions below have real, pre-written answers.
+      // Free-text questions are matched against them by keyword search.
 
       // 15 Pre-loaded questions list
       const popularQuestions = [
@@ -665,7 +603,7 @@ If NOT about Bihar land — say:
           district: 'Patna',
           text: 'Mere papa ne 2019 mein zameen kharidi thi lekin dakhil kharij abhi tak nahi hua. Kya ab bhi ho sakta hai?',
           views: 234,
-          answer: null
+          answer: 'Dakhil Kharij ke liye koi expiry nahi hoti — chahe registry kitni bhi purani ho, aap abhi bhi apply kar sakte hain. biharbhumi.bihar.gov.in par jaakar apply karein; registry deed, rasid aur ID proof saath rakhein. Agar case bahut purana hai to Anchal Karyalaya mein seedha jaakar bhi status pata kar sakte hain.'
         },
         {
           id: 2,
@@ -674,7 +612,7 @@ If NOT about Bihar land — say:
           district: 'Gaya',
           text: 'Bank home loan ke liye LPC maang raha hai. LPC banwane mein kitna time lagta hai?',
           views: 188,
-          answer: null
+          answer: 'Normally 15-30 din lagte hain agar sabhi documents sahi hon. Backlog ki wajah se kabhi-kabhi 45-60 din bhi lag jaate hain. Application biharbhumi.bihar.gov.in se online ya Anchal Karyalaya se offline ho sakti hai.'
         },
         {
           id: 3,
@@ -683,7 +621,7 @@ If NOT about Bihar land — say:
           district: 'Muzaffarpur',
           text: 'Muzaffarpur city mein 1 katha zameen ki kimat kya hai 2026 mein?',
           views: 341,
-          answer: null
+          answer: 'Rate location par bahut depend karta hai — Muzaffarpur city ke core areas mein 1 Katha ka circle rate lagbhag ₹3-8 lakh tak ho sakta hai, market rate isse zyada hota hai. Exact area ka rate circle-rate-bihar.html par dekhein ya local registry office se confirm karein.'
         },
         {
           id: 4,
@@ -692,7 +630,7 @@ If NOT about Bihar land — say:
           district: 'Darbhanga',
           text: 'Apna khata online kaise dekhen? Website kaunsi hai?',
           views: 412,
-          answer: null
+          answer: 'land.bihar.gov.in/Ror2025/RoR.aspx par jaakar apna district, anchal, mauja aur khata/khesra number daalkar khatiyan (RoR) dekh sakte hain — yeh bilkul free hai.'
         },
         {
           id: 5,
@@ -701,7 +639,7 @@ If NOT about Bihar land — say:
           district: 'Patna',
           text: 'Bihar mein stamp duty kitni lagti hai? Female ke naam par zyada fayda hota hai?',
           views: 295,
-          answer: null
+          answer: 'Purush khariddar ke liye 6% aur mahila khariddar ke liye 5.7% stamp duty lagti hai — 0.3% ki extra chhoot mahilaon ko milti hai. Iske alawa registration fee 2% (max ₹60,000) alag se lagti hai.'
         },
         {
           id: 6,
@@ -710,7 +648,7 @@ If NOT about Bihar land — say:
           district: 'Bhagalpur',
           text: 'Padosi ne meri zameen par kabza kar liya hai. Kahan shikayat karein?',
           views: 376,
-          answer: null
+          answer: 'Sabse pehle Anchal Adhikari (CO) ko likhit application dein. Wahan solution na mile to DCLR ya SDO ke paas jaayein. Zameen vivad ka formal case bhi file kar sakte hain — poori process zameen-vivad-bihar.html page par di gayi hai.'
         },
         {
           id: 7,
@@ -719,7 +657,7 @@ If NOT about Bihar land — say:
           district: 'Nalanda',
           text: 'Dakhil Kharij online apply karne ke baad status kaise check karein?',
           views: 198,
-          answer: null
+          answer: 'biharbhumi.bihar.gov.in par "Mutation Status" / Dakhil Kharij Status section mein apna case ya application number daalkar status check kar sakte hain. Status update hone par SMS bhi aata hai.'
         },
         {
           id: 8,
@@ -728,7 +666,7 @@ If NOT about Bihar land — say:
           district: 'Vaishali',
           text: 'PM Awas Yojana ke liye apply karna hai. Kya documents chahiye?',
           views: 154,
-          answer: null
+          answer: 'PM Awas Yojana Gramin (PMAY-G) ke liye Aadhar card, bank passbook, ration card, aur zameen ka document chahiye hota hai (khud ki zameen ya sarkari zameen ka proof). Kai jagah caste/income certificate bhi maanga jaata hai. Apply pmayg.nic.in par online hota hai.'
         },
         {
           id: 9,
@@ -737,7 +675,7 @@ If NOT about Bihar land — say:
           district: 'Samastipur',
           text: 'Zameen kharidne se pehle kya kya check karna chahiye? 5 zaroori baatein bataiye.',
           views: 310,
-          answer: null
+          answer: 'Zameen kharidne se pehle: 1) Jamabandi/khatiyan verify karein ki malik ka naam match karta hai, 2) encumbrance certificate lekar check karein koi loan/case to nahi hai, 3) confirm karein dakhil kharij ho chuka hai ya nahi, 4) circle rate se kam par deal na karein (stamp duty issue hoga), 5) site par jaakar physical possession/boundary verify karein.'
         },
         {
           id: 10,
@@ -746,7 +684,7 @@ If NOT about Bihar land — say:
           district: 'Begusarai',
           text: 'LPC ki validity kitni hoti hai? Purana LPC bank accept karta hai?',
           views: 142,
-          answer: null
+          answer: 'LPC ki koi fixed sarकारी expiry nahi hoti, lekin banks generally 6 mahine se 1 saal purana LPC hi accept karte hain safety ke liye. Agar aapka LPC isse purana hai to naya banwana zyada safe rahega.'
         },
         {
           id: 11,
@@ -755,7 +693,7 @@ If NOT about Bihar land — say:
           district: 'Munger',
           text: 'Jamabandi mein mera naam galat hai. Kaise theek karwayein?',
           views: 220,
-          answer: null
+          answer: 'Jamabandi mein naam ki galti theek karwane ke liye "Parimarjan" (correction) application Anchal Karyalaya mein deni hogi, saath mein Aadhar aur registry papers. Yeh online bhi parimarjanplus.bihar.gov.in se apply ho sakta hai.'
         },
         {
           id: 12,
@@ -764,7 +702,7 @@ If NOT about Bihar land — say:
           district: 'Purnia',
           text: 'Registry ke kuch din baad seller mara gaya. Ab zameen ki legality kaisi hogi?',
           views: 185,
-          answer: null
+          answer: 'Registry hone ke baad property legally aapke naam ho jaati hai, chahe seller baad mein expire ho jaaye — registry ki date hi valid maani jaati hai. Bas dakhil kharij zaroor karwa lein taaki sarkari records mein bhi naam update ho jaaye.'
         },
         {
           id: 13,
@@ -773,7 +711,7 @@ If NOT about Bihar land — say:
           district: 'East Champaran',
           text: 'Kisan Credit Card ke liye kaun sa bank best hai Bihar mein?',
           views: 167,
-          answer: null
+          answer: 'SBI, Bank of India aur regional rural banks (jaise Bihar Gramin Bank) KCC ke liye popular hain, kyunki interest subvention ke saath effective rate 4% tak reh jaata hai. Apne nikatam PSU bank branch mein jamabandi/lagan rasid lekar apply karein.'
         },
         {
           id: 14,
@@ -782,7 +720,7 @@ If NOT about Bihar land — say:
           district: 'Siwan',
           text: 'Khata number nahi pata — apna khata kaise dhundhen naam se?',
           views: 289,
-          answer: null
+          answer: 'land.bihar.gov.in/Ror2025/RoR.aspx par "Search by Name" option se malik ka naam daalkar khata dhoond sakte hain — bas district, anchal aur mauja select karna hoga.'
         },
         {
           id: 15,
@@ -791,7 +729,7 @@ If NOT about Bihar land — say:
           district: 'Saran',
           text: 'Zameen bechne par kya kya tax lagta hai Bihar mein?',
           views: 201,
-          answer: null
+          answer: 'Agar profit hua ho to capital gains tax lagta hai (long-term ho to indexation benefit milta hai). Registration fee aur stamp duty generally khariddar deta hai, lekin high-value sauda mein buyer 1% TDS bhi kaat sakta hai. Exact calculation ke liye ek CA se salaah lena behtar hai.'
         }
       ];
 
@@ -930,46 +868,8 @@ If NOT about Bihar land — say:
           viewsCountSpan.innerText = questionObj.views;
         }
 
-        // Call Gemini if not loaded yet
-        if (!questionObj.answer) {
-          answerDiv.innerHTML = `
-            <div class="flex items-center gap-2 text-primaryGreen font-black">
-              <span class="animate-spin text-sm">⏳</span> AI answer loading...
-            </div>
-          `;
-
-          try {
-            const promptContent = `${SYSTEM_PROMPT}\n\nCategory: ${questionObj.category}\nDistrict: ${questionObj.district}\nQuestion: ${questionObj.text}`;
-            const response = await fetch(API_URL, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                contents: [{ parts: [{ text: promptContent }] }]
-              })
-            });
-
-            if (!response.ok) throw new Error('API request failed');
-            const data = await response.json();
-            
-            if (data.candidates && data.candidates[0].content.parts[0].text) {
-              const aiText = data.candidates[0].content.parts[0].text;
-              questionObj.answer = aiText;
-              answerDiv.innerHTML = formatMarkdownToHTML(aiText);
-            } else {
-              throw new Error('Invalid payload');
-            }
-          } catch (err) {
-            console.error(err);
-            answerDiv.innerHTML = `
-              <div class="text-red-700 font-bold space-y-2">
-                <p>⚠️ Answer load nahi ho paya. Ek baar phir se click karein ya Direct Ask Expert tab use karein.</p>
-                <a href="ask-expert.html" class="inline-block bg-primaryGreen text-white px-3 py-1.5 rounded-xl text-xs font-bold hover:bg-customGreenHover transition-all">Go to Ask Expert</a>
-              </div>
-            `;
-          }
-        } else {
-          answerDiv.innerHTML = formatMarkdownToHTML(questionObj.answer);
-        }
+        // Answers are pre-written below (no live API call needed).
+        answerDiv.innerHTML = formatMarkdownToHTML(questionObj.answer);
       }
 
       // Simple formatting parser for bold and lists
@@ -1025,57 +925,56 @@ If NOT about Bihar land — say:
         // Scroll to loader smoothly
         aiSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        try {
-          const finalPrompt = `${SYSTEM_PROMPT}\n\nCategory: ${category}\nDistrict: ${district}\nName: ${name}\nQuestion: ${questionText}`;
-          const response = await fetch(API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents: [{ parts: [{ text: finalPrompt }] }]
-            })
-          });
+        // Client-side keyword search against our 15 answered questions --
+        // no live API call. If we find a close match we show it; otherwise
+        // we're upfront that we don't have it and offer WhatsApp.
+        setTimeout(function () {
+          try {
+            const queryWords = (category + ' ' + questionText).toLowerCase().split(/[^a-z0-9ऀ-ॿ]+/).filter(Boolean);
+            let best = null, bestScore = 0;
+            popularQuestions.forEach(function (q) {
+              const haystack = (q.category + ' ' + q.filterCategory + ' ' + q.text).toLowerCase();
+              let score = 0;
+              queryWords.forEach(function (w) { if (w.length >= 3 && haystack.indexOf(w) !== -1) score++; });
+              if (score > bestScore) { bestScore = score; best = q; }
+            });
 
-          if (!response.ok) throw new Error('API Request Failed');
-          const data = await response.json();
-
-          if (data.candidates && data.candidates[0].content.parts[0].text) {
-            const aiText = data.candidates[0].content.parts[0].text;
-            
-            lastSubmittedQuestion = questionText;
-            lastSubmittedAnswer = aiText;
-
-            // Render answer
-            answerPlaceholder.innerHTML = formatMarkdownToHTML(aiText);
-
-            // Hide loader and show card
             loadingCard.classList.add('hidden');
             answerCard.classList.remove('hidden');
 
-            // Save question to LocalStorage (Recent list)
-            saveToRecent(questionText, category, district, name, aiText);
-
-            // Clear textarea
-            document.getElementById('question-form').reset();
-            updateCharCount();
-
-          } else {
-            throw new Error('Payload structure unrecognized');
-          }
-
-        } catch (error) {
-          console.error(error);
-          loadingCard.classList.add('hidden');
-          answerCard.classList.remove('hidden');
-          answerPlaceholder.innerHTML = `
-            <div class="text-red-700 font-extrabold space-y-2 p-4 bg-red-50 rounded-2xl">
-              <p>⚠️ Humare server se abhi response nahi mil paya. Par aapka sawaal submit ho chuka hai!</p>
-              <p class="text-xs text-slate-500 font-bold">Aap seedha hume niche diye gaye button se WhatsApp par poochein ya fir doobara try karein.</p>
-              <div class="pt-2">
-                <a href="https://wa.me/919835102324?text=${encodeURIComponent(questionText)}" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-600 text-white font-black px-4 py-2 rounded-xl text-xs sm:text-sm hover:bg-customGreenHover transition-all">Direct WhatsApp Poochein</a>
+            if (best && bestScore >= 2) {
+              lastSubmittedQuestion = questionText;
+              lastSubmittedAnswer = best.answer;
+              answerPlaceholder.innerHTML =
+                '<p class="text-xs font-black text-primaryGreen uppercase tracking-wider mb-2">Closest matching sawaal: "' + best.text + '"</p>' +
+                formatMarkdownToHTML(best.answer);
+              saveToRecent(questionText, category, district, name, best.answer);
+              document.getElementById('question-form').reset();
+              updateCharCount();
+            } else {
+              answerPlaceholder.innerHTML = `
+                <div class="text-slate-700 font-bold space-y-2 p-4 bg-amber-50 rounded-2xl border border-amber-200">
+                  <p>Iske liye humare paas abhi ek exact pre-written jawab nahi hai. Aapka sawaal note ho gaya hai — hamare expert se seedha WhatsApp par poochein:</p>
+                  <div class="pt-2">
+                    <a href="https://wa.me/919835102324?text=${encodeURIComponent(questionText)}" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-600 text-white font-black px-4 py-2 rounded-xl text-xs sm:text-sm hover:bg-customGreenHover transition-all">Direct WhatsApp Poochein</a>
+                  </div>
+                </div>
+              `;
+            }
+          } catch (error) {
+            console.error(error);
+            loadingCard.classList.add('hidden');
+            answerCard.classList.remove('hidden');
+            answerPlaceholder.innerHTML = `
+              <div class="text-red-700 font-extrabold space-y-2 p-4 bg-red-50 rounded-2xl">
+                <p>Kuch gadbad ho gayi. Kripya seedha WhatsApp par poochein:</p>
+                <div class="pt-2">
+                  <a href="https://wa.me/919835102324?text=${encodeURIComponent(questionText)}" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-600 text-white font-black px-4 py-2 rounded-xl text-xs sm:text-sm hover:bg-customGreenHover transition-all">Direct WhatsApp Poochein</a>
+                </div>
               </div>
-            </div>
-          `;
-        }
+            `;
+          }
+        }, 500);
       }
 
       // LocalStorage Cache Management for Recent Questions (Max 5)
@@ -1166,23 +1065,8 @@ If NOT about Bihar land — say:
   
   
   
-<!-- STICKY BOTTOM BAR (FIX 4) -->
-<div id="sticky-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md text-white border-t border-emerald-500/30 px-3 py-2.5 shadow-2xl transition-all duration-300">
-  <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 text-xs sm:text-sm font-bold overflow-x-auto no-scrollbar">
-    <a href="ask-expert.html" class="flex items-center gap-1.5 bg-emerald-600/90 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all shadow-xs shrink-0">
-      <span>🤖</span> <span>Koi sawaal?</span>
-    </a>
-    <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all shadow-xs shrink-0">
-      <span>📱</span> <span>WhatsApp: 9835102324</span>
-    </a>
-    <a href="bigha-calculator.html" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border border-slate-700 shrink-0">
-      <span>🧮</span> <span>Bigha Calculator</span>
-    </a>
-    <a href="dakhil-kharij.html" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border border-slate-700 shrink-0">
-      <span>📋</span> <span>Dakhil Kharij</span>
-    </a>
-  </div>
-</div>
+
+
 
 <!-- EXIT INTENT POPUP (FIX 5) -->
 <div id="exit-intent-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-4 hidden transition-opacity duration-300">
