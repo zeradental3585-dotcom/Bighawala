@@ -737,49 +737,8 @@ Portal se copy karein ya manually likhein."></textarea>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-12 px-4 mt-auto">
-      <div class="max-w-7xl mx-auto space-y-8">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-slate-800">
-          <div class="space-y-2 max-w-2xl">
-            <a href="index.html" class="inline-flex items-center gap-2 hover:opacity-90 transition-opacity" aria-label="BighaWala.com Home">
-  <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-800 text-white font-black text-sm flex items-center justify-center shadow-md shrink-0">BW</span>
-  <span class="text-lg font-black"><span class="text-emerald-400">Bigha</span><span class="text-orange-400">Wala</span><span class="text-emerald-400">.com</span></span>
-</a>
-            <p class="text-xs leading-relaxed text-slate-500 font-bold">
-              Disclaimer (अस्वीकरण): यह वेबसाइट केवल शैक्षणिक, सूचनात्मक और उपयोगिता उद्देश्यों के लिए है। किसी भी कानूनी विवाद, संपत्ति खरीद या अधिकारिक सत्यापन के लिए हमेशा बिहार सरकार के राजस्व एवं भूमि सुधार विभाग के अधिकारिक पोर्टल <a href="https://biharbhumi.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="text-orange-400 underline font-extrabold hover:text-orange-300 transition-colors">biharbhumi.bihar.gov.in</a> पर जाएँ।
-            </p>
-          </div>
-          <div class="text-left md:text-right space-y-1 shrink-0">
-            <p class="text-xs text-slate-500 font-semibold">
-              विकसित भारत - समृद्ध बिहार भूमि अभियान © 2025
-            </p>
-            <p class="text-sm font-black text-orange-400 tracking-wider">
-              BighaWala.com
-            </p>
-          </div>
-        </div>
 
-        <div class="flex flex-wrap justify-between items-center gap-4 text-xs font-bold">
-          <div class="flex flex-wrap gap-x-5 gap-y-2">
-            <a href="index.html" class="hover:text-orange-400 transition-colors">Home (मुख्य पृष्ठ)</a>
-            <span class="text-slate-800">•</span>
-            <a href="bigha-calculator.html" class="hover:text-orange-400 transition-colors">Calculator</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html" class="hover:text-orange-400 transition-colors">Disclaimer (अस्वीकरण)</a>
-            <span class="text-slate-800">•</span>
-            <a href="privacy-policy/index.html" class="hover:text-orange-400 transition-colors">Privacy Policy (गोपनीयता नीति)</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html#terms" class="hover:text-orange-400 transition-colors">Terms of Use</a>
-            <span class="text-slate-800">•</span>
-            <a href="disclaimer/index.html#about" class="hover:text-orange-400 transition-colors">About Us (हमारे बारे में)</a>
-          </div>
-          <div class="text-slate-500">
-            AdSense compliant & Secure SSL 🔒
-          </div>
-        </div>
-      </div>
-    </footer>
+
 
     <!-- INTERACTIVITY JAVASCRIPT -->
     <script>
@@ -883,48 +842,80 @@ Status: Approved`
         }
       }
 
-      // API Key placeholder - will try secure server-side first, otherwise client-side fallback
-      const API_KEY = 'AIzaSyCy60HKc39mbfA4xp8o0qZ3-uFX4KmfsRk';
-      const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + API_KEY;
+      // Client-side document checklist engine.
+      // (This is a static site with no backend -- there is no live AI call here.
+      // Instead we run a real, honest rule-based checklist: for the selected
+      // document type we look for the standard fields a genuine Bihar land
+      // document of that type should contain, and report what was found vs
+      // missing. This is genuinely useful and 100% accurate about what it is.)
+      const DOC_TYPE_LABELS = {
+        jamabandi: 'जमाबंदी / खतियान',
+        lpc: 'LPC (Land Possession Certificate)',
+        dakhil_kharij: 'दाखिल खारिज (Mutation) दस्तावेज़',
+        sale_deed: 'बैनामा / सेल डीड',
+        court_order: 'कोर्ट ऑर्डर',
+        other: 'अन्य दस्तावेज़'
+      };
 
-      const SYSTEM_PROMPT = `You are BighaWala Document Expert — specialist in Bihar land documents.
-The user has pasted text from a Bihar land document. Analyze it completely and provide a structured report in Hindi+English mix.
+      const DOC_TYPE_FIELDS = {
+        jamabandi: [
+          { label: 'खाता संख्या (Khata No.)', re: /khata\s*(sankhya|no|number)?\s*[:\-]?\s*\S+|खाता\s*(संख्या)?\s*[:\-]?\s*\S+/i },
+          { label: 'खेसरा संख्या (Khesra No.)', re: /khesra\s*(sankhya|no|number)?\s*[:\-]?\s*\S+|खेसरा\s*(संख्या)?\s*[:\-]?\s*\S+/i },
+          { label: 'रकबा / क्षेत्रफल (Area)', re: /raqba|rakba|रकबा|acre|katha|bigha|hectare/i },
+          { label: 'मौजा / अंचल (Mauja/Anchal)', re: /mauja|मौजा|anchal|अंचल/i },
+          { label: 'स्वामी / मालिक का नाम (Owner Name)', re: /swami|malik|owner|स्वामी|मालिक/i },
+          { label: 'लगान (Lagaan/Rent)', re: /lagaan|लगान|rent/i }
+        ],
+        lpc: [
+          { label: 'सर्टिफिकेट नंबर (Certificate No.)', re: /certificate\s*(no|number)?\s*[:\-]?\s*\S+|प्रमाण पत्र\s*(संख्या)?\s*[:\-]?\s*\S+/i },
+          { label: 'स्वामी / मालिक का नाम (Owner Name)', re: /malik|owner|name|मालिक|नाम\s*[:\-]/i },
+          { label: 'खाता/खेसरा (Khata/Khesra)', re: /khata|khesra|खाता|खेसरा/i },
+          { label: 'क्षेत्रफल (Area)', re: /area|rakba|रकबा|acre|katha|bigha/i },
+          { label: 'तारीख (Date)', re: /date|तारीख|दिनांक|20\d\d/i },
+          { label: 'जारीकर्ता कार्यालय (Issuing Office)', re: /anchal|circle|अंचल|office|कार्यालय/i }
+        ],
+        dakhil_kharij: [
+          { label: 'केस/आवेदन संख्या (Case/Application No.)', re: /case\s*(no|number)?|application\s*(no|number)?|मामला|आवेदन\s*(संख्या)?/i },
+          { label: 'आवेदक/मालिक का नाम (Applicant/Malik Name)', re: /applicant|malik|आवेदक|मालिक|नाम\s*[:\-]/i },
+          { label: 'खाता/खेसरा (Khata/Khesra)', re: /khata|khesra|खाता|खेसरा/i },
+          { label: 'म्यूटेशन स्थिति (Mutation Status)', re: /status|approved|pending|rejected|स्थिति|स्वीकृत|लंबित|अस्वीकृत/i },
+          { label: 'आदेश की तारीख (Order Date)', re: /date|तारीख|दिनांक|20\d\d/i }
+        ],
+        sale_deed: [
+          { label: 'रजिस्ट्री/डीड नंबर (Registration/Deed No.)', re: /deed\s*(no|number)?|registration\s*(no|number)?|पंजीकरण\s*(संख्या)?|बैनामा\s*(संख्या)?/i },
+          { label: 'विक्रेता का नाम (Seller Name)', re: /seller|vikreta|विक्रेता/i },
+          { label: 'क्रेता का नाम (Buyer Name)', re: /buyer|kreta|क्रेता/i },
+          { label: 'सौदा राशि (Sale Consideration)', re: /rs\.?\s*\d|\u20b9|amount|राशि|लाख|crore|करोड़/i },
+          { label: 'संपत्ति विवरण (Khata/Khesra/Area)', re: /khata|khesra|rakba|area|खाता|खेसरा|रकबा/i },
+          { label: 'निबंधन तारीख (Registration Date)', re: /date|तारीख|दिनांक|20\d\d/i },
+          { label: 'उप-निबंधक कार्यालय (Sub-Registrar Office)', re: /sub-?registrar|निबंधक|registry office/i }
+        ],
+        court_order: [
+          { label: 'केस नंबर (Case No.)', re: /case\s*(no|number)?|मामला\s*(संख्या)?/i },
+          { label: 'न्यायालय का नाम (Court Name)', re: /court|न्यायालय|अदालत/i },
+          { label: 'आदेश की तारीख (Order Date)', re: /date|तारीख|दिनांक|20\d\d/i },
+          { label: 'पक्षकार (Petitioner/Respondent)', re: /petitioner|respondent|वादी|प्रतिवादी/i },
+          { label: 'आदेश/निर्णय (Order Summary)', re: /order|judgment|आदेश|निर्णय|फैसला/i }
+        ],
+        other: [
+          { label: 'खाता/खेसरा (Khata/Khesra)', re: /khata|khesra|खाता|खेसरा/i },
+          { label: 'रकबा / क्षेत्रफल (Area)', re: /rakba|raqba|रकबा|acre|katha|bigha/i },
+          { label: 'मालिक/पक्षकार का नाम (Name)', re: /malik|owner|नाम|name/i },
+          { label: 'तारीख (Date)', re: /date|तारीख|दिनांक|20\d\d/i }
+        ]
+      };
 
-Your analysis MUST include these sections:
+      const NEXT_STEPS = {
+        jamabandi: 'Apni Jamabandi Bihar sarkar ke aadhikarik portal biharbhumi.bihar.gov.in par jaakar zaroor verify karein — khata/khesra number se online records match karein.',
+        lpc: 'LPC certificate ki details Anchal Karyalaya (Circle Office) se verify karayein, khaas kar khata/khesra aur area sahi hai ya nahi.',
+        dakhil_kharij: 'Apne mutation case ki current status biharbhumi.bihar.gov.in par "Dakhil Kharij Status" section mein case/application number daal kar check karein.',
+        sale_deed: 'Registered bainama/sale deed ki authenticity nibandhan.bihar.gov.in par ya seedha Sub-Registrar office jaakar verify karayein, especially registration number se.',
+        court_order: 'Court order ki asliyat sambandhit court ki official website ya court registry se seedhe confirm karayein — case number se track karein.',
+        other: 'Document ka exact prakar pehchaan ke liye kripya BighaWala Expert (WhatsApp: 9835102324) se seedhi baat karein.'
+      };
 
-1. DOCUMENT KA NAAM AUR PRAKAR:
-   (What type of document is this)
-
-2. MALIK KI JANKARI:
-   (Owner details found in document)
-
-3. ZAMEEN KI JANKARI:
-   (Land details — size, location, type)
-
-4. IMPORTANT NUMBERS:
-   (Khata, Khesra, Certificate numbers etc)
-
-5. DOCUMENT KI VALIDITY:
-   (Is it valid? Any concerns?)
-
-6. KYA SAHI HAI — KYA GALAT HAI:
-   (Any issues or inconsistencies found)
-
-7. AAGE KYA KAREIN:
-   (What should the owner do next)
-
-8. IMPORTANT WARNING (if any):
-   (Any red flags or concerns)
-
-Format with clear Hindi headings.
-Use simple language — village level user.
-Be practical and helpful.
-If document seems problematic — warn clearly.
-If document is fine — reassure the user.
-End with: 'Koi sawaal ho toh BighaWala Expert se poochein: 9835102324'`;
-
-      // Main dispatch analysis function
-      async function runAnalysis() {
+      // Main analysis function -- runs entirely in the browser, instantly.
+      function runAnalysis() {
         const textInput = document.getElementById('doc-text-input');
         const pastedText = textInput.value.trim();
         const analyzeBtn = document.getElementById('analyze-btn');
@@ -937,97 +928,58 @@ End with: 'Koi sawaal ho toh BighaWala Expert se poochein: 9835102324'`;
           return;
         }
 
-        // Hide old outputs & show loaders
         errorBox.classList.add('hidden');
         resultWrapper.classList.add('hidden');
         loadingBox.classList.remove('hidden');
         analyzeBtn.disabled = true;
         analyzeBtn.classList.add('opacity-50');
 
-        try {
-          let reportText = '';
-
-          // 1. Try secure Express server-side route first
+        // Tiny delay purely so the loading state is visible -- this check runs
+        // instantly and entirely on-device, nothing is sent anywhere.
+        setTimeout(function () {
           try {
-            const response = await fetch('/api/check-document', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                documentType: selectedDocType,
-                documentText: pastedText
-              })
+            const typeLabel = DOC_TYPE_LABELS[selectedDocType] || DOC_TYPE_LABELS.other;
+            const fields = DOC_TYPE_FIELDS[selectedDocType] || DOC_TYPE_FIELDS.other;
+
+            const found = [];
+            const missing = [];
+            fields.forEach(function (f) {
+              if (f.re.test(pastedText)) { found.push(f.label); } else { missing.push(f.label); }
             });
 
-            if (response.ok) {
-              const data = await response.json();
-              reportText = data.explanation;
-            } else {
-              const errData = await response.json().catch(() => ({}));
-              if (errData && errData.error) {
-                throw new Error(errData.error);
-              }
-            }
-          } catch (err) {
-            console.warn('Backend proxy unavailable or failed. Trying direct client-side fallback...', err);
+            const foundText = found.length ? found.map(function (l) { return '- ' + l + ': मिला ✅'; }).join('\n') : 'कोई भी अपेक्षित field स्पष्ट रूप से नहीं मिला।';
+            const missingText = missing.length ? missing.map(function (l) { return '- ' + l + ': नहीं मिला ⚠️'; }).join('\n') : 'सभी अपेक्षित fields मिल गए — अच्छा संकेत।';
+
+            const completeness = fields.length ? Math.round((found.length / fields.length) * 100) : 0;
+
+            let reportText =
+              '1. DOCUMENT KA NAAM AUR PRAKAR:\n' +
+              'Aapke chune gaye prakar ke anusaar yeh ek ' + typeLabel + ' hai (yeh sirf aapke selection par based hai, hamara system automatically pehchan nahi karta).\n\n' +
+              '2. MILE HUE FIELDS:\n' + foundText + '\n\n' +
+              '3. MISSING / DOUBLE-CHECK KARNE WALE FIELDS:\n' + missingText + '\n\n' +
+              '4. COMPLETENESS SCORE:\n' + 'Is document mein is prakar ke liye zaroori ' + fields.length + ' mein se ' + found.length + ' standard fields mile (' + completeness + '%). Yeh sirf ek text-matching checklist hai, kanuni validity ka pramaan nahi.\n\n' +
+              '5. DOCUMENT KI VALIDITY:\n' + 'Yeh tool sirf ek automatic checklist hai — asli kanuni validity ki jaanch sirf sarkari registry/anchal karyalaya ya vakil hi kar sakte hain.\n\n' +
+              '6. KYA SAHI HAI KYA GALAT:\n' + (missing.length > 0 ? 'Kuch expected fields upar "Missing" mein list hain — ho sakta hai wo document mein hon lekin alag format/spelling mein likhe hon, isliye humara text-match unhe pakad na paya ho. Kripya khud dobara check karein.' : 'Text-matching ke hisaab se sabhi standard fields present dikh rahe hain.') + '\n\n' +
+              '7. AAGE KYA KAREIN:\n' + (NEXT_STEPS[selectedDocType] || NEXT_STEPS.other) + '\n\n' +
+              '8. IMPORTANT WARNING:\n' + (completeness < 50 ? 'Kai zaroori fields nahi mile — ho sakta hai document adhura ho, ya scan/photo mein text saaf na ho, ya galat document type select hua ho. Zaroor dobara jaanch karein.' : 'Koi badi chetavani nahi, lekin final confirmation ke liye upar diye gaye official portal/office se verify zaroor karein.') + '\n\n' +
+              'Koi sawaal ho toh BighaWala Expert se poochein: 9835102324';
+
+            const container = document.getElementById('analysis-cards-container');
+            container.innerHTML = formatAnalysisReport(reportText);
+
+            resultWrapper.classList.remove('hidden');
+            loadingBox.classList.add('hidden');
+            resultWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } catch (error) {
+            console.error(error);
+            loadingBox.classList.add('hidden');
+            errorBox.classList.remove('hidden');
+            document.getElementById('error-message').innerText = 'कागज़ का विश्लेषण करने में कोई समस्या आई। कृपया दोबारा प्रयास करें।';
+          } finally {
+            analyzeBtn.disabled = false;
+            analyzeBtn.classList.remove('opacity-50');
           }
-
-          // 2. Client-side direct fallback if backend route fails or is not present
-          if (!reportText) {
-            if (!API_KEY) {
-              throw new Error('सर्वर अभी व्यस्त है और क्लाइंट-साइड API की (API Key) कॉन्फ़िगर नहीं की गई है। कृपया some minutes बाद प्रयास करें या admin से संपर्क करें।');
-            }
-
-            const prompt = `DOCUMENT TYPE SELECTED: ${selectedDocType}
-PASTED DOCUMENT TEXT:
-"""
-${pastedText}
-"""
-
-कृपया इस दस्तावेज का विश्लेषण करें और रिपोर्ट तैयार करें।`;
-
-            const response = await fetch(API_URL, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                contents: [{ role: 'user', parts: [{ text: prompt }] }],
-                systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] }
-              })
-            });
-
-            if (!response.ok) {
-              const errData = await response.json().catch(() => ({}));
-              throw new Error(errData?.error?.message || `Direct API call failed with status ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
-              reportText = data.candidates[0].content.parts[0].text;
-            } else {
-              throw new Error('Gemini API से विश्लेषण रिपोर्ट प्राप्त करने में विफल।');
-            }
-          }
-
-          // Render output visually
-          const container = document.getElementById('analysis-cards-container');
-          container.innerHTML = formatAnalysisReport(reportText);
-          
-          // Display result wrapper & scroll to it smoothly
-          resultWrapper.classList.remove('hidden');
-          loadingBox.classList.add('hidden');
-          
-          resultWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        } catch (error) {
-          console.error(error);
-          loadingBox.classList.add('hidden');
-          errorBox.classList.remove('hidden');
-          document.getElementById('error-message').innerText = error.message || 'कागज़ का विश्लेषण करने में कोई समस्या आई। कृपया अपना इंटरनेट कनेक्शन जाँचें।';
-        } finally {
-          analyzeBtn.disabled = false;
-          analyzeBtn.classList.remove('opacity-50');
-        }
+        }, 500);
       }
 
       // Render the response block-by-block with icons and lovely layout
@@ -1185,23 +1137,8 @@ ${pastedText}
   
   
   
-<!-- STICKY BOTTOM BAR (FIX 4) -->
-<div id="sticky-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md text-white border-t border-emerald-500/30 px-3 py-2.5 shadow-2xl transition-all duration-300">
-  <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 text-xs sm:text-sm font-bold overflow-x-auto no-scrollbar">
-    <a href="ask-expert.html" class="flex items-center gap-1.5 bg-emerald-600/90 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all shadow-xs shrink-0">
-      <span>🤖</span> <span>Koi sawaal?</span>
-    </a>
-    <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all shadow-xs shrink-0">
-      <span>📱</span> <span>WhatsApp: 9835102324</span>
-    </a>
-    <a href="bigha-calculator.html" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border border-slate-700 shrink-0">
-      <span>🧮</span> <span>Bigha Calculator</span>
-    </a>
-    <a href="dakhil-kharij.html" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-3 py-1.5 rounded-xl whitespace-nowrap transition-all border border-slate-700 shrink-0">
-      <span>📋</span> <span>Dakhil Kharij</span>
-    </a>
-  </div>
-</div>
+
+
 
 <!-- EXIT INTENT POPUP (FIX 5) -->
 <div id="exit-intent-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-4 hidden transition-opacity duration-300">
