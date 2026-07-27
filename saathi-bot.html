@@ -454,122 +454,69 @@
       var messageCount = 0;
       var conversationHistory = [];
 
-      // API Key for Gemini API
-      const API_KEY = 'AIzaSyCy60HKc39mbfA4xp8o0qZ3-uFX4KmfsRk';
-
-      async function getSaathiResponse(userMessage, detectedLang) {
-        console.log('Calling Gemini API...');
-        console.log('Message:', userMessage);
-        console.log('Language:', detectedLang);
-
-        const prompt = `Tu Bihar ka ek dost hai 
-jiska naam Saathi hai. Tu zameen ke baare 
-mein sab jaanta hai. Tu aam log ki madad 
-karta hai — kisan, garib, padhe-likhe 
-aur an-padhe sabki.
-
-Bhasha: ${detectedLang || 'hindi'} mein jawab de.
-Hindi mein to seedhi baat kar.
-Bhojpuri mein to "raur", "hamar", "bani" 
-waale shabd use kar.
-Maithili mein to "apan", "hank", "chhi" 
-waale shabd use kar.
-
-ZAROORI JANKARI:
-Bihar mein (official standard):
-1 Bigha = 20 Katha
-1 Katha = 20 Dhur
-1 Dhur = 20 Dhurki
-1 Dhur = 68.0625 sqft
-1 Katha = 1361.25 sqft
-1 Bigha = 27225 sqft
-1 Bigha = 0.625 Acre
-1 Bigha = 62.5 Decimal
-1 Katha = 3.125 Decimal
-1 Acre = 100 Decimal = 1.6 Bigha
-Note: Bigha/Katha/Dhur ka size local "laggi" (measuring pole) ki lambai par nirbhar karta hai jo district-wise thodi alag ho sakti hai (colloquial/unofficial use ke liye) — lekin sarkari registry aur record hamesha upar wale standard figures use karta hai.
-
-SAHI PORTAL LINKS:
-Apna Khata dekhna ho to:
-land.bihar.gov.in/Ror2025/RoR.aspx
-
-Dakhil Kharij, LPC, Jamabandi ke liye:
-biharbhumi.bihar.gov.in/Biharbhumi/
-
-Registry ke liye:
-nibandhan.bihar.gov.in
-
-Bhu Lagan bharna ho to:
-bhulagan.bihar.gov.in
-
-Naksha dekhna ho to:
-emapi.bihar.gov.in
-
-Shikayat karni ho to:
-biharbhumiplus.bihar.gov.in/pg/
-
-JAWAB DENE KA TARIKA:
-- Chhota jawab de — 60 se 80 shabd max
-- Agar koi dukhi ya pareshaan lage to 
-  pehle ye kaho: "Aapki baat sunke dukh 
-  hua, par ghabrana nahi — hum hain na"
-- Aam bhasha use kar — court wali nahi
-- Akhir mein hamesha ye kaho:
-  "Koi aur sawaal ho to bataiye"
-- Agar sawaal bahut mushkil ho to kaho:
-  "Yeh thoda pechida hai — seedha 
-  madad ke liye WhatsApp karein"
-
-Sawaal: ${userMessage}`;
-
-        const requestBody = {
-          contents: [
-            {
-              role: "user",
-              parts: [{ text: prompt }]
-            }
-          ],
-          generationConfig: {
-            temperature: 0.8,
-            maxOutputTokens: 250,
-            topP: 0.9
-          }
-        };
-
-        const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + API_KEY;
-
-        try {
-          const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestBody)
-          });
-
-          if (!response.ok) {
-            const err = await response.text();
-            console.error('API Error:', err);
-            throw new Error('HTTP ' + response.status);
-          }
-
-          const result = await response.json();
-          console.log('API Response received');
-          console.log('Response:', result);
-
-          if (result.candidates && 
-              result.candidates[0] && 
-              result.candidates[0].content && 
-              result.candidates[0].content.parts && 
-              result.candidates[0].content.parts[0]) {
-            return result.candidates[0].content.parts[0].text;
-          } else {
-            throw new Error('Unexpected response format');
-          }
-        } catch(err) {
-          console.error('API Failed:', err);
-          throw err;
+      // Client-side FAQ engine -- no backend, no API key.
+      // Real, pre-written answers to common Bihar land questions in
+      // Hindi/Hinglish, matched against the user's spoken/typed
+      // question by keyword scoring.
+      const SAATHI_KB = [
+        {
+          keywords: ['दाखिल खारिज', 'dakhil kharij', 'dakhil', 'kharij', 'mutation'],
+          answer: 'दाखिल खारिज के लिए biharbhumi.bihar.gov.in पर जाकर "Apply for Mutation" चुनें, रजिस्ट्री डीड नंबर, खाता-खेसरा और आधार अपलोड करें। जमा करने के बाद केस नंबर मिलेगा जिससे स्टेटस चेक कर सकते हैं। कोई और सवाल हो तो बताइए।'
+        },
+        {
+          keywords: ['अपना खाता', 'apna khata', 'khata online', 'खतियान', 'khatiyan'],
+          answer: 'अपना खाता देखने के लिए land.bihar.gov.in/Ror2025/RoR.aspx पर जाइए, अपना जिला, अंचल, मौजा और खाता या खेसरा नंबर डालकर खतियान (RoR) मुफ्त में देख सकते हैं। कोई और सवाल हो तो बताइए।'
+        },
+        {
+          keywords: ['जमाबंदी', 'jamabandi', 'नकल', 'nakal'],
+          answer: 'जमाबंदी नकल निकालने के लिए land.bihar.gov.in पर "Jamabandi Panjee" सेक्शन चुनें, जिला-अंचल-मौजा भरें और खाता या खेसरा नंबर से सर्च करके PDF डाउनलोड कर सकते हैं। कोई और सवाल हो तो बताइए।'
+        },
+        {
+          keywords: ['एलपीसी', 'lpc', 'possession certificate'],
+          answer: 'LPC बनवाने के लिए जमाबंदी/खतियान की कॉपी, लगान रसीद, रजिस्ट्री डीड और आधार कार्ड के साथ अंचल कार्यालय में आवेदन दें, या biharbhumi.bihar.gov.in से ऑनलाइन अप्लाई करें। आम तौर पर 15-30 दिन लगते हैं। कोई और सवाल हो तो बताइए।'
+        },
+        {
+          keywords: ['सरकारी रेट', 'circle rate', 'mvr', 'सर्किल रेट', 'जमीन का रेट'],
+          answer: 'सरकारी सर्किल रेट (MVR) आपके जिले के अनुसार अलग-अलग होता है — mvr-rate-bihar.html या circle-rate-bihar.html पेज पर अपने जिले का रेट देख सकते हैं, या अंचल कार्यालय से भी पता कर सकते हैं। कोई और सवाल हो तो बताइए।'
+        },
+        {
+          keywords: ['भू-लगान', 'bhu lagan', 'भू लगान', 'लगान रसीद', 'lagan receipt'],
+          answer: 'भू-लगान की रसीद ऑनलाइन काटने के लिए bhulagan.bihar.gov.in पर जाइए, अपना खाता/खेसरा नंबर डालकर बकाया लगान चेक करें और ऑनलाइन पेमेंट करके रसीद डाउनलोड कर लें। कोई और सवाल हो तो बताइए।'
+        },
+        {
+          keywords: ['रजिस्ट्री', 'registry', 'stamp duty', 'स्टाम्प ड्यूटी'],
+          answer: 'रजिस्ट्री में पुरुष खरीददार के लिए 6% और महिला खरीददार के लिए 5.7% स्टाम्प ड्यूटी लगती है, साथ में 2% रजिस्ट्रेशन फीस (अधिकतम ₹60,000) लगती है। पूरी प्रक्रिया nibandhan.bihar.gov.in पर उपलब्ध है। कोई और सवाल हो तो बताइए।'
+        },
+        {
+          keywords: ['परिमार्जन', 'parimarjan', 'खसरा सुधार', 'khasra sudhar', 'नाम गलत'],
+          answer: 'जमाबंदी में नाम या खसरा की गलती ठीक करवाने के लिए "परिमार्जन" आवेदन parimarjanplus.bihar.gov.in पर ऑनलाइन या अंचल कार्यालय में आधार और रजिस्ट्री कागज़ात के साथ जमा करें। कोई और सवाल हो तो बताइए।'
+        },
+        {
+          keywords: ['विवाद', 'dispute', 'vivad', 'कब्जा', 'kabza', 'झगड़ा'],
+          answer: 'जमीन विवाद में सबसे पहले अंचल अधिकारी (CO) को लिखित आवेदन दें। वहां समाधान न मिले तो DCLR या SDO के पास जाएं। ज़्यादा गंभीर मामले में zameen-vivad-bihar.html पेज पर पूरी प्रक्रिया दी गई है। कोई और सवाल हो तो बताइए।'
         }
+      ];
+
+      function getSaathiResponse(userMessage, detectedLang) {
+        const q = (userMessage || '').toLowerCase();
+        let best = null;
+        let bestScore = 0;
+        for (const item of SAATHI_KB) {
+          let score = 0;
+          for (const kw of item.keywords) {
+            if (q.includes(kw.toLowerCase())) score++;
+          }
+          if (score > bestScore) {
+            bestScore = score;
+            best = item;
+          }
+        }
+        if (best && bestScore > 0) {
+          return Promise.resolve(best.answer);
+        }
+        return Promise.resolve(
+          'माफी — इसके लिए हमारे पास अभी सीधा जवाब नहीं है। ऊपर दिए सवालों में से कोई आज़माएं, या सीधे WhatsApp पर पूछें: 9835102324'
+        );
       }
 
       function prepareTextForSpeech(text) {
