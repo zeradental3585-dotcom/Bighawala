@@ -944,6 +944,25 @@ function bwInitShare(){
   if (tgLink) tgLink.href = 'https://t.me/share/url?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(shareTitle);
   if (xLink) xLink.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareTitle) + '&url=' + encodeURIComponent(shareUrl);
 
+  // GA4 recommended "share" event — lets Analytics report which pages get
+  // shared and on which platform (method), via Reports > Engagement > Events.
+  function trackShare(method) {
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'share', {
+          method: method,
+          content_type: 'page',
+          item_id: shareUrl
+        });
+      }
+    } catch (e) { /* analytics is never allowed to break sharing */ }
+  }
+
+  if (waLink) waLink.addEventListener('click', function () { trackShare('WhatsApp'); });
+  if (fbLink) fbLink.addEventListener('click', function () { trackShare('Facebook'); });
+  if (tgLink) tgLink.addEventListener('click', function () { trackShare('Telegram'); });
+  if (xLink) xLink.addEventListener('click', function () { trackShare('X'); });
+
   function showToast(msg) {
     if (!toast) return;
     toast.textContent = msg;
@@ -963,6 +982,7 @@ function bwInitShare(){
       document.execCommand('copy');
       document.body.removeChild(ta);
       showToast('Link copy ho gaya! ✅');
+      trackShare('Copy Link');
     } catch (e) {
       showToast('Copy nahi ho paya — link manually copy karein');
     }
@@ -973,6 +993,7 @@ function bwInitShare(){
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(shareUrl).then(function () {
           showToast('Link copy ho gaya! ✅');
+          trackShare('Copy Link');
         }).catch(copyFallback);
       } else {
         copyFallback();
@@ -983,7 +1004,9 @@ function bwInitShare(){
 
   fab.addEventListener('click', function () {
     if (navigator.share) {
-      navigator.share({ title: shareTitle, url: shareUrl }).catch(function () {});
+      navigator.share({ title: shareTitle, url: shareUrl }).then(function () {
+        trackShare('Native Share Sheet');
+      }).catch(function () {});
     } else {
       tray.classList.toggle('bw-open');
     }
