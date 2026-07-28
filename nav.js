@@ -639,6 +639,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     </button>
     <div class="bw-dd" id="bwg">
       <a href="bihar-jamin-survey.html" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
+      <a href="bihar-survey-status-check.html" style="font-weight:800;color:#1D4ED8;">🔍 सर्वे स्टेटस चेक करें</a>
       <a href="vanshavali-kaise-banaye.html" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (Free Tool)</a>
       <a href="dakhil-kharij.html">📋 Dakhil Kharij</a>
       <a href="dakhil-kharij-fees.html">💰 DK Fees</a>
@@ -729,6 +730,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     <div class="bw-mms">
       <div class="bw-mml">Guides</div>
       <a href="bihar-jamin-survey.html" onclick="bwM()" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
+      <a href="bihar-survey-status-check.html" onclick="bwM()" style="font-weight:800;color:#1D4ED8;">🔍 सर्वे स्टेटस चेक करें</a>
       <a href="dakhil-kharij.html" onclick="bwM()">📋 Dakhil Kharij</a>
       <a href="dakhil-kharij-fees.html" onclick="bwM()">💰 DK Fees</a>
       <a href="bhulekh.html" onclick="bwM()">🗺️ Bhulekh Bihar</a>
@@ -839,6 +841,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 window.bwSD = [
   {t:'Bihar Jamin Survey Guide',k:'survey sarvekshan vanshavali prapatra form 2 form 3 khanapuri',u:'bihar-jamin-survey.html'},
   {t:'Vanshavali Kaise Banaye (Free Tool)',k:'vanshavali banao generator prapatra 3 genealogy family tree',u:'vanshavali-kaise-banaye.html'},
+  {t:'Bihar Survey Status Check',k:'survey status check dlrs online khanapuri complaint',u:'bihar-survey-status-check.html'},
   {t:'अपना खाता देखें',k:'apna khata khatyan',u:'apna-khata-dekhe.html'},
   {t:'Bigha Calculator',k:'bigha katha dhur convert',u:'bigha-calculator.html'},
   {t:'Bigha to Decimal',k:'bigha decimal dismil',u:'bigha-to-decimal.html'},
