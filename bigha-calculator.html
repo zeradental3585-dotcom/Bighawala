@@ -98,6 +98,113 @@
         background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
         border: 2px solid #86EFAC;
       }
+
+      /* ===================== SIMPLE MODE ===================== */
+      .sm-card{ border:3px solid #1B5E20; }
+      .sm-header{ background:linear-gradient(135deg,#2E7D32 0%,#1B5E20 60%,#0f3d12 100%); }
+
+      .sm-unit-btn{
+        display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+        background:#F8FAFC; border:3px solid #E2E8F0; border-radius:20px;
+        padding:16px 8px; cursor:pointer; transition:transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+        min-height:96px;
+      }
+      .sm-unit-btn:hover{ transform:translateY(-2px); }
+      .sm-unit-btn:active{ transform:scale(0.96); }
+      .sm-unit-icon{ font-size:32px; line-height:1; }
+      .sm-unit-label{ font-size:13px; font-weight:800; color:#334155; line-height:1.25; }
+      .sm-unit-sub{ font-size:10px; font-weight:600; color:#94A3B8; }
+      .sm-unit-btn.sm-active{ border-color:currentColor; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
+      .sm-unit-acre.sm-active{ background:#ECFDF5; color:#15803D; }
+      .sm-unit-bigha.sm-active{ background:#EFF6FF; color:#1D4ED8; }
+      .sm-unit-katha.sm-active{ background:#FFFBEB; color:#B45309; }
+      .sm-unit-decimal.sm-active{ background:#FAF5FF; color:#7E22CE; }
+
+      .sm-stepper-btn{
+        width:56px; height:56px; border-radius:50%; border:none;
+        background:#1B5E20; color:#fff; font-size:32px; font-weight:900;
+        display:flex; align-items:center; justify-content:center;
+        cursor:pointer; box-shadow:0 4px 14px rgba(27,94,32,0.35);
+        transition:transform 0.12s ease;
+        flex-shrink:0; line-height:1; padding-bottom:4px;
+      }
+      .sm-stepper-btn:active{ transform:scale(0.9); }
+      @media(min-width:640px){ .sm-stepper-btn{ width:68px; height:68px; font-size:38px; } }
+
+      .sm-value-display{
+        font-size:52px; font-weight:900; color:#0f172a; line-height:1;
+        transition:transform 0.15s ease;
+      }
+      @media(min-width:640px){ .sm-value-display{ font-size:72px; } }
+      .sm-value-display.sm-pulse{ animation:smPulse 0.35s ease; }
+      @keyframes smPulse{ 0%{transform:scale(1);} 40%{transform:scale(1.15);} 100%{transform:scale(1);} }
+      .sm-unit-display{ font-size:16px; font-weight:800; color:#475569; margin-top:2px; }
+
+      .sm-slider{
+        -webkit-appearance:none; appearance:none; height:14px; border-radius:999px;
+        background:linear-gradient(90deg,#86EFAC,#2E7D32); outline:none; cursor:pointer;
+      }
+      .sm-slider::-webkit-slider-thumb{
+        -webkit-appearance:none; appearance:none; width:34px; height:34px; border-radius:50%;
+        background:#fff; border:5px solid #1B5E20; box-shadow:0 3px 10px rgba(0,0,0,0.3); cursor:pointer;
+      }
+      .sm-slider::-moz-range-thumb{
+        width:34px; height:34px; border-radius:50%; background:#fff; border:5px solid #1B5E20;
+        box-shadow:0 3px 10px rgba(0,0,0,0.3); cursor:pointer;
+      }
+
+      .sm-listen-btn{
+        background:#FF6F00; color:#fff; font-weight:900; font-size:15px;
+        padding:14px 26px; border-radius:999px; border:none; cursor:pointer;
+        box-shadow:0 6px 16px rgba(255,111,0,0.35); margin:4px 6px;
+        transition:transform 0.12s ease;
+      }
+      .sm-listen-btn:active{ transform:scale(0.96); }
+      .sm-type-toggle{
+        background:none; border:none; color:#2563EB; font-weight:800; font-size:13px;
+        text-decoration:underline; cursor:pointer; padding:10px; margin:4px 6px;
+      }
+
+      .sm-result-card{
+        display:flex; flex-direction:column; align-items:center; gap:2px;
+        background:#F8FAFC; border:2px solid #E2E8F0; border-radius:18px; padding:14px 8px;
+        transition:transform 0.15s ease;
+      }
+      .sm-result-card.sm-pulse{ animation:smCardPulse 0.35s ease; }
+      @keyframes smCardPulse{ 0%{transform:scale(1);} 45%{transform:scale(1.06);} 100%{transform:scale(1);} }
+      .sm-rc-icon{ font-size:26px; }
+      .sm-rc-value{ font-size:20px; font-weight:900; color:#0f172a; }
+      @media(min-width:640px){ .sm-rc-value{ font-size:24px; } }
+      .sm-rc-label{ font-size:11px; font-weight:700; color:#64748B; }
+      .sm-rc-acre{ border-color:#86EFAC; }
+      .sm-rc-bigha{ border-color:#93C5FD; }
+      .sm-rc-katha{ border-color:#FDE68A; }
+      .sm-rc-dhur{ border-color:#FDBA74; }
+      .sm-rc-decimal{ border-color:#D8B4FE; }
+      .sm-rc-sqft{ border-color:#CBD5E1; }
+
+      .sm-bkdd-box{
+        background:#F0FDF4; border:2px dashed #86EFAC; border-radius:16px; padding:12px;
+      }
+
+      .sm-compare-card{
+        background:#FFFBEB; border:2px solid #FDE68A; border-radius:18px; padding:16px; text-align:center;
+      }
+
+      .sm-visual-track{ background:#E2E8F0; border-radius:999px; height:22px; overflow:hidden; }
+      .sm-visual-fill{
+        height:100%; width:10%; border-radius:999px;
+        background:linear-gradient(90deg,#4ADE80,#1B5E20);
+        transition:width 0.4s ease;
+      }
+
+      .sm-share-btn{
+        background:#25D366; color:#fff; font-weight:900; font-size:14px;
+        padding:14px 28px; border-radius:999px; border:none; cursor:pointer;
+        box-shadow:0 6px 16px rgba(37,211,102,0.35);
+        transition:transform 0.12s ease;
+      }
+      .sm-share-btn:active{ transform:scale(0.96); }
     </style>
   </head>
   <body class="min-h-screen flex flex-col">
@@ -119,9 +226,165 @@
         </p>
       </section>
 
-      <!-- CALCULATOR TABS CONTAINER -->
+      <!-- ============================================================ -->
+      <!-- SIMPLE MODE — designed for low-literacy users. Big icons,     -->
+      <!-- +/- buttons + slider (no typing needed), huge numbers, a      -->
+      <!-- "listen" button that speaks the result aloud in Hindi, and    -->
+      <!-- real-world size comparisons instead of dense tables.          -->
+      <!-- ============================================================ -->
+      <section class="sm-card rounded-3xl shadow-xl overflow-hidden mb-8">
+        <div class="sm-header text-center py-5 px-4">
+          <span class="inline-block bg-white/20 text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+            👆 सबसे आसान तरीका — Simple Mode
+          </span>
+          <h2 class="text-xl sm:text-3xl font-black text-white leading-tight">
+            बस बटन दबाएं या स्लाइड करें! 🌾
+          </h2>
+          <p class="text-white/85 text-xs sm:text-sm font-bold mt-1">
+            कुछ भी टाइप करने की ज़रूरत नहीं — देखें, दबाएं और सुनें!
+          </p>
+        </div>
+
+        <div class="p-4 sm:p-8 bg-white">
+
+          <!-- STEP 1: UNIT PICKER (big icon buttons, no reading required) -->
+          <div class="text-center mb-2">
+            <span class="text-xs sm:text-sm font-black text-slate-500">1️⃣ पहले यूनिट चुनें (नीचे छूएं):</span>
+          </div>
+          <div id="smUnitPicker" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 mt-2">
+            <button type="button" onclick="smSelectUnit('acre')" data-unit="acre" class="sm-unit-btn sm-unit-acre sm-active">
+              <span class="sm-unit-icon">🌾</span>
+              <span class="sm-unit-label">एकड़<br><span class="sm-unit-sub">Acre</span></span>
+            </button>
+            <button type="button" onclick="smSelectUnit('bigha')" data-unit="bigha" class="sm-unit-btn sm-unit-bigha">
+              <span class="sm-unit-icon">📐</span>
+              <span class="sm-unit-label">बीघा<br><span class="sm-unit-sub">Bigha</span></span>
+            </button>
+            <button type="button" onclick="smSelectUnit('katha')" data-unit="katha" class="sm-unit-btn sm-unit-katha">
+              <span class="sm-unit-icon">🟩</span>
+              <span class="sm-unit-label">कट्ठा<br><span class="sm-unit-sub">Katha</span></span>
+            </button>
+            <button type="button" onclick="smSelectUnit('decimal')" data-unit="decimal" class="sm-unit-btn sm-unit-decimal">
+              <span class="sm-unit-icon">🔢</span>
+              <span class="sm-unit-label">डिसमिल<br><span class="sm-unit-sub">Decimal</span></span>
+            </button>
+          </div>
+
+          <!-- STEP 2: BIG VALUE DISPLAY + STEPPER + SLIDER -->
+          <div class="text-center mb-2">
+            <span class="text-xs sm:text-sm font-black text-slate-500">2️⃣ अब मात्रा चुनें (− या + दबाएं, या स्लाइड करें):</span>
+          </div>
+
+          <div class="flex items-center justify-center gap-3 sm:gap-5 my-5">
+            <button type="button" onclick="smStep(-1)" aria-label="कम करें (Decrease)" class="sm-stepper-btn">−</button>
+            <div class="text-center min-w-[160px] sm:min-w-[220px]">
+              <div id="smValueDisplay" class="sm-value-display">1</div>
+              <div id="smUnitDisplay" class="sm-unit-display">एकड़ (Acre)</div>
+            </div>
+            <button type="button" onclick="smStep(1)" aria-label="बढ़ाएं (Increase)" class="sm-stepper-btn">+</button>
+          </div>
+
+          <input type="range" id="smSlider" min="0.5" max="50" step="0.5" value="1" oninput="smSliderChange(this.value)" class="sm-slider w-full max-w-xl mx-auto block" aria-label="जमीन की मात्रा स्लाइडर (Land quantity slider)">
+
+          <div class="text-center mt-5">
+            <button type="button" onclick="smSpeak()" class="sm-listen-btn">
+              🔊 आवाज़ में सुनें (Listen)
+            </button>
+            <button type="button" onclick="smToggleTyping()" class="sm-type-toggle">
+              ✏️ सटीक नंबर टाइप करें
+            </button>
+            <div id="smTypeBox" class="hidden mt-3 max-w-xs mx-auto">
+              <input type="number" id="smTypeInput" step="any" min="0" oninput="smTypeChange(this.value)" class="w-full text-center px-4 py-3 bg-slate-50 border-2 border-slate-300 focus:border-emerald-600 rounded-xl font-black text-slate-900 outline-none text-lg" placeholder="यहां नंबर लिखें">
+            </div>
+          </div>
+
+          <!-- STEP 3: SEE IN ALL UNITS — big colourful auto-updating cards -->
+          <div class="text-center mt-9 mb-3">
+            <span class="text-xs sm:text-sm font-black text-slate-500">3️⃣ सभी में एक साथ देखें (अपने आप बदलता है):</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="sm-result-card sm-rc-acre">
+              <span class="sm-rc-icon">🌾</span>
+              <span id="smOutAcre" class="sm-rc-value">1</span>
+              <span class="sm-rc-label">एकड़ Acre</span>
+            </div>
+            <div class="sm-result-card sm-rc-bigha">
+              <span class="sm-rc-icon">📐</span>
+              <span id="smOutBigha" class="sm-rc-value">1.6</span>
+              <span class="sm-rc-label">बीघा Bigha</span>
+            </div>
+            <div class="sm-result-card sm-rc-katha">
+              <span class="sm-rc-icon">🟩</span>
+              <span id="smOutKatha" class="sm-rc-value">32</span>
+              <span class="sm-rc-label">कट्ठा Katha</span>
+            </div>
+            <div class="sm-result-card sm-rc-dhur">
+              <span class="sm-rc-icon">🟨</span>
+              <span id="smOutDhur" class="sm-rc-value">640</span>
+              <span class="sm-rc-label">धूर Dhur</span>
+            </div>
+            <div class="sm-result-card sm-rc-decimal">
+              <span class="sm-rc-icon">🔢</span>
+              <span id="smOutDecimal" class="sm-rc-value">100</span>
+              <span class="sm-rc-label">डिसमिल Decimal</span>
+            </div>
+            <div class="sm-result-card sm-rc-sqft">
+              <span class="sm-rc-icon">📏</span>
+              <span id="smOutSqft" class="sm-rc-value">43,560</span>
+              <span class="sm-rc-label">वर्ग फीट Sqft</span>
+            </div>
+          </div>
+
+          <div class="sm-bkdd-box mt-4 text-center">
+            <span class="text-xs font-bold text-slate-500">📜 कागज़ात में जैसे लिखा होता है (As written on paper):</span>
+            <div id="smBkddText" class="text-base sm:text-xl font-black text-emerald-900 mt-1">1 बीघा 12 कट्ठा 0 धूर 0 धुरकी</div>
+          </div>
+
+          <!-- STEP 4: REAL-WORLD VISUAL COMPARISON -->
+          <div class="text-center mt-9 mb-3">
+            <span class="text-xs sm:text-sm font-black text-slate-500">4️⃣ यह जमीन कितनी बड़ी है? (तस्वीर में समझें):</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="sm-compare-card">
+              <span class="text-3xl sm:text-4xl">⚽</span>
+              <div class="mt-1">
+                <span id="smCompareFootball" class="text-xl sm:text-2xl font-black text-emerald-800">0.6</span>
+                <span class="text-xs sm:text-sm font-bold text-slate-600"> फुटबॉल मैदान के बराबर</span>
+              </div>
+              <div class="text-[10px] text-slate-400 font-semibold">(Football Field ≈ 1.76 Acre)</div>
+            </div>
+            <div class="sm-compare-card">
+              <span class="text-3xl sm:text-4xl">🏠</span>
+              <div class="mt-1">
+                <span id="smCompareHouse" class="text-xl sm:text-2xl font-black text-orange-700">36</span>
+                <span class="text-xs sm:text-sm font-bold text-slate-600"> घर के प्लॉट के बराबर</span>
+              </div>
+              <div class="text-[10px] text-slate-400 font-semibold">(House Plot 30×40 ft = 1,200 Sqft)</div>
+            </div>
+          </div>
+          <div id="smVisualBarWrap" class="mt-4 max-w-xl mx-auto">
+            <div class="sm-visual-track">
+              <div id="smVisualBar" class="sm-visual-fill"></div>
+            </div>
+          </div>
+
+          <div class="text-center mt-7">
+            <button onclick="smShareResult()" class="sm-share-btn">
+              📱 यह रिजल्ट WhatsApp पर भेजें
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CALCULATOR TABS CONTAINER (ADVANCED / DETAILED TOOLS) -->
+      <div class="text-center mb-4 mt-2">
+        <span class="inline-block bg-slate-200 text-slate-700 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">
+          🎓 विस्तृत/एडवांस्ड टूल्स (Detailed Tools — Dhurki, Price, Laggi, Kari)
+        </span>
+      </div>
       <section class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden mb-8">
-        
+
         <!-- Tab Navigation Buttons (5 Tabs) -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 bg-slate-100 p-2 gap-2 border-b border-slate-200">
           <button id="tab-btn-1" onclick="switchTab(1)" class="tab-btn active py-3 px-2 rounded-2xl text-xs sm:text-sm font-extrabold text-center cursor-pointer">
@@ -863,6 +1126,174 @@
         window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(msg), '_blank');
       }
 
+      // ============================================================
+      // SIMPLE MODE — icon/slider driven converter for low-literacy users.
+      // Reuses the same canonical UNIT_SQFT table as the rest of the page.
+      // ============================================================
+      var SM_CONFIG = {
+        acre:    { hindi:'एकड़', eng:'Acre',    min:0.5,  max:50,   step:0.5, def:1   },
+        bigha:   { hindi:'बीघा', eng:'Bigha',   min:1,    max:100,  step:1,   def:2   },
+        katha:   { hindi:'कट्ठा', eng:'Katha',  min:1,    max:400,  step:1,   def:10  },
+        decimal: { hindi:'डिसमिल', eng:'Decimal', min:5,  max:1000, step:5,   def:50  }
+      };
+      var FOOTBALL_FIELD_SQFT = 76854.86; // FIFA standard pitch 105m x 68m = 7,140 sqm
+      var HOUSE_PLOT_SQFT = 1200;         // common Indian residential plot reference (30ft x 40ft)
+
+      var smState = { unit: 'acre', value: 1 };
+
+      function smSelectUnit(unit) {
+        if (!SM_CONFIG[unit]) return;
+        smState.unit = unit;
+        smState.value = SM_CONFIG[unit].def;
+
+        document.querySelectorAll('.sm-unit-btn').forEach(function (btn) {
+          btn.classList.toggle('sm-active', btn.getAttribute('data-unit') === unit);
+        });
+
+        var cfg = SM_CONFIG[unit];
+        var slider = document.getElementById('smSlider');
+        if (slider) {
+          slider.min = cfg.min;
+          slider.max = cfg.max;
+          slider.step = cfg.step;
+          slider.value = cfg.def;
+        }
+        var typeInput = document.getElementById('smTypeInput');
+        if (typeInput) typeInput.value = cfg.def;
+
+        smRender();
+      }
+
+      function smStep(dir) {
+        var cfg = SM_CONFIG[smState.unit];
+        var next = smState.value + dir * cfg.step;
+        next = Math.max(cfg.min, Math.min(cfg.max, next));
+        next = Math.round(next * 100) / 100;
+        smState.value = next;
+        var slider = document.getElementById('smSlider');
+        if (slider) slider.value = next;
+        var typeInput = document.getElementById('smTypeInput');
+        if (typeInput) typeInput.value = next;
+        smRender();
+      }
+
+      function smSliderChange(val) {
+        smState.value = parseFloat(val) || 0;
+        var typeInput = document.getElementById('smTypeInput');
+        if (typeInput) typeInput.value = smState.value;
+        smRender();
+      }
+
+      function smTypeChange(val) {
+        var v = parseFloat(val);
+        if (isNaN(v) || v < 0) return;
+        smState.value = v;
+        var slider = document.getElementById('smSlider');
+        if (slider) {
+          var cfg = SM_CONFIG[smState.unit];
+          slider.value = Math.max(cfg.min, Math.min(cfg.max, v));
+        }
+        smRender();
+      }
+
+      function smToggleTyping() {
+        var box = document.getElementById('smTypeBox');
+        if (!box) return;
+        box.classList.toggle('hidden');
+        if (!box.classList.contains('hidden')) {
+          var typeInput = document.getElementById('smTypeInput');
+          if (typeInput) { typeInput.value = smState.value; typeInput.focus(); }
+        }
+      }
+
+      function smPulse(el) {
+        if (!el) return;
+        el.classList.remove('sm-pulse');
+        void el.offsetWidth; // restart animation
+        el.classList.add('sm-pulse');
+      }
+
+      var smLastResult = null;
+
+      function smRender() {
+        var cfg = SM_CONFIG[smState.unit];
+        var totalSqft = smState.value * UNIT_SQFT[smState.unit];
+
+        var valDisp = document.getElementById('smValueDisplay');
+        if (valDisp) { valDisp.textContent = fmt(smState.value, 2); smPulse(valDisp); }
+        var unitDisp = document.getElementById('smUnitDisplay');
+        if (unitDisp) unitDisp.textContent = cfg.hindi + ' (' + cfg.eng + ')';
+
+        var bk = breakdownBKDD(totalSqft);
+        var bkddText = bk.bigha + ' बीघा ' + bk.katha + ' कट्ठा ' + bk.dhur + ' धूर ' + bk.dhurki + ' धुरकी';
+        var bkddEl = document.getElementById('smBkddText');
+        if (bkddEl) bkddEl.textContent = bkddText;
+
+        var outAcre = document.getElementById('smOutAcre');
+        var outBigha = document.getElementById('smOutBigha');
+        var outKatha = document.getElementById('smOutKatha');
+        var outDhur = document.getElementById('smOutDhur');
+        var outDecimal = document.getElementById('smOutDecimal');
+        var outSqft = document.getElementById('smOutSqft');
+        if (outAcre) outAcre.textContent = fmt(totalSqft / UNIT_SQFT.acre, 3);
+        if (outBigha) outBigha.textContent = fmt(totalSqft / UNIT_SQFT.bigha, 3);
+        if (outKatha) outKatha.textContent = fmt(totalSqft / UNIT_SQFT.katha, 2);
+        if (outDhur) outDhur.textContent = fmt(totalSqft / UNIT_SQFT.dhur, 1);
+        if (outDecimal) outDecimal.textContent = fmt(totalSqft / UNIT_SQFT.decimal, 2);
+        if (outSqft) outSqft.textContent = fmt(totalSqft, 0);
+        document.querySelectorAll('.sm-result-card').forEach(function (c) { smPulse(c); });
+
+        var footballCount = totalSqft / FOOTBALL_FIELD_SQFT;
+        var houseCount = totalSqft / HOUSE_PLOT_SQFT;
+        var fbEl = document.getElementById('smCompareFootball');
+        var houseEl = document.getElementById('smCompareHouse');
+        if (fbEl) fbEl.textContent = fmt(footballCount, footballCount < 1 ? 2 : 1);
+        if (houseEl) houseEl.textContent = fmt(houseCount, houseCount < 1 ? 2 : 1);
+
+        // visual bar: scaled on sqrt curve so both small & large values stay visible (10%-100%)
+        var bar = document.getElementById('smVisualBar');
+        if (bar) {
+          var acreEquiv = totalSqft / UNIT_SQFT.acre;
+          var pct = Math.min(100, Math.max(8, Math.sqrt(acreEquiv / 10) * 100));
+          bar.style.width = pct + '%';
+        }
+
+        smLastResult = {
+          input: fmt(smState.value, 2) + ' ' + cfg.eng,
+          bkdd: bk.bigha + ' Bigha ' + bk.katha + ' Katha ' + bk.dhur + ' Dhur ' + bk.dhurki + ' Dhurki',
+          acre: fmt(totalSqft / UNIT_SQFT.acre, 3),
+          decimal: fmt(totalSqft / UNIT_SQFT.decimal, 2),
+          sqft: fmt(totalSqft, 0)
+        };
+      }
+
+      function smSpeak() {
+        try {
+          if (!('speechSynthesis' in window)) {
+            alert('इस डिवाइस में आवाज़ सुविधा उपलब्ध नहीं है (Voice feature not available on this device)');
+            return;
+          }
+          if (!smLastResult) return;
+          var r = smLastResult;
+          var text = 'आपने चुना ' + r.input + '. यह बराबर है, ' + r.bkdd.replace(/Dhurki/g, 'धुरकी').replace(/Bigha/g, 'बीघा').replace(/Katha/g, 'कट्ठा').replace(/Dhur\b/g, 'धूर') +
+            '. या ' + r.decimal + ' डिसमिल. या ' + r.acre + ' एकड़.';
+          window.speechSynthesis.cancel();
+          var utter = new SpeechSynthesisUtterance(text);
+          utter.lang = 'hi-IN';
+          utter.rate = 0.9;
+          window.speechSynthesis.speak(utter);
+        } catch (e) { /* speech is a bonus feature, never block the calculator */ }
+      }
+
+      function smShareResult() {
+        if (!smLastResult) return;
+        var r = smLastResult;
+        var msg = "BighaWala Simple Calculator:\n" + r.input + " =\n" + r.bkdd + "\n" +
+          r.decimal + " Decimal | " + r.acre + " Acre | " + r.sqft + " Sqft\n" +
+          "https://www.bighawala.com/bigha-calculator";
+        window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(msg), '_blank');
+      }
+
       // TAB 2: BIGHA + KATHA + DHUR + DHURKI COMBINED ENTRY
       var lastTab2Result = null;
       function calcTab2() {
@@ -1098,6 +1529,9 @@
         calcTab3();
         calcTab4();
         calcTab5();
+        smState.unit = 'acre';
+        smState.value = 1;
+        smRender();
       });
     </script>
   </body>
