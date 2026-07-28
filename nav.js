@@ -623,6 +623,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       Tools <span class="bw-arr">▼</span>
     </button>
     <div class="bw-dd" id="bwt">
+      <a href="vanshavali-kaise-banaye.html" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (नया)</a>
       <a href="bigha-calculator.html">🧮 Bigha Calculator</a>
       <a href="bigha-to-decimal.html">🔢 Bigha to Decimal</a>
       <a href="zameen-moolyankan.html">🏡 Zameen Moolyankan</a>
@@ -638,6 +639,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     </button>
     <div class="bw-dd" id="bwg">
       <a href="bihar-jamin-survey.html" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
+      <a href="vanshavali-kaise-banaye.html" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (Free Tool)</a>
       <a href="dakhil-kharij.html">📋 Dakhil Kharij</a>
       <a href="dakhil-kharij-fees.html">💰 DK Fees</a>
       <a href="bhulekh.html">🗺️ Bhulekh Bihar</a>
@@ -715,6 +717,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Tools</div>
+      <a href="vanshavali-kaise-banaye.html" onclick="bwM()" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (नया)</a>
       <a href="bigha-calculator.html" onclick="bwM()">🧮 Bigha Calculator</a>
       <a href="bigha-to-decimal.html" onclick="bwM()">🔢 Bigha to Decimal</a>
       <a href="zameen-moolyankan.html" onclick="bwM()">🏡 Zameen Moolyankan</a>
@@ -835,6 +838,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 
 window.bwSD = [
   {t:'Bihar Jamin Survey Guide',k:'survey sarvekshan vanshavali prapatra form 2 form 3 khanapuri',u:'bihar-jamin-survey.html'},
+  {t:'Vanshavali Kaise Banaye (Free Tool)',k:'vanshavali banao generator prapatra 3 genealogy family tree',u:'vanshavali-kaise-banaye.html'},
   {t:'अपना खाता देखें',k:'apna khata khatyan',u:'apna-khata-dekhe.html'},
   {t:'Bigha Calculator',k:'bigha katha dhur convert',u:'bigha-calculator.html'},
   {t:'Bigha to Decimal',k:'bigha decimal dismil',u:'bigha-to-decimal.html'},
