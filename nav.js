@@ -1,5 +1,53 @@
 (function() {
 
+// Sitewide Organization + WebSite structured data (schema.org), injected once per page load.
+// Uses only real, verifiable business details (address/email from contact.html) — no fabricated data.
+try {
+  if (!document.getElementById('bw-org-schema')) {
+    var siteSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.bighawala.com/#organization",
+          "name": "BighaWala.com",
+          "url": "https://www.bighawala.com/",
+          "logo": "https://www.bighawala.com/og-image.png",
+          "email": "support@bighawala.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Arar Ghat, Bishunpur Arar",
+            "addressLocality": "Madhepura",
+            "addressRegion": "Bihar",
+            "postalCode": "852115",
+            "addressCountry": "IN"
+          },
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "Zera Technologies",
+            "url": "https://zeratech.io/"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.bighawala.com/#website",
+          "url": "https://www.bighawala.com/",
+          "name": "BighaWala.com",
+          "inLanguage": "hi",
+          "publisher": { "@id": "https://www.bighawala.com/#organization" }
+        }
+      ]
+    };
+    var schemaTag = document.createElement('script');
+    schemaTag.type = 'application/ld+json';
+    schemaTag.id = 'bw-org-schema';
+    schemaTag.text = JSON.stringify(siteSchema);
+    document.head.appendChild(schemaTag);
+  }
+} catch (e) {
+  // structured data is progressive enhancement — never block page rendering
+}
+
 var NAV_HTML = `
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
