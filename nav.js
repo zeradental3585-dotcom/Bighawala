@@ -457,6 +457,59 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 }
 .bw-cookie-btn:hover{background:#256428;}
 
+.bw-share-wrap{
+  position:fixed;right:16px;bottom:24px;z-index:9999;
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+}
+.bw-share-fab{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,#2E7D32,#1B5E20);
+  color:#fff;border:none;box-shadow:0 6px 18px rgba(0,0,0,0.3);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:24px;line-height:1;
+  transition:transform 0.2s ease;
+}
+.bw-share-fab:hover{transform:scale(1.06);}
+.bw-share-fab:active{transform:scale(0.95);}
+.bw-share-tray{
+  display:flex;flex-direction:column;align-items:flex-end;gap:8px;
+  opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:opacity 0.18s ease,transform 0.18s ease;
+}
+.bw-share-tray.bw-open{opacity:1;pointer-events:auto;transform:translateY(0);}
+.bw-share-item{
+  display:flex;align-items:center;gap:9px;
+  background:#fff;color:#0f172a;border:1px solid rgba(0,0,0,0.08);
+  padding:7px 16px 7px 7px;border-radius:999px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.2);
+  font-weight:700;font-size:12.5px;
+  text-decoration:none;cursor:pointer;white-space:nowrap;
+  -webkit-tap-highlight-color:transparent;
+}
+.bw-share-icon{
+  width:30px;height:30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:900;color:#fff;flex-shrink:0;
+}
+.bw-share-wa .bw-share-icon{background:#25D366;}
+.bw-share-fb .bw-share-icon{background:#1877F2;}
+.bw-share-tg .bw-share-icon{background:#229ED9;}
+.bw-share-x .bw-share-icon{background:#111827;}
+.bw-share-copy .bw-share-icon{background:#475569;}
+.bw-share-toast{
+  position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);
+  background:#0f172a;color:#fff;padding:11px 20px;border-radius:999px;
+  font-weight:700;font-size:13px;
+  opacity:0;pointer-events:none;transition:opacity 0.22s ease,transform 0.22s ease;
+  z-index:10000;box-shadow:0 6px 20px rgba(0,0,0,0.32);
+  white-space:nowrap;
+}
+.bw-share-toast.bw-show{opacity:1;transform:translate(-50%,0);}
+@media(max-width:600px){
+  .bw-share-wrap{bottom:84px;right:14px;}
+  .bw-share-toast{bottom:104px;}
+}
+
 @media(max-width:1024px){
   .bw-nav{display:none;}
   .bw-wai{display:none;}
@@ -668,6 +721,28 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
   </div>
   <button type="button" class="bw-cookie-btn" id="bwCookieOk">समझ गया</button>
 </div>
+
+<div class="bw-share-wrap" id="bwShareWrap">
+  <div class="bw-share-tray" id="bwShareTray">
+    <a href="#" id="bwShareWA" target="_blank" rel="noopener noreferrer" class="bw-share-item bw-share-wa" aria-label="WhatsApp par share karein">
+      <span class="bw-share-icon">💬</span>WhatsApp
+    </a>
+    <a href="#" id="bwShareFB" target="_blank" rel="noopener noreferrer" class="bw-share-item bw-share-fb" aria-label="Facebook par share karein">
+      <span class="bw-share-icon">f</span>Facebook
+    </a>
+    <a href="#" id="bwShareTG" target="_blank" rel="noopener noreferrer" class="bw-share-item bw-share-tg" aria-label="Telegram par share karein">
+      <span class="bw-share-icon">✈</span>Telegram
+    </a>
+    <a href="#" id="bwShareX" target="_blank" rel="noopener noreferrer" class="bw-share-item bw-share-x" aria-label="X par share karein">
+      <span class="bw-share-icon">𝕏</span>X (Twitter)
+    </a>
+    <button type="button" id="bwShareCopy" class="bw-share-item bw-share-copy" aria-label="Link copy karein">
+      <span class="bw-share-icon">🔗</span>Copy Link
+    </button>
+  </div>
+  <button type="button" class="bw-share-fab" id="bwShareFab" aria-label="Is page ko share karein">📤</button>
+</div>
+<div class="bw-share-toast" id="bwShareToast">Link copy ho gaya! ✅</div>
 `;
 
 window.bwSD = [
@@ -843,6 +918,82 @@ function initNav(){
   } catch (e) {
     // localStorage unavailable (private browsing etc.) — fail silently, no notice shown
   }
+
+  try { bwInitShare(); } catch (e) { /* share widget is progressive enhancement */ }
+}
+
+function bwInitShare(){
+  var fab = document.getElementById('bwShareFab');
+  var tray = document.getElementById('bwShareTray');
+  var toast = document.getElementById('bwShareToast');
+  if (!fab || !tray) return;
+
+  var canon = document.querySelector('link[rel="canonical"]');
+  var shareUrl = canon ? canon.href : window.location.href;
+  var shareTitle = document.title || 'BighaWala.com';
+  var shareText = shareTitle + ' — ' + shareUrl;
+
+  var waLink = document.getElementById('bwShareWA');
+  var fbLink = document.getElementById('bwShareFB');
+  var tgLink = document.getElementById('bwShareTG');
+  var xLink = document.getElementById('bwShareX');
+  var copyBtn = document.getElementById('bwShareCopy');
+
+  if (waLink) waLink.href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+  if (fbLink) fbLink.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
+  if (tgLink) tgLink.href = 'https://t.me/share/url?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(shareTitle);
+  if (xLink) xLink.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareTitle) + '&url=' + encodeURIComponent(shareUrl);
+
+  function showToast(msg) {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('bw-show');
+    setTimeout(function () { toast.classList.remove('bw-show'); }, 2200);
+  }
+
+  function copyFallback() {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = shareUrl;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('Link copy ho gaya! ✅');
+    } catch (e) {
+      showToast('Copy nahi ho paya — link manually copy karein');
+    }
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(function () {
+          showToast('Link copy ho gaya! ✅');
+        }).catch(copyFallback);
+      } else {
+        copyFallback();
+      }
+      tray.classList.remove('bw-open');
+    });
+  }
+
+  fab.addEventListener('click', function () {
+    if (navigator.share) {
+      navigator.share({ title: shareTitle, url: shareUrl }).catch(function () {});
+    } else {
+      tray.classList.toggle('bw-open');
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('#bwShareWrap')) {
+      tray.classList.remove('bw-open');
+    }
+  });
 }
 
 if(document.readyState === 'loading'){
