@@ -193,6 +193,49 @@
         </div>
       </section>
 
+      <!-- STEP B2: DISTRICT PERSONALIZATION HELPER -->
+      <section class="bg-white rounded-3xl border-2 border-emerald-200 p-6 sm:p-8 shadow-md space-y-5">
+        <div class="space-y-2 text-center sm:text-left">
+          <span class="inline-block bg-emerald-100 text-emerald-900 font-black text-xs px-3.5 py-1 rounded-full uppercase tracking-wider">
+            🎯 Personalized Guide
+          </span>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+            अपना जिला चुनें — हम आपको सही Steps बताएंगे
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 font-bold">
+            नीचे अपना जिला चुनें। ध्यान दें: आपका खाता/जमाबंदी रिकॉर्ड सीधे यहाँ नहीं दिखाया जा सकता (नीचे कारण पढ़ें) — लेकिन हम आपको सरकारी पोर्टल पर बिल्कुल सही जगह तक पहुंचाएंगे।
+          </p>
+        </div>
+
+        <div class="max-w-md mx-auto space-y-3">
+          <select id="districtSelect" onchange="handleDistrictSelect()" class="w-full bg-slate-50 border-2 border-slate-300 rounded-xl px-4 py-3.5 text-slate-900 font-bold text-sm sm:text-base focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500">
+            <option value="">-- अपना जिला चुनें (Select District) --</option>
+          </select>
+
+          <div id="districtConfirmBox" class="hidden bg-emerald-50 border border-emerald-200 rounded-2xl p-4 space-y-3">
+            <p class="text-xs sm:text-sm font-black text-emerald-950">
+              ✅ आपने चुना: <span id="districtConfirmName"></span>
+            </p>
+            <p class="text-xs text-emerald-900 font-semibold leading-relaxed">
+              Official Portal खुलते ही District dropdown में <strong id="districtConfirmName2"></strong> चुनें, फिर अपना अंचल, हल्का और मौजा चुनकर आगे बढ़ें।
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <a id="districtPortalBtn" href="https://land.bihar.gov.in/Ror2025/RoR.aspx" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow transition-all">
+                🔗 Official Portal खोलें
+              </a>
+              <a id="districtRateLink" href="#" class="hidden inline-flex items-center gap-1.5 bg-white border border-emerald-300 hover:bg-emerald-50 text-emerald-800 font-black text-xs px-4 py-2.5 rounded-xl shadow-xs transition-all">
+                💰 अपने जिले का Land Rate देखें
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-600 font-semibold leading-relaxed">
+          ℹ️ <strong>हम सीधे रिकॉर्ड क्यों नहीं दिखा सकते:</strong> बिहार सरकार का जमाबंदी पोर्टल सुरक्षा कारणों से एक Security Code (CAPTCHA) मांगता है, जिसे कोई भी थर्ड-पार्टी वेबसाइट स्वचालित रूप से नहीं भर सकती — यह आपकी निजी जानकारी की सुरक्षा के लिए है। इसलिए BighaWala आपको बिल्कुल सही कदम बताकर सीधे सरकार की असली वेबसाइट पर भेजता है, ताकि आपका डेटा हमेशा सरकार के अपने सुरक्षित सर्वर पर ही रहे।
+          अपना अंचल या मौजा याद नहीं? <a href="halka-mauja-kya-hota-hai.html" class="text-emerald-700 underline font-black">हल्का/मौजा गाइड पढ़ें</a> या <a href="bhu-naksha-bihar.html" class="text-emerald-700 underline font-black">भू-नक्शा में गांव खोजें</a>।
+        </div>
+      </section>
+
       <!-- STEP C: MINI BIGHA CALCULATOR -->
       <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-md space-y-6">
         <div class="border-b border-slate-100 pb-3 flex items-center justify-between flex-wrap gap-2">
@@ -777,6 +820,81 @@
     }
   });
 </script>
+
+    <!-- DISTRICT PERSONALIZATION SCRIPT -->
+    <script>
+      // Real Bihar districts (name, Hindi name, matching BighaWala land-rate page) —
+      // same authoritative list already used sitewide (bihar-all-districts-land-rate.html, nav.js)
+      var apnaKhataDistricts = [
+        { name: "Araria", hindi: "अररिया", url: "araria-land-rate.html" },
+        { name: "Arwal", hindi: "अरवल", url: "arwal-land-rate.html" },
+        { name: "Aurangabad", hindi: "औरंगाबाद", url: "aurangabad-land-rate.html" },
+        { name: "Banka", hindi: "बांका", url: "banka-land-rate.html" },
+        { name: "Begusarai", hindi: "बेगूसराय", url: "begusarai-land-rate.html" },
+        { name: "Bhagalpur", hindi: "भागलपुर", url: "bhagalpur-land-rate.html" },
+        { name: "Bhojpur", hindi: "भोजपुर", url: "bhojpur-land-rate.html" },
+        { name: "Buxar", hindi: "बक्सर", url: "buxar-land-rate.html" },
+        { name: "Darbhanga", hindi: "दरभंगा", url: "darbhanga-land-rate.html" },
+        { name: "East Champaran", hindi: "पूर्वी चंपारण", url: "east-champaran-land-rate.html" },
+        { name: "Gaya", hindi: "गया", url: "gaya-land-rate.html" },
+        { name: "Gopalganj", hindi: "गोपालगंज", url: "gopalganj-land-rate.html" },
+        { name: "Jamui", hindi: "जमुई", url: "jamui-land-rate.html" },
+        { name: "Jehanabad", hindi: "जहानाबाद", url: "jehanabad-land-rate.html" },
+        { name: "Kaimur", hindi: "कैमूर", url: "kaimur-land-rate.html" },
+        { name: "Katihar", hindi: "कटिहार", url: "katihar-land-rate.html" },
+        { name: "Khagaria", hindi: "खगड़िया", url: "khagaria-land-rate.html" },
+        { name: "Kishanganj", hindi: "किशनगंज", url: "kishanganj-land-rate.html" },
+        { name: "Lakhisarai", hindi: "लखीसराय", url: "lakhisarai-land-rate.html" },
+        { name: "Madhepura", hindi: "मधेपुरा", url: "madhepura-land-rate.html" },
+        { name: "Madhubani", hindi: "मधुबनी", url: "madhubani-land-rate.html" },
+        { name: "Munger", hindi: "मुंगेर", url: "munger-land-rate.html" },
+        { name: "Muzaffarpur", hindi: "मुजफ्फरपुर", url: "muzaffarpur-land-rate.html" },
+        { name: "Nalanda", hindi: "नालंदा", url: "nalanda-land-rate.html" },
+        { name: "Nawada", hindi: "नवादा", url: "nawada-land-rate.html" },
+        { name: "Patna", hindi: "पटना", url: "patna-land-rate.html" },
+        { name: "Purnia", hindi: "पूर्णिया", url: "purnia-land-rate.html" },
+        { name: "Rohtas", hindi: "रोहतास", url: "rohtas-land-rate.html" },
+        { name: "Saharsa", hindi: "सहरसा", url: "saharsa-land-rate.html" },
+        { name: "Samastipur", hindi: "समस्तीपुर", url: "samastipur-land-rate.html" },
+        { name: "Saran", hindi: "सारण", url: "saran-land-rate.html" },
+        { name: "Sheikhpura", hindi: "शेखपुरा", url: "sheikhpura-land-rate.html" },
+        { name: "Sheohar", hindi: "शिवहर", url: "sheohar-land-rate.html" },
+        { name: "Sitamarhi", hindi: "सीतामढ़ी", url: "sitamarhi-land-rate.html" },
+        { name: "Siwan", hindi: "सीवान", url: "siwan-land-rate.html" },
+        { name: "Supaul", hindi: "सुपौल", url: "supaul-land-rate.html" },
+        { name: "Vaishali", hindi: "वैशाली", url: "vaishali-land-rate.html" },
+        { name: "West Champaran", hindi: "पश्चिमी चंपारण", url: "west-champaran-land-rate.html" }
+      ];
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var sel = document.getElementById('districtSelect');
+        if (!sel) return;
+        apnaKhataDistricts.forEach(function (d) {
+          var opt = document.createElement('option');
+          opt.value = d.name;
+          opt.textContent = d.name + ' (' + d.hindi + ')';
+          sel.appendChild(opt);
+        });
+      });
+
+      function handleDistrictSelect() {
+        var sel = document.getElementById('districtSelect');
+        var val = sel.value;
+        var box = document.getElementById('districtConfirmBox');
+        if (!val) {
+          box.classList.add('hidden');
+          return;
+        }
+        var d = apnaKhataDistricts.filter(function (x) { return x.name === val; })[0];
+        if (!d) return;
+        document.getElementById('districtConfirmName').textContent = d.name + ' (' + d.hindi + ')';
+        document.getElementById('districtConfirmName2').textContent = d.name;
+        var rateLink = document.getElementById('districtRateLink');
+        rateLink.href = d.url;
+        rateLink.classList.remove('hidden');
+        box.classList.remove('hidden');
+      }
+    </script>
 
     <!-- INTERACTIVE SCRIPT FOR CHECKLIST & FAQ -->
     <script>
