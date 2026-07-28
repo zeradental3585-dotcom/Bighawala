@@ -705,6 +705,7 @@ window.bwSD = [
   {t:'Kisan Credit Card',k:'kisan credit kcc loan',u:'kisan-credit-card-bihar.html'},
   {t:'PM Awas Yojana',k:'pm awas ghar yojana',u:'pm-awas-yojana-bihar.html'},
   {t:'Patna Land Rate',k:'patna zameen rate',u:'patna-land-rate.html'},
+  {t:'Patna Land FAQ (25 Sawaal)',k:'patna registry bigha katha faq sawaal',u:'land-rate-patna.html'},
   {t:'All 38 Districts',k:'all district sabhi jila',u:'bihar-all-districts-land-rate.html'},
   {t:'About BighaWala',k:'about us hamare',u:'about.html'},
   {t:'Contact Us',k:'contact sampark',u:'contact.html'}
