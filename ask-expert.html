@@ -468,6 +468,63 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
+      function escapeHtml(str) {
+        return str
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      // Handles the chat form submission (typed question + Enter/पूछें button,
+      // and the synthetic submits dispatched by sendPredefined()).
+      function handleChatSubmit(event) {
+        if (event && event.preventDefault) event.preventDefault();
+
+        const input = document.getElementById('chat-input');
+        const chatBox = document.getElementById('chat-box');
+        const typingIndicator = document.getElementById('typing-indicator');
+        if (!input || !chatBox) return false;
+
+        const question = input.value.trim();
+        if (!question) return false;
+
+        hideError();
+
+        const userMsg = document.createElement('div');
+        userMsg.className = 'flex items-start gap-3 max-w-2xl ml-auto justify-end';
+        userMsg.innerHTML =
+          '<div class="bg-emerald-700 text-white rounded-2xl px-4 py-2.5 text-xs sm:text-sm font-bold shadow-xs">' + escapeHtml(question) + '</div>' +
+          '<div class="w-8 h-8 rounded-lg bg-emerald-100 text-xs flex items-center justify-center font-black text-emerald-800 shrink-0">आप</div>';
+        chatBox.appendChild(userMsg);
+
+        messagesHistory.push({ role: 'user', text: question });
+        input.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        if (typingIndicator) typingIndicator.classList.remove('hidden');
+
+        new Promise(function(resolve) { setTimeout(resolve, 500); })
+          .then(function() { return askAI(question); })
+          .then(function(answer) {
+            if (typingIndicator) typingIndicator.classList.add('hidden');
+            const botMsg = document.createElement('div');
+            botMsg.className = 'flex items-start gap-3 max-w-2xl';
+            botMsg.innerHTML =
+              '<div class="w-8 h-8 rounded-lg bg-orange-100 text-sm flex items-center justify-center shrink-0 font-bold">🤖</div>' +
+              '<div class="bg-white border border-slate-200/80 rounded-2xl p-4 text-xs sm:text-sm font-medium leading-relaxed shadow-xs text-slate-800">' + formatBotMessage(answer) + '</div>';
+            chatBox.appendChild(botMsg);
+            messagesHistory.push({ role: 'bot', text: answer });
+            chatBox.scrollTop = chatBox.scrollHeight;
+          })
+          .catch(function() {
+            if (typingIndicator) typingIndicator.classList.add('hidden');
+            const errorBox = document.getElementById('chat-error');
+            if (errorBox) errorBox.classList.remove('hidden');
+          });
+
+        return false;
+      }
+
       // Client-side FAQ engine -- no backend, no API key.
       // Real, pre-written answers to common Bihar land questions, matched
       // against the user's question by keyword scoring.
