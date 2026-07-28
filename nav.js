@@ -460,6 +460,9 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 .bw-share-wrap{
   position:fixed;right:16px;bottom:24px;z-index:9999;
   display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+  pointer-events:none; /* the wrapper box can extend past what's visible (e.g. the
+    collapsed tray) — only opt specific visible children back in below, so this
+    never silently swallows clicks meant for page content underneath it */
 }
 .bw-share-fab{
   width:56px;height:56px;border-radius:50%;
@@ -468,6 +471,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
   display:flex;align-items:center;justify-content:center;
   cursor:pointer;font-size:24px;line-height:1;
   transition:transform 0.2s ease;
+  pointer-events:auto;
 }
 .bw-share-fab:hover{transform:scale(1.06);}
 .bw-share-fab:active{transform:scale(0.95);}
