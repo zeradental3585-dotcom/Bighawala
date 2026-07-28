@@ -637,6 +637,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       Guides <span class="bw-arr">▼</span>
     </button>
     <div class="bw-dd" id="bwg">
+      <a href="bihar-jamin-survey.html" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
       <a href="dakhil-kharij.html">📋 Dakhil Kharij</a>
       <a href="dakhil-kharij-fees.html">💰 DK Fees</a>
       <a href="bhulekh.html">🗺️ Bhulekh Bihar</a>
@@ -724,6 +725,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Guides</div>
+      <a href="bihar-jamin-survey.html" onclick="bwM()" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
       <a href="dakhil-kharij.html" onclick="bwM()">📋 Dakhil Kharij</a>
       <a href="dakhil-kharij-fees.html" onclick="bwM()">💰 DK Fees</a>
       <a href="bhulekh.html" onclick="bwM()">🗺️ Bhulekh Bihar</a>
@@ -822,7 +824,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     <button type="button" class="bw-wa-close" id="bwWaClose" aria-label="बंद करें (Close)">✕</button>
     <div class="bw-wa-icon">📢</div>
     <div class="bw-wa-title">हमारा WhatsApp Channel Follow करें!</div>
-    <div class="bw-wa-desc">बिहार जमीन के रेट, नए सरकारी नियम और जरूरी अपडेट सबसे पहले सीधे WhatsApp पर पाएं — बिल्कुल मुफ्त।</div>
+    <div class="bw-wa-desc">बिहार जमीन सर्वे 2026 की तारीखें, जमीन के रेट, नए सरकारी नियम और जरूरी अपडेट सबसे पहले सीधे WhatsApp पर पाएं — बिल्कुल मुफ्त।</div>
     <a href="https://whatsapp.com/channel/0029VbD8TVN9sBIDccVcFb0y" target="_blank" rel="noopener noreferrer" id="bwWaFollow" class="bw-wa-cta">
       <span class="bw-wa-cta-icon">💬</span> Channel Follow करें
     </a>
@@ -832,6 +834,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 `;
 
 window.bwSD = [
+  {t:'Bihar Jamin Survey Guide',k:'survey sarvekshan vanshavali prapatra form 2 form 3 khanapuri',u:'bihar-jamin-survey.html'},
   {t:'अपना खाता देखें',k:'apna khata khatyan',u:'apna-khata-dekhe.html'},
   {t:'Bigha Calculator',k:'bigha katha dhur convert',u:'bigha-calculator.html'},
   {t:'Bigha to Decimal',k:'bigha decimal dismil',u:'bigha-to-decimal.html'},
