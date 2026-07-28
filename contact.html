@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <p class="text-xs sm:text-sm text-slate-500 font-bold mt-1">आप बिना फॉर्म भरे भी हमारे साथ निम्नलिखित माध्यमों से सीधे जुड़ सकते हैं।</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- WhatsApp Card -->
           <div class="bg-white border border-emerald-100 rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between space-y-4">
             <div class="space-y-3">
@@ -438,6 +438,41 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="text-[10px] text-center font-black tracking-widest text-orange-500 uppercase py-3 border border-dashed border-orange-200 rounded-xl">
               हमेशा आपकी सेवा में
             </div>
+          </div>
+
+          <!-- Email Card -->
+          <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-2xl">
+                📧
+              </div>
+              <h3 class="text-lg font-black text-slate-900">Email Karein</h3>
+              <p class="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed">
+                Detailed sawaal ya feedback ke liye email bhejein
+              </p>
+            </div>
+            <a
+              href="mailto:support@bighawala.com"
+              class="block w-full text-center bg-slate-800 hover:bg-slate-900 text-white font-black py-3 px-4 rounded-xl text-xs sm:text-sm transition-all min-h-[44px] flex items-center justify-center"
+            >
+              support@bighawala.com
+            </a>
+          </div>
+
+          <!-- Registered Address Card -->
+          <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-2xl">
+                📍
+              </div>
+              <h3 class="text-lg font-black text-slate-900">Registered Address</h3>
+              <p class="text-xs sm:text-sm text-slate-600 font-bold leading-relaxed">
+                Arar Ghat, Bishunpur Arar,<br>Madhepura, Bihar, India 852115
+              </p>
+            </div>
+            <p class="text-[10px] text-center font-black tracking-widest text-slate-400 uppercase py-3 border border-dashed border-slate-200 rounded-xl">
+              Operated by Zera Technologies
+            </p>
           </div>
         </div>
       </section>
