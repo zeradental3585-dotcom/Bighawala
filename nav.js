@@ -386,6 +386,29 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 .bw-mbar a span:last-child{font-size:9.5px;font-weight:500;}
 .bw-mbar a:hover{color:#FFCC00;}
 
+.bw-cookie-notice{
+  position:relative;width:100%;
+  background:#0f172a;color:rgba(255,255,255,0.9);
+  padding:10px 16px;
+  display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:center;gap:12px;
+  font-family:'Poppins',sans-serif;
+}
+.bw-cookie-text{
+  font-size:11.5px;line-height:1.5;
+  max-width:640px;text-align:center;
+  font-weight:500;
+}
+.bw-cookie-text a{color:#FFCC00;text-decoration:underline;font-weight:700;}
+.bw-cookie-btn{
+  background:#2E7D32;color:#fff;border:none;
+  padding:8px 18px;border-radius:10px;
+  font-weight:700;font-size:12px;
+  cursor:pointer;white-space:nowrap;
+  font-family:'Poppins',sans-serif;
+}
+.bw-cookie-btn:hover{background:#256428;}
+
 @media(max-width:1024px){
   .bw-nav{display:none;}
   .bw-wai{display:none;}
@@ -595,6 +618,14 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     </a>
   </div>
 </div>
+
+<div class="bw-cookie-notice" id="bwCookieNotice" style="display:none;">
+  <div class="bw-cookie-text">
+    🍪 Hum aur hamare partners (jaise Google AdSense) is site par cookies ka istemal karte hain taaki ads dikha sakein aur experience behtar bana sakein.
+    <a href="privacy-policy/index.html">Privacy Policy padhein</a>.
+  </div>
+  <button type="button" class="bw-cookie-btn" id="bwCookieOk">समझ गया</button>
+</div>
 `;
 
 window.bwSD = [
@@ -753,6 +784,22 @@ function initNav(){
     cDiv.id = 'zera-credit-ft';
     cDiv.innerHTML = '<div style="text-align:center;padding:10px 0 0;border-top:1px solid rgba(255,255,255,0.1);margin-top:12px;font-size:11px;color:rgba(255,255,255,0.5);font-family:\'Poppins\',sans-serif;">A <strong style="color:rgba(255,255,255,0.7);">Zera Technologies</strong> Property | Designed &amp; Developed by <a href="https://zeratech.io/" target="_blank" style="color:#FFCC00;text-decoration:none;font-weight:600;">Zera Technologies</a></div>';
     ft.appendChild(cDiv.firstElementChild);
+  }
+
+  try {
+    var cookieNotice = document.getElementById('bwCookieNotice');
+    var cookieOkBtn = document.getElementById('bwCookieOk');
+    if (cookieNotice && cookieOkBtn) {
+      if (!localStorage.getItem('bw_cookie_ack')) {
+        cookieNotice.style.display = 'flex';
+      }
+      cookieOkBtn.addEventListener('click', function() {
+        try { localStorage.setItem('bw_cookie_ack', '1'); } catch (e) {}
+        cookieNotice.style.display = 'none';
+      });
+    }
+  } catch (e) {
+    // localStorage unavailable (private browsing etc.) — fail silently, no notice shown
   }
 }
 
