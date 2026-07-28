@@ -1015,21 +1015,69 @@ function initNav(){
       var waTrack = function (action) {
         try { if (typeof gtag === 'function') { gtag('event', action); } } catch (e2) {}
       };
+
+      // How many times we've ever shown this + when the last one was —
+      // lets us back off instead of nagging on every single page view.
+      var waAttempts = parseInt(localStorage.getItem('bw_wa_channel_attempts') || '0', 10);
+      var waLastShown = parseInt(localStorage.getItem('bw_wa_channel_last_shown') || '0', 10);
+      var WA_MAX_ATTEMPTS = 3;
+      // Each retry waits longer than the last, and only fires at a moment
+      // the visitor is more likely to say yes — see trigger logic below.
+      var WA_COOLDOWN_MS = [0, 3 * 24 * 60 * 60 * 1000, 7 * 24 * 60 * 60 * 1000];
+
+      var waShow = function () {
+        waModal.classList.add('bw-wa-open');
+        waAttempts += 1;
+        try {
+          localStorage.setItem('bw_wa_channel_attempts', String(waAttempts));
+          localStorage.setItem('bw_wa_channel_last_shown', String(Date.now()));
+        } catch (e2) {}
+        waTrack('whatsapp_channel_shown_attempt_' + waAttempts);
+      };
+
       var waDismiss = function (reason) {
         waModal.classList.remove('bw-wa-open');
-        try { localStorage.setItem('bw_wa_channel_seen', '1'); } catch (e2) {}
+        if (reason === 'followed') {
+          try { localStorage.setItem('bw_wa_channel_followed', '1'); } catch (e2) {}
+        }
         waTrack('whatsapp_channel_' + reason);
       };
-      if (!localStorage.getItem('bw_wa_channel_seen')) {
-        setTimeout(function () {
-          waModal.classList.add('bw-wa-open');
-          waTrack('whatsapp_channel_shown');
-        }, 1200);
-      }
+
       if (waClose) waClose.addEventListener('click', function () { waDismiss('dismissed'); });
       if (waBackdrop) waBackdrop.addEventListener('click', function () { waDismiss('dismissed'); });
       if (waLater) waLater.addEventListener('click', function () { waDismiss('dismissed'); });
       if (waFollow) waFollow.addEventListener('click', function () { waDismiss('followed'); });
+
+      var alreadyFollowed = !!localStorage.getItem('bw_wa_channel_followed');
+      var underAttemptCap = waAttempts < WA_MAX_ATTEMPTS;
+      var cooldownDone = (Date.now() - waLastShown) >= (WA_COOLDOWN_MS[waAttempts] || 0);
+
+      if (!alreadyFollowed && underAttemptCap && cooldownDone) {
+        if (waAttempts === 0) {
+          // First-ever visit: surface it quickly so every new visitor sees it.
+          setTimeout(waShow, 1200);
+        } else {
+          // Retries earn their spot at a higher-intent moment instead of
+          // interrupting again on arrival: when the visitor is about to
+          // leave (mouse heads for the top of the screen), or — since that
+          // signal doesn't exist on mobile — after they've stuck around
+          // reading for a while. Whichever happens first wins, once.
+          var waRetryFired = false;
+          var waFireRetry = function () {
+            if (waRetryFired) return;
+            // Don't stack on top of this page's own exit-intent popup if
+            // it happens to be open at the same moment.
+            var otherExit = document.getElementById('exit-intent-modal');
+            if (otherExit && !otherExit.classList.contains('hidden')) return;
+            waRetryFired = true;
+            waShow();
+          };
+          document.addEventListener('mouseleave', function (e) {
+            if (e.clientY < 10) waFireRetry();
+          });
+          setTimeout(waFireRetry, 20000);
+        }
+      }
     }
   } catch (e) {
     // WhatsApp channel prompt is progressive enhancement — never block page rendering
