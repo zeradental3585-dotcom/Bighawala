@@ -458,7 +458,6 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="zameen-comparison.html">⚖️ Zameen Compare</a>
       <a href="bihar-land-quiz.html">🎯 Land Quiz</a>
       <a href="document-checker.html">📄 Document Checker</a>
-      <a href="saathi-bot.html">🎙️ साथी Voice AI</a>
     </div>
   </li>
   <li>
@@ -505,7 +504,6 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 
 <div class="bw-right">
   <button class="bw-si" onclick="bwS()" aria-label="खोजें (Search)">🔍</button>
-  <a href="saathi-bot.html" class="bw-sai">🎙️ साथी AI</a>
   <a href="https://wa.me/919835102324" target="_blank" class="bw-wai">💬 Expert</a>
   <button class="bw-ham" onclick="bwM()" aria-label="मेन्यू खोलें (Open menu)">
     <span></span><span></span><span></span>
@@ -541,7 +539,6 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     <div class="bw-mms">
       <a href="index.html" onclick="bwM()">🏠 Home</a>
       <a href="apna-khata-dekhe.html" onclick="bwM()">📋 अपना खाता देखें</a>
-      <a href="saathi-bot.html" onclick="bwM()">🎙️ साथी Voice AI</a>
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Tools</div>
@@ -610,9 +607,6 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     <a href="apna-khata-dekhe.html">
       <span>📋</span><span>Khata</span>
     </a>
-    <a href="saathi-bot.html">
-      <span>🎙️</span><span>साथी</span>
-    </a>
     <a href="community-qa.html">
       <span>🤝</span><span>Community</span>
     </a>
@@ -657,7 +651,6 @@ window.bwSD = [
   {t:'Zameen Compare',k:'compare do plot',u:'zameen-comparison.html'},
   {t:'Bihar Land Quiz',k:'quiz test knowledge',u:'bihar-land-quiz.html'},
   {t:'Document Checker',k:'document kagaz checker',u:'document-checker.html'},
-  {t:'साथी Voice AI',k:'saathi voice ai bot',u:'saathi-bot.html'},
   {t:'Community Q&A',k:'community sawaal jawab',u:'community-qa.html'},
   {t:'Bihar Land News',k:'news samachar update',u:'bihar-land-news.html'},
   {t:'Bihar Bhumi Portal',k:'portal bhumi sarkari',u:'bihar-bhumi-portal.html'},

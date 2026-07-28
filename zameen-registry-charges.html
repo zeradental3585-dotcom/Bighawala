@@ -965,8 +965,7 @@
           <ul class="space-y-2 text-xs font-medium">
             <li><a href="bigha-calculator.html" class="hover:text-emerald-400">Bigha Calculator Bihar</a></li>
             <li><a href="bigha-to-decimal.html" class="hover:text-emerald-400">Bigha to Decimal Calc</a></li>
-            <li><a href="saathi-bot.html" class="hover:text-emerald-400 font-bold text-amber-400"> साथी Voice Helper AI</a></li>
-            <li><a href="zameen-moolyankan.html" class="hover:text-emerald-400">Zameen Moolyankan</a></li>
+<li><a href="zameen-moolyankan.html" class="hover:text-emerald-400">Zameen Moolyankan</a></li>
             <li><a href="land-cost-calculator.html" class="hover:text-emerald-400">Land Cost Calculator</a></li>
             <li><a href="zameen-registry-charges.html" class="hover:text-emerald-400">Registry Charges 2026</a></li>
           </ul>
@@ -1006,9 +1005,7 @@
 
     <!-- FLOATING BUTTONS -->
     <a href="https://wa.me/919835102324?text=Hello%20BighaWala,%20mujhe%20Bihar%20registry%20charges%20ke%20bare%20mein%20poochhna%20hai" target="_blank" rel="noopener noreferrer" class="float-btn float-wa" aria-label="WhatsApp Us">💬</a>
-    <a href="saathi-bot.html" class="float-btn float-ai" aria-label="Voice Helper">🎙️</a>
-
-    <!-- STICKY MOBILE BOTTOM BAR -->
+<!-- STICKY MOBILE BOTTOM BAR -->
     <div class="mob-bar">
       <a href="index.html">
         <span class="mi">🏠</span>
@@ -1026,11 +1023,7 @@
         <span class="mi">📜</span>
         <span>Registry</span>
       </a>
-      <a href="saathi-bot.html">
-        <span class="mi">🎙️</span>
-        <span>साथी AI</span>
-      </a>
-    </div>
+</div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
@@ -1090,13 +1083,12 @@
           { name: "Bihar Registry Charges 2026", url: "zameen-registry-charges.html", desc: "Stamp Duty & Registration Fee Calc" },
           { name: "Dakhil Kharij Fees 2026", url: "dakhil-kharij-fees.html", desc: "Sarkari fees & Online Dakhil Kharij" },
           { name: "Apna Khata Bihar", url: "apna-khata-dekhe.html", desc: "Search Land Records online" },
-          { name: "Land Rates 2026", url: "land-rates.html", desc: "All 38 Districts Circle Rates" },
-          { name: "Saathi Voice Helper AI", url: "saathi-bot.html", desc: "Voice assistant for Bihar land questions" }
+          { name: "Land Rates 2026", url: "land-rates.html", desc: "All 38 Districts Circle Rates" }
         ];
 
         const filtered = pages.filter(p => p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
         if (filtered.length === 0) {
-          res.innerHTML = '<div class="p-3 text-xs text-slate-500 font-bold">Koi result nahi mila. <a href="saathi-bot.html" class="text-emerald-700 underline">साथी AI se poochein</a></div>';
+          res.innerHTML = '<div class="p-3 text-xs text-slate-500 font-bold">Koi result nahi mila. <a href="ask-expert.html" class="text-emerald-700 underline">Ask Expert se poochein</a></div>';
         } else {
           res.innerHTML = filtered.map(p => `
             <a href="${p.url}" class="block p-3 hover:bg-emerald-50 border-b border-slate-100 transition">

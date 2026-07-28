@@ -1,4 +1,16 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/saathi-bot",
+      "destination": "/ask-expert",
+      "permanent": true
+    },
+    {
+      "source": "/saathi-bot.html",
+      "destination": "/ask-expert",
+      "permanent": true
+    }
+  ]
 }
