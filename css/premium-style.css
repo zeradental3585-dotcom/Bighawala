@@ -1,0 +1,569 @@
+/*
+ * BighaWala Premium CSS & Responsive Optimization Stylesheet
+ * Architectural Concept: Mayo Clinic x Apple x Tesla x Rolex
+ * Professional, clean typography, supreme mobile usability, and zero clutter.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
+
+/* --- 1. CORE RESET & BASE STYLING --- */
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  line-height: 1.6;
+}
+
+/* Limit prose width for supreme readability */
+p {
+  max-width: 75ch;
+  line-height: 1.625;
+}
+
+/* --- 2. PREMIUM TYPOGRAPHY & SCALING (ANTI-SLOP) --- */
+h1 {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.75rem) !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.025em !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+  font-size: clamp(1.35rem, 4vw, 1.875rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+}
+
+h3 {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+  font-size: clamp(1.15rem, 3vw, 1.5rem) !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.01em !important;
+  font-weight: 600 !important;
+}
+
+/* --- 3. PREMIUM NAVIGATION & HEADER BRANDING --- */
+.nav-wrapper {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  position: sticky !important;
+  top: 0;
+  z-index: 99999 !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-container {
+  max-width: 1200px !important;
+  padding: 14px 24px !important;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none !important;
+}
+
+.nav-logo img {
+  display: none !important; /* Hide cheap placeholder image */
+}
+
+/* Beautiful custom pure-CSS brand icon styled like an Apple App Icon */
+.nav-logo::before {
+  content: 'B';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%) !important;
+  color: white !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nav-logo:hover::before {
+  transform: rotate(-5deg) scale(1.05);
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.25) !important;
+}
+
+.nav-logo-text {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.1 !important;
+}
+
+.nav-logo-name {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  color: #0f172a !important;
+}
+
+.nav-logo-name span {
+  color: #16a34a !important; /* Premium rich green instead of generic light green */
+}
+
+.nav-logo-tagline {
+  font-family: 'Noto Sans Devanagari', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  color: #64748b !important;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Premium Navigation Links */
+.nav-menu li a {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: #475569 !important;
+  transition: all 0.2s ease;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.nav-menu li a:hover {
+  color: #16a34a !important;
+  background: #f0fdf4;
+}
+
+.ask-expert-btn {
+  background: #ea580c !important; /* Tesla Saffron Sizzling Red-Orange */
+  color: white !important;
+  padding: 8px 18px !important;
+  border-radius: 9999px !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15) !important;
+}
+
+.ask-expert-btn:hover {
+  background: #d97706 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.25) !important;
+}
+
+/* Mobile responsive navigation fixes */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 10px 16px !important;
+  }
+  
+  .nav-logo-tagline {
+    display: none !important; /* Hidden on mobile to keep branding compact */
+  }
+}
+
+/* --- 4. HERO SECTION MAGNIFICENCE --- */
+.hero-gradient {
+  background: linear-gradient(135deg, #f0fdf4 0%, #f6fdf9 50%, #fffbf5 100%) !important; /* Elegant light-luxury clinical-modern background with soft emerald & warm gold/saffron hints */
+  border-bottom: 1px solid rgba(22, 163, 74, 0.08) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(22, 163, 74, 0.02) 100%);
+  pointer-events: none;
+}
+
+.hero-gradient * {
+  color: #0f172a !important; /* Force highly readable slate dark grey text for supreme contrast */
+}
+
+/* Specific subheadings and paragraphs inside hero section */
+.hero-gradient p, 
+.hero-gradient span.text-emerald-100 {
+  color: #475569 !important; /* Soft premium slate-gray for readable descriptions */
+  font-weight: 600 !important;
+}
+
+.hero-gradient h1 {
+  color: #1e293b !important;
+  background: linear-gradient(135deg, #064e3b 0%, #15803d 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 800 !important;
+}
+
+/* Beautiful custom badge in hero */
+.hero-gradient span.inline-block {
+  background: rgba(22, 163, 74, 0.08) !important;
+  color: #15803d !important;
+  border: 1px solid rgba(22, 163, 74, 0.15) !important;
+  font-weight: 700 !important;
+  -webkit-text-fill-color: initial !important; /* reset clip fill color */
+}
+
+/* Fix links inside the hero section */
+.hero-gradient a {
+  color: #ea580c !important; /* Warm rich saffron/orange link color */
+  text-decoration: underline !important;
+  font-weight: 700 !important;
+}
+.hero-gradient a:hover {
+  color: #d97706 !important;
+}
+
+/* Swiss Medical Design Alert/Tip Boxes */
+div[class*="bg-emerald-5"],
+div[class*="bg-emerald-50"],
+.bg-emerald-50 {
+  background: #f0fdf4 !important;
+  border-left: 4px solid #16a34a !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.02) !important;
+}
+
+div[class*="bg-orange-5"],
+div[class*="bg-orange-50"],
+.bg-orange-50 {
+  background: #fff7ed !important;
+  border-left: 4px solid #ea580c !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.02) !important;
+}
+
+div[class*="bg-blue-5"],
+div[class*="bg-blue-50"],
+.bg-blue-50 {
+  background: #f0f9ff !important;
+  border-left: 4px solid #0284c7 !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.02) !important;
+}
+
+/* Premium Brand Button Overrides */
+.bg-primaryGreen,
+button.bg-primaryGreen,
+a.bg-primaryGreen {
+  background: #16a34a !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.15) !important;
+}
+
+.bg-primaryGreen:hover,
+button.bg-primaryGreen:hover,
+a.bg-primaryGreen:hover {
+  background: #15803d !important;
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.25) !important;
+}
+
+.bg-accentSaffron,
+button.bg-accentSaffron,
+a.bg-accentSaffron {
+  background: #ea580c !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.15) !important;
+}
+
+.bg-accentSaffron:hover,
+button.bg-accentSaffron:hover,
+a.bg-accentSaffron:hover {
+  background: #d97706 !important;
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.25) !important;
+}
+
+
+/* --- 5. COMPACT AND PREMIUM CARDS (DE-NESTING) --- */
+/* Flattening nested cards and styling standard cards with Mayo Clinic cleanliness */
+.card, 
+section.bg-white, 
+div.bg-white {
+  border-radius: 20px !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.04), 0 2px 12px -2px rgba(0, 0, 0, 0.02) !important;
+  padding: clamp(16px, 4vw, 32px) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover lift on premium cards */
+.card-hover:hover, 
+.hover-card-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.08), 0 4px 16px -2px rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(22, 163, 74, 0.2) !important;
+}
+
+/* Flatten nested cards (e.g. div.bg-white inside section.bg-white) */
+section.bg-white div.bg-white,
+div.bg-white div.bg-white {
+  box-shadow: none !important;
+  border: 1px solid rgba(226, 232, 240, 0.6) !important;
+  border-radius: 14px !important;
+  background: #f8fafc !important; /* Light slate background to distinguish nested items instead of borders & shadows */
+  padding: 16px !important;
+}
+
+/* Eliminate nested cards of 3rd level */
+section.bg-white div.bg-white div.bg-white {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* --- 6. SUPERBLY OPTIMIZED RESPONSIVE TABLES --- */
+/* Responsive table container styling with subtle shadow scroll indicators */
+.overflow-x-auto, 
+div[class*="overflow-x"] {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  border-radius: 16px !important;
+  border: 1px solid #e2e8f0 !important;
+  margin: 16px 0 !important;
+  background: radial-gradient(circle at 100% 50%, rgba(0,0,0,0.04), rgba(0,0,0,0) 20px) !important; /* Beautiful scroll cue indicator */
+}
+
+/* Modern luxury design for all tables */
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  text-align: left !important;
+  font-size: 14px !important;
+}
+
+table th {
+  background: #f8fafc !important;
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  padding: 14px 18px !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  white-space: nowrap !important;
+}
+
+table td {
+  padding: 16px 18px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  color: #475569 !important;
+  vertical-align: middle !important;
+}
+
+/* Highlight important columns */
+table td:first-child {
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  min-width: 120px !important;
+}
+
+table tr:last-child td {
+  border-bottom: none !important;
+}
+
+table tr:nth-child(even) {
+  background: #fafafa !important;
+}
+
+/* Mobile Stacked Tables Alternative */
+@media (max-width: 600px) {
+  /* For tables that are not wide enough to scroll, reduce font size slightly and make cells compact */
+  table td, table th {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* --- 7. FAQ ACCORDIONS WITH SWISS MEDICAL CLINIC POLISH --- */
+/* FAQ container */
+.space-y-4 > .border-slate-200,
+div[class*="border-slate-200"][class*="rounded-2xl"] {
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 16px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: white !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.01) !important;
+  overflow: hidden !important;
+}
+
+.space-y-4 > .border-slate-200:hover,
+div[class*="border-slate-200"][class*="rounded-2xl"]:hover {
+  border-color: rgba(22, 163, 74, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03) !important;
+}
+
+/* Accordion Header Button */
+.space-y-4 button,
+button[class*="w-full"][class*="text-left"][class*="p-4"] {
+  padding: 18px 20px !important;
+  background: white !important;
+  font-size: clamp(14px, 3.5vw, 16px) !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  border-radius: 16px !important;
+  transition: all 0.2s ease !important;
+}
+
+.space-y-4 button:hover,
+button[class*="w-full"][class*="text-left"][class*="p-4"]:hover {
+  background: #f0fdf4 !important;
+  color: #16a34a !important;
+}
+
+/* FAQ Active/Open indicator */
+.space-y-4 button svg, 
+.space-y-4 button span[id*="faq-icon"],
+span[id*="corr-icon-"] {
+  color: #16a34a !important;
+  font-size: 16px !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Open Accordion Panels */
+div[id*="-content-"],
+div[class*="hidden"][class*="border-t"] {
+  background: white !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.6) !important;
+  padding: 20px 24px !important;
+  font-size: 14px !important;
+  line-height: 1.625 !important;
+  color: #475569 !important;
+}
+
+
+/* --- 8. CTA BUTTONS & FORM INPUTS --- */
+input, select, textarea {
+  background: #f8fafc !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  color: #1e293b !important;
+  outline: none;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #16a34a !important;
+  background: white !important;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.08) !important;
+}
+
+/* Primary buttons (Rolex / Tesla styling) */
+.btn-primary,
+button[type="submit"],
+a.bg-primaryGreen {
+  background: #16a34a !important;
+  color: white !important;
+  font-weight: 700 !important;
+  padding: 14px 28px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.2) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover,
+a.bg-primaryGreen:hover {
+  background: #15803d !important;
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.3) !important;
+}
+
+/* --- 9. CLEANING UP THE "SAME TAB" BADGES --- */
+/* Hide the unprofessional SAME TAB badge completely and replace with a sleek hover indicator */
+span[class*="SAME TAB"],
+span[class*="same-tab"],
+span:contains("SAME TAB") {
+  display: none !important;
+}
+
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(4px) !important;
+}
+
+/* --- 10. PREMIUM MOBILE Drawer (GLASSMORPHISM) --- */
+.mobile-menu {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.mobile-menu a {
+  font-weight: 600 !important;
+  padding: 14px 8px !important;
+  border-bottom: 1.5px solid #f1f5f9 !important;
+  color: #334155 !important;
+}
+
+.mobile-menu a:hover {
+  color: #16a34a !important;
+  background: #f8fafc;
+}
+
+/* --- 11. EMITTING UNPROFESSIONAL DESIGN TRACES --- */
+/* Beautifying lists - replace pins with elegant emerald dots */
+.space-y-3 li, .space-y-4 li {
+  position: relative;
+}
+
+/* Replace 📌 emojis with premium checkmarks in lists if requested */
+.premium-bullet-list li {
+  padding-left: 24px;
+}
+.premium-bullet-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #16a34a;
+  font-weight: 900;
+}
+
+/* General spacing enhancements */
+.space-y-10 > * {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+}
