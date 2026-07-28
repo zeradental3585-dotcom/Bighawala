@@ -514,6 +514,73 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
   .bw-share-toast{bottom:104px;}
 }
 
+.bw-wa-modal{
+  display:none;position:fixed;inset:0;z-index:100000;
+  align-items:center;justify-content:center;padding:16px;
+  font-family:'Poppins',sans-serif;
+}
+.bw-wa-modal.bw-wa-open{display:flex;}
+.bw-wa-backdrop{
+  position:absolute;inset:0;background:rgba(15,23,42,0.72);
+  backdrop-filter:blur(2px);
+}
+.bw-wa-card{
+  position:relative;background:#fff;border-radius:22px;
+  max-width:380px;width:100%;padding:28px 24px 24px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.35);
+  text-align:center;
+  animation:bwWaPop 0.25s ease;
+}
+@keyframes bwWaPop{
+  from{opacity:0;transform:scale(0.92) translateY(8px);}
+  to{opacity:1;transform:scale(1) translateY(0);}
+}
+.bw-wa-close{
+  position:absolute;top:12px;right:12px;
+  width:32px;height:32px;border-radius:50%;
+  background:#F5F5F5;border:none;cursor:pointer;
+  font-size:15px;color:#555;
+  display:flex;align-items:center;justify-content:center;
+}
+.bw-wa-close:hover{background:#E5E5E5;}
+.bw-wa-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;margin:0 auto 14px;
+  box-shadow:0 8px 20px rgba(37,211,102,0.35);
+}
+.bw-wa-title{
+  font-size:17.5px;font-weight:800;color:#0f172a;
+  margin-bottom:8px;line-height:1.35;
+}
+.bw-wa-desc{
+  font-size:13px;color:#555;line-height:1.6;
+  margin-bottom:20px;font-weight:500;
+}
+.bw-wa-cta{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:linear-gradient(135deg,#25D366,#1DA851);
+  color:#fff;text-decoration:none;
+  padding:14px 20px;border-radius:14px;
+  font-weight:700;font-size:15px;
+  box-shadow:0 8px 20px rgba(37,211,102,0.35);
+  transition:transform 0.15s ease;
+  margin-bottom:10px;
+}
+.bw-wa-cta:hover{transform:translateY(-1px);}
+.bw-wa-cta-icon{font-size:18px;}
+.bw-wa-later{
+  background:none;border:none;color:#888;
+  font-size:12.5px;font-weight:600;cursor:pointer;
+  padding:8px;font-family:'Poppins',sans-serif;
+  text-decoration:underline;
+}
+.bw-wa-later:hover{color:#555;}
+@media(max-width:600px){
+  .bw-wa-card{padding:24px 20px 20px;}
+}
+
 @media(max-width:1024px){
   .bw-nav{display:none;}
   .bw-wai{display:none;}
@@ -690,6 +757,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="community-qa.html" onclick="bwM()">🤝 Community Q&A</a>
       <a href="bihar-land-news.html" onclick="bwM()">📰 Bihar Land News</a>
       <a href="whatsapp-alerts.html" onclick="bwM()">📱 WhatsApp Alerts</a>
+      <a href="https://whatsapp.com/channel/0029VbD8TVN9sBIDccVcFb0y" target="_blank" rel="noopener noreferrer" onclick="bwM()">📢 WhatsApp Channel Follow करें</a>
       <a href="about.html" onclick="bwM()">ℹ️ About Us</a>
       <a href="contact.html" onclick="bwM()">📞 Contact</a>
       <a href="disclaimer.html" onclick="bwM()">📝 Disclaimer</a>
@@ -747,6 +815,20 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
   <button type="button" class="bw-share-fab" id="bwShareFab" aria-label="Is page ko share karein">📤</button>
 </div>
 <div class="bw-share-toast" id="bwShareToast">Link copy ho gaya! ✅</div>
+
+<div class="bw-wa-modal" id="bwWaModal" role="dialog" aria-modal="true" aria-label="WhatsApp Channel Follow Karein">
+  <div class="bw-wa-backdrop" id="bwWaBackdrop"></div>
+  <div class="bw-wa-card">
+    <button type="button" class="bw-wa-close" id="bwWaClose" aria-label="बंद करें (Close)">✕</button>
+    <div class="bw-wa-icon">📢</div>
+    <div class="bw-wa-title">हमारा WhatsApp Channel Follow करें!</div>
+    <div class="bw-wa-desc">बिहार जमीन के रेट, नए सरकारी नियम और जरूरी अपडेट सबसे पहले सीधे WhatsApp पर पाएं — बिल्कुल मुफ्त।</div>
+    <a href="https://whatsapp.com/channel/0029VbD8TVN9sBIDccVcFb0y" target="_blank" rel="noopener noreferrer" id="bwWaFollow" class="bw-wa-cta">
+      <span class="bw-wa-cta-icon">💬</span> Channel Follow करें
+    </a>
+    <button type="button" class="bw-wa-later" id="bwWaLater">बाद में</button>
+  </div>
+</div>
 `;
 
 window.bwSD = [
@@ -921,6 +1003,36 @@ function initNav(){
     }
   } catch (e) {
     // localStorage unavailable (private browsing etc.) — fail silently, no notice shown
+  }
+
+  try {
+    var waModal = document.getElementById('bwWaModal');
+    var waBackdrop = document.getElementById('bwWaBackdrop');
+    var waClose = document.getElementById('bwWaClose');
+    var waLater = document.getElementById('bwWaLater');
+    var waFollow = document.getElementById('bwWaFollow');
+    if (waModal) {
+      var waTrack = function (action) {
+        try { if (typeof gtag === 'function') { gtag('event', action); } } catch (e2) {}
+      };
+      var waDismiss = function (reason) {
+        waModal.classList.remove('bw-wa-open');
+        try { localStorage.setItem('bw_wa_channel_seen', '1'); } catch (e2) {}
+        waTrack('whatsapp_channel_' + reason);
+      };
+      if (!localStorage.getItem('bw_wa_channel_seen')) {
+        setTimeout(function () {
+          waModal.classList.add('bw-wa-open');
+          waTrack('whatsapp_channel_shown');
+        }, 1200);
+      }
+      if (waClose) waClose.addEventListener('click', function () { waDismiss('dismissed'); });
+      if (waBackdrop) waBackdrop.addEventListener('click', function () { waDismiss('dismissed'); });
+      if (waLater) waLater.addEventListener('click', function () { waDismiss('dismissed'); });
+      if (waFollow) waFollow.addEventListener('click', function () { waDismiss('followed'); });
+    }
+  } catch (e) {
+    // WhatsApp channel prompt is progressive enhancement — never block page rendering
   }
 
   try { bwInitShare(); } catch (e) { /* share widget is progressive enhancement */ }
