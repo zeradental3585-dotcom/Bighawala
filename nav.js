@@ -961,6 +961,14 @@ window.bwDS = function(q){
 };
 
 function initNav(){
+  if(!document.querySelector('link[rel="icon"]')){
+    var fav = document.createElement('link');
+    fav.rel = 'icon';
+    fav.type = 'image/svg+xml';
+    fav.href = '/favicon.svg';
+    document.head.appendChild(fav);
+  }
+
   var existing = document.querySelector('.bw-header,#bwH');
   if(existing){
     existing.remove();
