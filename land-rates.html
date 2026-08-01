@@ -45,24 +45,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primaryGreen: '#2E7D32',
-              accentSaffron: '#FF6F00',
-              customGreenHover: '#1B5E20',
-              customSaffronHover: '#E65100',
-            },
-            fontFamily: {
-              sans: ['Poppins', 'Noto Sans Devanagari', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
+    <link rel="stylesheet" href="/css/app.min.css">
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7577953323229534"
@@ -315,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-xs">
           <table class="w-full text-left border-collapse">
             <thead>
-              <tr class="bg-slate-100 text-slate-850 font-bold border-b border-slate-200 text-sm sm:text-base">
+              <tr class="bg-slate-100 text-slate-800 font-bold border-b border-slate-200 text-sm sm:text-base">
                 <th class="p-4">District (जिला)</th>
                 <th class="p-4">Area Type (प्रकार)</th>
                 <th class="p-4 text-right">Rate per Katha (Min)</th>
@@ -1315,7 +1298,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q1. Bihar mein 1 Katha zameen ki kimat kitni hai 2026 mein?</span>
               <span id="faq-arrow-1" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-1" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-1" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> बिहार में 1 कट्ठा जमीन की कीमत आपके स्थान पर निर्भर करती है। ग्रामीण क्षेत्रों में यह ₹10,000 से ₹1,00,000 तक हो सकती है, जबकि पटना जैसे शहरी और प्रमुख इलाकों में यह ₹15,00,000 से ₹50,00,000 (या व्यावसायिक क्षेत्रों में ₹1 करोड़ से अधिक) प्रति कट्ठा तक हो सकती है।
               </p>
@@ -1331,7 +1314,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q2. Patna mein plot ka rate kya hai?</span>
               <span id="faq-arrow-2" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-2" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-2" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> पटना शहर के मुख्य इलाकों (जैसे बोरिंग रोड, बेली रोड) में रिहायशी जमीन ₹80 लाख से ₹2 करोड़ से अधिक प्रति कट्ठा है। बाहरी और विकासशील इलाकों जैसे बिहटा, शिवाला या नौबतपुर में जमीन ₹15 लाख से ₹45 लाख प्रति कट्ठा की दर से मिल रही है।
               </p>
@@ -1347,7 +1330,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q3. Agricultural aur residential land rate mein kitna fark hota hai?</span>
               <span id="faq-arrow-3" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-3" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-3" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> आमतौर पर आवासीय (residential) जमीन का रेट कृषि (agricultural) जमीन से 3 से 10 गुना तक अधिक होता है। सड़क कनेक्टिविटी, आबादी का घनत्व और व्यावसायिक संभावनाओं के कारण यह अंतर और बढ़ जाता है।
               </p>
@@ -1363,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q4. Circle rate kaise pata karein apne jile ka?</span>
               <span id="faq-arrow-4" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-4" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-4" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> आप बिहार सरकार के आधिकारिक मद्यनिषेध, उत्पाद एवं निबंधन विभाग की वेबसाइट bhumijankari.bihar.gov.in पर जाकर "View MVR" विकल्प के माध्यम से अपने जिले, अंचल और मौजे का सरकारी सर्किल रेट (MVR) ऑनलाइन चेक कर सकते हैं।
               </p>
@@ -1379,7 +1362,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q5. Kya Bihar mein land rates badh rahe hain 2026 mein?</span>
               <span id="faq-arrow-5" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-5" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-5" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> हाँ, बिहार में नए एक्सप्रेसवे, रिंग रोड, बाईपास और मरीन ड्राइव जैसे इंफ्रास्ट्रक्चर प्रोजेक्ट्स के आने से जमीनों के दामों में 15% से 30% तक की भारी बढ़ोतरी देखी जा रही है, विशेषकर पटना, मुजफ्फरपुर और गया के बाहरी इलाकों में।
               </p>
@@ -1395,7 +1378,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q6. Registry ke liye circle rate ya market rate use hota hai?</span>
               <span id="faq-arrow-6" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-6" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-6" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> सरकारी रजिस्ट्री और स्टांप शुल्क (Stamp Duty) की गणना हमेशा सरकारी सर्किल रेट (MVR) के आधार पर होती है। यदि आपकी खरीद का वास्तविक बाजार मूल्य सर्किल रेट से कम है, तब भी आपको न्यूनतम सर्किल रेट पर ही स्टांप शुल्क देना होगा।
               </p>
@@ -1411,7 +1394,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q7. Sasta zameen kahan milega Bihar mein?</span>
               <span id="faq-arrow-7" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-7" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-7" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> बिहार में सबसे सस्ती जमीन बांका, जमुई, कैमूर, शिवहर और अररिया के दूर-दराज ग्रामीण कृषि क्षेत्रों में मिलती है, जहाँ दरें ₹10,000 से ₹45,000 प्रति कट्ठा के बीच हैं।
               </p>
@@ -1427,7 +1410,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q8. Land rate check karne ka sarkari tarika kya hai?</span>
               <span id="faq-arrow-8" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-8" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-8" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> अधिकारिक सरकारी तरीका यह है कि आप bhumijankari.bihar.gov.in पोर्टल पर जाएं या अपने क्षेत्र के अंचल कार्यालय (CO Office) में जाकर राजस्व कर्मचारी से 'न्यूनतम मूल्य पंजी' (MVR Register) मांगें।
               </p>
@@ -1443,7 +1426,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q9. Plot kharidne par kitna tax lagta alta Bihar mein?</span>
               <span id="faq-arrow-9" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-9" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-9" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> बिहार में जमीन या प्लॉट की रजिस्ट्री पर लगभग 6% स्टांप ड्यूटी (Stamp Duty) और 2% निबंधन शुल्क (Registry Charge) लगता है, जो कुल मिलाकर सरकारी दर का 8% होता है।
               </p>
@@ -1459,7 +1442,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="font-extrabold text-slate-900 text-sm sm:text-base">Q10. Kya NRI Bihar mein zameen kharid sakte hain?</span>
               <span id="faq-arrow-10" class="text-slate-400 font-extrabold select-none">▼</span>
             </button>
-            <div id="faq-ans-10" class="hidden px-5 pb-5 pt-3 border-t border-slate-150 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+            <div id="faq-ans-10" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
               <p>
                 <strong>उत्तर (Hindi):</strong> हाँ, भारतीय रिजर्व बैंक (RBI) और फेमा (FEMA) के नियमों के अनुसार अनिवासी भारतीय (NRI) बिहार में आवासीय या व्यावसायिक जमीन खरीद सकते हैं। हालांकि, वे कृषि भूमि, फार्महाउस या वृक्षारोपण वाली जमीन सीधे नहीं खरीद सकते।
               </p>

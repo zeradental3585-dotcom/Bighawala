@@ -45,24 +45,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primaryGreen: '#2E7D32',
-              accentSaffron: '#FF6F00',
-              customGreenHover: '#1B5E20',
-              customSaffronHover: '#E65100',
-            },
-            fontFamily: {
-              sans: ['Poppins', 'Noto Sans Devanagari', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
+    <link rel="stylesheet" href="/css/app.min.css">
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7577953323229534"
@@ -867,7 +850,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <p>
             केसीसी ऋण की कुल वैधता 5 वर्ष होती है, परंतु इसके सुचारू संचालन और ब्याज छूट (Interest Subsidy) का लाभ लगातार प्राप्त करने के लिए प्रत्येक वर्ष इसका <strong>एनुअल रिन्यूअल (Annual Renewal)</strong> कराना अत्यंत आवश्यक है। 
           </p>
-          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-150 space-y-2.5 text-xs sm:text-sm text-slate-700">
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2.5 text-xs sm:text-sm text-slate-700">
             <div class="flex items-start gap-2.5">
               <span class="text-orange-500 font-black">▪</span>
               <span><strong>वार्षिक समीक्षा:</strong> हर साल लोन अवधि समाप्त होने से पहले बैंक में जाकर नवीनीकरण का आवेदन दें।</span>
@@ -964,7 +947,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span>1. Bank KCC dene se mana kar raha hai — kya karein?</span>
               <span class="text-xl text-primaryGreen font-bold" id="prob-icon-1">+</span>
             </button>
-            <div class="hidden p-4 bg-white border-t border-slate-150 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-1">
+            <div class="hidden p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-1">
               <p>
                 यदि कोई बैंक मैनेजर बिना किसी ठोस कारण के केसीसी देने से मना करता है, तो आप इसके खिलाफ सबसे पहले जिला अग्रणी बैंक प्रबंधक (Lead District Manager - LDM) के पास लिखित शिकायत दर्ज करा सकते हैं। इसके अलावा, आप नाबार्ड (NABARD) के शिकायत पोर्टल अथवा बैंकिंग लोकपाल (Banking Ombudsman) की वेबसाइट पर भी शिकायत भेज सकते हैं। आवेदन पत्र और सभी दस्तावेज की पावती रसीद (Acknowledgement Receipt) हमेशा अपने पास रखें।
               </p>
@@ -981,7 +964,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span>2. KCC limit bahut kam di — increase kaise karein?</span>
               <span class="text-xl text-primaryGreen font-bold" id="prob-icon-2">+</span>
             </button>
-            <div class="hidden p-4 bg-white border-t border-slate-150 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-2">
+            <div class="hidden p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-2">
               <p>
                 यदि बैंक ने आपकी लिमिट कम आंकी है, तो आप अपने क्षेत्र का नया 'स्केल ऑफ फाइनेंस' चेक करें और बोई जाने वाली फसल का वास्तविक विवरण दें। यदि आपकी भूमि का सर्किल रेट (MVR) बढ़ा है, तो उसकी नई प्रतिलिपि बैंक को सौंपें। इसके अतिरिक्त, यदि आपके पास कोई अन्य भूमि भी है, तो उसका खाता/खेसरा और जमाबंदी रसीद भी शामिल कराएं ताकि कुल भूमि के आधार पर लिमिट को बढ़ाया जा सके।
               </p>
@@ -998,7 +981,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span>3. KCC renew nahi ho raha — kya problem ho sakti hai?</span>
               <span class="text-xl text-primaryGreen font-bold" id="prob-icon-3">+</span>
             </button>
-            <div class="hidden p-4 bg-white border-t border-slate-150 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-3">
+            <div class="hidden p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-3">
               <p>
                 केसीसी रिन्यूअल न होने के मुख्य तीन कारण हो सकते हैं: (1) पिछले वर्ष का पूरा ब्याज समय पर जमा न किया गया हो, (2) जमीन की नई रसीद या रिन्यूअल फॉर्म जमा न किया गया हो, या (3) सिबिल स्कोर खराब हो गया हो। बैंक में जाकर पिछले ब्याज का मिलान करें और रिन्यूअल अर्जी के साथ नया बटाईनामा अथवा ताजा जमाबंदी रसीद प्रस्तुत करें, नवीनीकरण आसानी से हो जाएगा।
               </p>
@@ -1015,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span>4. ATM card nahi mila — kaise milega?</span>
               <span class="text-xl text-primaryGreen font-bold" id="prob-icon-4">+</span>
             </button>
-            <div class="hidden p-4 bg-white border-t border-slate-150 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-4">
+            <div class="hidden p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-4">
               <p>
                 केसीसी स्वीकृति के समय बैंक को 'RuPay Debit Card' जारी करने का अनुरोध फॉर्म भरना पड़ता है। यदि आपको कार्ड नहीं मिला है, तो अपनी गृह शाखा (Home Branch) में जाएं और केसीसी खाते से लिंक RuPay एटीएम कार्ड जारी करने हेतु एक लिखित आवेदन दें। बैंक आमतौर पर 7 दिनों के भीतर कार्ड पोस्ट से या सीधे शाखा से प्रदान कर देता है।
               </p>
@@ -1032,7 +1015,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span>5. Interest zyada lag raha hai — subsidy kaise milegi?</span>
               <span class="text-xl text-primaryGreen font-bold" id="prob-icon-5">+</span>
             </button>
-            <div class="hidden p-4 bg-white border-t border-slate-150 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-5">
+            <div class="hidden p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-600 leading-relaxed font-bold space-y-2" id="prob-desc-5">
               <p>
                 सरकारी नियमानुसार 7% ब्याज पर 3% की सब्सिडी (प्रोत्साहन छूट) तभी मिलती है जब लोन की राशि को वर्ष में कम से कम एक बार समय पर या उससे पहले चुकाया जाए। यदि आपने भुगतान में देरी की है तो बैंक 7% से लेकर 9% तक सामान्य ब्याज वसूलता है। ब्याज सब्सिडी स्वतः आपके केसीसी खाते में क्रेडिट की जाती है, बशर्ते आपका पुनर्भुगतान रिकॉर्ड पूरी तरह से ग्रीन हो।
               </p>
