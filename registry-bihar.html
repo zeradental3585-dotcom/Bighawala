@@ -263,6 +263,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-medium">
           बिहार में अपनी जमीन, मकान या फ्लैट की कानूनी रजिस्ट्री करने की संपूर्ण विधि। स्टाम्प ड्यूटी दरें, सरकारी फीस, जरूरी दस्तावेज और ऑनलाइन अपॉइंटमेंट स्लॉट बुक करने का आसान तरीका।
         </p>
+        <div class="flex justify-center">
+          <button type="button" onclick="speakText('बिहार में अपनी जमीन, मकान या फ्लैट की कानूनी रजिस्ट्री करने की संपूर्ण विधि यहाँ बताई गई है। स्टाम्प ड्यूटी दरें, सरकारी फीस, जरूरी दस्तावेज और ऑनलाइन अपॉइंटमेंट स्लॉट बुक करने का आसान तरीका भी शामिल है।')" class="wa-listen-btn" aria-label="सुनें">🔊</button>
+        </div>
 
         <!-- Social Share Button (WhatsApp) -->
         <div class="pt-4 flex justify-center">
@@ -504,6 +507,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 कुल संभावित खर्च (TOTAL ESTIMATED COST): <span class="text-emerald-700 font-black">₹81,500 लगभग</span>
               </p>
             </div>
+          </div>
+
+          <!-- CIRCLE RATE → PROPERTY VALUE MINI-CALCULATOR -->
+          <div id="circle-rate-calculator" class="bg-white border-2 border-emerald-500 rounded-3xl p-5 sm:p-6 space-y-4 shadow-md">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <h3 class="text-sm sm:text-base font-black text-slate-900 flex items-center gap-1.5">
+                <span>🧮</span> पता नहीं कि जमीन की सरकारी वैल्यू कितनी है? यहाँ निकालें
+              </h3>
+              <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider">वैकल्पिक (Optional)</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 font-semibold leading-relaxed">
+              अपने जिले का Circle Rate / MVR (प्रति यूनिट) <a href="mvr-rate-bihar.html" class="text-primaryGreen underline font-black">यहाँ से देखें →</a> या <a href="https://nibandhan.bihar.gov.in" target="_blank" rel="noopener noreferrer" class="text-primaryGreen underline font-black">nibandhan.bihar.gov.in</a> पर चेक करें, फिर नीचे अपनी जमीन का एरिया और वह रेट डालें — हम आपके लिए कुल सरकारी मूल्य निकाल देंगे।
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
+              <div class="space-y-1.5">
+                <label for="cr-area" class="block text-xs font-extrabold text-slate-700">जमीन का एरिया (Area)</label>
+                <input type="number" id="cr-area" placeholder="जैसे 5" min="0"
+                  class="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm font-extrabold text-slate-800 focus:outline-none focus:border-emerald-500" />
+              </div>
+              <div class="space-y-1.5">
+                <label for="cr-unit" class="block text-xs font-extrabold text-slate-700">यूनिट (Unit)</label>
+                <select id="cr-unit" class="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm font-extrabold text-slate-800 focus:outline-none focus:border-emerald-500 cursor-pointer">
+                  <option value="katha">Katha / कट्ठा</option>
+                  <option value="decimal">Decimal / डिसमिल</option>
+                  <option value="bigha">Bigha / बीघा</option>
+                  <option value="sqft">Sq. Ft / वर्ग फीट</option>
+                </select>
+              </div>
+              <div class="space-y-1.5">
+                <label for="cr-rate" class="block text-xs font-extrabold text-slate-700">Rate प्रति यूनिट (₹)</label>
+                <input type="number" id="cr-rate" placeholder="जैसे 150000" min="0"
+                  class="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm font-extrabold text-slate-800 focus:outline-none focus:border-emerald-500" />
+              </div>
+            </div>
+            <button type="button" onclick="circleRateToValue()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm py-3 rounded-2xl shadow-md transition-all active:scale-95">
+              👉 Property Value Nikalein aur Neeche Bharein
+            </button>
+            <p id="cr-result" class="hidden text-center text-xs sm:text-sm font-black text-emerald-800 bg-emerald-50 rounded-xl p-3 border border-emerald-200"></p>
           </div>
 
           <!-- INTERACTIVE STAMP DUTY CALCULATOR -->
@@ -1388,6 +1429,33 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // STAMP DUTY CALCULATOR LOGIC
+      function circleRateToValue() {
+        const area = parseFloat(document.getElementById('cr-area').value);
+        const rate = parseFloat(document.getElementById('cr-rate').value);
+        const unit = document.getElementById('cr-unit').value;
+        const resultBox = document.getElementById('cr-result');
+
+        if (isNaN(area) || area <= 0 || isNaN(rate) || rate <= 0) {
+          resultBox.classList.remove('hidden');
+          resultBox.classList.add('text-rose-700', 'bg-rose-50', 'border-rose-200');
+          resultBox.classList.remove('text-emerald-800', 'bg-emerald-50', 'border-emerald-200');
+          resultBox.innerText = '⚠️ कृपया सही एरिया और रेट दर्ज करें।';
+          return;
+        }
+
+        const unitLabel = { katha: 'Katha', decimal: 'Decimal', bigha: 'Bigha', sqft: 'Sq.Ft' }[unit] || unit;
+        const value = Math.round(area * rate);
+
+        resultBox.classList.remove('hidden', 'text-rose-700', 'bg-rose-50', 'border-rose-200');
+        resultBox.classList.add('text-emerald-800', 'bg-emerald-50', 'border-emerald-200');
+        resultBox.innerText = '✅ ' + area + ' ' + unitLabel + ' × ₹' + rate.toLocaleString('en-IN') + ' = ' + formatIndianCurrency(value) + ' — नीचे अपने आप भर दिया गया है।';
+
+        const valInput = document.getElementById('calc-value');
+        valInput.value = value;
+        calculateRegistryFees();
+        valInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
       function calculateRegistryFees() {
         const valInput = document.getElementById('calc-value');
         let value = parseFloat(valInput.value);
@@ -1544,5 +1612,35 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<script>
+  // Generic Hindi text-to-speech for listen buttons (shared site pattern)
+  function speakText(text) {
+    try {
+      if (!('speechSynthesis' in window)) {
+        alert('इस डिवाइस में आवाज़ सुविधा उपलब्ध नहीं है (Voice feature not available on this device)');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      var utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'hi-IN';
+      utter.rate = 0.9;
+      window.speechSynthesis.speak(utter);
+      if (typeof gtag === 'function') { gtag('event', 'guide_listen'); }
+    } catch (e) { /* speech is a bonus feature, never block the page */ }
+  }
+</script>
+
+<style>
+  .wa-listen-btn{
+    background:#FF6F00;color:#fff;font-weight:900;font-size:14px;
+    width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;
+    box-shadow:0 3px 8px rgba(255,111,0,0.35);
+    transition:transform 0.12s ease;flex-shrink:0;
+  }
+  .wa-listen-btn:active{transform:scale(0.92);}
+  .wa-listen-sm{width:28px;height:28px;font-size:12px;}
+</style>
 </body>
 </html>

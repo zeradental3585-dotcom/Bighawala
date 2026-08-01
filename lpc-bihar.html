@@ -278,6 +278,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-semibold">
           बिहार में घर बैठे एलपीसी (LPC) ऑनलाइन अप्लाई करने, आवेदन की स्थिति जांचने तथा आवश्यक दस्तावेजों का संपूर्ण प्रामाणिक विवरण।
         </p>
+        <div class="flex justify-center">
+          <button type="button" onclick="speakText('LPC यानी Land Possession Certificate, भूमि स्वामित्व प्रमाण पत्र है। बिहार में घर बैठे एलपीसी ऑनलाइन अप्लाई करने, आवेदन की स्थिति जांचने तथा आवश्यक दस्तावेजों की पूरी जानकारी यहाँ दी गई है।')" class="wa-listen-btn" aria-label="सुनें">🔊</button>
+        </div>
 
       </div>
     </section>
@@ -1174,7 +1177,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </section>
 
       <!-- OFFICIAL PORTAL SECTION (Target of top link, positioned down for maximum engagement) -->
-      <section id="official-portal-section" class="bg-gradient-to-br from-emerald-950 via-slate-900 to-emerald-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+      <section id="official-portal-section-2" class="bg-gradient-to-br from-emerald-950 via-slate-900 to-emerald-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
         <div class="space-y-2">
           <span class="inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full">
             🔗 OFFICIAL PORTAL DIRECT LINKS
@@ -1917,5 +1920,35 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<script>
+  // Generic Hindi text-to-speech for listen buttons (shared site pattern)
+  function speakText(text) {
+    try {
+      if (!('speechSynthesis' in window)) {
+        alert('इस डिवाइस में आवाज़ सुविधा उपलब्ध नहीं है (Voice feature not available on this device)');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      var utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'hi-IN';
+      utter.rate = 0.9;
+      window.speechSynthesis.speak(utter);
+      if (typeof gtag === 'function') { gtag('event', 'guide_listen'); }
+    } catch (e) { /* speech is a bonus feature, never block the page */ }
+  }
+</script>
+
+<style>
+  .wa-listen-btn{
+    background:#FF6F00;color:#fff;font-weight:900;font-size:14px;
+    width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;
+    box-shadow:0 3px 8px rgba(255,111,0,0.35);
+    transition:transform 0.12s ease;flex-shrink:0;
+  }
+  .wa-listen-btn:active{transform:scale(0.92);}
+  .wa-listen-sm{width:28px;height:28px;font-size:12px;}
+</style>
 </body>
 </html>

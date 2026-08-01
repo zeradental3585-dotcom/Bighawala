@@ -247,8 +247,9 @@ document.addEventListener('DOMContentLoaded', function() {
           <h2 class="font-extrabold text-base sm:text-lg text-primaryGreen flex items-center gap-2 mb-2">
             🔥 Bihar Ka Pehla AI Land Document Checker!
           </h2>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800 font-medium mb-3">
-            Apne zameen ke kisi bhi kagaz ka text paste karein — AI turant Hindi mein samjha dega:
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 font-medium mb-3 flex items-center gap-2">
+            <span>Apne zameen ke kisi bhi kagaz ka text paste karein — AI turant Hindi mein samjha dega:</span>
+            <button type="button" onclick="speakText('अपने जमीन के किसी भी कागज़ का टेक्स्ट पेस्ट करें, AI तुरंत हिंदी में समझा देगा कि उस दस्तावेज़ में क्या लिखा है।')" class="wa-listen-btn wa-listen-sm" aria-label="सुनें">🔊</button>
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm font-semibold text-slate-800">
             <div class="flex items-center gap-2 bg-white/70 px-3 py-2 rounded-xl">
@@ -1325,6 +1326,36 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<script>
+  // Generic Hindi text-to-speech for listen buttons (shared site pattern)
+  function speakText(text) {
+    try {
+      if (!('speechSynthesis' in window)) {
+        alert('इस डिवाइस में आवाज़ सुविधा उपलब्ध नहीं है (Voice feature not available on this device)');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      var utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'hi-IN';
+      utter.rate = 0.9;
+      window.speechSynthesis.speak(utter);
+      if (typeof gtag === 'function') { gtag('event', 'guide_listen'); }
+    } catch (e) { /* speech is a bonus feature, never block the page */ }
+  }
+</script>
+
+<style>
+  .wa-listen-btn{
+    background:#FF6F00;color:#fff;font-weight:900;font-size:14px;
+    width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;
+    box-shadow:0 3px 8px rgba(255,111,0,0.35);
+    transition:transform 0.12s ease;flex-shrink:0;
+  }
+  .wa-listen-btn:active{transform:scale(0.92);}
+  .wa-listen-sm{width:28px;height:28px;font-size:12px;}
+</style>
 <!-- FOOTER HTML -->
 <footer class="bg-slate-900 text-slate-300 pt-12 pb-20 border-t-4 border-emerald-600 mt-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
