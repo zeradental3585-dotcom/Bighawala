@@ -623,6 +623,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       Tools <span class="bw-arr">▼</span>
     </button>
     <div class="bw-dd" id="bwt">
+      <a href="zameen-dastavez-checklist.html" style="font-weight:800;color:#B45309;">🧰 Zameen Dastavez Checklist (नया)</a>
       <a href="vanshavali-kaise-banaye.html" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (नया)</a>
       <a href="bigha-calculator.html">🧮 Bigha Calculator</a>
       <a href="bigha-to-decimal.html">🔢 Bigha to Decimal</a>
@@ -657,6 +658,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="self-declaration-form-bihar.html">📋 Self Declaration</a>
       <a href="zameen-vivad-bihar.html">⚖️ Zameen Vivad</a>
       <a href="bihar-bhumi-portal.html">🏛️ Bihar Bhumi Portal</a>
+      <a href="parimarjan-plus-bihar.html">🧰 Parimarjan Plus</a>
       <a href="kisan-credit-card-bihar.html">🌾 Kisan Credit Card</a>
       <a href="pm-awas-yojana-bihar.html">🏠 PM Awas Yojana</a>
       <a href="halka-mauja-kya-hota-hai.html">🏘️ Halka Mauja Kya Hai</a>
@@ -719,6 +721,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Tools</div>
+      <a href="zameen-dastavez-checklist.html" onclick="bwM()" style="font-weight:800;color:#B45309;">🧰 Zameen Dastavez Checklist (नया)</a>
       <a href="vanshavali-kaise-banaye.html" onclick="bwM()" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (नया)</a>
       <a href="bigha-calculator.html" onclick="bwM()">🧮 Bigha Calculator</a>
       <a href="bigha-to-decimal.html" onclick="bwM()">🔢 Bigha to Decimal</a>
@@ -748,6 +751,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="self-declaration-form-bihar.html" onclick="bwM()">📋 Self Declaration</a>
       <a href="zameen-vivad-bihar.html" onclick="bwM()">⚖️ Zameen Vivad</a>
       <a href="bihar-bhumi-portal.html" onclick="bwM()">🏛️ Bihar Bhumi Portal</a>
+      <a href="parimarjan-plus-bihar.html" onclick="bwM()">🧰 Parimarjan Plus</a>
       <a href="kisan-credit-card-bihar.html" onclick="bwM()">🌾 Kisan Credit Card</a>
       <a href="pm-awas-yojana-bihar.html" onclick="bwM()">🏠 PM Awas Yojana</a>
       <a href="halka-mauja-kya-hota-hai.html" onclick="bwM()">🏘️ Halka Mauja Kya Hai</a>
@@ -841,6 +845,8 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 `;
 
 window.bwSD = [
+  {t:'Zameen Dastavez Checklist',k:'dastavez checklist documents kagaz track khatiyan jamabandi registry mutation lpc',u:'zameen-dastavez-checklist.html'},
+  {t:'Parimarjan Plus Bihar',k:'parimarjan plus jamabandi sudhar correction naam khata khesra rakba',u:'parimarjan-plus-bihar.html'},
   {t:'Bihar Jamin Survey Guide',k:'survey sarvekshan vanshavali prapatra form 2 form 3 khanapuri',u:'bihar-jamin-survey.html'},
   {t:'Vanshavali Kaise Banaye (Free Tool)',k:'vanshavali banao generator prapatra 3 genealogy family tree',u:'vanshavali-kaise-banaye.html'},
   {t:'Bihar Survey Status Check',k:'survey status check dlrs online khanapuri complaint',u:'bihar-survey-status-check.html'},
