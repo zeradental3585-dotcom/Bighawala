@@ -116,8 +116,9 @@
         <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
           अपना खाता देखें Bihar 2026 | Apna Khata Online Dekhe
         </h1>
-        <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-semibold">
-          बिहार सरकार के राजस्व एवं भूमि सुधार विभाग के डिजिटल डेटाबेस से अपने नाम, खाता संख्या या खेसरा नंबर द्वारा जमीन के खतियान ऑनलाइन प्राप्त करें।
+        <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-semibold flex items-center justify-center gap-2 flex-wrap">
+          <span>बिहार सरकार के राजस्व एवं भूमि सुधार विभाग के डिजिटल डेटाबेस से अपने नाम, खाता संख्या या खेसरा नंबर द्वारा जमीन के खतियान ऑनलाइन प्राप्त करें।</span>
+          <button type="button" onclick="speakText('बिहार सरकार के राजस्व एवं भूमि सुधार विभाग के डिजिटल डेटाबेस से अपने नाम, खाता संख्या या खेसरा नंबर द्वारा जमीन के खतियान ऑनलाइन प्राप्त करें।')" class="wa-listen-btn" aria-label="सुनें (Listen)">🔊</button>
         </p>
       </div>
     </section>
@@ -134,8 +135,9 @@
           <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
             अपना खाता देखने के लिए तैयार हैं? ✅ पहले यह 5 चीज़ें confirm करें:
           </h2>
-          <p class="text-xs sm:text-sm text-slate-600 font-bold">
-            नीचे दिए गए 5 बिन्दुओं को टिक (tick) करें। सही जानकारी होने पर ही आधिकारिक पोर्टल खोलें:
+          <p class="text-xs sm:text-sm text-slate-600 font-bold flex items-center justify-center sm:justify-start gap-2 flex-wrap">
+            <span>नीचे दिए गए 5 बिन्दुओं को टिक (tick) करें। सही जानकारी होने पर ही आधिकारिक पोर्टल खोलें:</span>
+            <button type="button" onclick="speakText('नीचे दिए गए 5 बिन्दुओं को टिक करें। सही जानकारी होने पर ही आधिकारिक पोर्टल खोलें।')" class="wa-listen-btn wa-listen-sm" aria-label="सुनें (Listen)">🔊</button>
           </p>
         </div>
 
@@ -228,7 +230,10 @@
         </div>
 
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-600 font-semibold leading-relaxed">
-          ℹ️ <strong>हम सीधे रिकॉर्ड क्यों नहीं दिखा सकते:</strong> बिहार सरकार का जमाबंदी पोर्टल सुरक्षा कारणों से एक Security Code (CAPTCHA) मांगता है, जिसे कोई भी थर्ड-पार्टी वेबसाइट स्वचालित रूप से नहीं भर सकती — यह आपकी निजी जानकारी की सुरक्षा के लिए है। इसलिए BighaWala आपको बिल्कुल सही कदम बताकर सीधे सरकार की असली वेबसाइट पर भेजता है, ताकि आपका डेटा हमेशा सरकार के अपने सुरक्षित सर्वर पर ही रहे।
+          <div class="flex items-start justify-between gap-2">
+            <span>ℹ️ <strong>हम सीधे रिकॉर्ड क्यों नहीं दिखा सकते:</strong> बिहार सरकार का जमाबंदी पोर्टल सुरक्षा कारणों से एक Security Code (CAPTCHA) मांगता है, जिसे कोई भी थर्ड-पार्टी वेबसाइट स्वचालित रूप से नहीं भर सकती — यह आपकी निजी जानकारी की सुरक्षा के लिए है। इसलिए BighaWala आपको बिल्कुल सही कदम बताकर सीधे सरकार की असली वेबसाइट पर भेजता है, ताकि आपका डेटा हमेशा सरकार के अपने सुरक्षित सर्वर पर ही रहे।</span>
+            <button type="button" onclick="speakText('हम सीधे रिकॉर्ड क्यों नहीं दिखा सकते: बिहार सरकार का जमाबंदी पोर्टल सुरक्षा कारणों से एक Security Code मांगता है, जिसे कोई भी थर्ड-पार्टी वेबसाइट स्वचालित रूप से नहीं भर सकती। इसलिए BighaWala आपको बिल्कुल सही कदम बताकर सीधे सरकार की असली वेबसाइट पर भेजता है।')" class="wa-listen-btn wa-listen-sm shrink-0" aria-label="सुनें (Listen)">🔊</button>
+          </div>
           अपना अंचल या मौजा याद नहीं? <a href="halka-mauja-kya-hota-hai.html" class="text-emerald-700 underline font-black">हल्का/मौजा गाइड पढ़ें</a> या <a href="bhu-naksha-bihar.html" class="text-emerald-700 underline font-black">भू-नक्शा में गांव खोजें</a>।
         </div>
       </section>
@@ -965,6 +970,34 @@
           if (icon) icon.textContent = "➕";
         }
       }
+
+      // Generic Hindi text-to-speech for listen buttons (shared site pattern)
+      function speakText(text) {
+        try {
+          if (!('speechSynthesis' in window)) {
+            alert('इस डिवाइस में आवाज़ सुविधा उपलब्ध नहीं है (Voice feature not available on this device)');
+            return;
+          }
+          window.speechSynthesis.cancel();
+          var utter = new SpeechSynthesisUtterance(text);
+          utter.lang = 'hi-IN';
+          utter.rate = 0.9;
+          window.speechSynthesis.speak(utter);
+          if (typeof gtag === 'function') { gtag('event', 'guide_listen'); }
+        } catch (e) { /* speech is a bonus feature, never block the page */ }
+      }
     </script>
+
+    <style>
+      .wa-listen-btn{
+        background:#FF6F00;color:#fff;font-weight:900;font-size:14px;
+        width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+        display:inline-flex;align-items:center;justify-content:center;
+        box-shadow:0 3px 8px rgba(255,111,0,0.35);
+        transition:transform 0.12s ease;flex-shrink:0;
+      }
+      .wa-listen-btn:active{transform:scale(0.92);}
+      .wa-listen-sm{width:28px;height:28px;font-size:12px;}
+    </style>
 </body>
 </html>

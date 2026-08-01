@@ -218,8 +218,11 @@
         <!-- HERO BOX (GREEN) -->
         <div class="bg-emerald-800 text-white rounded-2xl p-5 sm:p-6 shadow-lg border-l-8 border-amber-400 relative overflow-hidden">
           <div class="relative z-10 space-y-3">
-            <div class="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-3 py-1 rounded-full text-xs font-black tracking-wide uppercase">
-              💡 Summary Guide 2026
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <div class="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-3 py-1 rounded-full text-xs font-black tracking-wide uppercase">
+                💡 Summary Guide 2026
+              </div>
+              <button type="button" onclick="speakText('खतियान बिहार के भूमि रिकॉर्ड व्यवस्था का सबसे पुराना दस्तावेज़ है। खतियान सर्वे के समय का एक बार बनने वाला मूल रिकॉर्ड है, जबकि जमाबंदी उसी खतियान से बना हुआ मौजूदा अपडेटेड रिकॉर्ड है।')" class="wa-listen-btn wa-listen-sm" aria-label="सुनें (Listen)">🔊</button>
             </div>
             <p class="text-base sm:text-lg font-bold leading-relaxed">
               Khatiyan Bihar ke land record system ka sabse purana document hai:
@@ -245,7 +248,11 @@
         <div class="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed mb-6 space-y-3">
           <!-- Analogy -->
           <div class="bg-emerald-50 border-l-4 border-emerald-600 p-4 rounded-r-xl text-slate-800">
-            <strong class="text-emerald-950 font-bold">📜 Purani Janamptri (Birth Certificate) Analogy:</strong><br>
+            <div class="flex items-start justify-between gap-2">
+              <strong class="text-emerald-950 font-bold">📜 Purani Janamptri (Birth Certificate) Analogy:</strong>
+              <button type="button" onclick="speakText('खतियान जमीन की जन्मपत्री जैसा है। जैसे आपका जन्म प्रमाण पत्र एक बार बनता है और उसी से आगे आधार कार्ड, पासपोर्ट जैसे दस्तावेज़ बनते हैं, वैसे ही खतियान एक बार सर्वे के समय बनता है और उसी से आगे जमाबंदी तैयार होती है।')" class="wa-listen-btn wa-listen-sm shrink-0" aria-label="सुनें (Listen)">🔊</button>
+            </div>
+            <br>
             Khatiyan zameen ki <strong>janamptri</strong> jaisa hai — jaise aapka birth certificate ek baar banta hai aur usi se aage aadhar card, passport jaise updated documents banate hain, waise hi Khatiyan ek baar survey ke waqt banta hai aur usi se aage Jamabandi (Register-II) taiyaar hoti hai.
           </div>
 
@@ -903,6 +910,34 @@
         const msg = encodeURIComponent("Bihar mein Khatiyan kya hota hai aur Jamabandi se kaise alag hai — simple Hindi guide:\nhttps://www.bighawala.com/khatiyan-bihar.html\nFree mein online dekhen!");
         window.open(`https://api.whatsapp.com/send?text=${msg}`, '_blank');
       }
+
+      // Generic Hindi text-to-speech for listen buttons (shared site pattern)
+      function speakText(text) {
+        try {
+          if (!('speechSynthesis' in window)) {
+            alert('इस डिवाइस में आवाज़ सुविधा उपलब्ध नहीं है (Voice feature not available on this device)');
+            return;
+          }
+          window.speechSynthesis.cancel();
+          var utter = new SpeechSynthesisUtterance(text);
+          utter.lang = 'hi-IN';
+          utter.rate = 0.9;
+          window.speechSynthesis.speak(utter);
+          if (typeof gtag === 'function') { gtag('event', 'guide_listen'); }
+        } catch (e) { /* speech is a bonus feature, never block the page */ }
+      }
     </script>
+
+    <style>
+      .wa-listen-btn{
+        background:#FF6F00;color:#fff;font-weight:900;font-size:14px;
+        width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+        display:inline-flex;align-items:center;justify-content:center;
+        box-shadow:0 3px 8px rgba(255,111,0,0.35);
+        transition:transform 0.12s ease;flex-shrink:0;
+      }
+      .wa-listen-btn:active{transform:scale(0.92);}
+      .wa-listen-sm{width:28px;height:28px;font-size:12px;}
+    </style>
   </body>
 </html>

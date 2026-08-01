@@ -185,8 +185,11 @@
         <!-- HERO BOX (GREEN) -->
         <div class="bg-emerald-800 text-white rounded-2xl p-5 sm:p-6 shadow-lg border-l-8 border-amber-400 relative overflow-hidden">
           <div class="relative z-10 space-y-3">
-            <div class="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-3 py-1 rounded-full text-xs font-black tracking-wide uppercase">
-              💡 Official Portal Guide 2026
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <div class="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-3 py-1 rounded-full text-xs font-black tracking-wide uppercase">
+                💡 Official Portal Guide 2026
+              </div>
+              <button type="button" onclick="speakText('डिजिटल जमाबंदी में नाम, खाता-खेसरा, रकबा या लगान की गलती है? परिमार्जन प्लस से ऑनलाइन, घर बैठे सुधार करें। यह राजस्व एवं भूमि सुधार विभाग, बिहार सरकार का आधिकारिक पोर्टल है।')" class="wa-listen-btn wa-listen-sm" aria-label="सुनें (Listen)">🔊</button>
             </div>
             <p class="text-base sm:text-lg font-bold leading-relaxed">
               Digitized Jamabandi mein naam, khata-khesra, rakba ya lagan ki galti hai?
@@ -738,6 +741,34 @@
         const msg = encodeURIComponent("Bihar mein Parimarjan Plus se Jamabandi ki galti kaise sudharein — simple Hindi guide:\nhttps://www.bighawala.com/parimarjan-plus-bihar.html\nFree mein online dekhen!");
         window.open(`https://api.whatsapp.com/send?text=${msg}`, '_blank');
       }
+
+      // Generic Hindi text-to-speech for listen buttons (shared site pattern)
+      function speakText(text) {
+        try {
+          if (!('speechSynthesis' in window)) {
+            alert('इस डिवाइस में आवाज़ सुविधा उपलब्ध नहीं है (Voice feature not available on this device)');
+            return;
+          }
+          window.speechSynthesis.cancel();
+          var utter = new SpeechSynthesisUtterance(text);
+          utter.lang = 'hi-IN';
+          utter.rate = 0.9;
+          window.speechSynthesis.speak(utter);
+          if (typeof gtag === 'function') { gtag('event', 'guide_listen'); }
+        } catch (e) { /* speech is a bonus feature, never block the page */ }
+      }
     </script>
+
+    <style>
+      .wa-listen-btn{
+        background:#FF6F00;color:#fff;font-weight:900;font-size:14px;
+        width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+        display:inline-flex;align-items:center;justify-content:center;
+        box-shadow:0 3px 8px rgba(255,111,0,0.35);
+        transition:transform 0.12s ease;flex-shrink:0;
+      }
+      .wa-listen-btn:active{transform:scale(0.92);}
+      .wa-listen-sm{width:28px;height:28px;font-size:12px;}
+    </style>
   </body>
 </html>
