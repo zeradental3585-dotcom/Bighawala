@@ -340,6 +340,106 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
 
+      <!-- INTERACTIVE TOOL — PORTAL NAVIGATOR WIZARD -->
+      <section class="bg-white border-2 border-emerald-500 rounded-3xl p-6 sm:p-8 space-y-5 shadow-md">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+            <span class="text-emerald-700">🧭</span> Mujhe Kya Chahiye? (Portal Navigator)
+          </h2>
+          <span class="bg-emerald-100 text-emerald-900 text-xs font-black px-3 py-1 rounded-full">Interactive Tool</span>
+        </div>
+        <p class="text-sm text-slate-600 font-semibold">
+          12+ portals mein confuse ho rahe hain? Bas neeche apna kaam chunein — sahi guide aur official link seedhe mil jayega:
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <button onclick="showBhumiNavResult('khata')" class="nav-wizard-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-slate-50 hover:bg-emerald-50 transition text-center">
+            <div class="text-2xl mb-1">🗺️</div>
+            <div class="text-xs font-black text-slate-800">Apna Khata Dekhna Hai</div>
+          </button>
+          <button onclick="showBhumiNavResult('mutation')" class="nav-wizard-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-slate-50 hover:bg-emerald-50 transition text-center">
+            <div class="text-2xl mb-1">🔄</div>
+            <div class="text-xs font-black text-slate-800">Dakhil Kharij Karna Hai</div>
+          </button>
+          <button onclick="showBhumiNavResult('lpc')" class="nav-wizard-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-slate-50 hover:bg-emerald-50 transition text-center">
+            <div class="text-2xl mb-1">📄</div>
+            <div class="text-xs font-black text-slate-800">LPC Banwana Hai</div>
+          </button>
+          <button onclick="showBhumiNavResult('correction')" class="nav-wizard-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-slate-50 hover:bg-emerald-50 transition text-center">
+            <div class="text-2xl mb-1">✏️</div>
+            <div class="text-xs font-black text-slate-800">Record Mein Galti Sudharni Hai</div>
+          </button>
+          <button onclick="showBhumiNavResult('survey')" class="nav-wizard-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-slate-50 hover:bg-emerald-50 transition text-center">
+            <div class="text-2xl mb-1">📐</div>
+            <div class="text-xs font-black text-slate-800">Survey Status Check Karna Hai</div>
+          </button>
+          <button onclick="showBhumiNavResult('lagan')" class="nav-wizard-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-slate-50 hover:bg-emerald-50 transition text-center">
+            <div class="text-2xl mb-1">💰</div>
+            <div class="text-xs font-black text-slate-800">Bhu-Lagan Bharna Hai</div>
+          </button>
+        </div>
+
+        <div id="bhumiNavResult" class="hidden bg-emerald-50 border-2 border-emerald-400 rounded-2xl p-5 space-y-3">
+          <div class="font-black text-base text-emerald-950" id="bhumiNavTitle"></div>
+          <p class="text-xs sm:text-sm text-slate-700 font-semibold" id="bhumiNavDesc"></p>
+          <div class="flex flex-wrap gap-2.5 pt-1">
+            <a id="bhumiNavGuideLink" href="#" class="bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-black px-5 py-2.5 rounded-xl shadow transition">Guide Padhein →</a>
+            <a id="bhumiNavPortalLink" href="#" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-black px-5 py-2.5 rounded-xl shadow transition">Official Portal Kholen ↗</a>
+          </div>
+        </div>
+
+        <script>
+          var bhumiNavData = {
+            khata: {
+              title: "🗺️ Apna Khata / Jamabandi Dekhna Hai",
+              desc: "District, Anchal, Halka aur Mauja chunkar apni current Jamabandi (RoR) muft mein online dekhein.",
+              guide: "apna-khata-dekhe.html",
+              portal: "https://land.bihar.gov.in/Ror2025/RoR.aspx"
+            },
+            mutation: {
+              title: "🔄 Dakhil Kharij (Mutation) Karna Hai",
+              desc: "Zameen registry ke baad naye malik ka naam sarkari record mein jodne ke liye online mutation apply karein.",
+              guide: "dakhil-kharij.html",
+              portal: "https://biharbhumi.bihar.gov.in/Biharbhumi/"
+            },
+            lpc: {
+              title: "📄 LPC (Land Possession Certificate) Banwana Hai",
+              desc: "Bank loan ya sarkari yojana ke liye zameen swamitva praman patra (LPC) online apply karein.",
+              guide: "lpc-bihar.html",
+              portal: "https://biharbhumi.bihar.gov.in/Biharbhumi/UserLogin"
+            },
+            correction: {
+              title: "✏️ Record Mein Galti Sudharni Hai",
+              desc: "Digitized Jamabandi mein naam, khata-khesra, rakba ya lagan ki galti Parimarjan Plus se online sudharein.",
+              guide: "parimarjan-plus-bihar.html",
+              portal: "https://parimarjanplus.bihar.gov.in"
+            },
+            survey: {
+              title: "📐 Survey Status / Objection Check Karna Hai",
+              desc: "Bihar Jamin Survey 2026 ki apni application status dekhein ya Prapatra-14/21 objection file karein.",
+              guide: "bihar-survey-status-check.html",
+              portal: "https://dlrs.bihar.gov.in/"
+            },
+            lagan: {
+              title: "💰 Bhu-Lagan (Land Tax) Bharna Hai",
+              desc: "Apni zameen ka salana bhu-lagan online net-banking ya UPI se bharein aur receipt download karein.",
+              guide: "bihar-bhumi-portal.html#bhu-lagan-guide",
+              portal: "https://www.bhulagan.bihar.gov.in/"
+            }
+          };
+
+          function showBhumiNavResult(key) {
+            var data = bhumiNavData[key];
+            document.getElementById('bhumiNavTitle').innerText = data.title;
+            document.getElementById('bhumiNavDesc').innerText = data.desc;
+            document.getElementById('bhumiNavGuideLink').href = data.guide;
+            document.getElementById('bhumiNavPortalLink').href = data.portal;
+            document.getElementById('bhumiNavResult').classList.remove('hidden');
+            document.getElementById('bhumiNavResult').scrollIntoView({behavior: 'smooth', block: 'nearest'});
+          }
+        </script>
+      </section>
+
       <!-- SECTION 1 — ALL PORTALS QUICK ACCESS (H2) -->
       <section id="all-portals" class="space-y-6 scroll-mt-20">
         <div class="text-center space-y-2">

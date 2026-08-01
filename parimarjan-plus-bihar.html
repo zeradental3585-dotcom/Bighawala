@@ -298,10 +298,87 @@
         </div>
       </section>
 
+      <!-- INTERACTIVE TOOL — DOCUMENT CHECKLIST WIZARD -->
+      <section class="mb-10 bg-white rounded-2xl p-6 shadow-sm border-2 border-emerald-500">
+        <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+            <span class="text-emerald-700">🧰</span> Mera Document Checklist Banayein
+          </h2>
+          <span class="bg-emerald-100 text-emerald-900 text-xs font-black px-3 py-1 rounded-full">Interactive Tool</span>
+        </div>
+        <p class="text-sm text-slate-600 mb-5 font-medium">
+          Neeche apna sudhar ka prakar chunein — is sudhar ke liye zaroori documents ki poori list turant dikhegi:
+        </p>
+
+        <div class="mb-5">
+          <label class="block text-xs font-black text-slate-800 uppercase tracking-wider mb-2">Aapko kis cheez mein sudhar chahiye?</label>
+          <select id="parimarjanDocSelect" onchange="showParimarjanDocs()" class="w-full px-4 py-3.5 bg-slate-50 border-2 border-emerald-400 rounded-xl text-sm font-bold text-slate-900 focus:outline-none focus:border-emerald-600">
+            <option value="">-- Sudhar ka prakar chunein --</option>
+            <option value="raiyat">Raiyat Vivaran (Naam / Pita ka Naam)</option>
+            <option value="bhoomi">Bhoomi Vivaran (Khata / Khesra / Rakba)</option>
+            <option value="lagan">Lagan (Land Rent)</option>
+            <option value="pata">Pata (Address)</option>
+            <option value="jaati">Jaati Praman Patra</option>
+          </select>
+        </div>
+
+        <div id="parimarjanDocResult" class="hidden bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-5 space-y-3">
+          <div class="font-black text-sm text-emerald-950 flex items-center gap-2 border-b border-emerald-200 pb-2">
+            <span>✅</span> <span id="parimarjanDocTitle"></span>
+          </div>
+          <ul id="parimarjanDocList" class="space-y-2 text-sm font-semibold text-slate-800"></ul>
+          <div class="bg-amber-100 border border-amber-300 rounded-xl p-3 text-xs font-bold text-amber-950">
+            📌 Har application ke saath <strong>Shapath Patra (Self-Declaration Affidavit)</strong> dena anivarya hai — chaahe kisi bhi prakar ka sudhar ho।
+          </div>
+        </div>
+
+        <script>
+          var parimarjanDocData = {
+            raiyat: {
+              title: "Raiyat Vivaran (Naam / Pita ka Naam) mein Sudhar ke liye:",
+              docs: ["Lagan raseed (यदि आवश्यक हो)", "Dakhil-Kharij shuddhi patra (यदि आवश्यक हो)", "Jamabandi panji copy (यदि आवश्यक हो)", "Dakhil-Kharij aadesh (यदि आवश्यक हो)"]
+            },
+            bhoomi: {
+              title: "Bhoomi Vivaran (Khata/Khesra/Rakba) mein Sudhar ke liye:",
+              docs: ["CS/RS/Chakbandi Khatiyan (यदि आवश्यक हो)", "Dakhil-Kharij shuddhi patra ya aadesh (यदि आवश्यक हो)", "Bhoomi dakhil-kabja praman patra (यदि आवश्यक हो)", "Sarkari bhoomi parcha abhilekh (यदि आवश्यक हो)"]
+            },
+            lagan: {
+              title: "Lagan (Land Rent) mein Sudhar ke liye:",
+              docs: ["Lagan raseed (अनिवार्य)"]
+            },
+            pata: {
+              title: "Pata (Address) mein Sudhar ke liye — koi ek document:",
+              docs: ["Aadhaar Card", "Bijli Bill", "Ration Card", "Driving License", "Passport", "Voter ID Card"]
+            },
+            jaati: {
+              title: "Jaati Praman Patra mein Sudhar ke liye:",
+              docs: ["Jaati Praman Patra (अनिवार्य)"]
+            }
+          };
+
+          function showParimarjanDocs() {
+            var sel = document.getElementById('parimarjanDocSelect').value;
+            var box = document.getElementById('parimarjanDocResult');
+            if (!sel) { box.classList.add('hidden'); return; }
+            var data = parimarjanDocData[sel];
+            document.getElementById('parimarjanDocTitle').innerText = data.title;
+            var listEl = document.getElementById('parimarjanDocList');
+            listEl.innerHTML = '';
+            data.docs.forEach(function(d) {
+              var li = document.createElement('li');
+              li.className = 'flex items-start gap-2';
+              li.innerHTML = '<span class="text-emerald-700 font-black">✓</span><span>' + d + '</span>';
+              listEl.appendChild(li);
+            });
+            box.classList.remove('hidden');
+          }
+        </script>
+      </section>
+
       <!-- SECTION 3 — DOCUMENTS REQUIRED TABLE -->
       <section class="mb-10 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
         <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 flex items-center gap-2">
-          <span class="text-emerald-700">📋</span> Zaroori Documents (Correction ke Prakar ke Anusaar)
+          <span class="text-emerald-700">📋</span> Zaroori Documents (Correction ke Prakar ke Anusaar) — Poori Table
         </h2>
 
         <p class="text-sm text-slate-600 mb-6 font-medium">

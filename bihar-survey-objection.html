@@ -172,6 +172,76 @@
     <!-- MAIN CONTAINER -->
     <main class="max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10 mb-16 relative z-20 space-y-10 w-full text-[16px]">
 
+      <!-- INTERACTIVE TOOL — SAHI FORM SELECTOR -->
+      <section class="bg-white rounded-3xl border-2 border-emerald-500 shadow-xl p-6 sm:p-8 space-y-5">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+            <span class="text-emerald-700">🧭</span> Mujhe Kaunsa Form Chahiye?
+          </h2>
+          <span class="bg-emerald-100 text-emerald-900 text-xs font-black px-3 py-1 rounded-full">Interactive Tool</span>
+        </div>
+
+        <!-- STEP 1 -->
+        <div id="objStep1">
+          <p class="text-sm sm:text-base font-bold text-slate-800 mb-4">
+            Step 1: Aapki zameen ka record abhi kis stage mein hai?
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <button onclick="selectObjStage('draft')" class="obj-stage-btn p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-slate-50 hover:bg-emerald-50 transition text-left flex items-center gap-3">
+              <span class="text-3xl">📝</span>
+              <div>
+                <div class="text-sm font-black text-slate-900">Draft Record (Prapatra-12)</div>
+                <div class="text-[11px] text-slate-600 font-semibold">Abhi shivir camp mein Khanapuri ke baad ka record hai</div>
+              </div>
+            </button>
+            <button onclick="selectObjStage('final')" class="obj-stage-btn p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-slate-50 hover:bg-emerald-50 transition text-left flex items-center gap-3">
+              <span class="text-3xl">📜</span>
+              <div>
+                <div class="text-sm font-black text-slate-900">Final Record (Prapatra-20)</div>
+                <div class="text-[11px] text-slate-600 font-semibold">Prapatra-14 ki sunwai ke baad publish hua final record hai</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2 RESULT -->
+        <div id="objStep2" class="hidden bg-emerald-50 border-2 border-emerald-400 rounded-2xl p-5 space-y-3">
+          <div class="font-black text-base text-emerald-950" id="objResultTitle"></div>
+          <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed" id="objResultDesc"></p>
+          <div class="bg-white border border-emerald-200 rounded-xl p-3 text-xs sm:text-sm font-bold text-slate-800" id="objResultWhere"></div>
+          <button onclick="resetObjWizard()" class="text-xs font-black text-emerald-800 underline hover:text-emerald-950">← Dobara Chunein</button>
+        </div>
+
+        <script>
+          var objStageData = {
+            draft: {
+              title: "📝 Aapko Prapatra-14 file karna hoga",
+              desc: "Prapatra-12 (draft record) mein naam, khata-khesra, rakba ya kisi bhi vivaran mein galti mile toh usi samay shivir camp mein Prapatra-14 (आपत्ति) file karein. Yeh pehla aur sabse aasan mauka hota hai galti sudharne ka.",
+              where: "📍 Kahan file karein: Apne mauja ke sarvekshan shivir camp mein, hearing ke dauraan."
+            },
+            final: {
+              title: "📜 Aapko Prapatra-21 file karna hoga",
+              desc: "Agar Prapatra-20 (final record) mein bhi galti reh gayi hai, toh Prapatra-21 ke through Bandobast Padadhikari (Settlement Officer) ke paas doosri aur aakhri aapatti darj kar sakte hain.",
+              where: "📍 Kahan file karein: Apne anchal ke Bandobast Padadhikari (Settlement Officer) ke karyalaya mein."
+            }
+          };
+
+          function selectObjStage(key) {
+            var data = objStageData[key];
+            document.getElementById('objResultTitle').innerText = data.title;
+            document.getElementById('objResultDesc').innerText = data.desc;
+            document.getElementById('objResultWhere').innerText = data.where;
+            document.getElementById('objStep1').classList.add('hidden');
+            document.getElementById('objStep2').classList.remove('hidden');
+          }
+
+          function resetObjWizard() {
+            document.getElementById('objStep2').classList.add('hidden');
+            document.getElementById('objStep1').classList.remove('hidden');
+          }
+        </script>
+      </section>
+
       <!-- WHY THIS MATTERS -->
       <section class="bg-white rounded-3xl border-2 border-red-500/20 shadow-lg p-6 sm:p-8 space-y-4">
         <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
