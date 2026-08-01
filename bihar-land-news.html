@@ -143,7 +143,28 @@ document.addEventListener('DOMContentLoaded', function() {
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="nav.js"></script>
 
-</head>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.bighawala.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bihar Land News 2026",
+          "item": "https://www.bighawala.com/bihar-land-news"
+        }
+      ]
+    }
+    </script>
+  </head>
   <body class="pb-16 bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col selection:bg-orange-100 selection:text-orange-900">
 
     <!-- BREAKING NEWS TICKER -->

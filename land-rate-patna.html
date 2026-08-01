@@ -352,7 +352,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, {passive: true});
 </script>
-</head>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.bighawala.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Patna Land Rates, Registry charges & Bigha Katha FAQ",
+          "item": "https://www.bighawala.com/land-rate-patna"
+        }
+      ]
+    }
+    </script>
+  </head>
   <body class="pb-16 bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col selection:bg-orange-100 selection:text-orange-900">
 
     <!-- STICKY HEADER -->
