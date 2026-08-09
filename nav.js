@@ -627,6 +627,11 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="pm-awas-yojana-bihar.html">🏠 PM Awas Yojana</a>
       <a href="halka-mauja-kya-hota-hai.html">🏘️ Halka Mauja Kya Hai</a>
       <a href="lpc-dakhil-kharij-status-check.html">🔍 LPC/DK Status Check</a>
+      <a href="waris-praman-patra-bihar.html">👪 Waris Praman Patra</a>
+      <a href="zameen-na-conversion-bihar.html">🏗️ Zameen NA Conversion</a>
+      <a href="circle-rate-objection-bihar.html">⚖️ Circle Rate Objection</a>
+      <a href="chakbandi-bihar.html">🧩 Chakbandi Kya Hai</a>
+      <a href="power-of-attorney-zameen-bihar.html">🖋️ Power of Attorney</a>
     </div>
   </li>
   <li>
@@ -720,6 +725,11 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="pm-awas-yojana-bihar.html" onclick="bwM()">🏠 PM Awas Yojana</a>
       <a href="halka-mauja-kya-hota-hai.html" onclick="bwM()">🏘️ Halka Mauja Kya Hai</a>
       <a href="lpc-dakhil-kharij-status-check.html" onclick="bwM()">🔍 LPC/DK Status Check</a>
+      <a href="waris-praman-patra-bihar.html" onclick="bwM()">👪 Waris Praman Patra</a>
+      <a href="zameen-na-conversion-bihar.html" onclick="bwM()">🏗️ Zameen NA Conversion</a>
+      <a href="circle-rate-objection-bihar.html" onclick="bwM()">⚖️ Circle Rate Objection</a>
+      <a href="chakbandi-bihar.html" onclick="bwM()">🧩 Chakbandi Kya Hai</a>
+      <a href="power-of-attorney-zameen-bihar.html" onclick="bwM()">🖋️ Power of Attorney</a>
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Rates</div>
@@ -817,6 +827,11 @@ window.bwSD = [
   {t:'Bhu Naksha',k:'bhu naksha land map',u:'bhu-naksha-bihar.html'},
   {t:'Self Declaration',k:'self declaration shapath patra',u:'self-declaration-form-bihar.html'},
   {t:'Zameen Vivad',k:'zameen vivad dispute',u:'zameen-vivad-bihar.html'},
+  {t:'Waris Praman Patra',k:'waris praman patra legal heir certificate uttaradhikar succession vanshavali rtps',u:'waris-praman-patra-bihar.html'},
+  {t:'Zameen NA Conversion',k:'na conversion agricultural non agricultural krishi gair krishi sdo',u:'zameen-na-conversion-bihar.html'},
+  {t:'Circle Rate Objection',k:'circle rate mvr objection complaint galat revision',u:'circle-rate-objection-bihar.html'},
+  {t:'Chakbandi Kya Hai',k:'chakbandi land consolidation bhoomi ekikaran',u:'chakbandi-bihar.html'},
+  {t:'Power of Attorney Zameen',k:'power of attorney poa gpa spa mukhtarnama zameen registry',u:'power-of-attorney-zameen-bihar.html'},
   {t:'Land Rates Bihar',k:'zameen rate kimat',u:'land-rates.html'},
   {t:'MVR Rate Bihar',k:'mvr minimum valuation',u:'mvr-rate-bihar.html'},
   {t:'Circle Rate',k:'circle rate sarkari',u:'circle-rate-bihar.html'},
