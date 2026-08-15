@@ -569,7 +569,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 <header class="bw-header" id="bwH">
 <div class="bw-hi">
 
-<a href="index.html" class="bw-logo">
+<a href="/" class="bw-logo">
   <div class="bw-li"><span>BW</span></div>
   <div class="bw-lt">
     <span class="bw-ln">
@@ -580,22 +580,22 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 </a>
 
 <ul class="bw-nav">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="apna-khata-dekhe.html">अपना खाता</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="apna-khata-dekhe">अपना खाता</a></li>
   <li>
     <button onclick="bwT('t')" class="bw-db">
       Tools <span class="bw-arr">▼</span>
     </button>
     <div class="bw-dd" id="bwt">
-      <a href="zameen-dastavez-checklist.html" style="font-weight:800;color:#B45309;">🧰 Zameen Dastavez Checklist (नया)</a>
-      <a href="vanshavali-kaise-banaye.html" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (नया)</a>
-      <a href="bigha-calculator.html">🧮 Bigha Calculator</a>
-      <a href="bigha-to-decimal.html">🔢 Bigha to Decimal</a>
-      <a href="zameen-moolyankan.html">🏡 Zameen Moolyankan</a>
-      <a href="land-cost-calculator.html">💰 Registry Cost</a>
-      <a href="zameen-comparison.html">⚖️ Zameen Compare</a>
-      <a href="bihar-land-quiz.html">🎯 Land Quiz</a>
-      <a href="document-checker.html">📄 Document Checker</a>
+      <a href="zameen-dastavez-checklist" style="font-weight:800;color:#B45309;">🧰 Zameen Dastavez Checklist (नया)</a>
+      <a href="vanshavali-kaise-banaye" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (नया)</a>
+      <a href="bigha-calculator">🧮 Bigha Calculator</a>
+      <a href="bigha-to-decimal">🔢 Bigha to Decimal</a>
+      <a href="zameen-moolyankan">🏡 Zameen Moolyankan</a>
+      <a href="land-cost-calculator">💰 Registry Cost</a>
+      <a href="zameen-comparison">⚖️ Zameen Compare</a>
+      <a href="bihar-land-quiz">🎯 Land Quiz</a>
+      <a href="document-checker">📄 Document Checker</a>
     </div>
   </li>
   <li>
@@ -603,35 +603,35 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       Guides <span class="bw-arr">▼</span>
     </button>
     <div class="bw-dd" id="bwg">
-      <a href="bihar-jamin-survey.html" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
-      <a href="bihar-survey-status-check.html" style="font-weight:800;color:#1D4ED8;">🔍 सर्वे स्टेटस चेक करें</a>
-      <a href="bihar-survey-objection.html" style="font-weight:800;color:#B91C1C;">⚖️ आपत्ति (Form 14/21)</a>
-      <a href="vanshavali-kaise-banaye.html" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (Free Tool)</a>
-      <a href="dakhil-kharij.html">📋 Dakhil Kharij</a>
-      <a href="dakhil-kharij-fees.html">💰 DK Fees</a>
-      <a href="bhulekh.html">🗺️ Bhulekh Bihar</a>
-      <a href="jamabandi.html">📑 Jamabandi</a>
-      <a href="lpc-bihar.html">📄 LPC Bihar</a>
-      <a href="lpc-validity-renewal.html">⏱️ LPC Validity</a>
-      <a href="registry-bihar.html">📜 Registry Guide</a>
-      <a href="zameen-registry-charges.html">💳 Registry Charges</a>
-      <a href="bainama-format-bihar.html">📝 Bainama Format</a>
-      <a href="khata-khesra-bihar.html">🔑 Khata Khesra</a>
-      <a href="khatiyan-bihar.html">📜 Khatiyan Bihar</a>
-      <a href="bhu-naksha-bihar.html">🗺️ Bhu Naksha</a>
-      <a href="self-declaration-form-bihar.html">📋 Self Declaration</a>
-      <a href="zameen-vivad-bihar.html">⚖️ Zameen Vivad</a>
-      <a href="bihar-bhumi-portal.html">🏛️ Bihar Bhumi Portal</a>
-      <a href="parimarjan-plus-bihar.html">🧰 Parimarjan Plus</a>
-      <a href="kisan-credit-card-bihar.html">🌾 Kisan Credit Card</a>
-      <a href="pm-awas-yojana-bihar.html">🏠 PM Awas Yojana</a>
-      <a href="halka-mauja-kya-hota-hai.html">🏘️ Halka Mauja Kya Hai</a>
-      <a href="lpc-dakhil-kharij-status-check.html">🔍 LPC/DK Status Check</a>
-      <a href="waris-praman-patra-bihar.html">👪 Waris Praman Patra</a>
-      <a href="zameen-na-conversion-bihar.html">🏗️ Zameen NA Conversion</a>
-      <a href="circle-rate-objection-bihar.html">⚖️ Circle Rate Objection</a>
-      <a href="chakbandi-bihar.html">🧩 Chakbandi Kya Hai</a>
-      <a href="power-of-attorney-zameen-bihar.html">🖋️ Power of Attorney</a>
+      <a href="bihar-jamin-survey" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
+      <a href="bihar-survey-status-check" style="font-weight:800;color:#1D4ED8;">🔍 सर्वे स्टेटस चेक करें</a>
+      <a href="bihar-survey-objection" style="font-weight:800;color:#B91C1C;">⚖️ आपत्ति (Form 14/21)</a>
+      <a href="vanshavali-kaise-banaye" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (Free Tool)</a>
+      <a href="dakhil-kharij">📋 Dakhil Kharij</a>
+      <a href="dakhil-kharij-fees">💰 DK Fees</a>
+      <a href="bhulekh">🗺️ Bhulekh Bihar</a>
+      <a href="jamabandi">📑 Jamabandi</a>
+      <a href="lpc-bihar">📄 LPC Bihar</a>
+      <a href="lpc-validity-renewal">⏱️ LPC Validity</a>
+      <a href="registry-bihar">📜 Registry Guide</a>
+      <a href="zameen-registry-charges">💳 Registry Charges</a>
+      <a href="bainama-format-bihar">📝 Bainama Format</a>
+      <a href="khata-khesra-bihar">🔑 Khata Khesra</a>
+      <a href="khatiyan-bihar">📜 Khatiyan Bihar</a>
+      <a href="bhu-naksha-bihar">🗺️ Bhu Naksha</a>
+      <a href="self-declaration-form-bihar">📋 Self Declaration</a>
+      <a href="zameen-vivad-bihar">⚖️ Zameen Vivad</a>
+      <a href="bihar-bhumi-portal">🏛️ Bihar Bhumi Portal</a>
+      <a href="parimarjan-plus-bihar">🧰 Parimarjan Plus</a>
+      <a href="kisan-credit-card-bihar">🌾 Kisan Credit Card</a>
+      <a href="pm-awas-yojana-bihar">🏠 PM Awas Yojana</a>
+      <a href="halka-mauja-kya-hota-hai">🏘️ Halka Mauja Kya Hai</a>
+      <a href="lpc-dakhil-kharij-status-check">🔍 LPC/DK Status Check</a>
+      <a href="waris-praman-patra-bihar">👪 Waris Praman Patra</a>
+      <a href="zameen-na-conversion-bihar">🏗️ Zameen NA Conversion</a>
+      <a href="circle-rate-objection-bihar">⚖️ Circle Rate Objection</a>
+      <a href="chakbandi-bihar">🧩 Chakbandi Kya Hai</a>
+      <a href="power-of-attorney-zameen-bihar">🖋️ Power of Attorney</a>
     </div>
   </li>
   <li>
@@ -639,15 +639,15 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       Rates <span class="bw-arr">▼</span>
     </button>
     <div class="bw-dd" id="bwr">
-      <a href="land-rates.html">💰 Land Rates 2026</a>
-      <a href="mvr-rate-bihar.html">📊 MVR Rate Bihar</a>
-      <a href="jamin-ka-rate-bihar.html">🏘️ Jamin Ka Rate</a>
-      <a href="circle-rate-bihar.html">🔢 Circle Rate</a>
-      <a href="bihar-all-districts-land-rate.html">📍 All 38 Districts</a>
+      <a href="land-rates">💰 Land Rates 2026</a>
+      <a href="mvr-rate-bihar">📊 MVR Rate Bihar</a>
+      <a href="jamin-ka-rate-bihar">🏘️ Jamin Ka Rate</a>
+      <a href="circle-rate-bihar">🔢 Circle Rate</a>
+      <a href="bihar-all-districts-land-rate">📍 All 38 Districts</a>
     </div>
   </li>
-  <li><a href="community-qa.html">Community</a></li>
-  <li><a href="bihar-land-news.html">News</a></li>
+  <li><a href="community-qa">Community</a></li>
+  <li><a href="bihar-land-news">News</a></li>
 </ul>
 
 <div class="bw-right">
@@ -673,7 +673,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 
 <div class="bw-mm" id="bwMM">
   <div class="bw-mmt">
-    <a href="index.html" class="bw-logo" onclick="bwM()">
+    <a href="/" class="bw-logo" onclick="bwM()">
       <div class="bw-li"><span>BW</span></div>
       <div class="bw-lt">
         <span class="bw-ln">
@@ -685,69 +685,69 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
   </div>
   <div class="bw-mmb">
     <div class="bw-mms">
-      <a href="index.html" onclick="bwM()">🏠 Home</a>
-      <a href="apna-khata-dekhe.html" onclick="bwM()">📋 अपना खाता देखें</a>
+      <a href="/" onclick="bwM()">🏠 Home</a>
+      <a href="apna-khata-dekhe" onclick="bwM()">📋 अपना खाता देखें</a>
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Tools</div>
-      <a href="zameen-dastavez-checklist.html" onclick="bwM()" style="font-weight:800;color:#B45309;">🧰 Zameen Dastavez Checklist (नया)</a>
-      <a href="vanshavali-kaise-banaye.html" onclick="bwM()" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (नया)</a>
-      <a href="bigha-calculator.html" onclick="bwM()">🧮 Bigha Calculator</a>
-      <a href="bigha-to-decimal.html" onclick="bwM()">🔢 Bigha to Decimal</a>
-      <a href="zameen-moolyankan.html" onclick="bwM()">🏡 Zameen Moolyankan</a>
-      <a href="land-cost-calculator.html" onclick="bwM()">💰 Registry Cost</a>
-      <a href="zameen-comparison.html" onclick="bwM()">⚖️ Zameen Compare</a>
-      <a href="bihar-land-quiz.html" onclick="bwM()">🎯 Bihar Land Quiz</a>
-      <a href="document-checker.html" onclick="bwM()">📄 Document Checker</a>
+      <a href="zameen-dastavez-checklist" onclick="bwM()" style="font-weight:800;color:#B45309;">🧰 Zameen Dastavez Checklist (नया)</a>
+      <a href="vanshavali-kaise-banaye" onclick="bwM()" style="font-weight:800;color:#2E7D32;">🌳 वंशावली बनाएं (नया)</a>
+      <a href="bigha-calculator" onclick="bwM()">🧮 Bigha Calculator</a>
+      <a href="bigha-to-decimal" onclick="bwM()">🔢 Bigha to Decimal</a>
+      <a href="zameen-moolyankan" onclick="bwM()">🏡 Zameen Moolyankan</a>
+      <a href="land-cost-calculator" onclick="bwM()">💰 Registry Cost</a>
+      <a href="zameen-comparison" onclick="bwM()">⚖️ Zameen Compare</a>
+      <a href="bihar-land-quiz" onclick="bwM()">🎯 Bihar Land Quiz</a>
+      <a href="document-checker" onclick="bwM()">📄 Document Checker</a>
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Guides</div>
-      <a href="bihar-jamin-survey.html" onclick="bwM()" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
-      <a href="bihar-survey-status-check.html" onclick="bwM()" style="font-weight:800;color:#1D4ED8;">🔍 सर्वे स्टेटस चेक करें</a>
-      <a href="bihar-survey-objection.html" onclick="bwM()" style="font-weight:800;color:#B91C1C;">⚖️ आपत्ति (Form 14/21)</a>
-      <a href="dakhil-kharij.html" onclick="bwM()">📋 Dakhil Kharij</a>
-      <a href="dakhil-kharij-fees.html" onclick="bwM()">💰 DK Fees</a>
-      <a href="bhulekh.html" onclick="bwM()">🗺️ Bhulekh Bihar</a>
-      <a href="jamabandi.html" onclick="bwM()">📑 Jamabandi</a>
-      <a href="lpc-bihar.html" onclick="bwM()">📄 LPC Bihar</a>
-      <a href="lpc-validity-renewal.html" onclick="bwM()">⏱️ LPC Validity</a>
-      <a href="registry-bihar.html" onclick="bwM()">📜 Registry Guide</a>
-      <a href="zameen-registry-charges.html" onclick="bwM()">💳 Registry Charges</a>
-      <a href="bainama-format-bihar.html" onclick="bwM()">📝 Bainama Format</a>
-      <a href="khata-khesra-bihar.html" onclick="bwM()">🔑 Khata Khesra</a>
-      <a href="khatiyan-bihar.html" onclick="bwM()">📜 Khatiyan Bihar</a>
-      <a href="bhu-naksha-bihar.html" onclick="bwM()">🗺️ Bhu Naksha</a>
-      <a href="self-declaration-form-bihar.html" onclick="bwM()">📋 Self Declaration</a>
-      <a href="zameen-vivad-bihar.html" onclick="bwM()">⚖️ Zameen Vivad</a>
-      <a href="bihar-bhumi-portal.html" onclick="bwM()">🏛️ Bihar Bhumi Portal</a>
-      <a href="parimarjan-plus-bihar.html" onclick="bwM()">🧰 Parimarjan Plus</a>
-      <a href="kisan-credit-card-bihar.html" onclick="bwM()">🌾 Kisan Credit Card</a>
-      <a href="pm-awas-yojana-bihar.html" onclick="bwM()">🏠 PM Awas Yojana</a>
-      <a href="halka-mauja-kya-hota-hai.html" onclick="bwM()">🏘️ Halka Mauja Kya Hai</a>
-      <a href="lpc-dakhil-kharij-status-check.html" onclick="bwM()">🔍 LPC/DK Status Check</a>
-      <a href="waris-praman-patra-bihar.html" onclick="bwM()">👪 Waris Praman Patra</a>
-      <a href="zameen-na-conversion-bihar.html" onclick="bwM()">🏗️ Zameen NA Conversion</a>
-      <a href="circle-rate-objection-bihar.html" onclick="bwM()">⚖️ Circle Rate Objection</a>
-      <a href="chakbandi-bihar.html" onclick="bwM()">🧩 Chakbandi Kya Hai</a>
-      <a href="power-of-attorney-zameen-bihar.html" onclick="bwM()">🖋️ Power of Attorney</a>
+      <a href="bihar-jamin-survey" onclick="bwM()" style="font-weight:800;color:#C2410C;">🗺️ जमीन सर्वे गाइड (नया)</a>
+      <a href="bihar-survey-status-check" onclick="bwM()" style="font-weight:800;color:#1D4ED8;">🔍 सर्वे स्टेटस चेक करें</a>
+      <a href="bihar-survey-objection" onclick="bwM()" style="font-weight:800;color:#B91C1C;">⚖️ आपत्ति (Form 14/21)</a>
+      <a href="dakhil-kharij" onclick="bwM()">📋 Dakhil Kharij</a>
+      <a href="dakhil-kharij-fees" onclick="bwM()">💰 DK Fees</a>
+      <a href="bhulekh" onclick="bwM()">🗺️ Bhulekh Bihar</a>
+      <a href="jamabandi" onclick="bwM()">📑 Jamabandi</a>
+      <a href="lpc-bihar" onclick="bwM()">📄 LPC Bihar</a>
+      <a href="lpc-validity-renewal" onclick="bwM()">⏱️ LPC Validity</a>
+      <a href="registry-bihar" onclick="bwM()">📜 Registry Guide</a>
+      <a href="zameen-registry-charges" onclick="bwM()">💳 Registry Charges</a>
+      <a href="bainama-format-bihar" onclick="bwM()">📝 Bainama Format</a>
+      <a href="khata-khesra-bihar" onclick="bwM()">🔑 Khata Khesra</a>
+      <a href="khatiyan-bihar" onclick="bwM()">📜 Khatiyan Bihar</a>
+      <a href="bhu-naksha-bihar" onclick="bwM()">🗺️ Bhu Naksha</a>
+      <a href="self-declaration-form-bihar" onclick="bwM()">📋 Self Declaration</a>
+      <a href="zameen-vivad-bihar" onclick="bwM()">⚖️ Zameen Vivad</a>
+      <a href="bihar-bhumi-portal" onclick="bwM()">🏛️ Bihar Bhumi Portal</a>
+      <a href="parimarjan-plus-bihar" onclick="bwM()">🧰 Parimarjan Plus</a>
+      <a href="kisan-credit-card-bihar" onclick="bwM()">🌾 Kisan Credit Card</a>
+      <a href="pm-awas-yojana-bihar" onclick="bwM()">🏠 PM Awas Yojana</a>
+      <a href="halka-mauja-kya-hota-hai" onclick="bwM()">🏘️ Halka Mauja Kya Hai</a>
+      <a href="lpc-dakhil-kharij-status-check" onclick="bwM()">🔍 LPC/DK Status Check</a>
+      <a href="waris-praman-patra-bihar" onclick="bwM()">👪 Waris Praman Patra</a>
+      <a href="zameen-na-conversion-bihar" onclick="bwM()">🏗️ Zameen NA Conversion</a>
+      <a href="circle-rate-objection-bihar" onclick="bwM()">⚖️ Circle Rate Objection</a>
+      <a href="chakbandi-bihar" onclick="bwM()">🧩 Chakbandi Kya Hai</a>
+      <a href="power-of-attorney-zameen-bihar" onclick="bwM()">🖋️ Power of Attorney</a>
     </div>
     <div class="bw-mms">
       <div class="bw-mml">Rates</div>
-      <a href="land-rates.html" onclick="bwM()">💰 Land Rates 2026</a>
-      <a href="mvr-rate-bihar.html" onclick="bwM()">📊 MVR Rate Bihar</a>
-      <a href="jamin-ka-rate-bihar.html" onclick="bwM()">🏘️ Jamin Ka Rate</a>
-      <a href="circle-rate-bihar.html" onclick="bwM()">🔢 Circle Rate Bihar</a>
-      <a href="bihar-all-districts-land-rate.html" onclick="bwM()">📍 All 38 Districts</a>
+      <a href="land-rates" onclick="bwM()">💰 Land Rates 2026</a>
+      <a href="mvr-rate-bihar" onclick="bwM()">📊 MVR Rate Bihar</a>
+      <a href="jamin-ka-rate-bihar" onclick="bwM()">🏘️ Jamin Ka Rate</a>
+      <a href="circle-rate-bihar" onclick="bwM()">🔢 Circle Rate Bihar</a>
+      <a href="bihar-all-districts-land-rate" onclick="bwM()">📍 All 38 Districts</a>
     </div>
     <div class="bw-mms">
       <div class="bw-mml">More</div>
-      <a href="community-qa.html" onclick="bwM()">🤝 Community Q&A</a>
-      <a href="bihar-land-news.html" onclick="bwM()">📰 Bihar Land News</a>
-      <a href="whatsapp-alerts.html" onclick="bwM()">📱 WhatsApp Alerts</a>
+      <a href="community-qa" onclick="bwM()">🤝 Community Q&A</a>
+      <a href="bihar-land-news" onclick="bwM()">📰 Bihar Land News</a>
+      <a href="whatsapp-alerts" onclick="bwM()">📱 WhatsApp Alerts</a>
       <a href="https://whatsapp.com/channel/0029VbD8TVN9sBIDccVcFb0y" target="_blank" rel="noopener noreferrer" onclick="bwM()">📢 WhatsApp Channel Follow करें</a>
-      <a href="about.html" onclick="bwM()">ℹ️ About Us</a>
-      <a href="contact.html" onclick="bwM()">📞 Contact</a>
-      <a href="disclaimer.html" onclick="bwM()">📝 Disclaimer</a>
+      <a href="about" onclick="bwM()">ℹ️ About Us</a>
+      <a href="contact" onclick="bwM()">📞 Contact</a>
+      <a href="disclaimer" onclick="bwM()">📝 Disclaimer</a>
     </div>
     <a href="https://wa.me/919835102324"
       target="_blank" class="bw-mmwa">
@@ -758,16 +758,16 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 
 <div class="bw-mbar">
   <div class="bw-mbari">
-    <a href="index.html">
+    <a href="/">
       <span>🏠</span><span>Home</span>
     </a>
-    <a href="bigha-calculator.html">
+    <a href="bigha-calculator">
       <span>🧮</span><span>Calculator</span>
     </a>
-    <a href="apna-khata-dekhe.html">
+    <a href="apna-khata-dekhe">
       <span>📋</span><span>Khata</span>
     </a>
-    <a href="community-qa.html">
+    <a href="community-qa">
       <span>🤝</span><span>Community</span>
     </a>
   </div>
@@ -776,7 +776,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 <div class="bw-cookie-notice" id="bwCookieNotice" style="display:none;">
   <div class="bw-cookie-text">
     🍪 Hum aur hamare partners (jaise Google AdSense) is site par cookies ka istemal karte hain taaki ads dikha sakein aur experience behtar bana sakein.
-    <a href="privacy-policy/index.html">Privacy Policy padhein</a>.
+    <a href="privacy-policy">Privacy Policy padhein</a>.
   </div>
   <button type="button" class="bw-cookie-btn" id="bwCookieOk">समझ गया</button>
 </div>
@@ -802,55 +802,55 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
 `;
 
 window.bwSD = [
-  {t:'Zameen Dastavez Checklist',k:'dastavez checklist documents kagaz track khatiyan jamabandi registry mutation lpc',u:'zameen-dastavez-checklist.html'},
-  {t:'Parimarjan Plus Bihar',k:'parimarjan plus jamabandi sudhar correction naam khata khesra rakba',u:'parimarjan-plus-bihar.html'},
-  {t:'Bihar Jamin Survey Guide',k:'survey sarvekshan vanshavali prapatra form 2 form 3 khanapuri',u:'bihar-jamin-survey.html'},
-  {t:'Vanshavali Kaise Banaye (Free Tool)',k:'vanshavali banao generator prapatra 3 genealogy family tree',u:'vanshavali-kaise-banaye.html'},
-  {t:'Bihar Survey Status Check',k:'survey status check dlrs online khanapuri complaint',u:'bihar-survey-status-check.html'},
-  {t:'Bihar Survey Objection Guide (Form 14/21)',k:'prapatra 12 14 20 21 objection aapatti bandobast padadhikari shivir',u:'bihar-survey-objection.html'},
-  {t:'अपना खाता देखें',k:'apna khata khatyan',u:'apna-khata-dekhe.html'},
-  {t:'Bigha Calculator',k:'bigha katha dhur convert',u:'bigha-calculator.html'},
-  {t:'Bigha to Decimal',k:'bigha decimal dismil',u:'bigha-to-decimal.html'},
-  {t:'Dakhil Kharij',k:'dakhil kharij mutation',u:'dakhil-kharij.html'},
-  {t:'Dakhil Kharij Fees',k:'dakhil fees paisa kharcha',u:'dakhil-kharij-fees.html'},
-  {t:'LPC Bihar',k:'lpc land possession',u:'lpc-bihar.html'},
-  {t:'LPC Validity',k:'lpc validity renewal expire',u:'lpc-validity-renewal.html'},
-  {t:'Jamabandi',k:'jamabandi nakal download',u:'jamabandi.html'},
-  {t:'Bhulekh Bihar',k:'bhulekh record',u:'bhulekh.html'},
-  {t:'Registry Guide',k:'registry nibandhan',u:'registry-bihar.html'},
-  {t:'Registry Charges',k:'registry charges stamp duty',u:'zameen-registry-charges.html'},
-  {t:'Bainama Format',k:'bainama sale deed hindi',u:'bainama-format-bihar.html'},
-  {t:'Khata Khesra',k:'khata khesra number',u:'khata-khesra-bihar.html'},
-  {t:'Khatiyan Bihar',k:'khatiyan cs rs survey jamabandi',u:'khatiyan-bihar.html'},
-  {t:'Halka Mauja Kya Hai',k:'halka mauja anchal revenue village',u:'halka-mauja-kya-hota-hai.html'},
-  {t:'LPC/Dakhil Kharij Status',k:'lpc status dakhil kharij status mutation check',u:'lpc-dakhil-kharij-status-check.html'},
-  {t:'Bhu Naksha',k:'bhu naksha land map',u:'bhu-naksha-bihar.html'},
-  {t:'Self Declaration',k:'self declaration shapath patra',u:'self-declaration-form-bihar.html'},
-  {t:'Zameen Vivad',k:'zameen vivad dispute',u:'zameen-vivad-bihar.html'},
-  {t:'Waris Praman Patra',k:'waris praman patra legal heir certificate uttaradhikar succession vanshavali rtps',u:'waris-praman-patra-bihar.html'},
-  {t:'Zameen NA Conversion',k:'na conversion agricultural non agricultural krishi gair krishi sdo',u:'zameen-na-conversion-bihar.html'},
-  {t:'Circle Rate Objection',k:'circle rate mvr objection complaint galat revision',u:'circle-rate-objection-bihar.html'},
-  {t:'Chakbandi Kya Hai',k:'chakbandi land consolidation bhoomi ekikaran',u:'chakbandi-bihar.html'},
-  {t:'Power of Attorney Zameen',k:'power of attorney poa gpa spa mukhtarnama zameen registry',u:'power-of-attorney-zameen-bihar.html'},
-  {t:'Land Rates Bihar',k:'zameen rate kimat',u:'land-rates.html'},
-  {t:'MVR Rate Bihar',k:'mvr minimum valuation',u:'mvr-rate-bihar.html'},
-  {t:'Circle Rate',k:'circle rate sarkari',u:'circle-rate-bihar.html'},
-  {t:'Jamin Ka Rate',k:'jamin rate check',u:'jamin-ka-rate-bihar.html'},
-  {t:'Zameen Moolyankan',k:'moolyankan valuation',u:'zameen-moolyankan.html'},
-  {t:'Cost Calculator',k:'cost kharcha stamp',u:'land-cost-calculator.html'},
-  {t:'Zameen Compare',k:'compare do plot',u:'zameen-comparison.html'},
-  {t:'Bihar Land Quiz',k:'quiz test knowledge',u:'bihar-land-quiz.html'},
-  {t:'Document Checker',k:'document kagaz checker',u:'document-checker.html'},
-  {t:'Community Q&A',k:'community sawaal jawab',u:'community-qa.html'},
-  {t:'Bihar Land News',k:'news samachar update',u:'bihar-land-news.html'},
-  {t:'Bihar Bhumi Portal',k:'portal bhumi sarkari',u:'bihar-bhumi-portal.html'},
-  {t:'Kisan Credit Card',k:'kisan credit kcc loan',u:'kisan-credit-card-bihar.html'},
-  {t:'PM Awas Yojana',k:'pm awas ghar yojana',u:'pm-awas-yojana-bihar.html'},
-  {t:'Patna Land Rate',k:'patna zameen rate',u:'patna-land-rate.html'},
-  {t:'Patna Land FAQ (25 Sawaal)',k:'patna registry bigha katha faq sawaal',u:'land-rate-patna.html'},
-  {t:'All 38 Districts',k:'all district sabhi jila',u:'bihar-all-districts-land-rate.html'},
-  {t:'About BighaWala',k:'about us hamare',u:'about.html'},
-  {t:'Contact Us',k:'contact sampark',u:'contact.html'}
+  {t:'Zameen Dastavez Checklist',k:'dastavez checklist documents kagaz track khatiyan jamabandi registry mutation lpc',u:'zameen-dastavez-checklist'},
+  {t:'Parimarjan Plus Bihar',k:'parimarjan plus jamabandi sudhar correction naam khata khesra rakba',u:'parimarjan-plus-bihar'},
+  {t:'Bihar Jamin Survey Guide',k:'survey sarvekshan vanshavali prapatra form 2 form 3 khanapuri',u:'bihar-jamin-survey'},
+  {t:'Vanshavali Kaise Banaye (Free Tool)',k:'vanshavali banao generator prapatra 3 genealogy family tree',u:'vanshavali-kaise-banaye'},
+  {t:'Bihar Survey Status Check',k:'survey status check dlrs online khanapuri complaint',u:'bihar-survey-status-check'},
+  {t:'Bihar Survey Objection Guide (Form 14/21)',k:'prapatra 12 14 20 21 objection aapatti bandobast padadhikari shivir',u:'bihar-survey-objection'},
+  {t:'अपना खाता देखें',k:'apna khata khatyan',u:'apna-khata-dekhe'},
+  {t:'Bigha Calculator',k:'bigha katha dhur convert',u:'bigha-calculator'},
+  {t:'Bigha to Decimal',k:'bigha decimal dismil',u:'bigha-to-decimal'},
+  {t:'Dakhil Kharij',k:'dakhil kharij mutation',u:'dakhil-kharij'},
+  {t:'Dakhil Kharij Fees',k:'dakhil fees paisa kharcha',u:'dakhil-kharij-fees'},
+  {t:'LPC Bihar',k:'lpc land possession',u:'lpc-bihar'},
+  {t:'LPC Validity',k:'lpc validity renewal expire',u:'lpc-validity-renewal'},
+  {t:'Jamabandi',k:'jamabandi nakal download',u:'jamabandi'},
+  {t:'Bhulekh Bihar',k:'bhulekh record',u:'bhulekh'},
+  {t:'Registry Guide',k:'registry nibandhan',u:'registry-bihar'},
+  {t:'Registry Charges',k:'registry charges stamp duty',u:'zameen-registry-charges'},
+  {t:'Bainama Format',k:'bainama sale deed hindi',u:'bainama-format-bihar'},
+  {t:'Khata Khesra',k:'khata khesra number',u:'khata-khesra-bihar'},
+  {t:'Khatiyan Bihar',k:'khatiyan cs rs survey jamabandi',u:'khatiyan-bihar'},
+  {t:'Halka Mauja Kya Hai',k:'halka mauja anchal revenue village',u:'halka-mauja-kya-hota-hai'},
+  {t:'LPC/Dakhil Kharij Status',k:'lpc status dakhil kharij status mutation check',u:'lpc-dakhil-kharij-status-check'},
+  {t:'Bhu Naksha',k:'bhu naksha land map',u:'bhu-naksha-bihar'},
+  {t:'Self Declaration',k:'self declaration shapath patra',u:'self-declaration-form-bihar'},
+  {t:'Zameen Vivad',k:'zameen vivad dispute',u:'zameen-vivad-bihar'},
+  {t:'Waris Praman Patra',k:'waris praman patra legal heir certificate uttaradhikar succession vanshavali rtps',u:'waris-praman-patra-bihar'},
+  {t:'Zameen NA Conversion',k:'na conversion agricultural non agricultural krishi gair krishi sdo',u:'zameen-na-conversion-bihar'},
+  {t:'Circle Rate Objection',k:'circle rate mvr objection complaint galat revision',u:'circle-rate-objection-bihar'},
+  {t:'Chakbandi Kya Hai',k:'chakbandi land consolidation bhoomi ekikaran',u:'chakbandi-bihar'},
+  {t:'Power of Attorney Zameen',k:'power of attorney poa gpa spa mukhtarnama zameen registry',u:'power-of-attorney-zameen-bihar'},
+  {t:'Land Rates Bihar',k:'zameen rate kimat',u:'land-rates'},
+  {t:'MVR Rate Bihar',k:'mvr minimum valuation',u:'mvr-rate-bihar'},
+  {t:'Circle Rate',k:'circle rate sarkari',u:'circle-rate-bihar'},
+  {t:'Jamin Ka Rate',k:'jamin rate check',u:'jamin-ka-rate-bihar'},
+  {t:'Zameen Moolyankan',k:'moolyankan valuation',u:'zameen-moolyankan'},
+  {t:'Cost Calculator',k:'cost kharcha stamp',u:'land-cost-calculator'},
+  {t:'Zameen Compare',k:'compare do plot',u:'zameen-comparison'},
+  {t:'Bihar Land Quiz',k:'quiz test knowledge',u:'bihar-land-quiz'},
+  {t:'Document Checker',k:'document kagaz checker',u:'document-checker'},
+  {t:'Community Q&A',k:'community sawaal jawab',u:'community-qa'},
+  {t:'Bihar Land News',k:'news samachar update',u:'bihar-land-news'},
+  {t:'Bihar Bhumi Portal',k:'portal bhumi sarkari',u:'bihar-bhumi-portal'},
+  {t:'Kisan Credit Card',k:'kisan credit kcc loan',u:'kisan-credit-card-bihar'},
+  {t:'PM Awas Yojana',k:'pm awas ghar yojana',u:'pm-awas-yojana-bihar'},
+  {t:'Patna Land Rate',k:'patna zameen rate',u:'patna-land-rate'},
+  {t:'Patna Land FAQ (25 Sawaal)',k:'patna registry bigha katha faq sawaal',u:'land-rate-patna'},
+  {t:'All 38 Districts',k:'all district sabhi jila',u:'bihar-all-districts-land-rate'},
+  {t:'About BighaWala',k:'about us hamare',u:'about'},
+  {t:'Contact Us',k:'contact sampark',u:'contact'}
 ];
 
 window.bwT = function(id){
