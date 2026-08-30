@@ -615,6 +615,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="lpc-validity-renewal">⏱️ LPC Validity</a>
       <a href="registry-bihar">📜 Registry Guide</a>
       <a href="zameen-registry-charges">💳 Registry Charges</a>
+      <a href="capital-gains-tax-calculator">🧾 Capital Gains Tax</a>
       <a href="bainama-format-bihar">📝 Bainama Format</a>
       <a href="khata-khesra-bihar">🔑 Khata Khesra</a>
       <a href="khatiyan-bihar">📜 Khatiyan Bihar</a>
@@ -713,6 +714,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="lpc-validity-renewal" onclick="bwM()">⏱️ LPC Validity</a>
       <a href="registry-bihar" onclick="bwM()">📜 Registry Guide</a>
       <a href="zameen-registry-charges" onclick="bwM()">💳 Registry Charges</a>
+      <a href="capital-gains-tax-calculator" onclick="bwM()">🧾 Capital Gains Tax</a>
       <a href="bainama-format-bihar" onclick="bwM()">📝 Bainama Format</a>
       <a href="khata-khesra-bihar" onclick="bwM()">🔑 Khata Khesra</a>
       <a href="khatiyan-bihar" onclick="bwM()">📜 Khatiyan Bihar</a>
@@ -819,6 +821,7 @@ window.bwSD = [
   {t:'Bhulekh Bihar',k:'bhulekh record',u:'bhulekh'},
   {t:'Registry Guide',k:'registry nibandhan',u:'registry-bihar'},
   {t:'Registry Charges',k:'registry charges stamp duty',u:'zameen-registry-charges'},
+  {t:'Capital Gains Tax Calculator',k:'capital gains tax zameen bechne par tax property sale',u:'capital-gains-tax-calculator'},
   {t:'Bainama Format',k:'bainama sale deed hindi',u:'bainama-format-bihar'},
   {t:'Khata Khesra',k:'khata khesra number',u:'khata-khesra-bihar'},
   {t:'Khatiyan Bihar',k:'khatiyan cs rs survey jamabandi',u:'khatiyan-bihar'},
