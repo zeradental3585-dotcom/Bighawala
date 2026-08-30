@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "name": "Bihar mein zameen kharidne mein total kitna kharcha aata hai?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bihar mein zameen kharidne par stamp duty male buyer ke liye 6% aur female ke liye 5.7% hoti hai. Iske sath 2% registration fee lagti hai. Iske alawa scanning fee, lawyer fee aur mutation fee milakar total property rate ka lagbhg 9% se 11% extra government aur professional charges ke roop mein kharcha aata hai."
+        "text": "Bihar mein zameen kharidne par stamp duty male buyer ke liye 6.3% aur female ke liye 5.7% hoti hai. Iske sath registration fee male ke liye 2.1% aur female ke liye 1.9% lagti hai (koi maximum cap nahi hai). Iske alawa scanning fee, lawyer fee aur mutation fee milakar total property rate ka lagbhg 10% se 12% extra government aur professional charges ke roop mein kharcha aata hai."
       }
     },
     {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "name": "Stamp duty aur registry fee alag alag hoti hai?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Haan, dono alag hain. Stamp Duty sarkar ka revenue tax hai jo legal agreement (Stamp) par lagta hai jo male ke liye 6% hai. Registration Fee Sub-Registrar Office (SRO) ka service charge hai jo court book entry ke liye flat 2% liya jata hai."
+        "text": "Haan, dono alag hain. Stamp Duty sarkar ka revenue tax hai jo legal agreement (Stamp) par lagta hai jo male ke liye 6.3% aur female ke liye 5.7% hai. Registration Fee Sub-Registrar Office (SRO) ka service charge hai jo male ke liye 2.1% aur female ke liye 1.9% liya jata hai — is par koi upper cap nahi hai."
       }
     },
     {
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "name": "Registration fee maximum kitni hoti hai Bihar mein?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "2026 ke updated niyam ke mutabik Bihar mein registration fee maximum ₹60,000 par cap hoti hai. 2% calculate karne par agar fee 60,000 se upar jati hai, toh bhi buyer ko sirf ₹60,000 hi dena hoga."
+        "text": "Bihar mein registration fee par koi maximum cap nahi hai. Yeh male buyer ke liye property value ka 2.1% aur female buyer ke liye 1.9% flat rate se calculate hoti hai, chahe property value jitni bhi bade."
       }
     },
     {
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "name": "Female ke naam par registry mein kitni bachat hoti hai?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Female ke naam par land property registry karne par stamp duty rate 5.7% lagta hai (Male ke liye 6%). Isse buyer ko direct property value par 0.3% ki cash saving milti hai. For example, 50 Lakh ki property par direct ₹15,000 ki bachat hogi."
+        "text": "Female ke naam par land property registry karne par stamp duty rate 5.7% lagta hai (Male ke liye 6.3%) aur registration fee 1.9% lagta hai (Male ke liye 2.1%). Isse buyer ko direct property value par 0.8% ki cash saving milti hai. For example, 50 Lakh ki property par direct ₹40,000 ki bachat hogi."
       }
     },
     {
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <input aria-label="विकल्प: male" type="radio" name="gender" value="male" class="text-primaryGreen focus:ring-0" checked onchange="onGenderChange('male')" />
                 <div>
                   <span class="font-black text-slate-800 text-sm sm:text-base block">👨 Male Buyer</span>
-                  <span class="text-[11px] text-slate-400 font-bold block">6% Stamp Duty</span>
+                  <span class="text-[11px] text-slate-400 font-bold block">6.3% Stamp Duty + 2.1% Registration</span>
                 </div>
               </label>
 
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <input aria-label="विकल्प: female" type="radio" name="gender" value="female" class="text-primaryGreen focus:ring-0" onchange="onGenderChange('female')" />
                 <div>
                   <span class="font-black text-slate-800 text-sm sm:text-base block">👩 Female Buyer</span>
-                  <span class="text-[11px] text-emerald-600 font-bold block">5.7% Stamp Duty (Saving)</span>
+                  <span class="text-[11px] text-emerald-600 font-bold block">5.7% Stamp Duty + 1.9% Registration (Saving)</span>
                 </div>
               </label>
             </div>
@@ -497,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <!-- Item 1 -->
               <div class="py-3 flex items-start justify-between gap-4">
                 <div>
-                  <div class="font-black text-slate-800 text-sm sm:text-base">1. Stamp Duty (<span id="report-stamp-percent">6%</span>)</div>
+                  <div class="font-black text-slate-800 text-sm sm:text-base">1. Stamp Duty (<span id="report-stamp-percent">6.3%</span>)</div>
                   <div class="text-xs text-slate-400 font-bold">Zameen kharidne par sabse bada sarkari tax</div>
                 </div>
                 <div class="text-right font-mono font-black text-slate-900 text-sm sm:text-base" id="val-stamp-duty">₹1,50,000</div>
@@ -506,8 +506,8 @@ document.addEventListener('DOMContentLoaded', function() {
               <!-- Item 2 -->
               <div class="py-3 flex items-start justify-between gap-4">
                 <div>
-                  <div class="font-black text-slate-800 text-sm sm:text-base">2. Registration Fee (2%, max ₹60,000)</div>
-                  <div class="text-xs text-slate-400 font-bold">Sarkari court registry register karne ki fee (Capped at 60k)</div>
+                  <div class="font-black text-slate-800 text-sm sm:text-base">2. Registration Fee (<span id="report-reg-percent">2.1%</span>, no cap)</div>
+                  <div class="text-xs text-slate-400 font-bold">Sarkari court registry register karne ki fee (koi maximum limit nahi)</div>
                 </div>
                 <div class="text-right font-mono font-black text-slate-900 text-sm sm:text-base" id="val-reg-fee">₹50,000</div>
               </div>
@@ -689,7 +689,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <ul class="space-y-3 text-xs sm:text-sm text-slate-700 font-bold">
               <li class="flex items-start gap-2.5">
                 <span class="text-emerald-600 shrink-0 text-base">✅</span>
-                <span>Female ke naam par registry karein — <strong class="text-emerald-900 font-black" id="saving-female-amt">₹7,500</strong> bachenge (Stamp duty flat 0.3% discounts milti hai).</span>
+                <span>Female ke naam par registry karein — <strong class="text-emerald-900 font-black" id="saving-female-amt">₹7,500</strong> bachenge (Stamp duty + registration fee milakar flat 0.8% discount milti hai).</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <span class="text-emerald-600 shrink-0 text-base">✅</span>
@@ -936,15 +936,15 @@ document.addEventListener('DOMContentLoaded', function() {
             <tbody class="divide-y divide-slate-100">
               <tr>
                 <td class="p-4 font-black">Stamp Duty</td>
-                <td class="p-4 font-mono" id="comp-stamp-male">₹1,50,000 (6%)</td>
+                <td class="p-4 font-mono" id="comp-stamp-male">₹1,57,500 (6.3%)</td>
                 <td class="p-4 font-mono" id="comp-stamp-female">₹1,42,500 (5.7%)</td>
-                <td class="p-4 font-mono text-emerald-700" id="comp-stamp-save">₹7,500 (0.3%)</td>
+                <td class="p-4 font-mono text-emerald-700" id="comp-stamp-save">₹15,000 (0.6%)</td>
               </tr>
               <tr>
                 <td class="p-4 font-black">Registration Fee</td>
-                <td class="p-4 font-mono" id="comp-reg-male">₹50,000 (2%)</td>
-                <td class="p-4 font-mono" id="comp-reg-female">₹50,000 (2%)</td>
-                <td class="p-4 font-mono text-slate-400">₹0</td>
+                <td class="p-4 font-mono" id="comp-reg-male">₹52,500 (2.1%)</td>
+                <td class="p-4 font-mono" id="comp-reg-female">₹47,500 (1.9%)</td>
+                <td class="p-4 font-mono text-emerald-700" id="comp-reg-save">₹5,000 (0.2%)</td>
               </tr>
               <tr class="bg-emerald-50/30">
                 <td class="p-4 font-black text-slate-900">Total Government Fees</td>
@@ -957,7 +957,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 text-xs sm:text-sm text-emerald-800 font-black">
-          💡 Female ke naam par registry karne se <strong id="comp-tip-saving" class="text-emerald-950 font-black">₹7,500</strong> ki bachat hoti hai! Government stamp duty rates par 0.3% flat relief pradan karti hai.
+          💡 Female ke naam par registry karne se <strong id="comp-tip-saving" class="text-emerald-950 font-black">₹20,000</strong> ki bachat hoti hai! Government stamp duty aur registration fee dono par 0.8% flat relief pradan karti hai.
         </div>
       </section>
 
@@ -979,7 +979,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </span>
             </summary>
             <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              A: Bihar mein zameen kharidne par stamp duty male buyer ke liye 6% aur female ke liye 5.7% hoti hai. Iske sath 2% registration fee lagti hai. Iske alawa scanning fee, lawyer fee aur mutation fee milakar total property rate ka lagbhg 9% se 11% extra government aur professional charges ke roop mein kharcha aata hai.
+              A: Bihar mein zameen kharidne par stamp duty male buyer ke liye 6.3% aur female ke liye 5.7% hoti hai. Iske sath registration fee male ke liye 2.1% aur female ke liye 1.9% lagti hai (koi maximum cap nahi hai). Iske alawa scanning fee, lawyer fee aur mutation fee milakar total property rate ka lagbhg 10% se 12% extra government aur professional charges ke roop mein kharcha aata hai.
             </p>
           </details>
 
@@ -992,7 +992,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </span>
             </summary>
             <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              A: Haan, dono alag hain. Stamp Duty sarkar ka revenue tax hai jo legal agreement (Stamp) par lagta hai jo male ke liye 6% hai. Registration Fee Sub-Registrar Office (SRO) ka service charge hai jo court book entry ke liye flat 2% liya jata hai.
+              A: Haan, dono alag hain. Stamp Duty sarkar ka revenue tax hai jo legal agreement (Stamp) par lagta hai jo male ke liye 6.3% aur female ke liye 5.7% hai. Registration Fee Sub-Registrar Office (SRO) ka service charge hai jo male ke liye 2.1% aur female ke liye 1.9% liya jata hai — is par koi upper cap nahi hai.
             </p>
           </details>
 
@@ -1005,7 +1005,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </span>
             </summary>
             <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              A: 2026 ke updated niyam ke mutabik Bihar mein registration fee maximum ₹60,000 par cap hoti hai. 2% calculate karne par agar fee 60,000 se upar jati hai, toh bhi buyer ko sirf ₹60,000 hi dena hoga.
+              A: Bihar mein registration fee par koi maximum cap nahi hai. Yeh male buyer ke liye property value ka 2.1% aur female buyer ke liye 1.9% flat rate se calculate hoti hai, chahe property value jitni bhi bade.
             </p>
           </details>
 
@@ -1018,7 +1018,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </span>
             </summary>
             <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              A: Female ke naam par land property registry karne par stamp duty rate 5.7% lagta hai (Male ke liye 6%). Isse buyer ko direct property value par 0.3% ki cash saving milti hai. For example, 50 Lakh ki property par direct ₹15,000 ki bachat hogi.
+              A: Female ke naam par land property registry karne par stamp duty rate 5.7% lagta hai (Male ke liye 6.3%) aur registration fee 1.9% lagta hai (Male ke liye 2.1%). Isse buyer ko direct property value par 0.8% ki cash saving milti hai. For example, 50 Lakh ki property par direct ₹40,000 ki bachat hogi.
             </p>
           </details>
 
@@ -1107,8 +1107,16 @@ document.addEventListener('DOMContentLoaded', function() {
         <h2 class="text-xl sm:text-2xl font-black text-slate-900 text-center">
           🔗 संबंधित अन्य महत्वपूर्ण टूल्स (Related Tools)
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
           <!-- Card 1 -->
+          <a href="zameen-registry-charges" class="bg-white border border-slate-200 hover:border-emerald-300 rounded-2xl p-5 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all group flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="text-3xl">🧮</div>
+              <h3 class="text-sm sm:text-base font-black text-slate-900 group-hover:text-primaryGreen transition-colors">Stamp Duty Calculator</h3>
+              <p class="text-[11px] text-slate-400 leading-relaxed font-bold">सिर्फ स्टाम्प ड्यूटी और रजिस्ट्रेशन फीस का सटीक कैलकुलेशन</p>
+            </div>
+          </a>
+          <!-- Card 2 -->
           <a href="land-rates" class="bg-white border border-slate-200 hover:border-emerald-300 rounded-2xl p-5 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all group flex flex-col justify-between">
             <div class="space-y-2">
               <div class="text-3xl">💰</div>
@@ -1116,7 +1124,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <p class="text-[11px] text-slate-400 leading-relaxed font-bold">बिहार के सभी जिलों का सरकारी सर्किल रेट (MVR)</p>
             </div>
           </a>
-          <!-- Card 2 -->
+          <!-- Card 3 -->
           <a href="zameen-moolyankan" class="bg-white border border-slate-200 hover:border-emerald-300 rounded-2xl p-5 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all group flex flex-col justify-between">
             <div class="space-y-2">
               <div class="text-3xl">🏡</div>
@@ -1124,7 +1132,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <p class="text-[11px] text-slate-400 leading-relaxed font-bold">ज़मीन का बाज़ार भाव और सरकारी मूल्यांकन चेक करें</p>
             </div>
           </a>
-          <!-- Card 3 -->
+          <!-- Card 4 -->
           <a href="registry-bihar" class="bg-white border border-slate-200 hover:border-emerald-300 rounded-2xl p-5 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all group flex flex-col justify-between">
             <div class="space-y-2">
               <div class="text-3xl">📋</div>
@@ -1256,15 +1264,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const hasLoan = document.querySelector('input[name="home-loan"]:checked').value === 'yes';
         const loanAmount = hasLoan ? (parseFloat(document.getElementById('input-loan-amount').value) || 0) : 0;
 
-        // 1. Stamp Duty
-        const stampPercent = buyerGender === 'male' ? 0.06 : 0.057;
+        // 1. Stamp Duty (6.3% Male, 5.7% Female)
+        const stampPercent = buyerGender === 'male' ? 0.063 : 0.057;
         const stampDutyVal = Math.round(propValue * stampPercent);
 
-        // 2. Registration Fee (2%, capped at 60,000)
-        let regFeeVal = Math.round(propValue * 0.02);
-        if (regFeeVal > 60000) {
-          regFeeVal = 60000;
-        }
+        // 2. Registration Fee (2.1% Male, 1.9% Female — no cap)
+        const regPercent = buyerGender === 'male' ? 0.021 : 0.019;
+        const regFeeVal = Math.round(propValue * regPercent);
 
         // Fixed Government Fees
         const pastingFee = 1000;
@@ -1311,8 +1317,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('report-district').innerText = selectedDistrict;
         document.getElementById('report-prop-value').innerText = `₹${propValue.toLocaleString('en-IN')}`;
         
-        document.getElementById('report-stamp-percent').innerText = buyerGender === 'male' ? '6%' : '5.7%';
+        document.getElementById('report-stamp-percent').innerText = buyerGender === 'male' ? '6.3%' : '5.7%';
         document.getElementById('val-stamp-duty').innerText = `₹${stampDutyVal.toLocaleString('en-IN')}`;
+        document.getElementById('report-reg-percent').innerText = buyerGender === 'male' ? '2.1%' : '1.9%';
         document.getElementById('val-reg-fee').innerText = `₹${regFeeVal.toLocaleString('en-IN')}`;
         document.getElementById('val-subtotal-gov').innerText = `₹${totalGovFees.toLocaleString('en-IN')}`;
         
@@ -1328,8 +1335,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('val-grand-total').innerText = `₹${grandTotal.toLocaleString('en-IN')}`;
         document.getElementById('val-extra-percentage').innerText = `Yeh aapki property value ka approx ${percentageExtra}% extra hai`;
 
-        // Savings tips DOM
-        const savingFemale = Math.round(propValue * 0.003); // saving 0.3%
+        // Savings tips DOM (female saves 0.6% stamp duty + 0.2% registration = 0.8% combined)
+        const savingFemale = Math.round(propValue * 0.008);
         document.getElementById('saving-female-amt').innerText = `₹${savingFemale.toLocaleString('en-IN')}`;
         document.getElementById('saving-agent-amt').innerText = `₹${agentFeeVal.toLocaleString('en-IN')}`;
 
@@ -1338,19 +1345,24 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('saving-grand-total').innerText = `₹${totalSavings.toLocaleString('en-IN')}`;
 
         // Comparison table DOM calculations
-        const maleStamp = Math.round(propValue * 0.06);
+        const maleStamp = Math.round(propValue * 0.063);
         const femaleStamp = Math.round(propValue * 0.057);
         const stampSave = maleStamp - femaleStamp;
 
-        document.getElementById('comp-stamp-male').innerText = `₹${maleStamp.toLocaleString('en-IN')} (6%)`;
+        document.getElementById('comp-stamp-male').innerText = `₹${maleStamp.toLocaleString('en-IN')} (6.3%)`;
         document.getElementById('comp-stamp-female').innerText = `₹${femaleStamp.toLocaleString('en-IN')} (5.7%)`;
-        document.getElementById('comp-stamp-save').innerText = `₹${stampSave.toLocaleString('en-IN')} (0.3%)`;
+        document.getElementById('comp-stamp-save').innerText = `₹${stampSave.toLocaleString('en-IN')} (0.6%)`;
 
-        document.getElementById('comp-reg-male').innerText = `₹${regFeeVal.toLocaleString('en-IN')} (2%)`;
-        document.getElementById('comp-reg-female').innerText = `₹${regFeeVal.toLocaleString('en-IN')} (2%)`;
+        const maleReg = Math.round(propValue * 0.021);
+        const femaleReg = Math.round(propValue * 0.019);
+        const regSave = maleReg - femaleReg;
 
-        const totalMaleFees = maleStamp + regFeeVal;
-        const totalFemaleFees = femaleStamp + regFeeVal;
+        document.getElementById('comp-reg-male').innerText = `₹${maleReg.toLocaleString('en-IN')} (2.1%)`;
+        document.getElementById('comp-reg-female').innerText = `₹${femaleReg.toLocaleString('en-IN')} (1.9%)`;
+        document.getElementById('comp-reg-save').innerText = `₹${regSave.toLocaleString('en-IN')} (0.2%)`;
+
+        const totalMaleFees = maleStamp + maleReg;
+        const totalFemaleFees = femaleStamp + femaleReg;
         const totalGovSave = totalMaleFees - totalFemaleFees;
 
         document.getElementById('comp-total-male').innerText = `₹${totalMaleFees.toLocaleString('en-IN')}`;
