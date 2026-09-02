@@ -625,6 +625,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="zameen-bina-sahmati-bikri-bihar">🚨 Bina Sahmati Bikri</a>
       <a href="bigha-calculator-uttar-pradesh">🌾 UP Bigha Calculator</a>
       <a href="bigha-calculator-jharkhand">🌳 Jharkhand Bigha Calculator</a>
+      <a href="bigha-calculator-west-bengal">🐟 West Bengal Bigha Calculator</a>
       <a href="bihar-bhumi-portal">🏛️ Bihar Bhumi Portal</a>
       <a href="parimarjan-plus-bihar">🧰 Parimarjan Plus</a>
       <a href="kisan-credit-card-bihar">🌾 Kisan Credit Card</a>
@@ -727,6 +728,7 @@ a,button,.bw-mbar a,.bw-ham,.bw-si{
       <a href="zameen-bina-sahmati-bikri-bihar" onclick="bwM()">🚨 Bina Sahmati Bikri</a>
       <a href="bigha-calculator-uttar-pradesh" onclick="bwM()">🌾 UP Bigha Calculator</a>
       <a href="bigha-calculator-jharkhand" onclick="bwM()">🌳 Jharkhand Bigha Calculator</a>
+      <a href="bigha-calculator-west-bengal" onclick="bwM()">🐟 West Bengal Bigha Calculator</a>
       <a href="bihar-bhumi-portal" onclick="bwM()">🏛️ Bihar Bhumi Portal</a>
       <a href="parimarjan-plus-bihar" onclick="bwM()">🧰 Parimarjan Plus</a>
       <a href="kisan-credit-card-bihar" onclick="bwM()">🌾 Kisan Credit Card</a>
@@ -831,6 +833,7 @@ window.bwSD = [
   {t:'Bina Sahmati Zameen Bikri — Emergency Guide',k:'bhai ne zameen bech di bina bataye ancestral property sold without consent coparcener',u:'zameen-bina-sahmati-bikri-bihar'},
   {t:'UP Bigha to Biswa Calculator',k:'uttar pradesh bigha biswa biswansi land measurement calculator',u:'bigha-calculator-uttar-pradesh'},
   {t:'Jharkhand Bigha to Katha Calculator',k:'jharkhand bigha katha dhur land measurement calculator cnt spt act',u:'bigha-calculator-jharkhand'},
+  {t:'West Bengal Bigha to Katha Calculator',k:'west bengal bigha katha chatak land measurement calculator banglarbhumi kolkata',u:'bigha-calculator-west-bengal'},
   {t:'Bainama Format',k:'bainama sale deed hindi',u:'bainama-format-bihar'},
   {t:'Khata Khesra',k:'khata khesra number',u:'khata-khesra-bihar'},
   {t:'Khatiyan Bihar',k:'khatiyan cs rs survey jamabandi',u:'khatiyan-bihar'},
