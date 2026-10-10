@@ -1124,6 +1124,49 @@ function bwInitShare(){
   fbLink.addEventListener('click', function () { trackShare('Facebook'); });
 }
 
+// GA4 "calculator_used" event — fires once per page view, the first time a
+// visitor edits an input/select (or presses a button) inside <main> on a
+// calculator page. Lets Analytics count real tool usage (mark as a key event).
+function initCalculatorTracking() {
+  var slug = (location.pathname.replace(/\/+$/, '').split('/').pop() || '').replace(/\.html$/, '');
+  var calcPages = {
+    'mvr-rate-bihar': 1, 'circle-rate-bihar': 1, 'bigha-calculator': 1,
+    'bigha-calculator-uttar-pradesh': 1, 'bigha-calculator-jharkhand': 1,
+    'bigha-calculator-west-bengal': 1, 'bigha-to-decimal': 1,
+    'capital-gains-tax-calculator': 1, 'land-cost-calculator': 1,
+    'zameen-registry-charges': 1, 'land-rates': 1, 'jamin-ka-rate-bihar': 1
+  };
+  if (!calcPages[slug] && !/-land-rate$/.test(slug)) return;
+  var main = document.querySelector('main');
+  if (!main) return;
+  var fired = false;
+  function fire(e) {
+    if (fired) return;
+    var t = e.target;
+    if (!t || !t.closest) return;
+    // ignore site search, share/listen buttons and links
+    if (t.closest('[role="search"], form[role="search"], .wa-listen-btn, a')) return;
+    var tag = (t.tagName || '').toLowerCase();
+    if (tag === 'input' && (t.type === 'search' || /search/i.test((t.id || '') + (t.name || '') + (t.placeholder || '')))) return;
+    if (tag === 'button' && /share|listen|speak|whatsapp|copy/i.test((t.getAttribute('onclick') || '') + (t.className || '') + (t.id || ''))) return;
+    if (tag !== 'input' && tag !== 'select' && tag !== 'button') return;
+    fired = true;
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'calculator_used', { calculator_name: slug, page_path: location.pathname });
+      }
+    } catch (err) { /* analytics must never break the calculator */ }
+  }
+  main.addEventListener('input', fire, true);
+  main.addEventListener('change', fire, true);
+  main.addEventListener('click', fire, true);
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCalculatorTracking);
+} else {
+  initCalculatorTracking();
+}
+
 if(document.readyState === 'loading'){
   document.addEventListener('DOMContentLoaded', initNav);
 } else {
